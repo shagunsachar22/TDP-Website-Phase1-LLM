@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 90-Second Recovery — The Deliberate Pause</title>
+  <meta name="description" content="Djokovic's rule. Ninety seconds between any two points. Don't open Slack until it hits zero." />
+  <link rel="canonical" href="https://thedeliberatepause.com/practice/90-second-recovery" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===========================================================
+       PAGE-SPECIFIC — 90-Second Recovery
+       =========================================================== */
+    .ninety-stage {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      position: relative;
+    }
+    .ninety-stage svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transform: rotate(-90deg);
+    }
+    .nw-track {
+      fill: none;
+      stroke: rgba(245, 239, 229, 0.10);
+      stroke-width: 2;
+    }
+    .nw-ring {
+      fill: none;
+      stroke: var(--accent-amber);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      transition: stroke 0.3s var(--ease);
+      filter: drop-shadow(0 0 12px rgba(214, 168, 110, 0.5));
+    }
+    .ninety-widget.is-done .nw-ring {
+      stroke: var(--cta);
+      filter: drop-shadow(0 0 16px rgba(197, 107, 69, 0.6));
+    }
+    .ninety-readout {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+    }
+    .nw-time {
+      font-family: var(--font-serif);
+      font-size: clamp(64px, 8vw, 96px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text-cream);
+      font-variant-numeric: tabular-nums;
+    }
+    .nw-status {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      font-weight: 600;
+    }
+    .nw-status[data-state="running"] { color: var(--accent-amber); }
+    .nw-status[data-state="done"]    { color: var(--cta); }
+
+    .nw-controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .nw-controls button {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border-on-dark);
+    }
+    .nw-start {
+      background: var(--accent-amber);
+      color: var(--bg-dark);
+      border-color: var(--accent-amber);
+    }
+    .nw-start:hover { background: var(--accent-amber-bright); transform: translateY(-2px); }
+    .nw-reset {
+      background: transparent;
+      color: var(--text-cream);
+    }
+    .nw-reset:hover { background: rgba(245,239,229,0.06); border-color: var(--text-cream); }
+
+    .ninety-widget.is-running .nw-start { opacity: 0.4; pointer-events: none; }
+    .ninety-widget.is-done .nw-start { opacity: 0.4; pointer-events: none; }
+
+    /* Then resume band */
+    .resume-band {
+      padding: 96px 0;
+      background: var(--bg-dark);
+      color: var(--text-cream);
+      border-top: 1px solid var(--border-on-dark);
+    }
+    .resume-band .wrap { max-width: 760px; text-align: center; }
+    .resume-band .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      display: block;
+      margin: 0 0 20px;
+    }
+    .resume-band h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4.4vw, 56px);
+      color: var(--text-cream);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin: 0 0 16px;
+    }
+    .resume-band h2 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+    .resume-band p {
+      color: var(--text-muted-dark);
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 auto;
+      max-width: 560px;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-logo-img" src="images/logo.svg" alt="" onerror="this.style.display='none'" />
+        <span class="nav-logo-text">The Deliberate Pause</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="read.html">Read</a></li>
+          <li><a href="pause.html" aria-current="page">Practice</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <a href="pause.html" class="btn btn-magnetic nav-cta">
+        <span class="label-long">Get the Playbook</span>
+        <span class="label-short">Get the Playbook</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+
+  <div class="practice-crumb">
+    <div class="practice-crumb-inner">
+      <a href="pause.html">← All Practices</a>
+      <span class="sep">/</span>
+      <span class="here">The 90-Second Recovery</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         1 · HERO + COUNTDOWN TIMER (dark)
+         ============================================================ -->
+    <section class="practice-hero theme-dark">
+      <div class="wrap">
+        <span class="pkey" data-scroll-fx>Practice 03 · The 90-Second Recovery</span>
+        <h1 data-scroll-fx="fade-up-lg">Djokovic's rule: <em>ninety seconds<br />between any two points.</em></h1>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Between the bad meeting and the next one — start the timer. Don't open Slack until it hits zero.</p>
+
+        <div class="ninety-widget" data-scroll-fx="zoom" style="--fx-delay: 0.25s;">
+          <div class="ninety-stage">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="nw-track" cx="50" cy="50" r="46"></circle>
+              <circle class="nw-ring"  cx="50" cy="50" r="46"></circle>
+            </svg>
+            <div class="ninety-readout">
+              <div class="nw-time">1:30</div>
+              <div class="nw-status" data-state="ready">Ready</div>
+            </div>
+          </div>
+          <div class="nw-controls">
+            <button class="nw-start" type="button">Start <span aria-hidden="true">→</span></button>
+            <button class="nw-reset" type="button">Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2 · ORIGIN
+         ============================================================ -->
+    <section class="origin">
+      <div class="wrap">
+        <div class="origin-grid">
+          <div data-scroll-fx="fade-right">
+            <span class="label">Origin</span>
+            <h2>Novak Djokovic</h2>
+            <div class="credentials">ATP · Tennis · 24 Grand Slams</div>
+          </div>
+          <div data-scroll-fx="fade-left">
+            <blockquote>The point that just happened is over. The next one hasn't started yet. Ninety seconds belong to neither.</blockquote>
+            <p>Djokovic doesn't just reset between points — he treats the 90 seconds as sacred. No replay. No projection. Towel, breath, look at the strings, walk to the line. The body regulates and the next point starts clean. Founders don't get this gap by default. The bad meeting bleeds straight into the next one. The rejection email opens while the previous call is still live. The protocol is: insert the gap, on purpose, and don't fill it with input.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3 · WHEN TO USE
+         ============================================================ -->
+    <section class="when-to-use">
+      <div class="wrap">
+        <span class="label" data-scroll-fx>When to use</span>
+        <h2 data-scroll-fx>The founder situations this protocol was <em>built for.</em></h2>
+        <hr data-scroll-fx />
+
+        <div class="situation-grid">
+          <article class="situation" data-scroll-fx>
+            <div class="num">01</div>
+            <div>
+              <h3>Between back-to-back meetings</h3>
+              <p>Stand up. Walk to a window. Don't open Slack. The previous meeting has to die before the next one is born.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">02</div>
+            <div>
+              <h3>After a hard rejection</h3>
+              <p>Investor passes. Customer churns. Big hire says no. Ninety seconds before you reply, post, or pivot.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">03</div>
+            <div>
+              <h3>Mid-fundraise</h3>
+              <p>The day of multiple pitches. Each one needs its own clean start. The previous one is a different match.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">04</div>
+            <div>
+              <h3>After difficult feedback</h3>
+              <p>Cofounder, board member, employee — anyone tells you something hard. Don't respond inside the first 90.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">05</div>
+            <div>
+              <h3>When the body says "stop"</h3>
+              <p>You notice the jaw, the chest, the breath getting short. Don't push through. 90 seconds, then continue.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">06</div>
+            <div>
+              <h3>Before the high-stakes one</h3>
+              <p>Final-round interview, board update, all-hands. 90 seconds before you walk in. No phone in your hand.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · THEN RESUME
+         ============================================================ -->
+    <section class="resume-band">
+      <div class="wrap">
+        <span class="label" data-scroll-fx>Then resume.</span>
+        <h2 data-scroll-fx>When the timer hits zero, the next point has <em>started.</em></h2>
+        <p data-scroll-fx style="--fx-delay: 0.1s;">Walk in clean. Don't bring the last point with you.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5 · ESSAYS ABOUT THIS PRACTICE
+         ============================================================ -->
+    <section class="related-essays">
+      <div class="wrap">
+        <div class="header" data-scroll-fx>
+          <h2>Essays · about this practice.</h2>
+          <a class="all" href="read.html">All essays <span>→</span></a>
+        </div>
+        <div class="related-list">
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Apr 18</div>
+            <h3><a href="read-essay.html">The 90 seconds you don't take after the bad call.</a></h3>
+            <div class="tag">Practice</div>
+          </article>
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Mar 30</div>
+            <h3><a href="read-essay.html">Djokovic's strings and the founder's laptop.</a></h3>
+            <div class="tag">Story</div>
+          </article>
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Feb 22</div>
+            <h3><a href="read-essay.html">Why the body files an objection before you do.</a></h3>
+            <div class="tag">Essay</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6 · GET THE PLAYBOOK BAND
+         ============================================================ -->
+    <section class="theme-dark" style="padding: 96px 0; text-align: center;">
+      <div class="wrap" style="max-width: 720px;">
+        <span class="pkey" style="font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 24px;" data-scroll-fx>Three down. One to go.</span>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 56px); color: var(--text-cream); letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 16px;" data-scroll-fx>Get the rest in the <em style="color: var(--accent-amber); font-style: italic; font-weight: 500;">Pause Playbook.</em></h2>
+        <p style="color: var(--text-muted-dark); font-size: 16px; line-height: 1.55; margin: 0 0 36px;" data-scroll-fx>Free PDF. Twelve protocols. In your inbox in sixty seconds.</p>
+        <form class="form-row" style="margin: 0 auto;" action="#" method="post" data-source="ninety-cta" data-scroll-fx>
+          <label for="email-90" class="visually-hidden">Email address</label>
+          <input type="email" id="email-90" name="email_address" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
+        </form>
+        <p class="form-disclaimer" style="text-align: center;">No spam ever. Unsubscribe in one click.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer theme-dark" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">The Deliberate Pause</div>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Tools and essays for startup founders on building companies without breaking themselves. Sourced from spiritual practice. Proven by sport.</p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Pause for 5 minutes.</h4>
+          <p class="sub">Every Monday, 11:11 am.</p>
+          <form class="form-row" action="#" method="post" data-source="footer">
+            <label for="email-footer" class="visually-hidden">Email address</label>
+            <input type="email" id="email-footer" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Read</h5><ul><li><a href="read.html">All essays</a></li></ul></div>
+        <div><h5>Practice</h5><ul>
+          <li><a href="pause.html">The Pause Playbook</a></li>
+          <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
+          <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>
+          <li><a href="practice-90-second-recovery.html">90-Second Recovery</a></li>
+        </ul></div>
+        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li><li><a href="https://twitter.com/" rel="noopener">X</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi (Abhishek Agarwal) · Built in [location]</div>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fx.js" defer></script>
+  <script src="interactives.js" defer></script>
+</body>
+</html>

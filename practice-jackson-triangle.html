@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Jackson Triangle — The Deliberate Pause</title>
+  <meta name="description" content="Phil Jackson's pre-conversation protocol. Drop ego. Name intent. See the other person. A 30-second tool you can run before any hard message." />
+  <link rel="canonical" href="https://thedeliberatepause.com/practice/jackson-triangle" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Jackson Triangle — Practice 01" />
+  <meta property="og:description" content="Before any hard conversation — tap three corners." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===========================================================
+       PAGE-SPECIFIC — Jackson Triangle
+       =========================================================== */
+    .jt-stage {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      aspect-ratio: 1.05 / 1;
+    }
+    .jt-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .jt-svg .tri-line {
+      stroke: rgba(245, 239, 229, 0.16);
+      stroke-width: 1;
+      fill: none;
+      transition: stroke 0.4s var(--ease);
+    }
+    .jt-widget.is-complete .jt-svg .tri-line { stroke: var(--accent-amber); }
+
+    .jt-corner {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: rgba(19, 19, 19, 0.85);
+      border: 1px solid var(--border-on-dark);
+      border-radius: 6px;
+      padding: 18px 28px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.35s var(--ease);
+      min-width: 120px;
+      user-select: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .jt-corner:hover {
+      border-color: var(--accent-amber);
+      transform: translate(-50%, -52%);
+    }
+    .jt-corner.is-tapped {
+      background: rgba(214, 168, 110, 0.16);
+      border-color: var(--accent-amber);
+      box-shadow: 0 0 32px rgba(214, 168, 110, 0.45);
+    }
+    .jt-corner .ckey {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+    .jt-corner .cmsg {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--text-cream);
+      margin: 0;
+    }
+    /* Corner positions — top, bottom-left, bottom-right */
+    .jt-corner[data-corner="ego"]    { top: 12%;  left: 50%; }
+    .jt-corner[data-corner="other"]  { top: 78%;  left: 22%; }
+    .jt-corner[data-corner="intent"] { top: 78%;  left: 78%; }
+
+    .jt-meta {
+      text-align: center;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .jt-counter {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      font-weight: 600;
+    }
+    .jt-counter span {
+      color: var(--accent-amber);
+      font-variant-numeric: tabular-nums;
+    }
+    .jt-done {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--accent-amber);
+      pointer-events: none;
+    }
+    .jt-done.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .jt-reset {
+      background: transparent;
+      border: 1px solid var(--border-on-dark);
+      color: var(--text-muted-dark);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      font-weight: 500;
+    }
+    .jt-reset:hover { color: var(--text-cream); border-color: var(--text-cream); }
+
+    @media (max-width: 600px) {
+      .jt-stage { aspect-ratio: 0.85 / 1; }
+      .jt-corner { padding: 12px 18px; min-width: 96px; }
+      .jt-corner .ckey { font-size: 10px; letter-spacing: 0.22em; }
+      .jt-corner .cmsg { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-logo-img" src="images/logo.svg" alt="" onerror="this.style.display='none'" />
+        <span class="nav-logo-text">The Deliberate Pause</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="read.html">Read</a></li>
+          <li><a href="pause.html" aria-current="page">Practice</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <a href="pause.html" class="btn btn-magnetic nav-cta">
+        <span class="label-long">Get the Playbook</span>
+        <span class="label-short">Get the Playbook</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       Crumb
+       ============================================================ -->
+  <div class="practice-crumb">
+    <div class="practice-crumb-inner">
+      <a href="pause.html">← All Practices</a>
+      <span class="sep">/</span>
+      <span class="here">The Jackson Triangle</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         1 · HERO + TRIANGLE WIDGET (dark)
+         ============================================================ -->
+    <section class="practice-hero theme-dark">
+      <div class="wrap">
+        <span class="pkey" data-scroll-fx>Practice 01 · The Jackson Triangle</span>
+        <h1 data-scroll-fx="fade-up-lg">Before any hard conversation — <em>tap three corners.</em></h1>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">A 30-second protocol. Drop the ego. Name the intent. See the other person. Then send the message.</p>
+
+        <div class="jt-widget" data-scroll-fx="zoom" style="--fx-delay: 0.25s;">
+          <div class="jt-stage">
+            <svg class="jt-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polygon class="tri-line" points="50,12 22,78 78,78"></polygon>
+            </svg>
+            <button class="jt-corner" data-corner="ego" type="button" aria-label="Tap to mark Ego as named">
+              <div class="ckey">Ego</div>
+              <div class="cmsg">Drop it.</div>
+            </button>
+            <button class="jt-corner" data-corner="other" type="button" aria-label="Tap to mark Other as seen">
+              <div class="ckey">Other</div>
+              <div class="cmsg">See them.</div>
+            </button>
+            <button class="jt-corner" data-corner="intent" type="button" aria-label="Tap to mark Intent as named">
+              <div class="ckey">Intent</div>
+              <div class="cmsg">Name it.</div>
+            </button>
+          </div>
+          <div class="jt-meta">
+            <div class="jt-counter"><span>0</span> / 3 Tapped</div>
+            <span class="jt-done">Now send the message →</span>
+            <button class="jt-reset" type="button">Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2 · ORIGIN
+         ============================================================ -->
+    <section class="origin">
+      <div class="wrap">
+        <div class="origin-grid">
+          <div data-scroll-fx="fade-right">
+            <span class="label">Origin</span>
+            <h2>Phil Jackson</h2>
+            <div class="credentials">NBA · Bulls + Lakers · 11 championships</div>
+          </div>
+          <div data-scroll-fx="fade-left">
+            <blockquote>Before every play, name your ego, your intent, and the other person's stake — out loud.</blockquote>
+            <p>Jackson's huddle wasn't a strategy session. It was a presence protocol. Three things had to be named before the play began. He used it on Jordan and Kobe — the two highest-ego players in the game. The triangle works because it forces you to step out of yourself for thirty seconds before you act. Same instinct that founders need before the hard Slack message, the cofounder talk, the firing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3 · WHEN TO USE
+         ============================================================ -->
+    <section class="when-to-use" aria-labelledby="when-headline">
+      <div class="wrap">
+        <span class="label" data-scroll-fx>When to use</span>
+        <h2 id="when-headline" data-scroll-fx>The founder situations this protocol was <em>built for.</em></h2>
+        <hr data-scroll-fx />
+
+        <div class="situation-grid">
+          <article class="situation" data-scroll-fx>
+            <div class="num">01</div>
+            <div>
+              <h3>The hard Slack message</h3>
+              <p>Before you hit send on anything that could land sharp. Tap three corners. Re-read.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">02</div>
+            <div>
+              <h3>The cofounder conversation</h3>
+              <p>When you're heading into a talk you've been mentally rehearsing for two days.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">03</div>
+            <div>
+              <h3>The firing</h3>
+              <p>The one moment where ego and intent both show up loudest. Slow down. Three corners.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">04</div>
+            <div>
+              <h3>The investor email</h3>
+              <p>When you're writing the update where the news is bad. Drop the spin. Name what you actually want from them.</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">05</div>
+            <div>
+              <h3>The all-hands</h3>
+              <p>Before walking on stage to say something that matters. Especially when "what they need" is different from "what you want to say."</p>
+            </div>
+          </article>
+          <article class="situation" data-scroll-fx>
+            <div class="num">06</div>
+            <div>
+              <h3>The performance review</h3>
+              <p>Both directions — giving one, receiving one. Run it before the meeting, then again after.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · ESSAYS ABOUT THIS PRACTICE
+         ============================================================ -->
+    <section class="related-essays">
+      <div class="wrap">
+        <div class="header" data-scroll-fx>
+          <h2>Essays · about this practice.</h2>
+          <a class="all" href="read.html">All essays <span>→</span></a>
+        </div>
+        <div class="related-list">
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Apr 24</div>
+            <h3><a href="read-essay.html">The Rehearsal Tax — why founders mistake replay for reflection</a></h3>
+            <div class="tag">Essay</div>
+          </article>
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Mar 17</div>
+            <h3><a href="read-essay.html">Drop the ego. Then read the email.</a></h3>
+            <div class="tag">Practice</div>
+          </article>
+          <article class="related-row" data-scroll-fx>
+            <div class="date">Feb 28</div>
+            <h3><a href="read-essay.html">Cofounder conversations don't fail in the meeting.</a></h3>
+            <div class="tag">Story</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5 · GET THE PLAYBOOK BAND
+         ============================================================ -->
+    <section class="theme-dark" style="padding: 96px 0; text-align: center;">
+      <div class="wrap" style="max-width: 720px;">
+        <span class="pkey" style="font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 24px;" data-scroll-fx>One down. Three to go.</span>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 56px); color: var(--text-cream); letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 16px;" data-scroll-fx>Get the rest in the <em style="color: var(--accent-amber); font-style: italic; font-weight: 500;">Pause Playbook.</em></h2>
+        <p style="color: var(--text-muted-dark); font-size: 16px; line-height: 1.55; margin: 0 0 36px;" data-scroll-fx>Free PDF. Twelve protocols. In your inbox in sixty seconds.</p>
+        <form class="form-row" style="margin: 0 auto;" action="#" method="post" data-source="jt-cta" data-scroll-fx>
+          <label for="email-jt" class="visually-hidden">Email address</label>
+          <input type="email" id="email-jt" name="email_address" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
+        </form>
+        <p class="form-disclaimer" style="text-align: center;">No spam ever. Unsubscribe in one click.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer theme-dark" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">The Deliberate Pause</div>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Tools and essays for startup founders on building companies without breaking themselves. Sourced from spiritual practice. Proven by sport.</p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Pause for 5 minutes.</h4>
+          <p class="sub">Every Monday, 11:11 am.</p>
+          <form class="form-row" action="#" method="post" data-source="footer">
+            <label for="email-footer" class="visually-hidden">Email address</label>
+            <input type="email" id="email-footer" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Read</h5><ul><li><a href="read.html">All essays</a></li></ul></div>
+        <div><h5>Practice</h5><ul>
+          <li><a href="pause.html">The Pause Playbook</a></li>
+          <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
+          <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>
+          <li><a href="practice-90-second-recovery.html">90-Second Recovery</a></li>
+        </ul></div>
+        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li><li><a href="https://twitter.com/" rel="noopener">X</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi (Abhishek Agarwal) · Built in [location]</div>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fx.js" defer></script>
+  <script src="interactives.js" defer></script>
+</body>
+</html>

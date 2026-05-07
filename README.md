@@ -1,40 +1,72 @@
-# The Deliberate Pause — site v0.3
+# The Deliberate Pause — site v0.4
 
-Static, multi-page site. Vanilla HTML/CSS, one tiny JS file for scroll FX.
+Static, multi-page site. Vanilla HTML/CSS, two small JS files (scroll FX + practice widgets).
 
 ## Pages
 
-| File | Route | Status |
+| File | Route | What it does |
 |---|---|---|
-| `index.html`       | `/`            | Homepage — hero, pull quote, pain checklist, pivot, reading, pause section, testimonials, definition, I'm Avi, newsletter, footer |
-| `about.html`       | `/about`       | Cinematic hero, identity stack, journey (3 beats), featured-in, reader pivot, two doors |
-| `read.html`        | `/read`        | Playbook hero banner, 2-col archive with sticky sidebar, filter chips, 8 essays |
-| `read-essay.html`  | `/read/[slug]` | Representative individual essay — drop cap, body, pull quote, mid-essay subscribe, share, keep-reading |
-| `pause.html`       | `/pause`       | Lead magnet — try-one-play breathe widget (CSS-animated), what-you-just-did, 4-play toolkit, get-the-other-eleven |
+| `index.html`                       | `/`                              | Homepage — full-bleed video hero with overlaid headline, 12 sections, full scroll FX |
+| `about.html`                       | `/about`                         | Cinematic hero (Avi photo full-bleed), identity stack, 3-beat journey, reader pivot, two doors |
+| `read.html`                        | `/read`                          | Playbook hero, 2-col archive with sticky sidebar, filter chips, 8 essays |
+| `read-essay.html`                  | `/read/[slug]`                   | Representative essay — drop cap, body, pull quote, mid-essay subscribe, share, keep-reading |
+| `pause.html`                       | `/pause`                         | Lead magnet — try-one-play breathe widget (CSS animated), what-you-just-did, 4-play toolkit |
+| `practice-jackson-triangle.html`   | `/practice/jackson-triangle`     | **Interactive 3-corner tap widget**, Phil Jackson origin, 6 founder situations, related essays |
+| `practice-think-box-play-box.html` | `/practice/think-box-play-box`   | **Think Box / Play Box toggle widget**, Annika Sörenstam origin, 6 situations, related essays |
+| `practice-90-second-recovery.html` | `/practice/90-second-recovery`   | **Live 90-second countdown timer** (animated stroke ring), Djokovic origin, 6 situations, "Then resume." |
 
 ## Shared assets
 
 | File | What |
 |---|---|
-| `styles.css`   | Design tokens, base, nav, footer, btn, form, eyebrow, scroll FX classes |
-| `scroll-fx.js` | IntersectionObserver reveals, animated counters, word-by-word reveal, parallax, magnetic CTAs, marquee, scroll progress |
-| `images/`      | Avi photos go here (see below) |
-| `llms.txt`     | LLM-discoverability brief at root |
-| `robots.txt`   | Permissive — explicit allow for GPTBot/ClaudeBot/PerplexityBot/etc. |
-| `sitemap.xml`  | All five live URLs |
-| `vercel.json`  | Clean URLs, no trailing slashes, llms.txt content-type |
+| `styles.css`       | Design tokens, base, nav, footer, btn, form, eyebrow, scroll FX, practice-page shared classes |
+| `scroll-fx.js`     | IntersectionObserver reveals, animated counters, word-by-word reveal, parallax, magnetic CTAs, marquee, scroll progress |
+| `interactives.js`  | Triangle tap counter, Think/Play toggle, 90-second countdown timer (loaded on practice pages) |
+| `images/`          | Avi photos + logo go here |
+| `llms.txt`         | LLM-discoverability brief at root |
+| `robots.txt`       | Permissive — explicit allow for GPTBot/ClaudeBot/PerplexityBot/etc. |
+| `sitemap.xml`      | All 8 live URLs |
+| `vercel.json`      | Clean URLs, no trailing slashes, llms.txt content-type |
 
-## Photos to drop in `images/`
+## Files to drop into `images/`
 
 | Filename | Used on | Spec |
 |---|---|---|
+| `logo.svg`             | Nav across all pages                    | Horizontal lockup, ~28px high, transparent · SVG preferred |
 | `avi-peer.jpg`         | Homepage "I'm Avi" + About reader pivot | Peer-direct, warm, settled · 800×1000 (4:5) |
 | `avi-cinematic.jpg`    | About page hero (full-bleed)            | Cinematic, environmental, dark bg · 1920×1080+ |
 | `avi-building.jpg`     | About journey beat 01                   | 800×600 (4:3) |
 | `avi-breaking.jpg`     | About journey beat 02 — hospital bed    | 800×600 (4:3) |
 | `avi-rebuilding.jpg`   | About journey beat 03 — at desk         | 800×600 (4:3) |
+| `hero-poster.jpg`      | Homepage hero video poster frame        | 1920×1080 still from the looping video |
 
-Until you drop the JPGs, the slots show a labelled placeholder so you know exactly where each one lives.
+For the hero video itself, drop a file at `videos/hero.mp4` (the placeholder shows a shimmer in the meantime). Then in `index.html`, uncomment the `<video>` line inside `.hero-video-bg`.
+
+The nav logo: when `images/logo.svg` doesn't exist, the wordmark text shows alone. Drop the SVG in and both the logo + wordmark render side-by-side. Hide the wordmark via CSS if you want logo-only.
+
+## Interactive widgets — what each does
+
+**Jackson Triangle** (`practice-jackson-triangle.html`)
+- Three corner buttons: EGO (top), OTHER (bottom-left), INTENT (bottom-right)
+- Click each to "tap" — fills with amber glow
+- Counter "0 / 3 Tapped" updates live
+- At 3/3, "Now send the message →" reveal appears + triangle outline turns amber
+- Reset button to redo
+
+**Think Box / Play Box** (`practice-think-box-play-box.html`)
+- Toggle switcher with two tabs: THINK BOX (default) | PLAY BOX
+- Active tab is solid dark, inactive is outlined
+- Pane below swaps content per tab
+- Each pane has the protocol description + 5 founder situations
+
+**90-Second Recovery** (`practice-90-second-recovery.html`)
+- Big circular SVG ring (drop-shadow glow)
+- Time display "1:30" → counts down to "0:00"
+- Status flips: READY → RUNNING (amber) → DONE (terracotta)
+- Stroke ring fills as time elapses
+- START + RESET buttons; START disables while running, RESET works any time
+
+All three respect `prefers-reduced-motion`.
 
 ## Scroll FX vocabulary
 
@@ -51,12 +83,12 @@ Add `data-scroll-fx="..."` to any element to opt into a reveal:
 Stagger reveals with `style="--fx-delay: 0.15s"` on the element.
 
 Special elements:
-- `.reveal-words` — splits text into words, releases them sequentially. Used on "But yours doesn't have to."
-- `[data-counter="9"]` — animates from 0 to 9 on first view. Used on "9 out of 10 startups."
-- `[data-parallax="0.08"]` — subtle parallax on photos (0–0.15 typical).
-- `.btn-magnetic` — CTA cursor follow.
-- `.marquee + .marquee-track` — infinite logo strip, hover to pause.
-- `.scroll-progress` — top-of-page gradient progress bar.
+- `.reveal-words` — splits text into words, releases them sequentially (homepage's "But yours doesn't have to.")
+- `[data-counter="9"]` — animates from 0 to N on first view (homepage's "9 out of 10 startups", read.html's "8 issues so far")
+- `[data-parallax="0.08"]` — subtle parallax on photos
+- `.btn-magnetic` — CTA cursor follow
+- `.marquee + .marquee-track` — infinite logo strip, hover to pause
+- `.scroll-progress` — top-of-page gradient progress bar
 
 All FX respect `prefers-reduced-motion`.
 
@@ -68,7 +100,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Or just double-click `index.html` — most browsers will run it fine without a server.
+Or just double-click `index.html`.
 
 ## Deploy to Vercel
 
@@ -80,9 +112,10 @@ npx vercel --prod
 ## Open questions / pending content
 
 - Photographer shoot date for the four Avi photos
+- Logo SVG (drop into `images/logo.svg`)
+- Hero video file (drop into `videos/hero.mp4`)
 - Real testimonial quotes (4 needed) + names + roles + photos
 - Press / "backed by" logos (need 5+ real ones, otherwise the band stays hidden)
-- ConvertKit form ID + per-source tags so I can wire all 8 forms
-- Hero looping video (Higgs stills + Seedance motion) — placeholder shimmer in the meantime
+- ConvertKit form ID + per-source tags so I can wire all 12 forms (5 on homepage, 1 read, 1 essay, 4 practice pages, 1 about)
 - Production domain (currently `thedeliberatepause.com` in canonical/sitemap/llms.txt)
 - Real essay bodies for `/read/[slug]` (current essay page is a representative template)

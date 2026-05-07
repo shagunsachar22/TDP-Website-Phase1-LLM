@@ -223,6 +223,9 @@ h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
   margin: 0 auto;
 }
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 600;
@@ -230,6 +233,13 @@ h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
   transition: letter-spacing 0.3s var(--ease);
 }
 .nav-logo:hover { letter-spacing: -0.01em; }
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.nav-logo-text { display: inline-block; }
+/* If logo.svg doesn't exist yet, only the wordmark shows. When you drop the file in, both render side-by-side; hide the text via CSS if you want logo-only. */
 .nav-links {
   display: flex;
   gap: 32px;
@@ -396,6 +406,296 @@ h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
   padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
+}
+
+/* ===========================================================
+   PRACTICE PAGES — shared
+   =========================================================== */
+
+/* Crumb above hero */
+.practice-crumb {
+  background: var(--bg-cream);
+  color: var(--text-muted-light);
+  border-bottom: 1px solid var(--border-on-cream);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.practice-crumb-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.practice-crumb a { color: var(--text-muted-light); transition: color 0.2s var(--ease); }
+.practice-crumb a:hover { color: var(--cta); }
+.practice-crumb .sep { color: var(--text-muted-light); opacity: 0.5; }
+.practice-crumb .here { color: var(--text-dark); font-weight: 600; }
+
+/* Practice hero (dark or cream variant) */
+.practice-hero {
+  padding: 112px 0 96px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.practice-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(214,168,110,0.10), transparent 60%);
+  pointer-events: none;
+}
+.practice-hero .wrap { max-width: 980px; position: relative; }
+.practice-hero .pkey {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  font-weight: 600;
+  margin: 0 0 32px;
+  display: inline-block;
+}
+.practice-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 6.4vw, 92px);
+  letter-spacing: -0.028em;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0 0 28px;
+}
+.practice-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+.theme-dark.practice-hero h1 { color: var(--text-cream); }
+.practice-hero .sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.5;
+  margin: 0 auto 56px;
+  max-width: 640px;
+}
+.theme-dark.practice-hero .sub { color: var(--text-muted-dark); }
+.theme-cream.practice-hero .sub { color: var(--text-muted-light); }
+
+/* Origin band (cream) */
+.origin {
+  padding: 96px 0;
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border-on-cream);
+}
+.origin .wrap { max-width: 1080px; }
+.origin-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.origin .label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  font-weight: 600;
+  margin: 0 0 12px;
+  display: block;
+}
+.origin h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4vw, 48px);
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin: 0 0 12px;
+}
+.origin .credentials {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+  font-weight: 500;
+}
+.origin blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+  letter-spacing: -0.005em;
+}
+.origin blockquote::before { content: "\201C"; }
+.origin blockquote::after  { content: "\201D"; }
+.origin p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted-light);
+  margin: 0;
+  max-width: 640px;
+}
+@media (max-width: 768px) {
+  .origin-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* When-to-use grid (cream) */
+.when-to-use {
+  padding: 96px 0 120px;
+  background: #FCFAF5;
+  border-top: 1px solid var(--border-on-cream);
+}
+.when-to-use .wrap { max-width: 1080px; }
+.when-to-use .label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  font-weight: 600;
+  margin: 0 0 16px;
+  display: block;
+}
+.when-to-use h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  max-width: 18ch;
+}
+.when-to-use h2 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+.when-to-use h2 ~ hr {
+  margin: 0 0 56px;
+  border: none;
+  border-top: 1px solid var(--text-dark);
+  width: 100%;
+}
+.situation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 56px;
+  row-gap: 0;
+}
+.situation {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-on-cream);
+  align-items: start;
+}
+.situation:first-child, .situation:nth-child(2) { border-top: none; }
+.situation .num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent-amber);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.situation h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.8vw, 22px);
+  margin: 0 0 8px;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+.situation p {
+  font-size: 14px;
+  color: var(--text-muted-light);
+  line-height: 1.55;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .situation-grid { grid-template-columns: 1fr; }
+  .situation:nth-child(2) { border-top: 1px solid var(--border-on-cream); }
+}
+
+/* Essays-about-this-practice band */
+.related-essays {
+  padding: 120px 0;
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border-on-cream);
+}
+.related-essays .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 16px;
+}
+.related-essays h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.related-essays .all {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 4px;
+  transition: gap 0.3s var(--ease), color 0.3s var(--ease);
+}
+.related-essays .all:hover { gap: 14px; color: var(--cta); border-color: var(--cta); }
+.related-list { display: flex; flex-direction: column; }
+.related-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  align-items: start;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-on-cream);
+  transition: padding 0.3s var(--ease);
+}
+.related-row:hover { padding-left: 8px; }
+.related-row .date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+  font-weight: 500;
+}
+.related-row h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 26px);
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+  margin: 0;
+  font-style: italic;
+  color: var(--accent-amber);
+  font-weight: 500;
+}
+.related-row h3 a { transition: color 0.2s var(--ease); }
+.related-row h3 a:hover { color: var(--cta); }
+.related-row .tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  font-weight: 600;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .related-row { grid-template-columns: 1fr; gap: 8px; }
+  .related-row .tag { text-align: left; }
 }
 
 /* ===========================================================
