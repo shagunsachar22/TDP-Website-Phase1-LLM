@@ -44,19 +44,48 @@
        =========================================================== */
 
     /* ---------- 1 · HERO (dark) ---------- */
-    .hero { padding: 56px 0 120px; }
+    .hero {
+      padding: 56px 0 120px;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(214, 168, 110, 0.08), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(197, 107, 69, 0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .hero .wrap { position: relative; }
     .hero-video-slot {
       width: 100%;
       aspect-ratio: 21 / 9;
-      background: rgba(245, 239, 229, 0.04);
+      background:
+        linear-gradient(135deg, rgba(245, 239, 229, 0.04), rgba(245, 239, 229, 0.01)),
+        radial-gradient(ellipse at center, rgba(214, 168, 110, 0.06), transparent 70%);
       border: 1px dashed var(--border-on-dark);
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted-dark);
       font-size: 13px;
       margin-bottom: 80px;
+      letter-spacing: 0.02em;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-video-slot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 30%, rgba(214, 168, 110, 0.05) 50%, transparent 70%);
+      animation: shimmer 6s linear infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
     .hero-headline {
       font-family: var(--font-serif);
@@ -79,8 +108,8 @@
       .hero-video-slot { aspect-ratio: 4 / 3; margin-bottom: 56px; }
     }
 
-    /* ---------- 2 · LOGO BAR (dark) ---------- */
-    .logobar { padding: 64px 0 96px; border-top: 1px solid var(--border-on-dark); }
+    /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
+    .logobar { padding: 56px 0 88px; border-top: 1px solid var(--border-on-dark); }
     .logobar-grid {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -96,15 +125,7 @@
       line-height: 2;
       white-space: nowrap;
     }
-    .logo-strip {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 36px 56px;
-      align-items: center;
-      opacity: 0.55;
-    }
-    .logo-slot {
+    .logo-marquee .logo-slot {
       width: 96px;
       height: 28px;
       border: 1px dashed var(--border-on-dark);
@@ -116,10 +137,13 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted-dark);
+      flex-shrink: 0;
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
     }
+    .logo-marquee .logo-slot:hover { opacity: 1; transform: scale(1.06); }
+    .logo-marquee { opacity: 0.6; }
     @media (max-width: 768px) {
       .logobar-grid { grid-template-columns: 1fr; gap: 32px; }
-      .logo-strip { justify-content: flex-start; }
     }
 
     /* ---------- 3 · PULL QUOTE (cream) ---------- */
@@ -134,6 +158,11 @@
       line-height: 1.2;
       margin: 0;
       color: var(--text-dark);
+    }
+    .pullquote em.amber {
+      font-style: italic;
+      color: var(--accent-amber);
+      font-weight: 500;
     }
 
     /* ---------- 4 · PAIN CHECKLIST (cream) ---------- */
@@ -158,7 +187,9 @@
       color: var(--text-muted-light);
       padding-top: 20px;
       border-top: 1px solid var(--border-on-cream);
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
     }
+    .pain-list li:hover { border-top-color: var(--accent-amber); transform: translateX(4px); }
     .pain-list li::before {
       content: "✓";
       display: inline-flex;
@@ -170,7 +201,9 @@
       font-size: 12px;
       color: var(--text-dark);
       margin-top: 2px;
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
     }
+    .pain-list li:hover::before { background: var(--accent-amber); color: var(--bg-dark); border-color: var(--accent-amber); }
     .pain-list b { color: var(--text-dark); font-weight: 600; }
     @media (max-width: 768px) {
       .pain-list { grid-template-columns: 1fr; }
@@ -188,7 +221,7 @@
       margin: 0;
     }
 
-    /* ---------- 6 · NINE OUT OF TEN PIVOT (cream) ---------- */
+    /* ---------- 6 · NINE OUT OF TEN PIVOT (cream) — counter + word reveal ---------- */
     .pivot { padding: 100px 0 140px; text-align: center; }
     .pivot .wrap { max-width: 820px; }
     .pivot .small {
@@ -198,6 +231,12 @@
       color: var(--text-dark);
       margin: 0 0 16px;
       letter-spacing: -0.005em;
+    }
+    .pivot .small .counter {
+      color: var(--cta);
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.25em;
     }
     .pivot h2 {
       font-family: var(--font-serif);
@@ -228,10 +267,17 @@
     .reading-featured a { display: block; }
     .reading-featured .thumb {
       aspect-ratio: 16 / 10;
-      background: rgba(26, 26, 26, 0.06);
+      background:
+        linear-gradient(135deg, rgba(214, 168, 110, 0.18), rgba(197, 107, 69, 0.08)),
+        rgba(26, 26, 26, 0.06);
       border: 1px solid var(--border-on-cream);
-      border-radius: 4px;
+      border-radius: 6px;
       margin-bottom: 28px;
+      transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+    }
+    .reading-featured a:hover .thumb {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -30px rgba(26, 26, 26, 0.4);
     }
     .reading-tag {
       font-family: var(--font-sans);
@@ -248,6 +294,8 @@
       line-height: 1.1;
       letter-spacing: -0.018em;
     }
+    .reading-featured h3 a { transition: color 0.3s var(--ease); }
+    .reading-featured h3 a:hover { color: var(--cta); }
     .reading-featured p {
       color: var(--text-muted-light);
       font-size: 16px;
@@ -256,7 +304,8 @@
       margin: 0 0 20px;
     }
     .reading-meta { font-size: 13px; color: var(--text-muted-light); }
-    .reading-meta a { color: var(--text-dark); font-weight: 500; }
+    .reading-meta a { color: var(--text-dark); font-weight: 500; transition: color 0.2s var(--ease); }
+    .reading-meta a:hover { color: var(--cta); }
 
     .reading-side { display: flex; flex-direction: column; gap: 28px; padding-top: 6px; }
     .reading-card {
@@ -265,15 +314,23 @@
       gap: 16px;
       padding: 24px 0;
       border-top: 1px solid var(--border-on-cream);
+      transition: padding 0.25s var(--ease);
     }
     .reading-card:first-child { border-top: none; padding-top: 0; }
+    .reading-card:hover { padding-left: 8px; }
     .reading-card .thumb-sm {
       aspect-ratio: 1 / 1;
-      background: rgba(26, 26, 26, 0.06);
+      background:
+        linear-gradient(135deg, rgba(214, 168, 110, 0.16), rgba(197, 107, 69, 0.05)),
+        rgba(26, 26, 26, 0.04);
       border: 1px solid var(--border-on-cream);
-      border-radius: 3px;
+      border-radius: 4px;
+      transition: transform 0.3s var(--ease);
     }
+    .reading-card:hover .thumb-sm { transform: scale(1.04); }
     .reading-card h4 { font-size: 17px; line-height: 1.3; margin: 6px 0 6px; letter-spacing: -0.005em; }
+    .reading-card h4 a { transition: color 0.2s var(--ease); }
+    .reading-card h4 a:hover { color: var(--cta); }
     .reading-card .sub { font-size: 13px; color: var(--text-muted-light); margin: 0; }
     @media (max-width: 900px) {
       .reading-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -323,7 +380,30 @@
       flex-direction: column;
       gap: 10px;
       min-height: 240px;
+      transition: background 0.4s var(--ease), border-color 0.4s var(--ease), transform 0.4s var(--ease);
+      position: relative;
+      overflow: hidden;
     }
+    .protocol-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 7px;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(214, 168, 110, 0.5), transparent);
+      -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+              mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease);
+      pointer-events: none;
+    }
+    .protocol-card:hover {
+      background: rgba(245, 239, 229, 0.05);
+      transform: translateY(-4px);
+    }
+    .protocol-card:hover::before { opacity: 1; }
     .protocol-card h4 {
       font-family: var(--font-serif);
       color: var(--text-cream);
@@ -388,6 +468,12 @@
       align-items: center;
       gap: 10px;
       font-weight: 500;
+      transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+      cursor: default;
+    }
+    .pause-benefits li:hover {
+      background: rgba(214, 168, 110, 0.12);
+      border-color: var(--accent-amber);
     }
     .pause-benefits li::before {
       content: "";
@@ -395,6 +481,7 @@
       width: 5px; height: 5px;
       border-radius: 50%;
       background: var(--accent-amber);
+      box-shadow: 0 0 8px rgba(214, 168, 110, 0.7);
     }
     @media (max-width: 1024px) {
       .pause-grid { grid-template-columns: 1fr; gap: 56px; }
@@ -421,6 +508,11 @@
       flex-direction: column;
       gap: 24px;
       min-height: 260px;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px -28px rgba(26, 26, 26, 0.25);
     }
     .testimonial blockquote {
       font-family: var(--font-serif);
@@ -442,7 +534,7 @@
     .testimonial-avatar {
       width: 40px; height: 40px;
       border-radius: 50%;
-      background: rgba(26, 26, 26, 0.08);
+      background: linear-gradient(135deg, rgba(214, 168, 110, 0.25), rgba(197, 107, 69, 0.1));
       border: 1px solid var(--border-on-cream);
       display: flex;
       align-items: center;
@@ -484,7 +576,10 @@
     .definition p:last-child { color: var(--text-dark); font-weight: 500; }
     .mechanism-slot {
       aspect-ratio: 4 / 3;
-      background: rgba(26, 26, 26, 0.04);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(214, 168, 110, 0.18), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(197, 107, 69, 0.12), transparent 55%),
+        rgba(26, 26, 26, 0.04);
       border: 1px dashed var(--border-on-cream);
       border-radius: 6px;
       display: flex;
@@ -500,7 +595,7 @@
       .definition-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    /* ---------- 11 · I'M AVI (cream) ---------- */
+    /* ---------- 11 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
     .avi-intro { padding: 96px 0 140px; }
     .avi-intro .wrap { max-width: 1100px; }
     .avi-intro-grid {
@@ -509,11 +604,22 @@
       gap: 80px;
       align-items: center;
     }
-    .avi-portrait-slot {
+    .avi-portrait {
       aspect-ratio: 4 / 5;
       background: rgba(26, 26, 26, 0.04);
-      border: 1px dashed var(--border-on-cream);
       border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .avi-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .avi-portrait .placeholder {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -522,7 +628,13 @@
       padding: 16px;
       text-align: center;
       line-height: 1.55;
+      border: 1px dashed var(--border-on-cream);
+      border-radius: 6px;
+      background: rgba(26, 26, 26, 0.04);
     }
+    /* If the img loads, hide the placeholder via the broken-image trick */
+    .avi-portrait img[src]:not([src=""]) ~ .placeholder { display: none; }
+
     .avi-intro h2 {
       margin-bottom: 28px;
       font-size: clamp(36px, 4.4vw, 56px);
@@ -545,7 +657,9 @@
       color: var(--text-dark);
       border-bottom: 1px solid var(--text-dark);
       padding-bottom: 2px;
+      transition: gap 0.3s var(--ease), border-color 0.3s var(--ease);
     }
+    .avi-intro .more:hover { gap: 14px; border-color: var(--cta); color: var(--cta); }
     @media (max-width: 900px) {
       .avi-intro-grid { grid-template-columns: 1fr; gap: 40px; }
     }
@@ -578,6 +692,7 @@
   </style>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- ============================================================
        NAV (sticky, dark)
@@ -587,12 +702,12 @@
       <a href="/" class="nav-logo" aria-label="The Deliberate Pause home">The Deliberate Pause</a>
       <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="/read">Read</a></li>
-          <li><a href="/pause">The Pause</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/read.html">Read</a></li>
+          <li><a href="/pause.html">The Pause</a></li>
+          <li><a href="/about.html">About</a></li>
         </ul>
       </nav>
-      <a href="#hero-form" class="btn nav-cta">
+      <a href="#hero-form" class="btn btn-magnetic nav-cta">
         <span class="label-long">Send me the Pause Playbook</span>
         <span class="label-short">Get Pause</span>
         <span class="arrow">→</span>
@@ -604,41 +719,45 @@
   <main>
 
     <!-- ============================================================
-         1 · HERO  (dark) — headline forced to 2 lines
+         1 · HERO  (dark) — headline 2 lines, gradient glow, shimmer
          ============================================================ -->
     <section class="hero theme-dark" aria-labelledby="hero-headline">
       <div class="wrap">
-        <div class="hero-video-slot" role="img" aria-label="Looping hero video — Higgs stills + Seedance motion (placeholder)">
+        <div class="hero-video-slot" data-scroll-fx="zoom" role="img" aria-label="Looping hero video — Higgs stills + Seedance motion (placeholder)">
           ▶ looping video — Higgs stills + Seedance motion
         </div>
-        <h1 class="hero-headline" id="hero-headline">Overwhelmed<br />running a startup?</h1>
-        <p class="lead">You're not alone. Running a startup is hard. The playbook — rooted in spiritual practice, proven by athletes — is how you stay present in the moments that decide the company.</p>
+        <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg">Overwhelmed<br />running a startup?</h1>
+        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">You're not alone. Running a startup is hard. The playbook — rooted in spiritual practice, proven by athletes — is how you stay present in the moments that decide the company.</p>
 
-        <form id="hero-form" class="form-row" action="#" method="post" data-source="hero">
+        <form id="hero-form" class="form-row" action="#" method="post" data-source="hero" data-scroll-fx style="--fx-delay: 0.3s;">
           <label for="email-hero" class="visually-hidden">Email address</label>
           <input type="email" id="email-hero" name="email_address" placeholder="your@email.com" required />
-          <button type="submit" class="btn">Send me the Pause Playbook — Free <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn-magnetic">Send me the Pause Playbook — Free <span class="arrow">→</span></button>
         </form>
-        <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+        <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">No spam ever. Unsubscribe in one click.</p>
       </div>
     </section>
 
     <!-- ============================================================
-         2 · LOGO BAR (dark) — labels LEFT, logos RIGHT
+         2 · LOGO BAR (dark) — labels left, infinite marquee right
          ============================================================ -->
     <section class="logobar theme-dark" aria-label="Press and supporters">
       <div class="wrap">
         <div class="logobar-grid">
-          <div class="logobar-labels">
+          <div class="logobar-labels" data-scroll-fx="fade-right">
             Read by founders<br />Backed by
           </div>
-          <div class="logo-strip" aria-hidden="true">
-            <div class="logo-slot">Logo 1</div>
-            <div class="logo-slot">Logo 2</div>
-            <div class="logo-slot">Logo 3</div>
-            <div class="logo-slot">Logo 4</div>
-            <div class="logo-slot">Logo 5</div>
-            <div class="logo-slot">Logo 6</div>
+          <div class="marquee logo-marquee" data-scroll-fx="fade-left" aria-hidden="true">
+            <div class="marquee-track">
+              <div class="logo-slot">Logo 1</div>
+              <div class="logo-slot">Logo 2</div>
+              <div class="logo-slot">Logo 3</div>
+              <div class="logo-slot">Logo 4</div>
+              <div class="logo-slot">Logo 5</div>
+              <div class="logo-slot">Logo 6</div>
+              <div class="logo-slot">Logo 7</div>
+              <div class="logo-slot">Logo 8</div>
+            </div>
           </div>
         </div>
       </div>
@@ -649,7 +768,7 @@
          ============================================================ -->
     <section class="pullquote theme-cream" aria-label="The cost">
       <div class="wrap">
-        <h2>The years founders are losing — health, family, self, peace — were never the price of winning.</h2>
+        <h2 data-scroll-fx="fade-up-lg">The years founders are losing — <em class="amber">health, family, self, peace</em> — were never the price of winning.</h2>
       </div>
     </section>
 
@@ -659,12 +778,12 @@
     <section class="pain theme-cream" aria-label="What founders are juggling">
       <div class="wrap">
         <ul class="pain-list">
-          <li><span><b>Juggling everything.</b> Hiring, operations, and fundraising at the same time.</span></li>
-          <li><span><b>Body breaking.</b> Sleep gone. Nutrition gone. Running on fumes.</span></li>
-          <li><span><b>No long view.</b> Holding the future while running today's standup.</span></li>
-          <li><span><b>Decision overload.</b> Choices stacking faster than you can think.</span></li>
-          <li><span><b>Resource-starved.</b> Building without enough capital, without enough team.</span></li>
-          <li><span><b>Founder loneliness.</b> A path no one around you walks.</span></li>
+          <li data-scroll-fx><span><b>Juggling everything.</b> Hiring, operations, and fundraising at the same time.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.05s;"><span><b>Body breaking.</b> Sleep gone. Nutrition gone. Running on fumes.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.1s;"><span><b>No long view.</b> Holding the future while running today's standup.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.15s;"><span><b>Decision overload.</b> Choices stacking faster than you can think.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.2s;"><span><b>Resource-starved.</b> Building without enough capital, without enough team.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.25s;"><span><b>Founder loneliness.</b> A path no one around you walks.</span></li>
         </ul>
       </div>
     </section>
@@ -674,25 +793,25 @@
          ============================================================ -->
     <section class="avi-quote theme-cream" aria-label="A note from Avi">
       <div class="wrap">
-        <p>I built CreditVidya to 740 people and sold it to CRED. The body broke first. A slipped disc, then a stroke. I rebuilt myself on the philosophy Phil Jackson used to win 11 NBA championships. Presence. Stillness. Dropping the ego.</p>
+        <p data-scroll-fx>I built CreditVidya to 740 people and sold it to CRED. The body broke first. A slipped disc, then a stroke. I rebuilt myself on the philosophy Phil Jackson used to win 11 NBA championships. Presence. Stillness. Dropping the ego.</p>
       </div>
     </section>
 
     <!-- ============================================================
-         6 · NINE OUT OF TEN PIVOT (cream) — the page's loudest moment
+         6 · PIVOT (cream) — counter + word reveal on the loud moment
          ============================================================ -->
     <section class="pivot theme-cream" aria-labelledby="pivot-headline">
       <div class="wrap">
-        <p class="small">9 out of 10 startups fail.</p>
-        <h2 id="pivot-headline">But yours doesn't have to.</h2>
-        <p class="sub">The Pause is the highest-leverage move in a founder's day.</p>
+        <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
+        <h2 id="pivot-headline" class="reveal-words">But yours doesn't have to.</h2>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.7s;">The Pause is the highest-leverage move in a founder's day.</p>
 
-        <form class="form-row" action="#" method="post" data-source="pivot">
+        <form class="form-row" action="#" method="post" data-source="pivot" data-scroll-fx style="--fx-delay: 0.85s;">
           <label for="email-pivot" class="visually-hidden">Email address</label>
           <input type="email" id="email-pivot" name="email_address" placeholder="your@email.com" required />
-          <button type="submit" class="btn">Build without breaking <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
         </form>
-        <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+        <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.95s;">No spam ever. Unsubscribe in one click.</p>
       </div>
     </section>
 
@@ -701,9 +820,9 @@
          ============================================================ -->
     <section class="reading theme-cream" aria-labelledby="reading-headline">
       <div class="wrap">
-        <span class="eyebrow" id="reading-headline">What other founders are reading</span>
+        <span class="eyebrow" id="reading-headline" data-scroll-fx>What other founders are reading</span>
         <div class="reading-grid">
-          <article class="reading-featured">
+          <article class="reading-featured" data-scroll-fx="fade-right">
             <a href="#"><div class="thumb" role="img" aria-label="Featured essay cover (placeholder)"></div></a>
             <div class="reading-tag">Essay</div>
             <h3><a href="#">[Big featured title — TBD copy, 1–2 lines]</a></h3>
@@ -712,7 +831,7 @@
           </article>
 
           <div class="reading-side">
-            <article class="reading-card">
+            <article class="reading-card" data-scroll-fx="fade-left">
               <div class="thumb-sm" role="img" aria-label="Essay thumbnail"></div>
               <div>
                 <div class="reading-tag">Essay</div>
@@ -720,7 +839,7 @@
                 <p class="sub">[1-line subline — TBD]</p>
               </div>
             </article>
-            <article class="reading-card">
+            <article class="reading-card" data-scroll-fx="fade-left" style="--fx-delay: 0.1s;">
               <div class="thumb-sm" role="img" aria-label="Story thumbnail"></div>
               <div>
                 <div class="reading-tag">Story</div>
@@ -728,7 +847,7 @@
                 <p class="sub">[1-line subline — TBD]</p>
               </div>
             </article>
-            <article class="reading-card">
+            <article class="reading-card" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
               <div class="thumb-sm" role="img" aria-label="Tool thumbnail"></div>
               <div>
                 <div class="reading-tag">Tool</div>
@@ -748,43 +867,43 @@
       <div class="wrap">
         <div class="pause-grid">
           <div class="pause-left">
-            <span class="eyebrow">05 / The Pause</span>
-            <h2 id="pause-headline">Tools the top 1% already use.</h2>
-            <p class="lead">Four protocols, translated from elite sport into the founder's workday. Get them free.</p>
+            <span class="eyebrow" data-scroll-fx>05 / The Pause</span>
+            <h2 id="pause-headline" data-scroll-fx>Tools the top 1% already use.</h2>
+            <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">Four protocols, translated from elite sport into the founder's workday. Get them free.</p>
 
-            <form class="form-row" action="#" method="post" data-source="pause-section">
+            <form class="form-row" action="#" method="post" data-source="pause-section" data-scroll-fx style="--fx-delay: 0.2s;">
               <label for="email-pause" class="visually-hidden">Email address</label>
               <input type="email" id="email-pause" name="email_address" placeholder="your@email.com" required />
-              <button type="submit" class="btn">Get the Playbook <span class="arrow">→</span></button>
+              <button type="submit" class="btn btn-magnetic">Get the Playbook <span class="arrow">→</span></button>
             </form>
-            <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
-            <p class="micro">Four plays. One PDF. You'll run them this week.</p>
+            <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.3s;">No spam ever. Unsubscribe in one click.</p>
+            <p class="micro" data-scroll-fx style="--fx-delay: 0.4s;">Four plays. One PDF. You'll run them this week.</p>
           </div>
 
           <div class="protocol-grid">
-            <article class="protocol-card">
+            <article class="protocol-card" data-scroll-fx style="--fx-delay: 0.1s;">
               <h4>Improve<br />Focus</h4>
               <p>Hold one thing when ten are pulling.</p>
               <div class="athlete">Kobe Bryant · NBA Basketball</div>
             </article>
-            <article class="protocol-card">
+            <article class="protocol-card" data-scroll-fx style="--fx-delay: 0.2s;">
               <h4>Build<br />Resilience</h4>
               <p>Recover in seconds, not days, after the hit.</p>
               <div class="athlete">Novak Djokovic · Grand Slam Tennis</div>
             </article>
-            <article class="protocol-card">
+            <article class="protocol-card" data-scroll-fx style="--fx-delay: 0.3s;">
               <h4>Build<br />Confidence</h4>
               <p>Walk into the meeting that matters, ready.</p>
               <div class="athlete">Annika Sörenstam · LPGA Golf</div>
             </article>
-            <article class="protocol-card">
+            <article class="protocol-card" data-scroll-fx style="--fx-delay: 0.4s;">
               <h4>Manage<br />Stress</h4>
               <p>Drop your heart rate before the next decision.</p>
               <div class="athlete">Roger Federer · Grand Slam Tennis</div>
             </article>
           </div>
 
-          <div class="pause-benefits">
+          <div class="pause-benefits" data-scroll-fx>
             <h3>What the Pause gives you.</h3>
             <ul>
               <li>Catch yourself before the spiral</li>
@@ -803,9 +922,9 @@
          ============================================================ -->
     <section class="testimonials theme-cream" aria-labelledby="testimonials-headline">
       <div class="wrap">
-        <span class="eyebrow" id="testimonials-headline">What founders are saying</span>
+        <span class="eyebrow" id="testimonials-headline" data-scroll-fx>What founders are saying</span>
         <div class="testimonial-grid">
-          <article class="testimonial">
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.05s;">
             <blockquote>"[Quote 1 — TBD, 1–3 sentences from a real reader.]"</blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">photo</div>
@@ -815,7 +934,7 @@
               </div>
             </div>
           </article>
-          <article class="testimonial">
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.15s;">
             <blockquote>"[Quote 2 — TBD, 1–3 sentences from a real reader.]"</blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">photo</div>
@@ -825,7 +944,7 @@
               </div>
             </div>
           </article>
-          <article class="testimonial">
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.25s;">
             <blockquote>"[Quote 3 — TBD, 1–3 sentences from a real reader.]"</blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">photo</div>
@@ -835,7 +954,7 @@
               </div>
             </div>
           </article>
-          <article class="testimonial">
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.35s;">
             <blockquote>"[Quote 4 — TBD, 1–3 sentences from a real reader.]"</blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">photo</div>
@@ -855,13 +974,13 @@
     <section class="definition theme-cream" aria-labelledby="definition-headline">
       <div class="wrap">
         <div class="definition-grid">
-          <div>
+          <div data-scroll-fx="fade-right">
             <h2 id="definition-headline">What is the Deliberate Pause?</h2>
             <p>The pause is the deliberate act of creating space — between trigger and response, between the world hitting you and the way you react to it.</p>
             <p>Jordan, Federer, Annika — they've used tools rooted in spiritual practice to win under pressure for thirty years. Founders have been left out.</p>
             <p>We're closing that gap.</p>
           </div>
-          <div class="mechanism-slot" role="img" aria-label="Mechanism illustration: brain · breath · body (placeholder)">
+          <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain · breath · body (placeholder)">
             figure / mechanism illustration<br />(brain · breath · body — placeholder)
           </div>
         </div>
@@ -869,20 +988,21 @@
     </section>
 
     <!-- ============================================================
-         11 · I'M AVI (cream)
+         11 · I'M AVI (cream) — wired to /images/avi-peer.jpg
          ============================================================ -->
     <section class="avi-intro theme-cream" aria-labelledby="avi-intro-headline">
       <div class="wrap">
         <div class="avi-intro-grid">
-          <div class="avi-portrait-slot" role="img" aria-label="Environmental photo of Avi — peer-coded · NOT stage / studio (placeholder)">
-            environmental photo of Avi<br />peer-coded · NOT stage / studio
+          <div class="avi-portrait parallax-wrap" data-scroll-fx="zoom">
+            <img class="parallax-img" data-parallax="0.08" src="images/avi-peer.jpg" alt="Avi Agarwal — environmental, peer-coded portrait" loading="lazy" onerror="this.style.display='none'" />
+            <div class="placeholder">environmental photo of Avi<br />peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi-peer.jpg</code></div>
           </div>
-          <div>
+          <div data-scroll-fx="fade-left">
             <h2 id="avi-intro-headline">I'm Avi.</h2>
             <p>From selling shoes on the streets of Kathmandu to working on Wall Street to co-founding CreditVidya in India and selling it to CRED — I came to believe this: ambition and spirituality aren't opposites.</p>
             <p>Spirituality isn't found in the mountains. It's found in the daily work. Presence, stillness, dropping the ego — they're how excellence gets built. Better decisions. Better leaders. Better humans.</p>
             <p>I built The Deliberate Pause because I needed it first. Now I'm handing it to you.</p>
-            <a href="/about" class="more">More of the story →</a>
+            <a href="/about.html" class="more">More of the story →</a>
           </div>
         </div>
       </div>
@@ -893,16 +1013,16 @@
          ============================================================ -->
     <section class="newsletter theme-cream" aria-labelledby="newsletter-headline">
       <div class="wrap">
-        <h2 id="newsletter-headline">Pause for 5 minutes.</h2>
-        <h3>Every Monday, 11:11 am.</h3>
-        <p class="sub">Start your week with a tool, not a feeling.</p>
+        <h2 id="newsletter-headline" data-scroll-fx>Pause for 5 minutes.</h2>
+        <h3 data-scroll-fx style="--fx-delay: 0.1s;">Every Monday, 11:11 am.</h3>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.2s;">Start your week with a tool, not a feeling.</p>
 
-        <form class="form-row" action="#" method="post" data-source="newsletter">
+        <form class="form-row" action="#" method="post" data-source="newsletter" data-scroll-fx style="--fx-delay: 0.3s;">
           <label for="email-news" class="visually-hidden">Email address</label>
           <input type="email" id="email-news" name="email_address" placeholder="your@email.com" required />
-          <button type="submit" class="btn">Build without breaking <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
         </form>
-        <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+        <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">No spam ever. Unsubscribe in one click.</p>
       </div>
     </section>
   </main>
@@ -932,16 +1052,16 @@
       <div class="footer-cols">
         <div>
           <h5>Read</h5>
-          <ul><li><a href="/read">All essays</a></li></ul>
+          <ul><li><a href="/read.html">All essays</a></li></ul>
         </div>
         <div>
           <h5>The Pause</h5>
-          <ul><li><a href="/pause">Get the Pause Playbook (free)</a></li></ul>
+          <ul><li><a href="/pause.html">Get the Pause Playbook (free)</a></li></ul>
         </div>
         <div>
           <h5>About</h5>
           <ul>
-            <li><a href="/about">About Avi</a></li>
+            <li><a href="/about.html">About Avi</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -966,6 +1086,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="scroll-fx.js" defer></script>
 </body>
 </html>

@@ -1,105 +1,88 @@
-# The Deliberate Pause — homepage v0.1
+# The Deliberate Pause — site v0.3
 
-Static, single-file homepage built per Avi's direction (5 May 2026):
+Static, multi-page site. Vanilla HTML/CSS, one tiny JS file for scroll FX.
 
-- Homepage first, no JS complexity
-- Tool pages (Jackson Triangle, etc.) come later
-- 4 protocol cards on homepage are display-only for v1
-- Nav CTA consistent everywhere
-- Built modular so sections can be added later
-- "UI is the new API" — clean semantic HTML, schema.org, llms.txt
+## Pages
 
-## Files
+| File | Route | Status |
+|---|---|---|
+| `index.html`       | `/`            | Homepage — hero, pull quote, pain checklist, pivot, reading, pause section, testimonials, definition, I'm Avi, newsletter, footer |
+| `about.html`       | `/about`       | Cinematic hero, identity stack, journey (3 beats), featured-in, reader pivot, two doors |
+| `read.html`        | `/read`        | Playbook hero banner, 2-col archive with sticky sidebar, filter chips, 8 essays |
+| `read-essay.html`  | `/read/[slug]` | Representative individual essay — drop cap, body, pull quote, mid-essay subscribe, share, keep-reading |
+| `pause.html`       | `/pause`       | Lead magnet — try-one-play breathe widget (CSS-animated), what-you-just-did, 4-play toolkit, get-the-other-eleven |
 
-| File | What it does |
+## Shared assets
+
+| File | What |
 |---|---|
-| `index.html` | The homepage. Single file, embedded CSS, one tiny JS line for the year stamp. |
-| `llms.txt` | LLM-discoverability summary. Sits at root, served as text/markdown. |
-| `robots.txt` | Permissive. Explicit allow for major LLM crawlers (GPTBot, ClaudeBot, PerplexityBot, etc.). |
-| `sitemap.xml` | Four URLs for now (/, /about, /read, /pause). Grows as pages ship. |
-| `vercel.json` | Vercel config. Clean URLs, no trailing slashes, proper Content-Type for llms.txt. |
+| `styles.css`   | Design tokens, base, nav, footer, btn, form, eyebrow, scroll FX classes |
+| `scroll-fx.js` | IntersectionObserver reveals, animated counters, word-by-word reveal, parallax, magnetic CTAs, marquee, scroll progress |
+| `images/`      | Avi photos go here (see below) |
+| `llms.txt`     | LLM-discoverability brief at root |
+| `robots.txt`   | Permissive — explicit allow for GPTBot/ClaudeBot/PerplexityBot/etc. |
+| `sitemap.xml`  | All five live URLs |
+| `vercel.json`  | Clean URLs, no trailing slashes, llms.txt content-type |
 
-## Stack
+## Photos to drop in `images/`
 
-- HTML5 + CSS3 (vanilla, embedded). No framework, no build step.
-- Fonts: Fraunces (serif headlines) + Inter (sans UI), loaded from Google Fonts.
-- Hosting: Vercel (drop the folder in as a static project).
-- Domain: thedeliberatepause.com (TBD)
-- CMS: not in v1. Static content for now. Webflow port + CMS layer comes after homepage and About are signed off.
+| Filename | Used on | Spec |
+|---|---|---|
+| `avi-peer.jpg`         | Homepage "I'm Avi" + About reader pivot | Peer-direct, warm, settled · 800×1000 (4:5) |
+| `avi-cinematic.jpg`    | About page hero (full-bleed)            | Cinematic, environmental, dark bg · 1920×1080+ |
+| `avi-building.jpg`     | About journey beat 01                   | 800×600 (4:3) |
+| `avi-breaking.jpg`     | About journey beat 02 — hospital bed    | 800×600 (4:3) |
+| `avi-rebuilding.jpg`   | About journey beat 03 — at desk         | 800×600 (4:3) |
 
-## Design tokens
+Until you drop the JPGs, the slots show a labelled placeholder so you know exactly where each one lives.
 
-All in CSS variables at the top of the `<style>` block. Edit there, propagate everywhere.
+## Scroll FX vocabulary
 
-```
---color-charcoal: #1A1A1A;     /* dark sections */
---color-cream: #F5F0EB;        /* default bg */
---color-beige: #EDE6DA;        /* alt bg */
---color-amber: #C4873A;        /* accent (italics, eyebrow numerals) */
---color-terracotta: #B8694A;   /* CTA button */
---font-serif: "Fraunces"...    /* headlines */
---font-sans: "Inter"...        /* UI */
---max-width: 1280px;           /* desktop container */
-```
+Add `data-scroll-fx="..."` to any element to opt into a reveal:
 
-## Section map
+| Value | Behaviour |
+|---|---|
+| (default)      | fade up, 28px |
+| `fade-up-lg`   | fade up, 56px (for big hero headlines) |
+| `fade-left`    | slide in from right |
+| `fade-right`   | slide in from left |
+| `zoom`         | gentle scale-up |
 
-```
-nav (sticky)
-01  Hero
-02  Pain points (what it costs)
-03  Avi intro
-04  Logo bar (read by / backed by)
-05  The Pause + The Chain SVG + 4 protocol cards
-06  Featured essays (3 cards)
-07  Testimonials (4 cards)
-08  What TDP is / isn't
-09  Avi journey (building → breaking → re-building)
-10  Newsletter + footer
-```
+Stagger reveals with `style="--fx-delay: 0.15s"` on the element.
 
-Each section is a standalone `<section>` with its own class. Drop a new one in by copying an existing block and renaming.
+Special elements:
+- `.reveal-words` — splits text into words, releases them sequentially. Used on "But yours doesn't have to."
+- `[data-counter="9"]` — animates from 0 to 9 on first view. Used on "9 out of 10 startups."
+- `[data-parallax="0.08"]` — subtle parallax on photos (0–0.15 typical).
+- `.btn-magnetic` — CTA cursor follow.
+- `.marquee + .marquee-track` — infinite logo strip, hover to pause.
+- `.scroll-progress` — top-of-page gradient progress bar.
 
-## Placeholder slots (need real content)
+All FX respect `prefers-reduced-motion`.
 
-- Hero image / video (1920x1080 desktop, 780x1170 mobile)
-- Avi portrait (800x1000)
-- 5 press/backer logos (300x100, SVG preferred)
-- 3 essay thumbnails (400x400)
-- 4 testimonial quotes + names + roles + avatars (300x300)
-
-See `TDP_Homepage_Image_Sizes_for_Avi.md` for the full brief.
-
-## What's intentionally NOT in v1
-
-- ConvertKit form integration (form posts to `#` for now — wire when account ID is ready)
-- The breathe widget animation (waiting on /pause page build)
-- Jackson Triangle interactive (deferred per Avi)
-- Filter chips (lives on /read, not homepage)
-- 90-second timer (deferred per Avi)
-- Real OG image at /og.jpg (placeholder reference in <meta>)
-
-## Deploy to Vercel (3 commands)
+## Local preview
 
 ```
-cd tdp-site
+cd ~/Desktop/dump/tdp-site
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+Or just double-click `index.html` — most browsers will run it fine without a server.
+
+## Deploy to Vercel
+
+```
+cd ~/Desktop/dump/tdp-site
 npx vercel --prod
-# (or push to GitHub and connect via Vercel dashboard)
 ```
 
-## Schema.org / structured data
+## Open questions / pending content
 
-Inline `<script type="application/ld+json">` covers:
-- WebSite
-- Organization (with founder ref)
-- Person (Avi, with knowsAbout)
-
-This is the minimum for LLM discoverability. As we ship essays, each `/read/[slug]` will need its own `Article` schema.
-
-## Validation checks before going live
-
-1. Run through https://validator.schema.org/ — paste full HTML
-2. Run through https://search.google.com/test/rich-results
-3. Lighthouse on mobile + desktop (target: 95+ on Performance, Accessibility, SEO)
-4. View as `User-Agent: GPTBot` and `User-Agent: ClaudeBot` to confirm nothing breaks
-5. Visual diff at 1280px and 390px viewports
+- Photographer shoot date for the four Avi photos
+- Real testimonial quotes (4 needed) + names + roles + photos
+- Press / "backed by" logos (need 5+ real ones, otherwise the band stays hidden)
+- ConvertKit form ID + per-source tags so I can wire all 8 forms
+- Hero looping video (Higgs stills + Seedance motion) — placeholder shimmer in the meantime
+- Production domain (currently `thedeliberatepause.com` in canonical/sitemap/llms.txt)
+- Real essay bodies for `/read/[slug]` (current essay page is a representative template)

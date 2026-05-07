@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pause Playbook — Try one play, right now, no email</title>
+  <meta name="description" content="Before you decide if this is for you — breathe with Federer. Then get the other eleven plays. Free." />
+  <link rel="canonical" href="https://thedeliberatepause.com/pause" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Pause Playbook — Try one play right now" />
+  <meta property="og:description" content="Federer ran this 4:1:5 cycle between every serve. 237 weeks at world #1." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===========================================================
+       PAGE-SPECIFIC — pause / lead magnet
+       =========================================================== */
+
+    /* ---------- Mini nav for this page ---------- */
+    .nav-mini-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px var(--gutter);
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .nav-mini .logo {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-cream);
+      font-weight: 600;
+    }
+    .nav-mini .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+    }
+
+    /* ---------- 1 · TRY ONE PLAY (dark) ---------- */
+    .try {
+      padding: 48px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    .try::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(214,168,110,0.1), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(197,107,69,0.08), transparent 60%);
+      pointer-events: none;
+    }
+    .try .wrap { position: relative; max-width: 1180px; }
+    .try .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin: 0 0 32px;
+      display: inline-block;
+    }
+
+    .try-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .try-left h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6vw, 92px);
+      color: var(--text-cream);
+      letter-spacing: -0.025em;
+      line-height: 0.98;
+      margin: 0 0 32px;
+      max-width: 13ch;
+    }
+    .try-left h1 em {
+      color: var(--accent-amber);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .try-left p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-muted-dark);
+      max-width: 540px;
+      margin: 0 0 40px;
+    }
+    .try-left .micro {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin: 0 0 16px;
+      display: block;
+    }
+
+    /* Breathe widget — pure CSS animation, 4:1:5 cycle */
+    .breathe-stage {
+      aspect-ratio: 1 / 1;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .breathe-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(214,168,110,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .breathe-dot {
+      position: relative;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #E8B97A 0%, #D6A86E 40%, #B5824D 100%);
+      box-shadow:
+        0 0 80px rgba(214, 168, 110, 0.45),
+        inset 0 -20px 60px rgba(181, 130, 77, 0.4);
+      animation: breathe 10s var(--ease-in-out) infinite;
+      will-change: transform, box-shadow;
+    }
+    @keyframes breathe {
+      /* 4s inhale (0-40%), 1s hold (40-50%), 5s exhale (50-100%) */
+      0%   { transform: scale(0.7); box-shadow: 0 0 40px rgba(214,168,110,0.3), inset 0 -10px 30px rgba(181,130,77,0.4); }
+      40%  { transform: scale(1.15); box-shadow: 0 0 100px rgba(214,168,110,0.55), inset 0 -24px 70px rgba(181,130,77,0.4); }
+      50%  { transform: scale(1.15); box-shadow: 0 0 100px rgba(214,168,110,0.55), inset 0 -24px 70px rgba(181,130,77,0.4); }
+      100% { transform: scale(0.7); box-shadow: 0 0 40px rgba(214,168,110,0.3), inset 0 -10px 30px rgba(181,130,77,0.4); }
+    }
+    .breathe-cycle {
+      position: absolute;
+      bottom: -12%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .breathe-cycle::before { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--accent-amber); margin-right: 12px; vertical-align: middle; }
+    .breathe-cycle::after  { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--accent-amber); margin-left: 12px; vertical-align: middle; }
+    .breathe-caption {
+      position: absolute;
+      bottom: -22%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--text-muted-dark);
+      text-align: center;
+      width: 100%;
+      max-width: 360px;
+      line-height: 1.5;
+    }
+    .breathe-caption strong { display: block; color: var(--accent-amber); font-weight: 500; font-style: normal; letter-spacing: 0.04em; margin-bottom: 4px; }
+
+    .try-cta {
+      margin-top: 40px;
+      padding: 32px;
+      background: rgba(245, 239, 229, 0.04);
+      border: 1px solid var(--border-on-dark);
+      border-radius: 8px;
+    }
+    .try-cta .small {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin: 0 0 16px;
+      display: block;
+    }
+    .try-cta .form-row { max-width: none; }
+    .try-cta .form-disclaimer { color: var(--text-muted-dark); }
+
+    @media (max-width: 1024px) {
+      .try-grid { grid-template-columns: 1fr; gap: 80px; }
+      .breathe-stage { max-width: 360px; }
+    }
+
+    /* ---------- 2 · WHAT YOU JUST DID (cream) ---------- */
+    .what-just-did {
+      padding: 140px 0 120px;
+      text-align: center;
+    }
+    .what-just-did .wrap { max-width: 980px; }
+    .what-just-did .pointer {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted-light);
+      font-weight: 600;
+      display: block;
+      margin: 0 0 40px;
+    }
+    .what-just-did h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.4vw, 56px);
+      letter-spacing: -0.022em;
+      line-height: 1.15;
+      margin: 0 0 32px;
+    }
+    .what-just-did h2 em {
+      color: var(--accent-amber);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .what-just-did p {
+      font-size: clamp(16px, 1.4vw, 18px);
+      line-height: 1.65;
+      color: var(--text-muted-light);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ---------- 3 · THE TOOLKIT (cream) ---------- */
+    .toolkit { padding: 80px 0 140px; }
+    .toolkit .wrap { max-width: 880px; }
+    .toolkit-eyebrow {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(22px, 2vw, 28px);
+      color: var(--accent-amber);
+      margin: 0 0 8px;
+      text-align: center;
+      letter-spacing: -0.005em;
+    }
+    .toolkit h2 {
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin: 0 0 64px;
+      text-align: center;
+    }
+
+    .play-row {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 28px 0;
+      border-top: 1px solid var(--border-on-cream);
+      transition: padding 0.3s var(--ease);
+    }
+    .play-row:last-child { border-bottom: 1px solid var(--border-on-cream); }
+    .play-row:hover { padding-left: 8px; }
+    .play-num {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      color: var(--accent-amber);
+      letter-spacing: -0.02em;
+      font-weight: 500;
+      line-height: 1;
+    }
+    .play-info h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2vw, 26px);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin: 0 0 6px;
+      color: var(--text-dark);
+    }
+    .play-info .athlete {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted-light);
+      font-weight: 500;
+    }
+    .play-status {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .play-status.tried {
+      background: rgba(214, 168, 110, 0.16);
+      color: var(--cta);
+      border: 1px solid var(--accent-amber);
+    }
+    .play-status.tried::after { content: " ✓"; }
+    .play-status.in-pdf {
+      background: transparent;
+      color: var(--text-muted-light);
+      border: 1px solid var(--border-on-cream);
+    }
+    @media (max-width: 600px) {
+      .play-row { grid-template-columns: 40px 1fr; gap: 16px; }
+      .play-status { grid-column: 2; justify-self: start; }
+    }
+
+    /* ---------- 4 · GET THE OTHER ELEVEN (dark) ---------- */
+    .get-eleven {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .get-eleven::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, rgba(214,168,110,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .get-eleven .wrap { position: relative; max-width: 720px; }
+    .get-eleven .small {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin: 0 0 32px;
+      display: block;
+    }
+    .get-eleven h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 80px);
+      color: var(--text-cream);
+      letter-spacing: -0.028em;
+      line-height: 1;
+      margin: 0 0 16px;
+    }
+    .get-eleven h2 em {
+      color: var(--accent-amber);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .get-eleven .sub {
+      font-size: 16px;
+      color: var(--text-muted-dark);
+      margin: 0 0 40px;
+      line-height: 1.55;
+    }
+    .get-eleven .form-row { margin: 0 auto; }
+    .get-eleven .form-disclaimer { text-align: center; color: var(--text-muted-dark); }
+    .get-eleven .built-by {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      font-weight: 500;
+      margin: 48px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Mini nav: brand left, "free playbook" label right (cold-traffic landing) -->
+  <header class="nav nav-mini" role="banner">
+    <div class="nav-mini-inner">
+      <a href="/" class="logo">The Deliberate Pause</a>
+      <span class="label">Free Playbook</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1 · TRY ONE PLAY · RIGHT NOW · NO EMAIL
+         ============================================================ -->
+    <section class="try theme-dark">
+      <div class="wrap">
+        <span class="label" data-scroll-fx>Try one play · right now · no email</span>
+        <div class="try-grid">
+          <div class="try-left">
+            <h1 data-scroll-fx="fade-up-lg">Before you decide if this is for you — <em>breathe with Federer.</em></h1>
+            <p data-scroll-fx style="--fx-delay: 0.1s;">The dot expands on the inhale, holds, contracts on the exhale. Match it for thirty seconds. That's one of the twelve tools in the Playbook. The other eleven are in your inbox in sixty seconds.</p>
+
+            <div class="try-cta" data-scroll-fx style="--fx-delay: 0.2s;">
+              <span class="small">Get the other eleven</span>
+              <form class="form-row" action="#" method="post" data-source="pause-try">
+                <label for="email-try" class="visually-hidden">Email address</label>
+                <input type="email" id="email-try" name="email_address" placeholder="your@email.com" required />
+                <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
+              </form>
+              <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+            </div>
+          </div>
+
+          <div data-scroll-fx="zoom">
+            <div class="breathe-stage">
+              <div class="breathe-dot" aria-hidden="true"></div>
+              <div class="breathe-cycle">4 : 1 : 5</div>
+              <div class="breathe-caption">
+                <strong>Federer ran this 4:1:5 cycle between every serve.</strong>
+                237 weeks at world #1.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2 · WHAT YOU JUST DID (cream)
+         ============================================================ -->
+    <section class="what-just-did theme-cream">
+      <div class="wrap">
+        <span class="pointer" data-scroll-fx>↓ What you just did</span>
+        <h2 data-scroll-fx="fade-up-lg">Dropped your heart rate. Slowed the cortisol. Got back the three seconds you need to <em>decide instead of react.</em></h2>
+        <p data-scroll-fx style="--fx-delay: 0.2s;">That's one tool. The Playbook has eleven more — from Phil Jackson, Kobe Bryant, Annika Sörenstam, Novak Djokovic — translated for the founder's day.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3 · THE TOOLKIT — 4 plays (one tried, three in the PDF)
+         ============================================================ -->
+    <section class="toolkit theme-cream" aria-labelledby="toolkit-headline">
+      <div class="wrap">
+        <p class="toolkit-eyebrow" data-scroll-fx>The toolkit that won championships</p>
+        <h2 id="toolkit-headline" data-scroll-fx>— now for founders.</h2>
+
+        <article class="play-row" data-scroll-fx>
+          <div class="play-num">01</div>
+          <div class="play-info">
+            <h3>The Federer Reset</h3>
+            <div class="athlete">Roger Federer · Manage stress</div>
+          </div>
+          <span class="play-status tried">Tried</span>
+        </article>
+
+        <article class="play-row" data-scroll-fx>
+          <div class="play-num">02</div>
+          <div class="play-info">
+            <h3>The Jackson Triangle</h3>
+            <div class="athlete">Phil Jackson · Improve focus</div>
+          </div>
+          <span class="play-status in-pdf">In the PDF</span>
+        </article>
+
+        <article class="play-row" data-scroll-fx>
+          <div class="play-num">03</div>
+          <div class="play-info">
+            <h3>Think Box · Play Box</h3>
+            <div class="athlete">Annika Sörenstam · Build confidence</div>
+          </div>
+          <span class="play-status in-pdf">In the PDF</span>
+        </article>
+
+        <article class="play-row" data-scroll-fx>
+          <div class="play-num">04</div>
+          <div class="play-info">
+            <h3>The 90-Second Recovery</h3>
+            <div class="athlete">Novak Djokovic · Build resilience</div>
+          </div>
+          <span class="play-status in-pdf">In the PDF</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · GET THE OTHER ELEVEN (dark) — final ask
+         ============================================================ -->
+    <section class="get-eleven theme-dark" aria-labelledby="final-headline">
+      <div class="wrap">
+        <span class="small" data-scroll-fx>You ran one play.</span>
+        <h2 id="final-headline" data-scroll-fx="fade-up-lg">Get the <em>other eleven.</em></h2>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.1s;">Free PDF. In your inbox in sixty seconds.</p>
+
+        <form class="form-row" action="#" method="post" data-source="pause-final" data-scroll-fx style="--fx-delay: 0.2s;">
+          <label for="email-final" class="visually-hidden">Email address</label>
+          <input type="email" id="email-final" name="email_address" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
+        </form>
+        <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+        <p class="built-by">Built by Avi · ex-CreditVidya, sold to CRED</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer theme-dark" role="contentinfo">
+    <div class="wrap" style="border-top: 1px solid var(--border-on-dark);">
+      <div class="footer-bottom" style="padding-top: 32px;">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi (Abhishek Agarwal)</div>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fx.js" defer></script>
+</body>
+</html>

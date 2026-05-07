@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Avi — The Deliberate Pause</title>
+  <meta name="description" content="From selling shoes on the streets of Kathmandu, to Wall Street, to co-founding CreditVidya. The body broke first. The integration was the actual work." />
+  <meta name="author" content="Avi Agarwal" />
+  <link rel="canonical" href="https://thedeliberatepause.com/about" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://thedeliberatepause.com/about" />
+  <meta property="og:title" content="About Avi — The Deliberate Pause" />
+  <meta property="og:description" content="The toolkit Patanjali wrote and Phil Jackson used to win 11 championships is what I used to rebuild my life." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Abhishek Agarwal",
+      "alternateName": "Avi Agarwal",
+      "jobTitle": "Founder, The Deliberate Pause",
+      "description": "2x founder. Co-founded CreditVidya, acquired by CRED. Now building The Deliberate Pause."
+    }
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       PAGE-SPECIFIC — about
+       =========================================================== */
+
+    /* ---------- 1 · CINEMATIC HERO (dark) ---------- */
+    .about-hero { padding: 0; min-height: 92vh; position: relative; display: flex; align-items: stretch; }
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .about-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transform: scale(1.04);
+      will-change: transform;
+    }
+    .about-hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 0%, transparent 40%, rgba(19,19,19,0.85) 90%, var(--bg-dark) 100%),
+        linear-gradient(90deg, rgba(19,19,19,0.6) 0%, transparent 60%);
+    }
+    .about-hero-bg .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted-dark);
+      font-size: 13px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, rgba(214,168,110,0.1), transparent 60%),
+        var(--bg-dark);
+      letter-spacing: 0.02em;
+    }
+    .about-hero-bg img[src]:not([src=""]) ~ .placeholder { display: none; }
+
+    .about-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 96px var(--gutter) 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .about-hero .eyebrow { color: var(--accent-amber); margin-bottom: 32px; }
+    .about-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(56px, 8vw, 116px);
+      color: var(--text-cream);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 14ch;
+      margin: 0 0 32px;
+    }
+    .about-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+    .about-hero .scroll-cue {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      margin-top: 56px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: scroll-bob 2.4s var(--ease-in-out) infinite;
+    }
+    @keyframes scroll-bob {
+      0%, 100% { transform: translateY(0); opacity: 0.7; }
+      50% { transform: translateY(4px); opacity: 1; }
+    }
+
+    /* ---------- 2 · IDENTITY STACK (dark) ---------- */
+    .identity { padding: 140px 0; }
+    .identity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .identity-stack {
+      font-family: var(--font-serif);
+      font-size: clamp(56px, 8vw, 120px);
+      line-height: 1;
+      color: var(--text-cream);
+      letter-spacing: -0.03em;
+      font-weight: 600;
+    }
+    .identity-stack span {
+      display: block;
+      transition: color 0.3s var(--ease), letter-spacing 0.4s var(--ease);
+    }
+    .identity-stack span:nth-child(1) { color: var(--text-cream); }
+    .identity-stack span:nth-child(2) { color: rgba(245,239,229,0.7); }
+    .identity-stack span:nth-child(3) { color: var(--accent-amber); font-style: italic; }
+    .identity-stack span:hover { letter-spacing: -0.02em; color: var(--accent-amber); }
+    .identity-copy { padding-top: 24px; }
+    .identity-copy p {
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.65;
+      color: var(--text-muted-dark);
+      margin: 0 0 20px;
+      max-width: 540px;
+    }
+    .identity-copy p:last-child { color: var(--text-cream); font-weight: 500; }
+    @media (max-width: 900px) {
+      .identity-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ---------- 3 · CredentIAL BAND (dark) ---------- */
+    .credential {
+      padding: 80px 0 100px;
+      border-top: 1px solid var(--border-on-dark);
+    }
+    .credential .wrap { max-width: 880px; }
+    .credential-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 32px;
+      background: rgba(245, 239, 229, 0.03);
+      border: 1px solid var(--border-on-dark);
+      border-radius: 8px;
+    }
+    .credential-thumb {
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.06)),
+        rgba(245, 239, 229, 0.04);
+      border: 1px dashed var(--border-on-dark);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted-dark);
+      text-align: center;
+      padding: 12px;
+    }
+    .credential-card p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(16px, 1.5vw, 20px);
+      line-height: 1.55;
+      color: var(--text-cream);
+      margin: 0;
+    }
+    .credential-card .source {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin-top: 16px;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .credential-card { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- 4 · JOURNEY (dark, 3 beats) ---------- */
+    .journey {
+      padding: 120px 0 140px;
+      border-top: 1px solid var(--border-on-dark);
+    }
+    .journey .eyebrow { color: var(--accent-amber); margin-bottom: 48px; }
+    .journey-beat {
+      display: grid;
+      grid-template-columns: 80px 1.2fr 1fr;
+      gap: 56px;
+      padding: 64px 0;
+      border-top: 1px solid var(--border-on-dark);
+      align-items: center;
+    }
+    .journey-beat:last-child { border-bottom: 1px solid var(--border-on-dark); }
+    .journey-num {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 5vw, 72px);
+      color: var(--accent-amber);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .journey-text h3 {
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--text-cream);
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .journey-text .stage {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .journey-text p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-muted-dark);
+      margin: 0;
+      max-width: 480px;
+    }
+    .journey-img {
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.14), rgba(197,107,69,0.05)),
+        rgba(245, 239, 229, 0.03);
+      border: 1px dashed var(--border-on-dark);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted-dark);
+      text-align: center;
+      padding: 16px;
+      line-height: 1.55;
+    }
+    @media (max-width: 900px) {
+      .journey-beat { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+      .journey-num { font-size: 56px; }
+    }
+
+    /* ---------- 5 · FEATURED IN (dark) ---------- */
+    .featured-in { padding: 80px 0; border-top: 1px solid var(--border-on-dark); text-align: center; }
+    .featured-in .eyebrow { margin-bottom: 32px; color: var(--text-muted-dark); }
+    .featured-in .wrap { max-width: 920px; }
+    .featured-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px 56px;
+      align-items: center;
+      opacity: 0.5;
+    }
+    .featured-strip .logo-slot {
+      width: 110px; height: 32px;
+      border: 1px dashed var(--border-on-dark);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+    }
+    .featured-in .micro {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text-muted-dark);
+      margin-top: 24px;
+    }
+
+    /* ---------- 6 · READER PIVOT (cream) ---------- */
+    .pivot-reader { padding: 140px 0 120px; }
+    .pivot-reader .wrap { max-width: 1100px; }
+    .pivot-reader-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .pivot-reader .photo {
+      aspect-ratio: 4 / 5;
+      background: rgba(26,26,26,0.04);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pivot-reader .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      will-change: transform;
+    }
+    .pivot-reader .photo .placeholder {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted-light);
+      font-size: 12px;
+      padding: 16px;
+      text-align: center;
+      line-height: 1.55;
+      border: 1px dashed var(--border-on-cream);
+      border-radius: 6px;
+    }
+    .pivot-reader .photo img[src]:not([src=""]) ~ .placeholder { display: none; }
+    .pivot-reader .eyebrow { color: var(--text-muted-light); margin-bottom: 28px; }
+    .pivot-reader h2 {
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin: 0 0 8px;
+    }
+    .pivot-reader .small {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(20px, 2vw, 26px);
+      color: var(--accent-amber);
+      margin: 0 0 32px;
+    }
+    .help-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .help-list li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid var(--border-on-cream);
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--text-dark);
+      transition: padding 0.3s var(--ease);
+    }
+    .help-list li:hover { padding-left: 8px; }
+    .help-list li::before {
+      content: "✓";
+      width: 24px; height: 24px;
+      border: 1px solid var(--border-on-cream);
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-dark);
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .help-list li:hover::before { background: var(--accent-amber); color: var(--bg-dark); border-color: var(--accent-amber); }
+    @media (max-width: 900px) {
+      .pivot-reader-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ---------- 7 · TWO DOORS (cream) ---------- */
+    .two-doors { padding: 80px 0 140px; }
+    .two-doors .wrap { max-width: 1100px; }
+    .two-doors .eyebrow { display: block; text-align: center; margin-bottom: 32px; }
+    .two-doors h2 {
+      text-align: center;
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.025em;
+      margin: 0 0 64px;
+    }
+    .doors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .door {
+      background: var(--bg-dark);
+      color: var(--text-cream);
+      padding: 48px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+    }
+    .door::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(214,168,110,0.16), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.5s var(--ease-out);
+      pointer-events: none;
+    }
+    .door:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 64px -32px rgba(19,19,19,0.5);
+    }
+    .door:hover::before { opacity: 1; }
+    .door .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+    }
+    .door h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 36px);
+      color: var(--text-cream);
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .door p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted-dark);
+      margin: 0;
+      flex: 1;
+    }
+    .door .form-row { max-width: none; }
+    .door .form-disclaimer { color: var(--text-muted-dark); }
+    @media (max-width: 768px) {
+      .doors-grid { grid-template-columns: 1fr; }
+      .door { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">The Deliberate Pause</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/read.html">Read</a></li>
+          <li><a href="/pause.html">The Pause</a></li>
+          <li><a href="/about.html" aria-current="page">About</a></li>
+        </ul>
+      </nav>
+      <a href="/pause.html" class="btn btn-magnetic nav-cta">
+        <span class="label-long">Send me the Pause Playbook</span>
+        <span class="label-short">Get Pause</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1 · CINEMATIC HERO
+         ============================================================ -->
+    <section class="about-hero theme-dark">
+      <div class="about-hero-bg parallax-wrap">
+        <img class="parallax-img" data-parallax="0.06" src="images/avi-cinematic.jpg" alt="Avi Agarwal portrait — cinematic, environmental" loading="eager" onerror="this.style.display='none'" />
+        <div class="placeholder">cinematic photo of Avi · environmental · peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi-cinematic.jpg</code></div>
+      </div>
+      <div class="about-hero-inner">
+        <span class="eyebrow" data-scroll-fx>Avi's Story</span>
+        <h1 data-scroll-fx="fade-up-lg">From Kathmandu to <em>the boardroom</em>, then back to the body.</h1>
+        <span class="scroll-cue" data-scroll-fx style="--fx-delay: 0.3s;">Scroll ↓</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2 · IDENTITY STACK
+         ============================================================ -->
+    <section class="identity theme-dark" aria-labelledby="identity-headline">
+      <div class="wrap">
+        <span class="eyebrow" data-scroll-fx>03 / Identity</span>
+        <div class="identity-grid">
+          <h2 class="identity-stack" id="identity-headline" data-scroll-fx="fade-right">
+            <span>Founder.</span>
+            <span>Writer.</span>
+            <span>Practitioner.</span>
+          </h2>
+          <div class="identity-copy" data-scroll-fx="fade-left">
+            <p>2x Founder. CreditVidya — acquired by CRED. The toolkit Patanjali wrote and Phil Jackson used to win 11 championships is what I used to rebuild my life.</p>
+            <p>Odds are stacked against us. You need every tool you have. The brand is built on what I'm still learning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3 · CREDENTIAL BAND
+         ============================================================ -->
+    <section class="credential theme-dark">
+      <div class="wrap">
+        <div class="credential-card" data-scroll-fx>
+          <div class="credential-thumb">
+            press article — TechCrunch / YourStory<br />CreditVidya acquired by CRED
+          </div>
+          <div>
+            <p>"From humble beginnings."</p>
+            <span class="source">Primary-source credential</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · JOURNEY — three beats
+         ============================================================ -->
+    <section class="journey theme-dark" aria-labelledby="journey-headline">
+      <div class="wrap">
+        <span class="eyebrow" id="journey-headline" data-scroll-fx>04 / Journey</span>
+
+        <article class="journey-beat" data-scroll-fx>
+          <div class="journey-num">01</div>
+          <div class="journey-text">
+            <div class="stage">Building</div>
+            <h3>Kathmandu street kid. Wall Street. Then CreditVidya.</h3>
+            <p>740 people, acquired by CRED. Twenty years of climbing. The version of me from those years didn't pause. He sprinted.</p>
+          </div>
+          <div class="journey-img">building photo · 800×600<br />drop: <code>images/avi-building.jpg</code></div>
+        </article>
+
+        <article class="journey-beat" data-scroll-fx>
+          <div class="journey-num">02</div>
+          <div class="journey-text">
+            <div class="stage">Breaking</div>
+            <h3>The body had been keeping score.</h3>
+            <p>The slip disc came first. Then the stroke. I just hadn't been reading the ledger. Building the company was visible. What it was costing me wasn't, until it was. Some founders break in the boardroom. I broke in the body. The company kept running. I didn't.</p>
+          </div>
+          <div class="journey-img">hospital bed photo · proof "build without breaking" isn't a metaphor<br />drop: <code>images/avi-breaking.jpg</code></div>
+        </article>
+
+        <article class="journey-beat" data-scroll-fx>
+          <div class="journey-num">03</div>
+          <div class="journey-text">
+            <div class="stage">Re-building</div>
+            <h3>The integration was the actual work.</h3>
+            <p>Vipassana. Patanjali's Yoga Sutras, read and re-read. Studying what Phil Jackson did with the Bulls. The integration was the actual work — not the side project. The Deliberate Pause is what I built once I knew that. I'm bringing both to founders.</p>
+          </div>
+          <div class="journey-img">contemporary Avi at desk · Yoga Sutras nearby · post-recovery<br />drop: <code>images/avi-rebuilding.jpg</code></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5 · FEATURED IN
+         ============================================================ -->
+    <section class="featured-in theme-dark">
+      <div class="wrap">
+        <span class="eyebrow" data-scroll-fx>Featured in</span>
+        <div class="featured-strip" data-scroll-fx>
+          <div class="logo-slot">Logo 1</div>
+          <div class="logo-slot">Logo 2</div>
+          <div class="logo-slot">Logo 3</div>
+          <div class="logo-slot">Logo 4</div>
+          <div class="logo-slot">Logo 5</div>
+          <div class="logo-slot">Logo 6</div>
+        </div>
+        <p class="micro">Honesty rule: only ship real logos. If &lt;5 exist, this band waits to Phase 1.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6 · READER PIVOT (cream)
+         ============================================================ -->
+    <section class="pivot-reader theme-cream" aria-labelledby="reader-headline">
+      <div class="wrap">
+        <div class="pivot-reader-grid">
+          <div class="photo parallax-wrap" data-scroll-fx="zoom">
+            <img class="parallax-img" data-parallax="0.07" src="images/avi-peer.jpg" alt="Avi Agarwal — peer-direct portrait, warm, settled" loading="lazy" onerror="this.style.display='none'" />
+            <div class="placeholder">peer-direct photo of Avi looking at camera<br />warm · settled · Avi-with-reader<br /><br />drop file: <code>images/avi-peer.jpg</code></div>
+          </div>
+          <div data-scroll-fx="fade-left">
+            <span class="eyebrow">05 / Reader Pivot</span>
+            <h2 id="reader-headline">How can I help you?</h2>
+            <p class="small">I can't help with everything. Here's what I can help with.</p>
+            <ul class="help-list">
+              <li>Run a sport-tested protocol before the meeting that matters</li>
+              <li>Stop confusing exhaustion for commitment</li>
+              <li>Recover from setbacks without grinding through them</li>
+              <li>Decide from clarity, not from fear</li>
+              <li>Build the company without losing yourself</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7 · TWO DOORS — Where to start
+         ============================================================ -->
+    <section class="two-doors theme-cream" aria-labelledby="doors-headline">
+      <div class="wrap">
+        <span class="eyebrow" data-scroll-fx>06 / Where to start</span>
+        <h2 id="doors-headline" data-scroll-fx>Where to start.</h2>
+        <div class="doors-grid">
+          <article class="door" data-scroll-fx="fade-right">
+            <span class="label">Lead Magnet</span>
+            <h3>The Pause Playbook.</h3>
+            <p>Four sport-translated plays. Free PDF. You'll run them this week.</p>
+            <form class="form-row" action="#" method="post" data-source="about-door-1">
+              <label for="email-door1" class="visually-hidden">Email address</label>
+              <input type="email" id="email-door1" name="email_address" placeholder="your@email.com" required />
+              <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
+            </form>
+            <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+          </article>
+          <article class="door" data-scroll-fx="fade-left">
+            <span class="label">Newsletter</span>
+            <h3>The Essays.</h3>
+            <p>One pause every Monday at 11:11. Plus everything I've already written.</p>
+            <form class="form-row" action="#" method="post" data-source="about-door-2">
+              <label for="email-door2" class="visually-hidden">Email address</label>
+              <input type="email" id="email-door2" name="email_address" placeholder="your@email.com" required />
+              <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
+            </form>
+            <p class="form-disclaimer">No spam ever. Unsubscribe in one click.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer theme-dark" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">The Deliberate Pause</div>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Tools and essays for startup founders on building companies without breaking themselves. Sourced from spiritual practice. Proven by sport.</p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Pause for 5 minutes.</h4>
+          <p class="sub">Every Monday, 11:11 am.</p>
+          <form class="form-row" action="#" method="post" data-source="footer">
+            <label for="email-footer" class="visually-hidden">Email address</label>
+            <input type="email" id="email-footer" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Read</h5><ul><li><a href="/read.html">All essays</a></li></ul></div>
+        <div><h5>The Pause</h5><ul><li><a href="/pause.html">Get the Pause Playbook (free)</a></li></ul></div>
+        <div><h5>About</h5><ul><li><a href="/about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li><li><a href="https://twitter.com/" rel="noopener">X</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi (Abhishek Agarwal) · Built in [location]</div>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fx.js" defer></script>
+</body>
+</html>
