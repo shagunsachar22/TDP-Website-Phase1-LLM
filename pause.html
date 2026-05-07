@@ -114,11 +114,18 @@
       display: block;
     }
 
-    /* Breathe widget — pure CSS animation, 4:1:5 cycle */
+    /* Breathe widget — pure CSS animation, 4:1:5 cycle.
+       Cycle indicator lives INSIDE the dot. Caption sits cleanly below. */
+    .breathe-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
     .breathe-stage {
       aspect-ratio: 1 / 1;
-      max-width: 480px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 420px;
       position: relative;
       display: flex;
       align-items: center;
@@ -129,21 +136,24 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at center, rgba(214,168,110,0.12), transparent 70%);
+        radial-gradient(circle at center, rgba(214,168,110,0.10), transparent 70%);
       pointer-events: none;
     }
     .breathe-dot {
       position: relative;
-      width: 50%;
-      height: 50%;
+      width: 56%;
+      height: 56%;
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 30%, #E8B97A 0%, #D6A86E 40%, #B5824D 100%);
       box-shadow:
         0 0 80px rgba(214, 168, 110, 0.45),
-        inset 0 -20px 60px rgba(181, 130, 77, 0.4);
+        inset 0 -20px 60px rgba(181, 130, 77, 0.35);
       animation: breathe 10s var(--ease-in-out) infinite;
       will-change: transform, box-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     @keyframes breathe {
       /* 4s inhale (0-40%), 1s hold (40-50%), 5s exhale (50-100%) */
@@ -152,36 +162,46 @@
       50%  { transform: scale(1.15); box-shadow: 0 0 100px rgba(214,168,110,0.55), inset 0 -24px 70px rgba(181,130,77,0.4); }
       100% { transform: scale(0.7); box-shadow: 0 0 40px rgba(214,168,110,0.3), inset 0 -10px 30px rgba(181,130,77,0.4); }
     }
+    /* "4 : 1 : 5" lives inside the dot, centered, counter-scales to stay legible */
     .breathe-cycle {
-      position: absolute;
-      bottom: -12%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--font-sans);
-      font-size: 11px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--accent-amber);
-      font-weight: 600;
-      white-space: nowrap;
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--bg-dark);
+      text-shadow: 0 1px 0 rgba(255,255,255,0.18);
+      animation: cycle-counter 10s var(--ease-in-out) infinite;
+      will-change: transform;
     }
-    .breathe-cycle::before { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--accent-amber); margin-right: 12px; vertical-align: middle; }
-    .breathe-cycle::after  { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--accent-amber); margin-left: 12px; vertical-align: middle; }
+    @keyframes cycle-counter {
+      /* Counter-scales the breathing scale so text stays roughly the same size */
+      0%   { transform: scale(1.43); }
+      40%  { transform: scale(0.87); }
+      50%  { transform: scale(0.87); }
+      100% { transform: scale(1.43); }
+    }
+    /* Caption: clean block below, no overlap */
     .breathe-caption {
-      position: absolute;
-      bottom: -22%;
-      left: 50%;
-      transform: translateX(-50%);
+      max-width: 360px;
+      text-align: center;
       font-family: var(--font-serif);
       font-style: italic;
       font-size: 14px;
       color: var(--text-muted-dark);
-      text-align: center;
-      width: 100%;
-      max-width: 360px;
-      line-height: 1.5;
+      line-height: 1.55;
+      margin: 0;
     }
-    .breathe-caption strong { display: block; color: var(--accent-amber); font-weight: 500; font-style: normal; letter-spacing: 0.04em; margin-bottom: 4px; }
+    .breathe-caption strong {
+      display: block;
+      color: var(--accent-amber);
+      font-weight: 500;
+      font-style: normal;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
 
     .try-cta {
       margin-top: 40px;
@@ -320,6 +340,15 @@
       color: var(--text-muted-light);
       border: 1px solid var(--border-on-cream);
     }
+    .play-status.practice {
+      background: var(--bg-dark);
+      color: var(--text-cream);
+      border: 1px solid var(--bg-dark);
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), gap 0.25s var(--ease);
+    }
+    .play-row:hover .play-status.practice { background: var(--cta); border-color: var(--cta); }
+    /* play-row as link */
+    a.play-row { color: inherit; text-decoration: none; }
     @media (max-width: 600px) {
       .play-row { grid-template-columns: 40px 1fr; gap: 16px; }
       .play-status { grid-column: 2; justify-self: start; }
@@ -421,15 +450,16 @@
             </div>
           </div>
 
-          <div data-scroll-fx="zoom">
+          <div class="breathe-block" data-scroll-fx="zoom">
             <div class="breathe-stage">
-              <div class="breathe-dot" aria-hidden="true"></div>
-              <div class="breathe-cycle">4 : 1 : 5</div>
-              <div class="breathe-caption">
-                <strong>Federer ran this 4:1:5 cycle between every serve.</strong>
-                237 weeks at world #1.
+              <div class="breathe-dot" aria-hidden="true">
+                <span class="breathe-cycle">4 : 1 : 5</span>
               </div>
             </div>
+            <p class="breathe-caption">
+              <strong>237 weeks at world #1</strong>
+              Federer ran this 4:1:5 cycle between every serve.
+            </p>
           </div>
         </div>
       </div>
@@ -454,41 +484,41 @@
         <p class="toolkit-eyebrow" data-scroll-fx>The toolkit that won championships</p>
         <h2 id="toolkit-headline" data-scroll-fx>— now for founders.</h2>
 
-        <article class="play-row" data-scroll-fx>
+        <a class="play-row" href="practice-federer-reset.html" data-scroll-fx>
           <div class="play-num">01</div>
           <div class="play-info">
             <h3>The Federer Reset</h3>
             <div class="athlete">Roger Federer · Manage stress</div>
           </div>
           <span class="play-status tried">Tried</span>
-        </article>
+        </a>
 
-        <article class="play-row" data-scroll-fx>
+        <a class="play-row" href="practice-jackson-triangle.html" data-scroll-fx>
           <div class="play-num">02</div>
           <div class="play-info">
             <h3>The Jackson Triangle</h3>
             <div class="athlete">Phil Jackson · Improve focus</div>
           </div>
-          <span class="play-status in-pdf">In the PDF</span>
-        </article>
+          <span class="play-status practice">Try it →</span>
+        </a>
 
-        <article class="play-row" data-scroll-fx>
+        <a class="play-row" href="practice-think-box-play-box.html" data-scroll-fx>
           <div class="play-num">03</div>
           <div class="play-info">
             <h3>Think Box · Play Box</h3>
             <div class="athlete">Annika Sörenstam · Build confidence</div>
           </div>
-          <span class="play-status in-pdf">In the PDF</span>
-        </article>
+          <span class="play-status practice">Try it →</span>
+        </a>
 
-        <article class="play-row" data-scroll-fx>
+        <a class="play-row" href="practice-90-second-recovery.html" data-scroll-fx>
           <div class="play-num">04</div>
           <div class="play-info">
             <h3>The 90-Second Recovery</h3>
             <div class="athlete">Novak Djokovic · Build resilience</div>
           </div>
-          <span class="play-status in-pdf">In the PDF</span>
-        </article>
+          <span class="play-status practice">Try it →</span>
+        </a>
       </div>
     </section>
 

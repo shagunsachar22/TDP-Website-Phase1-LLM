@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Jackson Triangle — The Deliberate Pause</title>
-  <meta name="description" content="Phil Jackson's pre-conversation protocol. Drop ego. Name intent. See the other person. A 30-second tool you can run before any hard message." />
-  <link rel="canonical" href="https://thedeliberatepause.com/practice/jackson-triangle" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="The Jackson Triangle — Practice 01" />
-  <meta property="og:description" content="Before any hard conversation — tap three corners." />
+  <title>The Federer Reset — The Deliberate Pause</title>
+  <meta name="description" content="Sixteen seconds. Federer's 4:1:5 breath cycle between every serve. The stress reset that won twenty Grand Slams and 237 weeks at world #1." />
+  <link rel="canonical" href="https://thedeliberatepause.com/practice/federer-reset" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,123 +14,117 @@
 
   <style>
     /* ===========================================================
-       PAGE-SPECIFIC — Jackson Triangle
+       PAGE-SPECIFIC — Federer Reset
+       Reuses the breathe widget styling from pause.html, simplified.
        =========================================================== */
-    .jt-stage {
-      position: relative;
-      max-width: 720px;
-      margin: 0 auto;
-      aspect-ratio: 1.05 / 1;
-    }
-    .jt-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .jt-svg .tri-line {
-      stroke: rgba(245, 239, 229, 0.16);
-      stroke-width: 1;
-      fill: none;
-      transition: stroke 0.4s var(--ease);
-    }
-    .jt-widget.is-complete .jt-svg .tri-line { stroke: var(--accent-amber); }
 
-    .jt-corner {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      background: rgba(19, 19, 19, 0.85);
-      border: 1px solid var(--border-on-dark);
-      border-radius: 6px;
-      padding: 18px 28px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.35s var(--ease);
-      min-width: 120px;
-      user-select: none;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    .jt-corner:hover {
-      border-color: var(--accent-amber);
-      transform: translate(-50%, -52%);
-    }
-    .jt-corner.is-tapped {
-      background: rgba(214, 168, 110, 0.16);
-      border-color: var(--accent-amber);
-      box-shadow: 0 0 32px rgba(214, 168, 110, 0.45);
-    }
-    .jt-corner .ckey {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent-amber);
-      font-weight: 600;
-      margin: 0 0 6px;
-    }
-    .jt-corner .cmsg {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 14px;
-      color: var(--text-cream);
-      margin: 0;
-    }
-    /* Corner positions — top, bottom-left, bottom-right */
-    .jt-corner[data-corner="ego"]    { top: 12%;  left: 50%; }
-    .jt-corner[data-corner="other"]  { top: 78%;  left: 22%; }
-    .jt-corner[data-corner="intent"] { top: 78%;  left: 78%; }
-
-    .jt-meta {
-      text-align: center;
-      margin-top: 32px;
+    .breathe-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 40px;
     }
-    .jt-counter {
+    .breathe-stage {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .breathe-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(214,168,110,0.10), transparent 70%);
+      pointer-events: none;
+    }
+    .breathe-dot {
+      position: relative;
+      width: 56%;
+      height: 56%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #E8B97A 0%, #D6A86E 40%, #B5824D 100%);
+      box-shadow:
+        0 0 80px rgba(214, 168, 110, 0.45),
+        inset 0 -20px 60px rgba(181, 130, 77, 0.35);
+      animation: breathe 10s var(--ease-in-out) infinite;
+      will-change: transform, box-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes breathe {
+      0%   { transform: scale(0.7); box-shadow: 0 0 40px rgba(214,168,110,0.3), inset 0 -10px 30px rgba(181,130,77,0.4); }
+      40%  { transform: scale(1.15); box-shadow: 0 0 100px rgba(214,168,110,0.55), inset 0 -24px 70px rgba(181,130,77,0.4); }
+      50%  { transform: scale(1.15); box-shadow: 0 0 100px rgba(214,168,110,0.55), inset 0 -24px 70px rgba(181,130,77,0.4); }
+      100% { transform: scale(0.7); box-shadow: 0 0 40px rgba(214,168,110,0.3), inset 0 -10px 30px rgba(181,130,77,0.4); }
+    }
+    .breathe-cycle {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--bg-dark);
+      text-shadow: 0 1px 0 rgba(255,255,255,0.18);
+      animation: cycle-counter 10s var(--ease-in-out) infinite;
+      will-change: transform;
+    }
+    @keyframes cycle-counter {
+      0%   { transform: scale(1.43); }
+      40%  { transform: scale(0.87); }
+      50%  { transform: scale(0.87); }
+      100% { transform: scale(1.43); }
+    }
+    .breathe-phases {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 480px;
+    }
+    .breathe-phases .phase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
       font-family: var(--font-sans);
-      font-size: 11px;
-      letter-spacing: 0.32em;
+    }
+    .breathe-phases .phase b {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--accent-amber);
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+    .breathe-phases .phase span {
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-muted-dark);
       font-weight: 600;
     }
-    .jt-counter span {
-      color: var(--accent-amber);
-      font-variant-numeric: tabular-nums;
-    }
-    .jt-done {
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+    .breathe-caption {
+      max-width: 420px;
+      text-align: center;
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 18px;
-      color: var(--accent-amber);
-      pointer-events: none;
-    }
-    .jt-done.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .jt-reset {
-      background: transparent;
-      border: 1px solid var(--border-on-dark);
+      font-size: 14px;
       color: var(--text-muted-dark);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .breathe-caption strong {
+      display: block;
+      color: var(--accent-amber);
+      font-weight: 500;
+      font-style: normal;
       font-family: var(--font-sans);
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      padding: 10px 18px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.25s var(--ease);
-      font-weight: 500;
-    }
-    .jt-reset:hover { color: var(--text-cream); border-color: var(--text-cream); }
-
-    @media (max-width: 600px) {
-      .jt-stage { aspect-ratio: 0.85 / 1; }
-      .jt-corner { padding: 12px 18px; min-width: 96px; }
-      .jt-corner .ckey { font-size: 10px; letter-spacing: 0.22em; }
-      .jt-corner .cmsg { font-size: 12px; }
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -162,51 +153,40 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       Crumb
-       ============================================================ -->
   <div class="practice-crumb">
     <div class="practice-crumb-inner">
       <a href="pause.html">← All Practices</a>
       <span class="sep">/</span>
-      <span class="here">The Jackson Triangle</span>
+      <span class="here">The Federer Reset</span>
     </div>
   </div>
 
   <main>
 
     <!-- ============================================================
-         1 · HERO + TRIANGLE WIDGET (dark)
+         1 · HERO + BREATHE WIDGET (dark)
          ============================================================ -->
     <section class="practice-hero theme-dark">
       <div class="wrap">
-        <span class="pkey" data-scroll-fx>Practice 01 · The Jackson Triangle</span>
-        <h1 data-scroll-fx="fade-up-lg">Before any hard conversation — <em>tap three corners.</em></h1>
-        <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">A 30-second protocol. Drop the ego. Name the intent. See the other person. Then send the message.</p>
+        <span class="pkey" data-scroll-fx>Practice 04 · The Federer Reset</span>
+        <h1 data-scroll-fx="fade-up-lg">Sixteen seconds. The reset that won <em>twenty Grand Slams.</em></h1>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Inhale four. Hold one. Exhale five. Match the dot for thirty seconds. The body resets. The next point starts clean.</p>
 
-        <div class="jt-widget" data-scroll-fx="zoom" style="--fx-delay: 0.25s;">
-          <div class="jt-stage">
-            <svg class="jt-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <polygon class="tri-line" points="50,12 22,78 78,78"></polygon>
-            </svg>
-            <button class="jt-corner" data-corner="ego" type="button" aria-label="Tap to mark Ego as named">
-              <div class="ckey">Ego</div>
-              <div class="cmsg">Drop it.</div>
-            </button>
-            <button class="jt-corner" data-corner="other" type="button" aria-label="Tap to mark Other as seen">
-              <div class="ckey">Other</div>
-              <div class="cmsg">See them.</div>
-            </button>
-            <button class="jt-corner" data-corner="intent" type="button" aria-label="Tap to mark Intent as named">
-              <div class="ckey">Intent</div>
-              <div class="cmsg">Name it.</div>
-            </button>
+        <div class="breathe-block" data-scroll-fx="zoom" style="--fx-delay: 0.25s;">
+          <div class="breathe-stage">
+            <div class="breathe-dot" aria-hidden="true">
+              <span class="breathe-cycle">4 : 1 : 5</span>
+            </div>
           </div>
-          <div class="jt-meta">
-            <div class="jt-counter"><span>0</span> / 3 Tapped</div>
-            <span class="jt-done">Now send the message →</span>
-            <button class="jt-reset" type="button">Reset</button>
+          <div class="breathe-phases">
+            <div class="phase"><b>4s</b><span>Inhale</span></div>
+            <div class="phase"><b>1s</b><span>Hold</span></div>
+            <div class="phase"><b>5s</b><span>Exhale</span></div>
           </div>
+          <p class="breathe-caption">
+            <strong>237 weeks at world #1</strong>
+            Federer ran this between every serve, three hundred and seventy times a match, for twenty years.
+          </p>
         </div>
       </div>
     </section>
@@ -219,12 +199,12 @@
         <div class="origin-grid">
           <div data-scroll-fx="fade-right">
             <span class="label">Origin</span>
-            <h2>Phil Jackson</h2>
-            <div class="credentials">NBA · Bulls + Lakers · 11 championships</div>
+            <h2>Roger Federer</h2>
+            <div class="credentials">ATP · Tennis · 20 Grand Slams · 310 weeks at #1</div>
           </div>
           <div data-scroll-fx="fade-left">
-            <blockquote>Before every play, name your ego, your intent, and the other person's stake — out loud.</blockquote>
-            <p>Jackson's huddle wasn't a strategy session. It was a presence protocol. Three things had to be named before the play began. He used it on Jordan and Kobe — the two highest-ego players in the game. The triangle works because it forces you to step out of yourself for thirty seconds before you act. Same instinct that founders need before the hard Slack message, the cofounder talk, the firing.</p>
+            <blockquote>The point is over. Don't bring it to the next one. The breath is the bridge.</blockquote>
+            <p>Sport psychologists tracked Federer for two decades and found the same micro-protocol on almost every serve: turn away from the baseline, four counts in through the nose, one count held, five counts out. Sixteen seconds total. He wasn't relaxing — he was switching nervous systems. Sympathetic to parasympathetic. Reactive to deliberate. It's the same drop founders need to make between the bad email and the next call. The breath is the cheapest, fastest, most under-used tool in the founder's day. Run the cycle for thirty seconds and the body believes you.</p>
           </div>
         </div>
       </div>
@@ -233,53 +213,53 @@
     <!-- ============================================================
          3 · WHEN TO USE
          ============================================================ -->
-    <section class="when-to-use" aria-labelledby="when-headline">
+    <section class="when-to-use">
       <div class="wrap">
         <span class="label" data-scroll-fx>When to use</span>
-        <h2 id="when-headline" data-scroll-fx>The founder situations this protocol was <em>built for.</em></h2>
+        <h2 data-scroll-fx>The founder situations this protocol was <em>built for.</em></h2>
         <hr data-scroll-fx />
 
         <div class="situation-grid">
           <article class="situation" data-scroll-fx>
             <div class="num">01</div>
             <div>
-              <h3>The hard Slack message</h3>
-              <p>Before you hit send on anything that could land sharp. Tap three corners. Re-read.</p>
+              <h3>Before you hit send</h3>
+              <p>The Slack message that could land sharp. The investor email with bad news. Run a cycle. Re-read the draft. Send.</p>
             </div>
           </article>
           <article class="situation" data-scroll-fx>
             <div class="num">02</div>
             <div>
-              <h3>The cofounder conversation</h3>
-              <p>When you're heading into a talk you've been mentally rehearsing for two days.</p>
+              <h3>Walking into the meeting</h3>
+              <p>Thirty seconds in the lift. Or the parking lot. Or behind a closed door. Anywhere with a wall and a breath.</p>
             </div>
           </article>
           <article class="situation" data-scroll-fx>
             <div class="num">03</div>
             <div>
-              <h3>The firing</h3>
-              <p>The one moment where ego and intent both show up loudest. Slow down. Three corners.</p>
+              <h3>After you read the news</h3>
+              <p>Cap-table news, market news, churn news, hire-just-quit news. The body is already cortisol-high. Drop it before you decide.</p>
             </div>
           </article>
           <article class="situation" data-scroll-fx>
             <div class="num">04</div>
             <div>
-              <h3>The investor email</h3>
-              <p>When you're writing the update where the news is bad. Drop the spin. Name what you actually want from them.</p>
+              <h3>The 3pm wall</h3>
+              <p>Decision fatigue is a body state, not a moral failure. Reset before the afternoon meetings, not after them.</p>
             </div>
           </article>
           <article class="situation" data-scroll-fx>
             <div class="num">05</div>
             <div>
-              <h3>The all-hands</h3>
-              <p>Before walking on stage to say something that matters. Especially when "what they need" is different from "what you want to say."</p>
+              <h3>Right before you sleep</h3>
+              <p>Three minutes of the cycle drops the heart rate enough that the mind stops auditioning tomorrow's meetings.</p>
             </div>
           </article>
           <article class="situation" data-scroll-fx>
             <div class="num">06</div>
             <div>
-              <h3>The performance review</h3>
-              <p>Both directions — giving one, receiving one. Run it before the meeting, then again after.</p>
+              <h3>When you notice the chest</h3>
+              <p>The body always tells you first. Tight jaw. Shallow breath. Don't push through. Sixteen seconds, then continue.</p>
             </div>
           </article>
         </div>
@@ -298,18 +278,18 @@
         <div class="related-list">
           <article class="related-row" data-scroll-fx>
             <div class="date">Apr 24</div>
-            <h3><a href="read-essay.html">The Rehearsal Tax — why founders mistake replay for reflection</a></h3>
+            <h3><a href="read-essay.html">The Rehearsal Tax — why founders mistake replay for reflection.</a></h3>
             <div class="tag">Essay</div>
           </article>
           <article class="related-row" data-scroll-fx>
-            <div class="date">Mar 17</div>
-            <h3><a href="read-essay.html">Drop the ego. Then read the email.</a></h3>
+            <div class="date">Mar 12</div>
+            <h3><a href="read-essay.html">Sixteen seconds you'll never get back if you don't take.</a></h3>
             <div class="tag">Practice</div>
           </article>
           <article class="related-row" data-scroll-fx>
-            <div class="date">Feb 28</div>
-            <h3><a href="read-essay.html">Cofounder conversations don't fail in the meeting.</a></h3>
-            <div class="tag">Story</div>
+            <div class="date">Feb 22</div>
+            <h3><a href="read-essay.html">Why the body files an objection before you do.</a></h3>
+            <div class="tag">Essay</div>
           </article>
         </div>
       </div>
@@ -320,12 +300,12 @@
          ============================================================ -->
     <section class="theme-dark" style="padding: 96px 0; text-align: center;">
       <div class="wrap" style="max-width: 720px;">
-        <span class="pkey" style="font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 24px;" data-scroll-fx>One down. Three to go.</span>
+        <span class="pkey" style="font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 24px;" data-scroll-fx>You ran one cycle.</span>
         <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 56px); color: var(--text-cream); letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 16px;" data-scroll-fx>Get the rest in the <em style="color: var(--accent-amber); font-style: italic; font-weight: 500;">Pause Playbook.</em></h2>
         <p style="color: var(--text-muted-dark); font-size: 16px; line-height: 1.55; margin: 0 0 36px;" data-scroll-fx>Free PDF. Twelve protocols. In your inbox in sixty seconds.</p>
-        <form class="form-row" style="margin: 0 auto;" action="#" method="post" data-source="jt-cta" data-scroll-fx>
-          <label for="email-jt" class="visually-hidden">Email address</label>
-          <input type="email" id="email-jt" name="email_address" placeholder="your@email.com" required />
+        <form class="form-row" style="margin: 0 auto;" action="#" method="post" data-source="federer-cta" data-scroll-fx>
+          <label for="email-fed" class="visually-hidden">Email address</label>
+          <input type="email" id="email-fed" name="email_address" placeholder="your@email.com" required />
           <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
         </form>
         <p class="form-disclaimer" style="text-align: center;">No spam ever. Unsubscribe in one click.</p>
@@ -376,6 +356,5 @@
   </footer>
 
   <script src="scroll-fx.js" defer></script>
-  <script src="interactives.js" defer></script>
 </body>
 </html>
