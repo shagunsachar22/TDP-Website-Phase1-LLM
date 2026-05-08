@@ -46,7 +46,9 @@
     /* ---------- 1 · HERO (dark) — full-bleed video, overlay headline ---------- */
     .hero {
       padding: 0;
+      /* vh fallback first, then dvh (dynamic viewport — accounts for iOS Safari's address bar). */
       min-height: 88vh;
+      min-height: 88dvh;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -156,8 +158,21 @@
       50%      { transform: translate(-50%, 4px); opacity: 0.95; }
     }
     @media (max-width: 768px) {
-      .hero { min-height: 80vh; }
+      .hero { min-height: 80vh; min-height: 80dvh; }
       .hero-content { padding: 0 var(--gutter) 56px; }
+      .hero-headline { font-size: clamp(40px, 11vw, 56px); line-height: 1; }
+      .hero-content .lead { font-size: 16px; }
+      .pivot h2 { font-size: clamp(48px, 14vw, 80px); }
+      .pullquote { padding: 96px 0 80px; }
+      .pullquote h2 { font-size: clamp(26px, 6.5vw, 36px); }
+      .pain { padding-bottom: 96px; }
+      .pivot { padding: 72px 0 96px; }
+      .reading { padding: 96px 0; }
+      .pause { padding: 96px 0; }
+      .testimonials { padding: 96px 0; }
+      .definition { padding: 96px 0 72px; }
+      .avi-intro { padding: 72px 0 96px; }
+      .newsletter { padding: 96px 0; }
     }
 
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
@@ -887,34 +902,34 @@
           <article class="reading-featured" data-scroll-fx="fade-right">
             <a href="read-essay.html"><div class="thumb" role="img" aria-label="Featured essay cover (placeholder)"></div></a>
             <div class="reading-tag">Essay</div>
-            <h3><a href="read-essay.html">Why the body files an objection before you do.</a></h3>
-            <p>The cofounder talk you've been avoiding for two weeks isn't a mind problem. It's a chest problem. Here's how to read the ledger before it reads you.</p>
-            <div class="reading-meta">7 min · <a href="read-essay.html">Read more →</a></div>
+            <h3><a href="read-essay.html">The Unicorn Trap.</a></h3>
+            <p>The story you tell yourself about scale — and why the body files an objection long before the cap table does.</p>
+            <div class="reading-meta">6 min · <a href="read-essay.html">Read more →</a></div>
           </article>
 
           <div class="reading-side">
             <article class="reading-card" data-scroll-fx="fade-left">
-              <div class="thumb-sm" role="img" aria-label="Practice thumbnail"></div>
-              <div>
-                <div class="reading-tag">Practice</div>
-                <h4><a href="read-essay.html">The 90 seconds you don't take after the bad call.</a></h4>
-                <p class="sub">Apr 18 · Djokovic's rule, ported to the founder's day.</p>
-              </div>
-            </article>
-            <article class="reading-card" data-scroll-fx="fade-left" style="--fx-delay: 0.1s;">
               <div class="thumb-sm" role="img" aria-label="Story thumbnail"></div>
               <div>
                 <div class="reading-tag">Story</div>
-                <h4><a href="read-essay.html">Djokovic's strings and the founder's laptop.</a></h4>
-                <p class="sub">Mar 30 · Why preparation is sacred and recovery is non-negotiable.</p>
+                <h4><a href="read-essay.html">Low Status Moat.</a></h4>
+                <p class="sub">Mar 17 · The work nobody photographs is the work that compounds.</p>
+              </div>
+            </article>
+            <article class="reading-card" data-scroll-fx="fade-left" style="--fx-delay: 0.1s;">
+              <div class="thumb-sm" role="img" aria-label="Essay thumbnail"></div>
+              <div>
+                <div class="reading-tag">Essay</div>
+                <h4><a href="read-essay.html">Does happiness feel 'different'?</a></h4>
+                <p class="sub">Apr 14 · Notes on contentment vs. winning — and which one is durable.</p>
               </div>
             </article>
             <article class="reading-card" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
-              <div class="thumb-sm" role="img" aria-label="Practice thumbnail"></div>
+              <div class="thumb-sm" role="img" aria-label="Story thumbnail"></div>
               <div>
-                <div class="reading-tag">Practice</div>
-                <h4><a href="practice-jackson-triangle.html">The Jackson Triangle — three taps before any hard message.</a></h4>
-                <p class="sub">Mar 17 · Drop ego. Name intent. See the other.</p>
+                <div class="reading-tag">Story</div>
+                <h4><a href="read-essay.html">When success still feels empty.</a></h4>
+                <p class="sub">Apr 28 · The hollow feeling after the exit no one warns founders about.</p>
               </div>
             </article>
           </div>

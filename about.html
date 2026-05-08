@@ -39,7 +39,14 @@
        =========================================================== */
 
     /* ---------- 1 · CINEMATIC HERO (dark) ---------- */
-    .about-hero { padding: 0; min-height: 92vh; position: relative; display: flex; align-items: stretch; }
+    .about-hero {
+      padding: 0;
+      min-height: 92vh;
+      min-height: 92dvh; /* iOS Safari: dynamic viewport — accounts for the address bar */
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
     .about-hero-bg {
       position: absolute;
       inset: 0;

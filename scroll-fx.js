@@ -10,6 +10,66 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Mobile menu ---------- */
+  // Inject the menu DOM if it doesn't exist (so it works on every page automatically)
+  let menu = document.querySelector('.mobile-menu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.className = 'mobile-menu';
+    menu.setAttribute('aria-hidden', 'true');
+    menu.innerHTML = `
+      <div class="mobile-menu-overlay" data-menu-close></div>
+      <aside class="mobile-menu-panel" role="dialog" aria-label="Site navigation">
+        <div class="mobile-menu-top">
+          <span class="brand">The Deliberate Pause</span>
+          <button class="mobile-menu-close" type="button" aria-label="Close menu" data-menu-close>×</button>
+        </div>
+        <ul class="mobile-menu-list">
+          <li><a href="read.html">Read</a></li>
+          <li>
+            <details>
+              <summary>Practice</summary>
+              <ul class="mobile-menu-sub">
+                <li><a href="pause.html">The Pause Playbook</a></li>
+                <li><a href="practice-federer-reset.html">Federer Reset</a></li>
+                <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
+                <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>
+                <li><a href="practice-90-second-recovery.html">90-Second Recovery</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+          <a href="pause.html" class="btn">Get the Playbook <span class="arrow">→</span></a>
+          <p class="micro">Every Monday · 11:11 AM</p>
+        </div>
+      </aside>
+    `;
+    document.body.appendChild(menu);
+  }
+
+  const toggleBtn = document.querySelector('.nav-mobile-toggle');
+  function openMenu() {
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+  menu.querySelectorAll('[data-menu-close]').forEach((el) => el.addEventListener('click', closeMenu));
+  // Tap any menu link → close (so the link still navigates after the slide-out)
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+  });
+
   /* ---------- Nav: condense on scroll ---------- */
   const nav = document.querySelector('.nav');
   if (nav) {

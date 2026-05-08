@@ -48,6 +48,11 @@
       user-select: none;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
+      /* iOS Safari: ensure taps register and don't flash with the default highlight */
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      font-family: inherit;
+      color: inherit;
     }
     .jt-corner:hover {
       border-color: var(--accent-amber);
