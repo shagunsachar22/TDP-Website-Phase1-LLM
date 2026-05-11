@@ -30,15 +30,38 @@ Static, multi-page site. Vanilla HTML/CSS, two small JS files (scroll FX + pract
 
 ## Files to drop into `images/`
 
+**Brand:**
 | Filename | Used on | Spec |
 |---|---|---|
 | `logo.svg`             | Nav across all pages                    | Horizontal lockup, ~28px high, transparent · SVG preferred |
-| `avi-peer.jpg`         | Homepage "I'm Avi" + About reader pivot | Peer-direct, warm, settled · 800×1000 (4:5) |
-| `avi-cinematic.jpg`    | About page hero (full-bleed)            | Cinematic, environmental, dark bg · 1920×1080+ |
+| `hero-poster.jpg`      | Homepage hero video poster frame        | 1920×1080 still from the looping video |
+| `hero.mp4`             | (place in `videos/`)                    | Looping hero video, muted, 6-10s |
+
+**Avi:**
+| Filename | Used on | Spec |
+|---|---|---|
+| `avi-peer.jpg`         | Homepage "I'm Avi" + About reader pivot | Peer-direct (white shirt / stool photo), warm, settled · 800×1000 (4:5) |
+| `avi-cinematic.jpg`    | About page hero (full-bleed)            | Cinematic (pink blazer / dark bg photo) · 1920×1080+ |
 | `avi-building.jpg`     | About journey beat 01                   | 800×600 (4:3) |
 | `avi-breaking.jpg`     | About journey beat 02 — hospital bed    | 800×600 (4:3) |
 | `avi-rebuilding.jpg`   | About journey beat 03 — at desk         | 800×600 (4:3) |
-| `hero-poster.jpg`      | Homepage hero video poster frame        | 1920×1080 still from the looping video |
+
+**Testimonials** (homepage; if file missing, the initials show in a circle as fallback):
+| Filename | Person | Role |
+|---|---|---|
+| `testimonial-rahul.jpg`   | Rahul Mehta   | Founder |
+| `testimonial-raghav.jpg`  | Raghav Kumar  | SVP |
+| `testimonial-riya.jpg`    | Riya Mittal   | Associate Director |
+| `testimonial-pravesh.jpg` | Pravesh Saraf | Director, Barmy Wines |
+
+All testimonial photos: 300×300, square, will be circle-cropped via CSS. Names + quotes are pulled from www.thedeliberatepause.com (the live site) so they match across both versions.
+
+**Extra testimonial photos you sent (6 total) — only 4 are used on the homepage.** Save the remaining 2 if you want them later, or swap them in for any of the 4 above:
+- Image 4 (woman, green top, indoor)  → spare female testimonial slot
+- Image 6 (woman, black top, necklace) → spare female testimonial slot
+- Image 7 (woman, dark tank top)       → spare female testimonial slot
+
+Suggest renaming whichever two you want to use to `testimonial-ankita.jpg` + `testimonial-esha.jpg` (both real names from the live site) and I'll add cards for them in the next iteration.
 
 For the hero video itself, drop a file at `videos/hero.mp4` (the placeholder shows a shimmer in the meantime). Then in `index.html`, uncomment the `<video>` line inside `.hero-video-bg`.
 

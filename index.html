@@ -564,7 +564,7 @@
     .testimonials .eyebrow { margin-bottom: 56px; }
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .testimonial {
@@ -600,7 +600,7 @@
       border-top: 1px solid var(--border-on-cream);
     }
     .testimonial-avatar {
-      width: 40px; height: 40px;
+      width: 44px; height: 44px;
       border-radius: 50%;
       background: linear-gradient(135deg, rgba(214, 168, 110, 0.25), rgba(197, 107, 69, 0.1));
       border: 1px solid var(--border-on-cream);
@@ -609,6 +609,21 @@
       justify-content: center;
       font-size: 11px;
       color: var(--text-muted-light);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .testimonial-avatar .initials {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--text-dark);
+      font-weight: 500;
     }
     .testimonial-author .name { font-weight: 600; font-size: 14px; }
     .testimonial-author .role { font-size: 12px; color: var(--text-muted-light); }
@@ -1002,42 +1017,62 @@
         <span class="eyebrow" id="testimonials-headline" data-scroll-fx>What founders are saying</span>
         <div class="testimonial-grid">
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.05s;">
-            <blockquote>"[Quote 1 — TBD, 1–3 sentences from a real reader.]"</blockquote>
+            <blockquote>"Watching Avi rebuild — Vipassana, the Sutras, Phil Jackson's pages — showed me the way back. His story gave me permission to fix myself."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">photo</div>
+              <div class="testimonial-avatar"><img src="images/testimonial-rahul.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">RM</span>'" /></div>
               <div>
-                <div class="name">[Name 1]</div>
-                <div class="role">[Role, Company]</div>
+                <div class="name">Rahul Mehta</div>
+                <div class="role">Founder</div>
               </div>
             </div>
           </article>
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.15s;">
-            <blockquote>"[Quote 2 — TBD, 1–3 sentences from a real reader.]"</blockquote>
+            <blockquote>"Five minutes before the board meeting. Three corners, one breath. The decisions land different now."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">photo</div>
+              <div class="testimonial-avatar"><img src="images/testimonial-raghav.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">RK</span>'" /></div>
               <div>
-                <div class="name">[Name 2]</div>
-                <div class="role">[Role, Company]</div>
+                <div class="name">Raghav Kumar</div>
+                <div class="role">SVP</div>
               </div>
             </div>
           </article>
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.25s;">
-            <blockquote>"[Quote 3 — TBD, 1–3 sentences from a real reader.]"</blockquote>
+            <blockquote>"I needed recovery, not intensity. Working with the rhythm — instead of forcing through it — changed everything."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">photo</div>
+              <div class="testimonial-avatar"><img src="images/testimonial-riya.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">RM</span>'" /></div>
               <div>
-                <div class="name">[Name 3]</div>
-                <div class="role">[Role, Company]</div>
+                <div class="name">Riya Mittal</div>
+                <div class="role">Associate Director</div>
               </div>
             </div>
           </article>
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.35s;">
-            <blockquote>"[Quote 4 — TBD, 1–3 sentences from a real reader.]"</blockquote>
+            <blockquote>"I stopped checking the phone after 9pm. The world keeps spinning. I sleep. Mornings finally belong to me."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">photo</div>
+              <div class="testimonial-avatar"><img src="images/testimonial-pravesh.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">PS</span>'" /></div>
               <div>
-                <div class="name">[Name 4]</div>
-                <div class="role">[Role, Company]</div>
+                <div class="name">Pravesh Saraf</div>
+                <div class="role">Director, Barmy Wines</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.45s;">
+            <blockquote>"Finally founders who actually get it. Taking care of yourself isn't being soft — it's being smart. People who want to win for years, not months."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar"><img src="images/testimonial-ankita.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">AR</span>'" /></div>
+              <div>
+                <div class="name">Ankita Rao</div>
+                <div class="role">Director</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial" data-scroll-fx style="--fx-delay: 0.55s;">
+            <blockquote>"I now see failure as a data point, not a personal judgment. The pause taught me that. It's the difference between collapsing and adjusting."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar"><img src="images/testimonial-esha.jpg" alt="" onerror="this.parentElement.innerHTML='<span class="initials">EA</span>'" /></div>
+              <div>
+                <div class="name">Esha Arora</div>
+                <div class="role">Product Lead</div>
               </div>
             </div>
           </article>

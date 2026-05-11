@@ -160,6 +160,49 @@
       .identity-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
+    /* ---------- Numbers band (dark) — Bartlett-style stats stack ---------- */
+    .numbers-band {
+      padding: 96px 0;
+      border-top: 1px solid var(--border-on-dark);
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .number-cell {
+      text-align: left;
+    }
+    .number-cell .figure {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      color: var(--accent-amber);
+      line-height: 0.95;
+      margin: 0 0 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .number-cell .figure .unit {
+      font-size: 0.55em;
+      letter-spacing: -0.015em;
+      color: rgba(214,168,110,0.7);
+      margin-left: 4px;
+    }
+    .number-cell .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .numbers-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    }
+
     /* ---------- 3 · CredentIAL BAND (dark) ---------- */
     .credential {
       padding: 80px 0 100px;
@@ -221,27 +264,40 @@
     .journey .eyebrow { color: var(--accent-amber); margin-bottom: 48px; }
     .journey-beat {
       display: grid;
-      grid-template-columns: 80px 1.2fr 1fr;
-      gap: 56px;
-      padding: 64px 0;
+      grid-template-columns: 100px 1.2fr 1fr;
+      gap: 64px;
+      padding: 88px 0;
       border-top: 1px solid var(--border-on-dark);
-      align-items: center;
+      align-items: start;
     }
     .journey-beat:last-child { border-bottom: 1px solid var(--border-on-dark); }
     .journey-num {
       font-family: var(--font-serif);
-      font-size: clamp(48px, 5vw, 72px);
+      font-size: clamp(56px, 6vw, 96px);
       color: var(--accent-amber);
-      line-height: 1;
+      line-height: 0.9;
       font-weight: 500;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.035em;
+      position: sticky;
+      top: 96px;
+    }
+    .journey-num .chapter {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted-dark);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.32em;
     }
     .journey-text h3 {
-      font-size: clamp(28px, 3vw, 40px);
+      font-size: clamp(32px, 3.6vw, 48px);
       color: var(--text-cream);
-      margin: 0 0 16px;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
+      margin: 0 0 24px;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
     }
     .journey-text .stage {
       font-family: var(--font-sans);
@@ -250,14 +306,26 @@
       text-transform: uppercase;
       color: var(--accent-amber);
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .journey-text p {
-      font-size: 15px;
-      line-height: 1.65;
+      font-size: 16px;
+      line-height: 1.7;
       color: var(--text-muted-dark);
-      margin: 0;
-      max-width: 480px;
+      margin: 0 0 16px;
+      max-width: 520px;
+    }
+    .journey-text .pull {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(20px, 2vw, 26px);
+      line-height: 1.4;
+      color: var(--accent-amber);
+      margin: 24px 0 16px;
+      padding-left: 24px;
+      border-left: 2px solid var(--accent-amber);
+      max-width: 520px;
+      letter-spacing: -0.012em;
     }
     .journey-img {
       aspect-ratio: 4 / 3;
@@ -534,6 +602,32 @@
     </section>
 
     <!-- ============================================================
+         NUMBERS BAND — Bartlett-style credential stack
+         ============================================================ -->
+    <section class="numbers-band theme-dark">
+      <div class="wrap">
+        <div class="numbers-grid">
+          <div class="number-cell" data-scroll-fx>
+            <div class="figure">740<span class="unit">people</span></div>
+            <div class="label">CreditVidya, scaled from zero</div>
+          </div>
+          <div class="number-cell" data-scroll-fx style="--fx-delay: 0.1s;">
+            <div class="figure">1<span class="unit">exit</span></div>
+            <div class="label">Acquired by CRED</div>
+          </div>
+          <div class="number-cell" data-scroll-fx style="--fx-delay: 0.2s;">
+            <div class="figure">2<span class="unit">breaks</span></div>
+            <div class="label">Slipped disc. Stroke.</div>
+          </div>
+          <div class="number-cell" data-scroll-fx style="--fx-delay: 0.3s;">
+            <div class="figure">11<span class="unit">rings</span></div>
+            <div class="label">The playbook I rebuilt on</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          3 · CREDENTIAL BAND
          ============================================================ -->
     <section class="credential theme-dark">
@@ -558,31 +652,37 @@
         <span class="eyebrow" id="journey-headline" data-scroll-fx>04 / Journey</span>
 
         <article class="journey-beat" data-scroll-fx>
-          <div class="journey-num">01</div>
+          <div class="journey-num"><span class="chapter">Chapter</span>01</div>
           <div class="journey-text">
             <div class="stage">Building</div>
             <h3>Kathmandu street kid. Wall Street. Then CreditVidya.</h3>
-            <p>740 people, acquired by CRED. Twenty years of climbing. The version of me from those years didn't pause. He sprinted.</p>
+            <p>I sold shoes on the streets of Kathmandu as a kid. Worked Wall Street as a young man. Then co-founded CreditVidya in India and scaled it to 740 people over a decade. CRED acquired us. Twenty years of climbing.</p>
+            <blockquote class="pull">The version of me from those years didn't pause. He sprinted.</blockquote>
+            <p>That version got the company built. He also got me broken. I just didn't know it yet.</p>
           </div>
           <div class="journey-img">building photo · 800×600<br />drop: <code>images/avi-building.jpg</code></div>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
-          <div class="journey-num">02</div>
+          <div class="journey-num"><span class="chapter">Chapter</span>02</div>
           <div class="journey-text">
             <div class="stage">Breaking</div>
             <h3>The body had been keeping score.</h3>
-            <p>The slip disc came first. Then the stroke. I just hadn't been reading the ledger. Building the company was visible. What it was costing me wasn't, until it was. Some founders break in the boardroom. I broke in the body. The company kept running. I didn't.</p>
+            <p>The slipped disc came first. Then the stroke. The body had been keeping score the entire time. I just hadn't been reading the ledger.</p>
+            <blockquote class="pull">Some founders break in the boardroom. I broke in the body. The company kept running. I didn't.</blockquote>
+            <p>Building the company had been visible. What it was costing me hadn't been — until it suddenly was. And then nothing else mattered.</p>
           </div>
           <div class="journey-img">hospital bed photo · proof "build without breaking" isn't a metaphor<br />drop: <code>images/avi-breaking.jpg</code></div>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
-          <div class="journey-num">03</div>
+          <div class="journey-num"><span class="chapter">Chapter</span>03</div>
           <div class="journey-text">
             <div class="stage">Re-building</div>
             <h3>The integration was the actual work.</h3>
-            <p>Vipassana. Patanjali's Yoga Sutras, read and re-read. Studying what Phil Jackson did with the Bulls. The integration was the actual work — not the side project. The Deliberate Pause is what I built once I knew that. I'm bringing both to founders.</p>
+            <p>Vipassana. Patanjali's Yoga Sutras, read and re-read. Studying what Phil Jackson did with the Bulls — and what George Mumford did with Kobe and Jordan. Federer's pre-serve breath. Annika Sörenstam's line in the grass.</p>
+            <blockquote class="pull">The integration was the actual work. Not the side project. Not the retreat. Not "after the company."</blockquote>
+            <p>The Deliberate Pause is what I built once I knew that. The protocols that won championships, translated for the founder's day. I'm bringing both to you.</p>
           </div>
           <div class="journey-img">contemporary Avi at desk · Yoga Sutras nearby · post-recovery<br />drop: <code>images/avi-rebuilding.jpg</code></div>
         </article>
