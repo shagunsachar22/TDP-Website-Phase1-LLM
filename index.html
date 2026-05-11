@@ -160,7 +160,8 @@
     @media (max-width: 768px) {
       .hero { min-height: 80vh; min-height: 80dvh; }
       .hero-content { padding: 0 var(--gutter) 56px; }
-      .hero-headline { font-size: clamp(40px, 11vw, 56px); line-height: 1; }
+      /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
+      .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
       .pivot h2 { font-size: clamp(48px, 14vw, 80px); }
       .pullquote { padding: 96px 0 80px; }
