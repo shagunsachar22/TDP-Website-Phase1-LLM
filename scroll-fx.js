@@ -10,6 +10,17 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Avatar fallback (used by <img onerror=...>) ---------- */
+  // When a testimonial photo file is missing, replace the <img> with the person's initials.
+  // Avoids HTML-attribute quote-escaping nightmares.
+  window.tdpAvatarFallback = function (img) {
+    if (!img || !img.parentElement) return;
+    const span = document.createElement('span');
+    span.className = 'initials';
+    span.textContent = img.dataset.initials || (img.alt || '?').slice(0, 2).toUpperCase();
+    img.replaceWith(span);
+  };
+
   /* ---------- Mobile menu ---------- */
   // Inject the menu DOM if it doesn't exist (so it works on every page automatically)
   let menu = document.querySelector('.mobile-menu');

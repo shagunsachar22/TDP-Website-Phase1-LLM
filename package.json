@@ -1,0 +1,19 @@
+{
+  "name": "tdp-site",
+  "version": "0.4.0",
+  "description": "The Deliberate Pause — static site",
+  "private": true,
+  "scripts": {
+    "dev": "npx http-server -p 8000 -s -c-1",
+    "qa": "playwright test",
+    "qa:update": "playwright test --update-snapshots",
+    "qa:report": "playwright show-report qa-reports",
+    "qa:mobile": "playwright test --project=iphone-14 --project=iphone-se --project=pixel-7",
+    "qa:desktop": "playwright test --project=desktop-1280 --project=desktop-1440 --project=desktop-1920",
+    "qa:safari": "playwright test --project=webkit-mac --project=iphone-14"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "http-server": "^14.1.1"
+  }
+}
