@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Clauddiction Trap — The Deliberate Pause</title>
+  <meta name="description" content="Claude makes me ship faster than ever but keeps me restless and pivoting. Starting again is not the same as building well. This essay explores the real cost of AI speed, the power of stillness, and why constant pivots are quietly destroying depth" />
+  <link rel="canonical" href="https://thedeliberatepause.com/read/the-clauddiction-trap" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Clauddiction Trap — The Deliberate Pause" />
+  <meta property="og:description" content="Claude makes me ship faster than ever but keeps me restless and pivoting. Starting again is not the same as building well. This essay explores the real cost of AI speed, the power of stillness, and why constant pivots are quietly destroying depth" />
+  <meta property="og:image" content="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69f768d7ce1e10ff05356ddb_social_preview_webp.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Clauddiction Trap",
+    "description": "Claude makes me ship faster than ever but keeps me restless and pivoting. Starting again is not the same as building well. This essay explores the real cost of AI speed, the power of stillness, and why constant pivots are quietly destroying depth",
+    "author": { "@type": "Person", "name": "Avi Agarwal" },
+    "datePublished": "2026-05-04",
+    "publisher": { "@type": "Organization", "name": "The Deliberate Pause" }
+  }
+  </script>
+
+  <style>
+    .article-header { padding: 64px 0 56px; text-align: center; }
+    .article-header .crumb { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); margin: 0 0 32px; display: inline-block; }
+    .article-header .crumb a { transition: color 0.2s var(--ease); }
+    .article-header .crumb a:hover { color: var(--cta); }
+    .article-header h1 { font-family: var(--font-serif); font-size: clamp(48px, 6.4vw, 96px); letter-spacing: -0.03em; line-height: 1; margin: 0 auto 24px; max-width: 16ch; }
+    .article-header .dek { font-family: var(--font-serif); font-style: italic; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: var(--text-muted-light); max-width: 680px; margin: 0 auto 32px; }
+    .article-header .byline { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); font-weight: 500; }
+    .article-header .byline .dot { color: var(--accent-amber); margin: 0 8px; }
+    .cover { max-width: 1080px; margin: 0 auto 80px; padding: 0 var(--gutter); }
+    .cover-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border-on-cream); border-radius: 8px; display: block; background: rgba(26, 26, 26, 0.06); }
+    .article-body { padding: 0 0 96px; }
+    .article-body .wrap { max-width: 720px; }
+    .article-body p, .article-body h2, .article-body h3, .article-body blockquote, .article-body ul, .article-body ol, .article-body figure { max-width: 720px; }
+    .article-body p, .article-body li { font-family: var(--font-serif); font-size: 19px; line-height: 1.7; color: var(--text-dark); letter-spacing: -0.005em; }
+    .article-body p { margin: 0 0 24px; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 22px; padding: 0; }
+    .article-body li { margin: 0 0 12px; padding-left: 4px; }
+    .article-body p:first-of-type::first-letter { font-family: var(--font-serif); font-size: 5em; float: left; line-height: 0.85; padding: 6px 14px 0 0; color: var(--accent-amber); font-weight: 600; }
+    .article-body h2 { font-family: var(--font-serif); font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--text-dark); margin: 56px 0 20px; }
+    .article-body blockquote { font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; color: var(--accent-amber); margin: 56px 0; padding: 0 0 0 32px; border-left: 2px solid var(--accent-amber); letter-spacing: -0.012em; max-width: 680px; }
+    .article-body figure { margin: 56px 0; }
+    .article-body figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border-on-cream); border-radius: 8px; }
+    .mid-subscribe { margin: 96px auto; padding: 56px 48px; background: var(--bg-dark); color: var(--text-cream); border-radius: 12px; text-align: center; max-width: 720px; }
+    .mid-subscribe .label { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 20px; }
+    .mid-subscribe h3 { font-family: var(--font-serif); font-size: clamp(28px, 3vw, 40px); color: var(--text-cream); margin: 0 0 8px; letter-spacing: -0.022em; line-height: 1.1; }
+    .mid-subscribe p { font-family: var(--font-sans); font-size: 14px; color: var(--text-muted-dark); line-height: 1.55; margin: 0 0 28px; }
+    .mid-subscribe .form-row { margin: 0 auto; max-width: 480px; }
+    .mid-subscribe .form-disclaimer { color: var(--text-muted-dark); }
+    .signature { max-width: 720px; margin: 56px auto 0; font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--text-muted-light); }
+    .share { max-width: 720px; margin: 80px auto 0; padding: 32px 0; border-top: 1px solid var(--border-on-cream); border-bottom: 1px solid var(--border-on-cream); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .share p { font-size: 14px; color: var(--text-muted-light); margin: 0; max-width: 280px; line-height: 1.55; }
+    .share-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .share-link { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.06em; font-weight: 500; padding: 10px 18px; border: 1px solid var(--border-on-cream); border-radius: 999px; color: var(--text-dark); transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease); display: inline-flex; align-items: center; gap: 6px; }
+    .share-link:hover { background: var(--bg-dark); color: var(--text-cream); border-color: var(--bg-dark); }
+    .keep-reading { padding: 96px 0 120px; }
+    .keep-reading-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+    .keep-reading h2 { font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.025em; line-height: 1.05; margin: 0; }
+    .keep-reading .all { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dark); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s var(--ease), color 0.3s var(--ease); }
+    .keep-reading .all:hover { gap: 14px; color: var(--cta); }
+    .keep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .keep-card .thumb { aspect-ratio: 4 / 3; background: linear-gradient(135deg, rgba(214,168,110,0.18), rgba(197,107,69,0.06)), rgba(26, 26, 26, 0.06); background-size: cover; background-position: center; border: 1px solid var(--border-on-cream); border-radius: 6px; margin-bottom: 20px; transition: transform 0.5s var(--ease-out); }
+    .keep-card:hover .thumb { transform: translateY(-4px); }
+    .keep-card h3 { font-size: 22px; letter-spacing: -0.015em; margin: 0 0 12px; line-height: 1.2; }
+    .keep-card h3 a { transition: color 0.2s var(--ease); }
+    .keep-card h3 a:hover { color: var(--cta); }
+    .keep-card p { font-size: 14px; color: var(--text-muted-light); line-height: 1.55; margin: 0 0 12px; }
+    .keep-card .meta { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); font-weight: 600; }
+    .toolkit-band { margin: 24px auto 96px; padding: 40px 48px; background: var(--bg-dark); color: var(--text-cream); border-radius: 12px; max-width: 1100px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; }
+    .toolkit-band .label { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; }
+    .toolkit-band h3 { font-family: var(--font-serif); color: var(--text-cream); font-size: clamp(20px, 2vw, 26px); margin: 0; letter-spacing: -0.015em; }
+    .toolkit-band h3 .sub { font-family: var(--font-sans); font-size: 13px; color: var(--text-muted-dark); letter-spacing: 0; font-weight: 400; display: block; margin-top: 4px; }
+    @media (max-width: 768px) { .keep-grid { grid-template-columns: 1fr; gap: 32px; } .toolkit-band { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 32px; } .mid-subscribe { padding: 40px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-logo-img" src="../../images/logo.svg" alt="" onerror="this.style.display='none'" />
+        <span class="nav-logo-text">The Deliberate Pause</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/read.html" aria-current="page">Read</a></li>
+          <li><a href="/pause.html">Practice</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+      <a href="/pause.html" class="btn btn-magnetic nav-cta">
+        <span class="label-long">Get the Playbook</span>
+        <span class="label-short">Get the Playbook</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+  <main class="theme-cream">
+    <header class="article-header">
+      <div class="wrap">
+        <span class="crumb"><a href="/read.html">← The Archive</a> / Story</span>
+        <h1 data-scroll-fx="fade-up-lg">The Clauddiction Trap</h1>
+        <p class="dek" data-scroll-fx style="--fx-delay: 0.1s;">Best founders think like artists, in stillness</p>
+        <div class="byline" data-scroll-fx style="--fx-delay: 0.2s;">Avi <span class="dot">·</span> 8 min read <span class="dot">·</span> May 4, 2026</div>
+      </div>
+    </header>
+    <div class="cover"><img class="cover-img" data-scroll-fx="zoom" src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69f768d7ce1e10ff05356ddb_social_preview_webp.webp" alt="The Clauddiction Trap" /></div>
+    <article class="article-body">
+      <div class="wrap">
+        <h2 data-scroll-fx>Best founders think like artists, in stillness</h2><p data-scroll-fx>I have been coding day and night, even though I claim never to have been hooked on a technology like this. I was late to Instagram, am still not on Pinterest, and skipped Snapchat entirely. But Claude has taken over my life in a way nothing else has. I have agents running across Claude, Codex, and Perplexity overnight while I sleep, and by morning there is a working prototype waiting for me that would have taken a quarter to build at CreditVidya. As a one-man army, I am shipping more than I did with a product manager and four engineers. The speed is real, and it is something I would not trade. But, it is also the fastest road to the oldest trap I know.</p><p data-scroll-fx>The trap is the shifting goalpost we set ourselves each time we think of a new pivot. And Clauddiction has made us even more susceptible to the trap, with the ease of trying out a new idea acting as a perfect bait. I hadn’t realised it until late March this year, when I felt something familiar. The shine of my current product had faded, and the next idea, the one I hadn&#x27;t started yet, was glowing at the edges of my attention with a warmth the current project no longer had. As my fingers moved to open a new terminal, I recognised the feeling with a clarity that stopped me mid-keystroke. This was not new. I had done this before, and I had done this to people.</p><p data-scroll-fx>When Sanjib, our head of data science, posted his tenth work anniversary on LinkedIn, his former teammates left a note under the photo: &quot;10 years. 1 company. Infinite pivots.&quot; I&#x27;m sure they meant it as a badge of honour, but it landed in my chest like a confession. </p><p data-scroll-fx>First at CreditVidya and then at Prefr, we pivoted through everything. Credit education. Financial fitness reports. Score improvement. The ScoreUp app. Fraud verification. Alternative data credit scoring. B2B Pay Later. Lending-as-a-service. Each new direction required the team to abandon what they&#x27;d built, reload a new mental model, and commit again with the same intensity, knowing, though nobody said it, that the next shift was already forming in my head.</p><p data-scroll-fx>Last week, I wrote about <a href="https://www.thedeliberatepause.com/newsletter/when-success-still-feels-empty">the rider and the elephant</a>, the rational mind and the instinctual body. The rider promises the elephant a reward for its effort. <em>Ek baar yeh ho jaaye, bus life set.</em> But instead of delivering, the rider changes the goal. The elephant learns that effort never leads to reward, and the broken pact between them leads to emptiness, exhaustion, and a hollowness that no achievement can fill. That essay was about what the broken pact does to one person. The rider, though, never stops at one person.</p><p data-scroll-fx>When you run a team, you become the rider for a much larger animal, the humans who load the priority you set and allocate themselves toward the outcome it promises. They are spending their elephant on you. They believe, when they start a project, that there is a reward at the end: a launch, a result, a number that will move, a resolution that lets them feel for one clean day that they pulled something off. That belief is the engine that keeps your startup running. The pact you have with them is the same pact your rider has with your elephant. Effort, in exchange for the reward that was promised. Not money. Not even praise, exactly. Closure. The knowledge that their work had meaning.</p><p data-scroll-fx>And every time you move the goalpost, you break the pact.</p><p data-scroll-fx>I have seen what that looks like at scale. Seven hundred people in a townhall. I am on stage announcing that we are shifting gears - a new direction, new priorities, new everything. Not everyone speaks up, but if you watch carefully, you can read the room through small gestures: a drop in posture, wandering eyes, the specific look of someone who has decided not to invest the part of themselves that actually matters. They still show up, still hit their metrics, but the ownership, the creative risk, the willingness to build something that might matter - all of that leaves without announcement..</p><h2 data-scroll-fx>The Goalpost Factory</h2><p data-scroll-fx>This is what clauddiction does when it scales. The solo founder&#x27;s restlessness multiplied across a team becomes an organisational condition. What felt like creative energy in a single builder becomes, at twenty people, a culture of bracing.</p><p data-scroll-fx>In June 2021, sixty-one former employees of BrewDog signed an open letter that detailed what it felt like to work for a man who could not stop changing his mind. They called themselves Punks With Purpose, a small revenge against the brand&#x27;s branding. Most of the letter was the usual catalogue of a hard culture: the long hours, the broken promises, the missing development. But the most telling line was about the daily emergencies. Staff had learned to brace each morning for a new pivot, a fresh &quot;everything has changed&quot; announcement from co-founder James Watt, sending the team scrambling in a new direction on a whim. The team did not call this leadership. But James Watt thought it was agility.</p><p data-scroll-fx>A friend of mine is living a quieter version of the same story. She builds premium footwear, think the Birkenstock of India. Real product, real traction, a brand people love. But every time we speak, there is a new initiative: an affordable label for a younger segment, a physical store, an Amazon channel, a collaboration targeting a different audience. Each move has a business case, and each one is smart in isolation, but with every new direction, the previous one gets deprioritised, which is a polite word for ‘abandoned while still technically alive’.</p><p data-scroll-fx>She is not careless. She is ambitious. And underneath, she is running a goalpost factory. James Watt ran his at a daily speed, and sixty-one people wrote a letter. I ran mine, pushing my team through pivot after pivot for seven years. Today, I know countless entrepreneurs, clauddictors, running the same factory at machine speed, alone in a room with AI, because we have lost the ability to tolerate stillness.</p><h2 data-scroll-fx>When Pivoting Is Right</h2><p data-scroll-fx>I need to defend the pivot because some of them saved my company. The lending pivot during COVID was not my nervous system talking. The B2B SaaS model had a structural ceiling visible in the numbers. The market was sending a real signal, and that pivot led to the CRED acquisition. The founder who cannot change direction dies. I believe that completely.</p><p data-scroll-fx>The problem is that the pivot your market demands and the pivot your nervous system demands look identical from the inside. Both feel urgent. Both come with a business case you can defend. You can wear &quot;strategic agility&quot; the way I used to wear &quot;I&#x27;m just very driven.&quot; But if your nervous system cannot tolerate stillness, then most of your reprioritisations are signals wearing market clothes. The market would have been fine with the priority you set last week. It’s just that you couldn&#x27;t sit with it.</p><p data-scroll-fx>Most of what we disguise as productivity is movement without depth. Real work happens when you sit with something long enough to find the layers underneath the surface. The entrepreneurs who build things that last are not the fastest ones. They are the ones who stay longest.</p>
+<h2 data-scroll-fx>The Smallest Honest Move</h2><p data-scroll-fx>UC Berkeley researchers found that when goals shift rapidly, the brain only partially adjusts to each new goal state, a phenomenon they call &quot;control adjustment cost.&quot; The reduction is 15 to 25 per cent of cognitive capacity per switch, not from fatigue but from the switching itself, as the brain attempts to run two incomplete programmes simultaneously, with neither getting full resources. You build faster but think thinner. Four prototypes sound like output, but each one consumed the cognitive depth that the others needed.</p><p data-scroll-fx>Goodall&#x27;s Change Volume Framework asks one question: what works well here, and what should we protect? Then it asks the leader to count how many goals have shifted in the last thirty, sixty, ninety days. And finally, to separate change doing something different from making something better. Once the change volume is a number, you can no longer mistake it for strategy. For me, that question becomes personal: how many things have I started in the last thirty days, and for each one, can I name the signal that triggered it, or was I running from the work that staying would require?</p><p data-scroll-fx>Leslie Perlow at Harvard found that banning interruptions during specific hours raised productivity 59 per cent in the morning and 65 per cent in the afternoon. What the intervention did was structural: it removed the leader&#x27;s ability to inject false urgency into the team&#x27;s working hours, building a fence around cognitive flow rather than trying to change the leader&#x27;s instincts. </p><p data-scroll-fx>My own answer lives in two rituals. Every morning, a distraction-free hour before any screen, writing down what has worked and what hasn&#x27;t. Every Sunday, two questions: if I tracked every priority change I made this quarter and showed it to my team, would they describe what I&#x27;m doing as leadership or as whiplash? For each goal shift in the last thirty days, can I name the external signal that triggered it, or was it my own restlessness?</p><h2 data-scroll-fx>Entrepreneurship Is in Staying</h2><p data-scroll-fx>Sanjib stayed ten years. He saw every pivot. What his note didn&#x27;t say - what nobody says out loud - is that infinite pivots is the opposite of what great work requires.</p><p data-scroll-fx>The best founders I know think like artists. They plan obsessively before the first line of code, before the first sample, before the first conversation with Claude. They treat the blank canvas as a decision that deserves weight. And once they start, they go deep, through the obvious layer, through the second layer, into the third, where the thing starts to reveal what it actually is. That is where the magic lives - in the staying.</p><p data-scroll-fx>The rider wants to start again. The artist knows that the work starts only after you have sat with it long enough to peel away what it isn&#x27;t.</p><p data-scroll-fx>The Deliberate Pause, the name of this series, the thing I am still learning, is not a rest between sprints. It is the gap the rider refuses to enter: between the idea and the build, between the build and the judgment, between the judgment and the abandonment. That gap is not a weakness. That gap is where everything real gets made.</p><p data-scroll-fx>I have a Superman cape. The question is whether I am building art or running from stillness.</p>
+        <aside class="mid-subscribe" data-scroll-fx>
+          <span class="label">Newsletter · Primary</span>
+          <h3>Read along on Mondays.</h3>
+          <p>5 minutes of Deliberate Pause, every Monday at 11:11.</p>
+          <form class="form-row" action="#" method="post" data-source="essay-mid">
+            <label for="email-mid" class="visually-hidden">Email address</label>
+            <input type="email" id="email-mid" name="email_address" placeholder="your email" required />
+            <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
+          </form>
+          <p class="form-disclaimer">No spam.</p>
+        </aside>
+        <p class="signature">— Avi</p>
+        <div class="share">
+          <p>Found this useful? Forward it to a founder who needs it.</p>
+          <div class="share-links">
+            <a class="share-link" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fthedeliberatepause.com%2Fread%2Fthe-clauddiction-trap&text=The%20Clauddiction%20Trap" target="_blank" rel="noopener">Share on X →</a>
+            <a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthedeliberatepause.com%2Fread%2Fthe-clauddiction-trap" target="_blank" rel="noopener">LinkedIn →</a>
+            <a class="share-link" href="#" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Link copied';return false;">Copy link →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <section class="keep-reading">
+      <div class="wrap">
+        <div class="keep-reading-header" data-scroll-fx>
+          <h2>Keep reading.</h2>
+          <a href="/read.html" class="all">All essays <span>→</span></a>
+        </div>
+        <div class="keep-grid">
+          <article class="keep-card" data-scroll-fx>
+            <a href="/read/the-hidden-cost-of-not-choosing-yourself/"><div class="thumb" style="background-image: linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.08)), url('https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/6a00d5007925d863935034d4_og_1200x630.webp');"></div></a>
+            <h3><a href="/read/the-hidden-cost-of-not-choosing-yourself/">The Hidden Cost of Not Choosing Yourself</a></h3>
+            <p>Why high achievers can confuse success with identity, and why not choosing yourself can become the most expensive decision of all.</p>
+            <div class="meta">8 min read · May 11, 2026</div>
+          </article>
+<article class="keep-card" data-scroll-fx style="--fx-delay: 0.1s;">
+            <a href="/read/when-success-still-feels-empty/"><div class="thumb" style="background-image: linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.08)), url('https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69ee6df77f6a120af9d1f16d_OG%20Image.webp');"></div></a>
+            <h3><a href="/read/when-success-still-feels-empty/">When Success Still Feels Empty</a></h3>
+            <p>Why high achievers can feel empty even after success, and how a 20-minute audit can reveal what’s really missing.</p>
+            <div class="meta">10 min read · April 27, 2026</div>
+          </article>
+<article class="keep-card" data-scroll-fx style="--fx-delay: 0.2s;">
+            <a href="/read/angry-young-vijays-disappointment/"><div class="thumb" style="background-image: linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.08)), url('https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69e4d2a06df622df6c389b0a_OG%20Image.webp');"></div></a>
+            <h3><a href="/read/angry-young-vijays-disappointment/">Angry Young Vijay’s Disappointment</a></h3>
+            <p>Why high-achievers turn disappointment into anger, and how that hidden emotion spills onto the people closest to them.</p>
+            <div class="meta">9 min read · April 20, 2026</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <aside class="toolkit-band" data-scroll-fx>
+      <span class="label">Or get the toolkit</span>
+      <h3>The Pause Playbook<span class="sub">Four sport-translated plays. Free PDF.</span></h3>
+      <a href="/pause.html" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></a>
+    </aside>
+  </main>
+  <footer class="footer theme-dark" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">The Deliberate Pause</div>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Tools and essays for startup founders on building companies without breaking themselves. Sourced from spiritual practice. Proven by sport.</p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Pause for 5 minutes.</h4>
+          <p class="sub">Every Monday, 11:11 am.</p>
+          <form class="form-row" action="#" method="post" data-source="footer">
+            <label for="email-footer" class="visually-hidden">Email address</label>
+            <input type="email" id="email-footer" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Read</h5><ul><li><a href="/read.html">All essays</a></li></ul></div>
+        <div><h5>Practice</h5><ul>
+          <li><a href="/pause.html">The Pause Playbook</a></li>
+          <li><a href="/practice-federer-reset.html">Federer Reset</a></li>
+          <li><a href="/practice-jackson-triangle.html">Jackson Triangle</a></li>
+          <li><a href="/practice-think-box-play-box.html">Think Box · Play Box</a></li>
+          <li><a href="/practice-90-second-recovery.html">90-Second Recovery</a></li>
+        </ul></div>
+        <div><h5>About</h5><ul><li><a href="/about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li><li><a href="https://twitter.com/" rel="noopener">X</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi (Abhishek Agarwal) · Built in [location]</div>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../../scroll-fx.js" defer></script>
+</body>
+</html>
