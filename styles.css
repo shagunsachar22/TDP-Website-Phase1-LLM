@@ -716,9 +716,10 @@ body.menu-open { overflow: hidden; }
   line-height: 1;
   font-weight: 600;
   margin: 0 auto 28px;
-  max-width: min(15ch, 100%);
+  max-width: min(20ch, 100%);
 }
 .practice-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+.practice-hero h1 .keep-together { white-space: nowrap; }
 .theme-dark.practice-hero h1 { color: var(--text-cream); }
 .practice-hero .sub {
   font-family: var(--font-serif);
