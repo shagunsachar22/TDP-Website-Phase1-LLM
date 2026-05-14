@@ -544,6 +544,7 @@ async function main() {
     acc[issue.category] = (acc[issue.category] || 0) + 1;
     return acc;
   }, {});
+  read = read.replace(/\n\s*<p class="meta">Every Monday, 11:11 am\.[\s\S]*?<\/p>/, "");
   read = read.replace(/data-counter="\d+"/, `data-counter="${imported.length}"`);
   read = read.replace(/<span class="counter"[^>]*>\d+<\/span> issues so far/, `<span class="counter" data-counter="${imported.length}">0</span> issues imported`);
   read = read.replace(/      background-size: cover;\n      background-position: center;\n/g, "");
