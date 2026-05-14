@@ -77,19 +77,19 @@
 
     .try-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
       gap: 80px;
       align-items: center;
     }
 
     .try-left h1 {
       font-family: var(--font-serif);
-      font-size: clamp(48px, 6vw, 92px);
+      font-size: clamp(44px, 5.4vw, 82px);
       color: var(--text-cream);
       letter-spacing: -0.025em;
       line-height: 0.98;
       margin: 0 0 32px;
-      max-width: 13ch;
+      max-width: min(16ch, 100%);
     }
     .try-left h1 em {
       color: var(--accent-amber);
@@ -223,9 +223,13 @@
     .try-cta .form-row { max-width: none; }
     .try-cta .form-disclaimer { color: var(--text-muted-dark); }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1180px) {
       .try-grid { grid-template-columns: 1fr; gap: 80px; }
       .breathe-stage { max-width: 360px; }
+      .try-left h1 { max-width: 18ch; }
+    }
+    @media (max-width: 768px) {
+      .try-left h1 { font-size: clamp(38px, 10vw, 56px); max-width: 100%; }
     }
 
     /* ---------- 2 · WHAT YOU JUST DID (cream) ---------- */
@@ -286,7 +290,7 @@
 
     .play-row {
       display: grid;
-      grid-template-columns: 64px 1fr auto;
+      grid-template-columns: 64px minmax(0, 1fr) auto;
       gap: 24px;
       align-items: center;
       padding: 28px 0;

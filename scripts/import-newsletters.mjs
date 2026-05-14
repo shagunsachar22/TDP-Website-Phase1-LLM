@@ -275,7 +275,7 @@ function articlePage(issue, allIssues) {
     .article-header .crumb { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); margin: 0 0 32px; display: inline-block; }
     .article-header .crumb a { transition: color 0.2s var(--ease); }
     .article-header .crumb a:hover { color: var(--cta); }
-    .article-header h1 { font-family: var(--font-serif); font-size: clamp(48px, 6.4vw, 96px); letter-spacing: -0.03em; line-height: 1; margin: 0 auto 24px; max-width: 16ch; }
+    .article-header h1 { font-family: var(--font-serif); font-size: clamp(44px, 5.8vw, 84px); letter-spacing: -0.03em; line-height: 1; margin: 0 auto 24px; max-width: min(20ch, 100%); text-wrap: balance; }
     .article-header .dek { font-family: var(--font-serif); font-style: italic; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: var(--text-muted-light); max-width: 680px; margin: 0 auto 32px; }
     .article-header .byline { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); font-weight: 500; }
     .article-header .byline .dot { color: var(--accent-amber); margin: 0 8px; }
@@ -322,7 +322,7 @@ function articlePage(issue, allIssues) {
     .toolkit-band .label { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; }
     .toolkit-band h3 { font-family: var(--font-serif); color: var(--text-cream); font-size: clamp(20px, 2vw, 26px); margin: 0; letter-spacing: -0.015em; }
     .toolkit-band h3 .sub { font-family: var(--font-sans); font-size: 13px; color: var(--text-muted-dark); letter-spacing: 0; font-weight: 400; display: block; margin-top: 4px; }
-    @media (max-width: 768px) { .keep-grid { grid-template-columns: 1fr; gap: 32px; } .toolkit-band { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 32px; } .mid-subscribe { padding: 40px 24px; } }
+    @media (max-width: 768px) { .article-header h1 { font-size: clamp(38px, 10vw, 56px); max-width: 100%; } .keep-grid { grid-template-columns: 1fr; gap: 32px; } .toolkit-band { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 32px; } .mid-subscribe { padding: 40px 24px; } }
   </style>
 </head>
 <body>
@@ -560,6 +560,10 @@ async function main() {
   read = read.replace(/Essays <span class="count">\d+<\/span>/, `Essays <span class="count">${counts.Essay || 0}</span>`);
   read = read.replace(/Practice <span class="count">\d+<\/span>/, `Practice <span class="count">${counts.Practice || 0}</span>`);
   read = read.replace(/Notes <span class="count">\d+<\/span>/, `Notes <span class="count">0</span>`);
+  read = read.replace(/font-size: clamp\(56px, 8vw, 116px\);([\s\S]*?)max-width: 14ch;/, "font-size: clamp(48px, 7.4vw, 104px);$1max-width: min(16ch, 100%);");
+  read = read.replace(/grid-template-columns: 1fr 320px;/, "grid-template-columns: minmax(0, 1fr) 320px;");
+  read = read.replace(/grid-template-columns: 200px 1fr;/, "grid-template-columns: 200px minmax(0, 1fr);");
+  read = read.replace(/\.essay-row \{ grid-template-columns: 96px 1fr; gap: 16px; \}/, ".essay-row { grid-template-columns: 1fr; gap: 18px; }\n      .essay-row .thumb { max-width: 180px; }\n      .essay-row:hover { padding-left: 0; }");
   read = read.replace(/(\.essay-row \.thumb \{[\s\S]*?background:[\s\S]*?;)([\s\S]*?border: 1px solid var\(--border-on-cream\);)/, "$1\n      background-size: cover;\n      background-position: center;$2");
   read = read.replace(
     /(<div class="filter-row"[\s\S]*?<\/div>\s*)[\s\S]*?(\s*<div class="end-of-archive">)/,

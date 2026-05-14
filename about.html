@@ -98,11 +98,11 @@
     .about-hero .eyebrow { color: var(--accent-amber); margin-bottom: 32px; }
     .about-hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(56px, 8vw, 116px);
+      font-size: clamp(48px, 7.2vw, 104px);
       color: var(--text-cream);
       line-height: 0.95;
       letter-spacing: -0.03em;
-      max-width: 14ch;
+      max-width: min(16ch, 100%);
       margin: 0 0 32px;
     }
     .about-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
@@ -127,7 +127,7 @@
     .identity { padding: 140px 0; }
     .identity-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
       gap: 80px;
       align-items: start;
     }
@@ -211,7 +211,7 @@
     .credential .wrap { max-width: 880px; }
     .credential-card {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 200px minmax(0, 1fr);
       gap: 40px;
       align-items: center;
       padding: 32px;
@@ -264,7 +264,7 @@
     .journey .eyebrow { color: var(--accent-amber); margin-bottom: 48px; }
     .journey-beat {
       display: grid;
-      grid-template-columns: 100px 1.2fr 1fr;
+      grid-template-columns: 100px minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 64px;
       padding: 88px 0;
       border-top: 1px solid var(--border-on-dark);
@@ -385,7 +385,7 @@
     .pivot-reader .wrap { max-width: 1100px; }
     .pivot-reader-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       gap: 80px;
       align-items: center;
     }
@@ -478,7 +478,7 @@
     }
     .doors-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
     }
     .door {

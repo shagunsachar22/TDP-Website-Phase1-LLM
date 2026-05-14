@@ -102,6 +102,8 @@ h1, h2, h3, h4 {
   margin: 0 0 24px;
   /* iOS Safari font-rendering refinement */
   text-rendering: optimizeLegibility;
+  text-wrap: balance;
+  overflow-wrap: normal;
 }
 h1 { font-size: clamp(44px, 7vw, 96px); letter-spacing: -0.032em; }
 h2 { font-size: clamp(30px, 4.5vw, 56px); letter-spacing: -0.026em; }
@@ -120,6 +122,20 @@ h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.25; letter-spacing: -0.01
   max-width: 640px;
   margin: 0;
   letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+}
+
+[class*="grid"] > *,
+[class*="row"] > *,
+[class*="card"] > *,
+.wrap > * {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -695,11 +711,12 @@ body.menu-open { overflow: hidden; }
 }
 .practice-hero h1 {
   font-family: var(--font-serif);
-  font-size: clamp(48px, 6.4vw, 92px);
+  font-size: clamp(44px, 5.8vw, 84px);
   letter-spacing: -0.028em;
   line-height: 1;
   font-weight: 600;
-  margin: 0 0 28px;
+  margin: 0 auto 28px;
+  max-width: min(15ch, 100%);
 }
 .practice-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
 .theme-dark.practice-hero h1 { color: var(--text-cream); }
@@ -771,6 +788,8 @@ body.menu-open { overflow: hidden; }
   max-width: 640px;
 }
 @media (max-width: 768px) {
+  .practice-hero { padding: 80px 0 72px; }
+  .practice-hero h1 { font-size: clamp(34px, 9vw, 52px); max-width: 100%; }
   .origin-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 

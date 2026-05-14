@@ -46,13 +46,13 @@
     }
     .playbook-hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(56px, 8vw, 116px);
+      font-size: clamp(48px, 7.4vw, 104px);
       color: var(--accent-amber);
       letter-spacing: -0.03em;
       line-height: 0.95;
       font-weight: 600;
       margin: 0 0 40px;
-      max-width: 14ch;
+      max-width: min(16ch, 100%);
       margin-left: auto;
       margin-right: auto;
     }
@@ -70,7 +70,7 @@
     .archive { padding: 120px 0 140px; }
     .archive-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: minmax(0, 1fr) 320px;
       gap: 80px;
       align-items: start;
     }
@@ -138,7 +138,7 @@
     /* Essay rows */
     .essay-row {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 200px minmax(0, 1fr);
       gap: 32px;
       align-items: start;
       padding: 40px 0;
@@ -261,7 +261,9 @@
       .archive-sidebar { position: static; }
     }
     @media (max-width: 600px) {
-      .essay-row { grid-template-columns: 96px 1fr; gap: 16px; }
+      .essay-row { grid-template-columns: 1fr; gap: 18px; }
+      .essay-row .thumb { max-width: 180px; }
+      .essay-row:hover { padding-left: 0; }
     }
   </style>
 </head>
