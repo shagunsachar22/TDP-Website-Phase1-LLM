@@ -164,7 +164,6 @@
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
-      .pivot h2 { font-size: clamp(48px, 14vw, 80px); }
       .pullquote { padding: 96px 0 80px; }
       .pullquote h2 { font-size: clamp(26px, 6.5vw, 36px); }
       .pain { padding-bottom: 96px; }
@@ -176,7 +175,6 @@
       .avi-intro { padding: 72px 0 96px; }
       .newsletter { padding: 96px 0; }
     }
-
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
     .logobar { padding: 56px 0 88px; border-top: 1px solid var(--border-on-dark); }
     .logobar-grid {
@@ -309,12 +307,16 @@
     }
     .pivot h2 {
       font-family: var(--font-serif);
-      font-size: clamp(64px, 11vw, 144px);
+      font-size: 104px;
       color: var(--accent-amber);
       letter-spacing: -0.035em;
       line-height: 0.95;
       font-weight: 600;
       margin: 0 0 56px;
+    }
+    .pivot h2 .line {
+      display: block;
+      white-space: nowrap;
     }
     .pivot .sub {
       font-size: clamp(16px, 1.4vw, 19px);
@@ -324,6 +326,15 @@
     }
     .pivot .form-row { margin: 0 auto; }
     .pivot .form-disclaimer { text-align: center; }
+    @media (max-width: 768px) {
+      .pivot h2 { font-size: 68px; }
+    }
+    @media (max-width: 600px) {
+      .pivot h2 { font-size: 46px; }
+    }
+    @media (max-width: 420px) {
+      .pivot h2 { font-size: 36px; letter-spacing: -0.028em; }
+    }
 
     /* ---------- 7 · WHAT OTHER FOUNDERS ARE READING (cream) ---------- */
     .reading { padding: 120px 0; border-top: 1px solid var(--border-on-cream); }
@@ -409,9 +420,13 @@
     .pause { padding: 140px 0 140px; }
     .pause-grid {
       display: grid;
-      grid-template-columns: 5fr 7fr;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
       gap: 64px;
       align-items: start;
+    }
+    .pause-left,
+    .protocol-grid {
+      min-width: 0;
     }
     .pause-left h2 {
       color: var(--text-cream);
@@ -452,6 +467,7 @@
       transition: background 0.4s var(--ease), border-color 0.4s var(--ease), transform 0.4s var(--ease);
       position: relative;
       overflow: hidden;
+      min-width: 0;
     }
     .protocol-card::before {
       content: "";
@@ -553,9 +569,13 @@
       background: var(--accent-amber);
       box-shadow: 0 0 8px rgba(214, 168, 110, 0.7);
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1180px) {
       .pause-grid { grid-template-columns: 1fr; gap: 56px; }
-      .protocol-grid { grid-template-columns: repeat(2, 1fr); }
+      .protocol-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .pause-left .lead { max-width: 620px; }
+    }
+    @media (max-width: 900px) {
+      .protocol-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 600px) {
       .protocol-grid { grid-template-columns: 1fr; }
@@ -897,7 +917,7 @@
     <section class="pivot theme-cream" aria-labelledby="pivot-headline">
       <div class="wrap">
         <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
-        <h2 id="pivot-headline" class="reveal-words">But yours doesn't have to.</h2>
+        <h2 id="pivot-headline" data-scroll-fx="fade-up-lg"><span class="line">But yours</span><span class="line">doesn't have to.</span></h2>
         <p class="sub" data-scroll-fx style="--fx-delay: 0.7s;">The Pause is the highest-leverage move in a founder's day.</p>
 
         <form class="form-row" action="#" method="post" data-source="pivot" data-scroll-fx style="--fx-delay: 0.85s;">
