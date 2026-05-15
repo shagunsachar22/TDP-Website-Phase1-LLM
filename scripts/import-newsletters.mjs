@@ -341,6 +341,7 @@ function articlePage(issue, allIssues) {
     <article class="article-body">
       <div class="wrap">
         ${issue.body}
+        <p class="signature">— Avi</p>
         <aside class="mid-subscribe" data-scroll-fx>
           <span class="label">Newsletter · Primary</span>
           <h3>Read along on Mondays.</h3>
@@ -352,7 +353,6 @@ function articlePage(issue, allIssues) {
           </form>
           <p class="form-disclaimer">No spam.</p>
         </aside>
-        <p class="signature">— Avi</p>
         <div class="share">
           <p>Found this useful? Forward it to a founder who needs it.</p>
           <div class="share-links">
