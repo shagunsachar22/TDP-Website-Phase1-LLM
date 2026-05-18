@@ -50,6 +50,8 @@ This memo synthesizes the following uploaded/reviewed artifacts:
 
 Important caveat: not every CSV has CPC values for every keyword. Where CPC exists, it should be treated as directional commercial-intent evidence, not as the only decision rule. Some high-fit terms have low or missing CPC because they are informational, early-category, or not yet advertiser-saturated.
 
+India-first CPC rule: because Phase 1 is built for Indian builders, **India volume and India CPC should be the primary demand/commercial-intent filter**. US CPC is useful only as secondary context, especially for future global expansion or for spotting high-intent long-tail ideas that may later travel. Do not let high US CPC override weak India fit.
+
 Latest-input caveat: the newer keyword-pipeline change log keeps a broader raw data universe than the editorial strategy uses. For example, overthinking and loneliness are kept in the raw pipeline for discovery, but the current Phase 1 editorial emphasis remains the six builder-identity territories unless Avi explicitly reprioritizes them.
 
 ---
@@ -105,49 +107,57 @@ Implication for word choice:
 
 ---
 
-## 5. CPC and Volume Signals
+## 5. India-First CPC and Volume Signals
+
+The first draft of this memo included several US CPC examples because the data tables exposed both geos. That should not drive Phase 1 decisions. The corrected rule is:
+
+1. **India volume first:** is this a phrase Indian builders actually search?
+2. **India CPC second:** is there commercial-intent signal in India?
+3. **Brand fit third:** does the term map to identity work for builders, not generic self-help?
+4. **US CPC fourth:** useful context only, not the deciding factor.
 
 ### 5.1 Identity / ICP Vocabulary
 
 These terms help decide who the site says it is for.
 
-| Keyword | India vol | US vol | India CPC | US CPC | Copy implication |
+| Keyword | India vol | India CPC | US vol | US CPC | India-first copy implication |
 |---|---:|---:|---:|---:|---|
-| entrepreneur | 246,000 | 368,000 | $1.57 | $19.59 | Huge demand, high US commercial intent, but generic. Use in FAQ/body, not as the brand’s core identity. |
-| freelancer | 450,000 | 110,000 | $0.31 | $4.15 | High volume but too broad. Not the primary ICP word. |
-| founder | 33,100 | 74,000 | $1.14 | $4.39 | Stronger precision than entrepreneur. Good for headlines and navigation. |
-| builder | 33,100 | 49,500 | $0.83 | $6.44 | Lower than entrepreneur but more ownable and aligned with Avi’s language. |
-| creator | 60,500 | 33,100 | $0.41 | $3.71 | Useful secondary audience, but not the lead identity. |
-| startup founder | 590 | 590 | $1.54 | $17.40 | Low volume, high intent. Use in FAQ/schema and specific pages. |
-| indie hacker | 5,400 | 3,600 | $1.35 | $24.46 | High commercial intent, niche adjacent. Useful if TDP later wants solo-builder content. |
-| tech founder | 170 | 260 | — | $28.37 | Low volume, high-intent edge term. Good for long-tail support, not homepage. |
-| post-exit founder | 10 | 210 | — | $44.60 | Very low volume but extremely high commercial intent. Good for future premium/post-output pages. |
+| entrepreneur | 246,000 | $1.57 | 368,000 | $19.59 | Strongest broad India signal, but generic. Use in FAQ/body/schema, not as the only brand identity. |
+| founder | 33,100 | $1.14 | 74,000 | $4.39 | Best balance of India fit, precision, and brand credibility. Use prominently. |
+| builder | 33,100 | $0.83 | 49,500 | $6.44 | Strong brand-language term with decent India demand. Use as emotional ICP language. |
+| business owner | 2,400 | $5.26 | 9,900 | $15.39 | High India CPC, but less startup-specific. Useful for expansion, not homepage lead. |
+| digital entrepreneur | 2,900 | $1.72 | 480 | $20.77 | India-relevant digital-builder phrase. Useful for long-tail or FAQ. |
+| startup founder | 590 | $1.54 | 590 | $17.40 | Low volume but good India intent. Use for specific pages/schema, not broad homepage target. |
+| creator | 60,500 | $0.41 | 33,100 | $3.71 | High India volume, but broader than TDP’s main founder lens. Keep secondary. |
+| freelancer | 450,000 | $0.31 | 110,000 | $4.15 | Huge India volume but too broad/low-fit. Avoid as a primary ICP word. |
+| post-exit founder | 10 | — | 210 | $44.60 | US-high-CPC but weak India signal. Defer unless building a premium post-exit page. |
 
 Decision:
 
-- Lead with **founders** and **builders** because they balance search legibility with brand precision.
-- Use **entrepreneur** where SEO needs breadth, especially FAQ and schema.
+- Lead with **founders** and **builders** because they balance India search legibility with brand precision.
+- Use **entrepreneur** where SEO needs Indian breadth, especially FAQ and schema.
 - Avoid making **freelancer** or **creator** the main homepage term unless a specific future page is built for those audiences.
+- Defer US-high-CPC / India-low-volume terms such as **post-exit founder** until a future premium or post-output vertical.
 
 ### 5.2 Mental Framework Vocabulary
 
 These terms make the method credible to a rational founder.
 
-| Keyword | India vol | US vol | India CPC | US CPC | Copy implication |
+| Keyword | India vol | India CPC | US vol | US CPC | India-first copy implication |
 |---|---:|---:|---:|---:|---|
-| psychology | 450,000 | 673,000 | $0.69 | $12.90 | Supports “founder psychology” as a category door. |
-| emotional intelligence | 60,500 | 450,000 | $0.92 | $2.25 | High volume but corporate-coded. Use sparingly. |
-| strategic planning | 18,100 | 301,000 | $2.51 | $9.87 | Useful for decision-making context, but not TDP’s emotional core. |
-| conflict resolution | 18,100 | 301,000 | $0.95 | $5.97 | Useful for practice pages and cofounder/team moments. |
-| cognitive dissonance | 18,100 | 246,000 | $0.01 | $1.68 | Strong explanatory scaffold; not a conversion term. |
-| imposter syndrome | 33,100 | 201,000 | $0.08 | $1.30 | Huge pain doorway; likely a cornerstone SEO topic. |
-| decision making | 27,100 | 18,100 | $0.45 | $11.67 | Strong performance language. Use in outcomes. |
-| decision fatigue | 880 | 6,600 | — | $7.73 | Good bridge between internal state and founder performance. |
-| decision making under stress | low volume | low volume | — | $30.84 | Low search volume, high-intent phrase. Useful for page sections and LLM answers. |
+| psychology | 450,000 | $0.69 | 673,000 | $12.90 | Strong India demand; supports “founder psychology,” though the term is broad. |
+| emotional intelligence | 60,500 | $0.92 | 450,000 | $2.25 | High India volume but corporate-coded. Use as scaffolding, not brand center. |
+| strategic planning | 18,100 | $2.51 | 301,000 | $9.87 | Stronger India CPC; useful in decision-making and founder operating-context copy. |
+| conflict resolution | 18,100 | $0.95 | 301,000 | $5.97 | Useful for cofounder/team pressure and Jackson Triangle framing. |
+| structured decision making | 40,500 | $1.00 | 9,900 | $1.38 | Good India signal for “clearer decisions” language. |
+| decision making models | 1,000 | $7.69 | 2,400 | $7.95 | High India CPC but more framework/search-education coded. Good for future explainer, not homepage. |
+| cognitive dissonance | 18,100 | $0.01 | 246,000 | $1.68 | Strong explanatory scaffold; weak India commercial signal. |
+| imposter syndrome | 33,100 | $0.08 | 201,000 | $1.30 | Huge India volume; weak CPC but high brand fit. Still a cornerstone pain topic. |
+| decision making | 27,100 | $0.45 | 18,100 | $11.67 | Strong performance language. Use in outcomes. |
 
 Decision:
 
-- Use **founder psychology** because “psychology” has massive demand and lets TDP avoid clinical mental-health coding.
+- Use **founder psychology** because “psychology” has massive India demand and lets TDP avoid clinical mental-health coding.
 - Use **decisions under pressure** because it turns inner work into a performance outcome.
 - Use **identity work** for depth, but define it clearly because it can sound abstract.
 
@@ -155,23 +165,22 @@ Decision:
 
 Promise terms should connect pain to the outcome.
 
-| Keyword | Combined volume | CPC signal | Copy implication |
-|---|---:|---:|---|
-| how to break bad habits | 23,500 | US CPC $3.02 | High demand but self-improvement-coded. TDP can reference habits, but should not become habit content. |
-| decision fatigue | 7,480 | US CPC $7.73 | Strong supporting term for founder clarity and overload pages. |
-| how to build self-confidence | 6,500 | India CPC $1.74 / US CPC $2.19 | Useful for confidence/validation content, but avoid generic confidence-advice tone. |
-| know yourself | 2,180 | India CPC $0.28 / US CPC $7.17 | Good spiritual/identity bridge term. |
-| how to overcome fear of failure | 980 | US CPC $4.12 | Direct TDP-fit cornerstone topic. |
-| how to overcome self-doubt | 530 | India CPC $3.14 / US CPC $5.52 | Good pain doorway with commercial signal. |
-| how to improve self-awareness | 620 | US CPC $7.68 | Good FAQ/glossary support term. |
-| decisions under pressure | 260 | US CPC $4.88 | Low volume but high brand fit. Use as outcome language. |
-| what to do when business fails | 50 | US CPC $7.54 | Tiny volume, high-intent. Good for future post-failure essay/FAQ. |
+| Keyword | India volume | India CPC | US CPC | India-first implication |
+|---|---:|---:|---:|---|
+| how to build self-confidence | 3,600 | $1.74 | $2.19 | Best India signal in this promise set; use for validation/self-image content, but keep founder-specific. |
+| how to overcome self-doubt | 210 | $3.14 | $5.52 | Small volume but strong India CPC and strong brand fit. Good supporting page/FAQ phrase. |
+| how to change my mindset | 140 | $1.88 | $2.93 | Useful as a bridge phrase, but avoid generic mindset content. |
+| know yourself | 880 | $0.28 | $7.17 | Good identity/spiritual bridge; India CPC is modest, so use as supporting language. |
+| understanding yourself | 210 | $0.37 | $2.53 | Supporting self-awareness phrase, not a main target. |
+| how to improve decision making skills | 210 | $0.16 | $1.16 | Lower commercial signal in India, but strong conceptual fit for “better decisions under pressure.” |
+| how to improve self-awareness | 140 | $0.01 | $7.68 | US signal exists, but India CPC is weak. Use only as glossary/FAQ support. |
+| what to do when business fails | low | — | $7.54 | US-high, India-weak. Defer unless Avi wants a post-failure founder essay. |
 
 Decision:
 
 - The homepage should not over-index on “confidence,” “habits,” or “self-awareness” because those pull toward generic self-help.
 - It should use them as internal page topics, FAQ answers, or article subheads.
-- The strongest promise language remains: **better decisions under pressure** and **ambition without suffering**.
+- The strongest promise language remains: **better decisions under pressure** and **ambition without suffering**, but India CPC suggests near-term supporting copy should also include **self-confidence**, **self-doubt**, **career path**, **post mortem**, and **validation** where they fit naturally.
 
 ---
 

@@ -12,6 +12,8 @@ The new inputs support the current Phase 1 direction: no lead magnet as the laun
 
 They do not suggest going back to the old lead-magnet-led homepage. The large research archive contains several older playbook and wireframe specs, but Avi’s newer direction is clearer: Phase 1 should prioritize SEO structure and LLM legibility before the lead magnet.
 
+Important correction: keyword prioritization should use **India volume and India CPC first**. US CPC should be treated as secondary context only. The ICP is Indian builders, so US-high-CPC terms should not drive Phase 1 page selection unless the India signal and brand fit are also strong.
+
 ## Changes Worth Making Now
 
 | Finding | Phase 1 implication | Status |
@@ -21,6 +23,7 @@ They do not suggest going back to the old lead-magnet-led homepage. The large re
 | Page targets should be pain terms; method terms should live inside pages. | Do not target `meditation`, `yoga`, `sakshi`, or `atomic habits` as first-wave SEO pages. Target founder pain, then differentiate through method. | Added to memo, FAQ, glossary, llms-full. |
 | Competitor percentages are distorted by mega-keywords. | Do not overreact to crowded category percentages. Avoid competitor-owned mega-keywords as page targets, but keep useful vocabulary inside the page. | Added to memo. |
 | The keyword pipeline now includes broader clusters. | Keep the data broad, but keep Phase 1 editorial focused on six founder-identity territories until Avi reprioritizes. | Added caveat to memo. |
+| India CPC should be the primary commercial-intent signal. | Reweighted the CPC section away from US-high-CPC examples and toward India volume/CPC plus brand fit. | Updated memo. |
 
 ## Changes to Defer
 
@@ -39,6 +42,8 @@ The newer keyword-pipeline change log keeps overthinking and loneliness in the r
 - keep them in the raw keyword database for discovery,
 - do not prioritize them as Phase 1 page targets,
 - revisit only if Avi wants broader founder mental-health coverage.
+
+There is a second prioritization tension: several terms show high US CPC but weak India fit, such as `post-exit founder`. These should be parked for later premium/global strategy, not used as Phase 1 decision drivers.
 
 ## Recommended Next Build Step
 
