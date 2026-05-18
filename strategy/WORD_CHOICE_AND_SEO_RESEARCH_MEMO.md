@@ -45,8 +45,12 @@ This memo synthesizes the following uploaded/reviewed artifacts:
 | `mental_framework/keywords.csv` | Framework vocabulary: psychology, emotional intelligence, strategic planning, conflict resolution, decision-making, imposter syndrome. |
 | `brand_promise/keywords.csv` | Promise-adjacent vocabulary: decision fatigue, self-awareness, self-confidence, fear of failure, decision making under stress. |
 | `master_keywords_volume.csv` | Canonical volume-bearing keyword database and territory classification. |
+| `seo_updates-20260518T093737Z-3-001.zip` | New keyword-pipeline expansion, competitor concentration findings, LLM citation hygiene, and anchor-phrase strategy. |
+| `research_website-20260518T094230Z-3-001.zip` | Earlier brand, competition, wireframe, and playbook research history; useful context, but not all recommendations remain current after the Phase 1 no-lead-magnet decision. |
 
 Important caveat: not every CSV has CPC values for every keyword. Where CPC exists, it should be treated as directional commercial-intent evidence, not as the only decision rule. Some high-fit terms have low or missing CPC because they are informational, early-category, or not yet advertiser-saturated.
+
+Latest-input caveat: the newer keyword-pipeline change log keeps a broader raw data universe than the editorial strategy uses. For example, overthinking and loneliness are kept in the raw pipeline for discovery, but the current Phase 1 editorial emphasis remains the six builder-identity territories unless Avi explicitly reprioritizes them.
 
 ---
 
@@ -196,6 +200,8 @@ TDP’s chosen mix:
 
 > Pain-first entry + inner-practice method + mental-framework scaffolding + builder-specific application.
 
+The 2026-05-18 SEO update adds one important nuance: competitor crowding is partly distorted by mega-keywords. James Clear looks dominant because of `atomic habits`; Hintsa and Coa get pulled by `sleep hygiene`; Isha and Mumford get pulled by practice-name keywords like meditation, yoga, mindfulness, and stoicism. That means TDP does not need to avoid those vocabularies entirely. It needs to avoid using them as primary page targets.
+
 That is why the website must not sound like:
 
 - “Be more productive.”
@@ -209,6 +215,33 @@ It should sound like:
 - “Create space before the reaction.”
 - “Separate signal from story.”
 - “Make one cleaner move under pressure.”
+
+### 6.1 Page Targets vs In-Page Vocabulary
+
+The updated SEO strategy separates three registers:
+
+| Register | Use as page target? | Examples | Role |
+|---|---|---|---|
+| Pain target | Yes | founder burnout, imposter syndrome, fear of failure, validation seeking, hustle culture | H1, URL, opening paragraph, FAQ question. |
+| Method vocabulary | No | The Pause, The Chain, witness, sakshi, stillness, vritti | The reveal/reframe in the middle of the page. |
+| Scaffolding vocabulary | Usually no | identity work, decision under pressure, cognitive dissonance, self-image, personal mastery | Section labels, credibility framing, definitions. |
+
+This is the biggest practical copy rule from the new material. We should not build SEO pages called “sakshi for founders” or “meditation for founders” as the first wave. We should build pages around the pain the founder searches, then use sakshi, witness, and stillness to make TDP’s answer distinctive.
+
+### 6.2 Anchor Phrase Strategy
+
+The competitor analysis suggests that recognizable brands often concentrate around 2-3 repeatable terms, not dozens. TDP should repeat a small set until the market starts handing them back.
+
+Current recommended anchors:
+
+| Anchor | Role | Status |
+|---|---|---|
+| Ambition without the suffering | Long-arc promise | Keep. |
+| The Deliberate Pause | Brand + method | Keep. |
+| The Chain | Mechanism | Keep and define often. |
+| Stillness under pressure for builders | Possible third wedge phrase | Test in FAQ/glossary/LLM files before making it homepage-dominant. |
+
+The new SEO doc lists other possible third anchors: `identity work for builders`, `the witness behind the founder`, `decisions from a clear identity`, `stillness under pressure`, and `sakshi for builders`. My recommendation is to keep `identity work for builders` as category language and test `stillness under pressure for builders` as the more memorable wedge phrase.
 
 ---
 
@@ -447,7 +480,28 @@ Phase 1 therefore needs:
 | `feed.xml` | Efficient discovery of updates. |
 | HowTo schema on practices | Lets agents answer “how do I do this?” with steps. |
 
+The SEO update adds a hard rule: every important page needs at least one citable unit. A citable unit is a clean 1-2 sentence definition or thesis that an LLM can quote without reconstructing the idea. Examples:
+
+- “The Pause is the deliberate gap between pressure and reaction.”
+- “The Chain is modality to physiological space to cognitive clarity to better decision under pressure to sustained ambition without suffering.”
+- “Founder burnout is not only overwork; it is often the cost of a fused identity.”
+
 This is not SEO decoration. It is the agent-facing version of the website.
+
+---
+
+## 11.1 What Changed After Reviewing the 2026-05-18 Inputs
+
+The new files do inform changes, but they do not overturn the Phase 1 direction.
+
+| Input finding | Change made / recommended |
+|---|---|
+| Every page needs a citable unit. | Added citable-unit language to the agent architecture, FAQ, glossary, and llms-full generation. Next step: add explicit summary callouts to every essay template. |
+| Competitors concentrate around 2-3 keywords. | Added anchor-phrase strategy to this memo and the LLM files. |
+| Mega-keywords distort competitor ownership. | Updated strategy to avoid overreacting to competitor category percentages. |
+| Page targets should be pain terms, not method terms. | Added page-target vs method/scaffolding distinction. |
+| The raw keyword pipeline now keeps more clusters than the editorial strategy. | Added caveat: raw discovery can remain broad while Phase 1 stays focused on six builder-identity territories. |
+| Research archive contains older lead-magnet/wireframe logic. | Do not reintroduce the lead magnet for Phase 1; keep it as Phase 2 unless Avi changes the launch sequence. |
 
 ---
 
