@@ -140,6 +140,30 @@
       color: rgba(245, 239, 229, 0.55);
       text-shadow: 0 1px 8px rgba(0,0,0,0.4);
     }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero-actions .btn-secondary {
+      background: rgba(245, 239, 229, 0.08);
+      color: var(--text-cream);
+      border-color: rgba(245, 239, 229, 0.18);
+    }
+    .hero-actions .btn-secondary:hover {
+      background: rgba(245, 239, 229, 0.14);
+      border-color: rgba(245, 239, 229, 0.3);
+    }
+    .theme-cream .hero-actions .btn-secondary {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border-on-cream);
+    }
+    .theme-cream .hero-actions .btn-secondary:hover {
+      background: rgba(26, 26, 26, 0.05);
+      border-color: rgba(26, 26, 26, 0.18);
+    }
     .hero-scroll-cue {
       position: absolute;
       bottom: 24px;
@@ -812,12 +836,13 @@
         <ul class="nav-links">
           <li><a href="read.html">Read</a></li>
           <li><a href="pause.html">Practice</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <a href="#hero-form" class="btn btn-magnetic nav-cta">
-        <span class="label-long">Get the Playbook</span>
-        <span class="label-short">Get the Playbook</span>
+      <a href="faq.html" class="btn btn-magnetic nav-cta">
+        <span class="label-long">Start here</span>
+        <span class="label-short">Start</span>
         <span class="arrow">→</span>
       </a>
       <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">≡</button>
@@ -838,15 +863,13 @@
 
       <!-- Overlay content — sits on top of video, lower-left -->
       <div class="hero-content">
-        <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Overwhelmed</span><span class="line">running a startup?</span></h1>
-        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">You're not alone. Running a startup is hard. The playbook — rooted in spiritual practice, proven by athletes — is how you stay present in the moments that decide the company.</p>
+        <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">The mental game</span><span class="line">for founders.</span></h1>
+        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Founder psychology for Indian builders whose self-worth has fused with output. Sourced from spiritual practice. Proven by elite sport. Built for better decisions under pressure.</p>
 
-        <form id="hero-form" class="form-row" action="#" method="post" data-source="hero" data-scroll-fx style="--fx-delay: 0.3s;">
-          <label for="email-hero" class="visually-hidden">Email address</label>
-          <input type="email" id="email-hero" name="email_address" placeholder="your@email.com" required />
-          <button type="submit" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></button>
-        </form>
-        <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">No spam ever. Unsubscribe in one click.</p>
+        <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
+          <a class="btn btn-magnetic" href="read.html">Read the essays <span class="arrow">→</span></a>
+          <a class="btn btn-magnetic btn-secondary" href="pause.html">Try a practice <span class="arrow">→</span></a>
+        </div>
       </div>
 
       <span class="hero-scroll-cue" aria-hidden="true">Scroll ↓</span>
@@ -882,7 +905,7 @@
          ============================================================ -->
     <section class="pullquote theme-cream" aria-label="The cost">
       <div class="wrap">
-        <h2 data-scroll-fx="fade-up-lg">The years founders are losing — <em class="amber">health, family, self, peace</em> — were never the price of winning.</h2>
+        <h2 data-scroll-fx="fade-up-lg">Founder burnout is not just overwork. It is what happens when <em class="amber">output becomes identity.</em></h2>
       </div>
     </section>
 
@@ -892,12 +915,12 @@
     <section class="pain theme-cream" aria-label="What founders are juggling">
       <div class="wrap">
         <ul class="pain-list">
-          <li data-scroll-fx><span><b>Juggling everything.</b> Hiring, operations, and fundraising at the same time.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.05s;"><span><b>Body breaking.</b> Sleep gone. Nutrition gone. Running on fumes.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.1s;"><span><b>No long view.</b> Holding the future while running today's standup.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.15s;"><span><b>Decision overload.</b> Choices stacking faster than you can think.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.2s;"><span><b>Resource-starved.</b> Building without enough capital, without enough team.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.25s;"><span><b>Founder loneliness.</b> A path no one around you walks.</span></li>
+          <li data-scroll-fx><span><b>Imposter syndrome.</b> Every rejection starts sounding like evidence about who you are.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.05s;"><span><b>Burnout.</b> Rest feels unsafe because production has become the proof of worth.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.1s;"><span><b>Fear of failure.</b> One wrong move feels like identity collapse, not market feedback.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.15s;"><span><b>Validation seeking.</b> The dashboard, the investor reply, the audience response starts running the nervous system.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.2s;"><span><b>Analysis paralysis.</b> The mind keeps asking for certainty because the body is trying to avoid shame.</span></li>
+          <li data-scroll-fx style="--fx-delay: 0.25s;"><span><b>Hustle culture.</b> The script the village applauds becomes the script that keeps you trapped.</span></li>
         </ul>
       </div>
     </section>
@@ -918,14 +941,12 @@
       <div class="wrap">
         <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
         <h2 id="pivot-headline" data-scroll-fx="fade-up-lg"><span class="line">But yours</span><span class="line">doesn't have to.</span></h2>
-        <p class="sub" data-scroll-fx style="--fx-delay: 0.7s;">The Pause is the highest-leverage move in a founder's day.</p>
+        <p class="sub" data-scroll-fx style="--fx-delay: 0.7s;">The Pause creates the space between pressure and reaction: physiological space, cognitive clarity, and one cleaner decision under pressure.</p>
 
-        <form class="form-row" action="#" method="post" data-source="pivot" data-scroll-fx style="--fx-delay: 0.85s;">
-          <label for="email-pivot" class="visually-hidden">Email address</label>
-          <input type="email" id="email-pivot" name="email_address" placeholder="your@email.com" required />
-          <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
-        </form>
-        <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.95s;">No spam ever. Unsubscribe in one click.</p>
+        <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.85s; justify-content: center;">
+          <a class="btn btn-magnetic" href="glossary.html">Learn The Chain <span class="arrow">→</span></a>
+          <a class="btn btn-magnetic btn-secondary" href="faq.html">Read the FAQ <span class="arrow">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -983,15 +1004,12 @@
           <div class="pause-left">
             <span class="eyebrow" data-scroll-fx>05 / The Pause</span>
             <h2 id="pause-headline" data-scroll-fx>Tools the top 1% already use.</h2>
-            <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">Four protocols, translated from elite sport into the founder's workday. Get them free.</p>
+            <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">Four protocols, translated from elite sport into the founder's workday. Use them before the pitch, after the rejection, inside the cofounder fight, or mid-spiral.</p>
 
-            <form class="form-row" action="#" method="post" data-source="pause-section" data-scroll-fx style="--fx-delay: 0.2s;">
-              <label for="email-pause" class="visually-hidden">Email address</label>
-              <input type="email" id="email-pause" name="email_address" placeholder="your@email.com" required />
-              <button type="submit" class="btn btn-magnetic">Get the Playbook <span class="arrow">→</span></button>
-            </form>
-            <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.3s;">No spam ever. Unsubscribe in one click.</p>
-            <p class="micro" data-scroll-fx style="--fx-delay: 0.4s;">Four plays. One PDF. You'll run them this week.</p>
+            <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.2s;">
+              <a class="btn btn-magnetic" href="pause.html">Explore the practices <span class="arrow">→</span></a>
+            </div>
+            <p class="micro" data-scroll-fx style="--fx-delay: 0.4s;">Run one before the next live moment.</p>
           </div>
 
           <div class="protocol-grid">
@@ -1110,9 +1128,9 @@
         <div class="definition-grid">
           <div data-scroll-fx="fade-right">
             <h2 id="definition-headline">What is the Deliberate Pause?</h2>
-            <p>The pause is the deliberate act of creating space — between trigger and response, between the world hitting you and the way you react to it.</p>
+            <p>The pause is the deliberate act of creating space between pressure and reaction. TDP calls the mechanism The Chain: modality → physiological space → cognitive clarity → better decision under pressure → sustained ambition without suffering.</p>
             <p>Jordan, Federer, Annika — they've used tools rooted in spiritual practice to win under pressure for thirty years. Founders have been left out.</p>
-            <p>We're closing that gap.</p>
+            <p>We're closing that gap with identity work for builders, not another meditation app.</p>
           </div>
           <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain · breath · body (placeholder)">
             figure / mechanism illustration<br />(brain · breath · body — placeholder)
@@ -1186,12 +1204,12 @@
       <div class="footer-cols">
         <div>
           <h5>Read</h5>
-          <ul><li><a href="read.html">All essays</a></li></ul>
+          <ul><li><a href="read.html">All essays</a></li><li><a href="faq.html">FAQ</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="sources.html">Sources</a></li></ul>
         </div>
         <div>
           <h5>Practice</h5>
           <ul>
-            <li><a href="pause.html">The Pause Playbook</a></li>
+            <li><a href="pause.html">Practice Library</a></li>
             <li><a href="practice-federer-reset.html">Federer Reset</a></li>
             <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
             <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>

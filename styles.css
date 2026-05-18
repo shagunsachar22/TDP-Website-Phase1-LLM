@@ -244,7 +244,7 @@ blockquote {
 .form-row {
   display: flex;
   gap: 0;
-  max-width: 580px; /* up from 520 — the long-text CTAs ("Send me the Pause Playbook — Free →") need the extra room */
+  max-width: 580px; /* keeps longer CTA labels from crowding the email field */
   align-items: stretch;
 }
 .form-row input[type="email"] {

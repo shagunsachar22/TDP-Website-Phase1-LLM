@@ -8,9 +8,9 @@ Static, multi-page site. Vanilla HTML/CSS, two small JS files (scroll FX + pract
 |---|---|---|
 | `index.html`                       | `/`                              | Homepage — full-bleed video hero with overlaid headline, 12 sections, full scroll FX |
 | `about.html`                       | `/about`                         | Cinematic hero (Avi photo full-bleed), identity stack, 3-beat journey, reader pivot, two doors |
-| `read.html`                        | `/read`                          | Playbook hero, 2-col archive with sticky sidebar, filter chips, 8 essays |
+| `read.html`                        | `/read`                          | Essay archive hero, 2-col archive with sticky sidebar, filter chips, 38 essays |
 | `read-essay.html`                  | `/read/[slug]`                   | Representative essay — drop cap, body, pull quote, mid-essay subscribe, share, keep-reading |
-| `pause.html`                       | `/pause`                         | Lead magnet — try-one-play breathe widget (CSS animated), what-you-just-did, 4-play toolkit |
+| `pause.html`                       | `/pause`                         | Practice library — try-one-play breathe widget (CSS animated), what-you-just-did, 4-practice toolkit |
 | `practice-jackson-triangle.html`   | `/practice/jackson-triangle`     | **Interactive 3-corner tap widget**, Phil Jackson origin, 6 founder situations, related essays |
 | `practice-think-box-play-box.html` | `/practice/think-box-play-box`   | **Think Box / Play Box toggle widget**, Annika Sörenstam origin, 6 situations, related essays |
 | `practice-90-second-recovery.html` | `/practice/90-second-recovery`   | **Live 90-second countdown timer** (animated stroke ring), Djokovic origin, 6 situations, "Then resume." |

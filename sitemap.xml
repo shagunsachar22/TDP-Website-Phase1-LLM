@@ -46,4 +46,13 @@
   <url><loc>https://thedeliberatepause.com/read/someone-is-stealing-your-lifetime-literally</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thedeliberatepause.com/read/the-calendar-is-killing-your-performance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thedeliberatepause.com/read/welcome-to-the-deliberate-pause</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thedeliberatepause.com/faq.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/glossary.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/sources.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/llms-sitemap.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/llms-full.txt</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/api/essays.json</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/api/practices.json</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thedeliberatepause.com/api/avi.json</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>

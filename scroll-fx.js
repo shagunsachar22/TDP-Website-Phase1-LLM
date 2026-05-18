@@ -41,7 +41,7 @@
             <details>
               <summary>Practice</summary>
               <ul class="mobile-menu-sub">
-                <li><a href="pause.html">The Pause Playbook</a></li>
+                <li><a href="pause.html">Practice Library</a></li>
                 <li><a href="practice-federer-reset.html">Federer Reset</a></li>
                 <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
                 <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>
@@ -52,7 +52,7 @@
           <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
-          <a href="pause.html" class="btn">Get the Playbook <span class="arrow">→</span></a>
+          <a href="pause.html" class="btn">Start here <span class="arrow">→</span></a>
           <p class="micro">Every Monday · 11:11 AM</p>
         </div>
       </aside>

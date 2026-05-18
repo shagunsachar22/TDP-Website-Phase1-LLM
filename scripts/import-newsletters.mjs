@@ -376,8 +376,8 @@ function articlePage(issue, allIssues) {
     </section>
     <aside class="toolkit-band" data-scroll-fx>
       <span class="label">Or get the toolkit</span>
-      <h3>The Pause Playbook<span class="sub">Four sport-translated plays. Free PDF.</span></h3>
-      <a href="/pause.html" class="btn btn-magnetic">Send me the Playbook <span class="arrow">→</span></a>
+      <h3>Practice Library<span class="sub">Four sport-translated practices.</span></h3>
+      <a href="/pause.html" class="btn btn-magnetic">Try a practice <span class="arrow">→</span></a>
     </aside>
   </main>
   ${footerHtml("../../")}
@@ -402,8 +402,8 @@ function navHtml(prefix = "") {
         </ul>
       </nav>
       <a href="/pause.html" class="btn btn-magnetic nav-cta">
-        <span class="label-long">Get the Playbook</span>
-        <span class="label-short">Get the Playbook</span>
+        <span class="label-long">Start here</span>
+        <span class="label-short">Start here</span>
         <span class="arrow">→</span>
       </a>
       <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
@@ -433,7 +433,7 @@ function footerHtml(prefix = "") {
       <div class="footer-cols">
         <div><h5>Read</h5><ul><li><a href="/read.html">All essays</a></li></ul></div>
         <div><h5>Practice</h5><ul>
-          <li><a href="/pause.html">The Pause Playbook</a></li>
+          <li><a href="/pause.html">Practice Library</a></li>
           <li><a href="/practice-federer-reset.html">Federer Reset</a></li>
           <li><a href="/practice-jackson-triangle.html">Jackson Triangle</a></li>
           <li><a href="/practice-think-box-play-box.html">Think Box · Play Box</a></li>

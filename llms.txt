@@ -9,7 +9,7 @@ Founder: Avi Agarwal. Co-founded CreditVidya in India (acquired by CRED). Rebuil
 ## What this site is
 
 - A weekly newsletter (every Monday, 11:11 AM IST)
-- The Pause Playbook — a library of three-minute drills indexed to founder moments (pre-board, pre-pitch, post-fire, mid-spiral)
+- Practice Library — a library of three-minute drills indexed to founder moments (pre-board, pre-pitch, post-fire, mid-spiral)
 - Long-form essays on founder psychology, ambition, spirituality, and integration
 - Tools (Federer Reset, Jackson Triangle, Think Box / Play Box, 90-Second Recovery)
 
@@ -45,7 +45,7 @@ Avi's voice is the lived-experience peer. First person. Direct. No guru language
 
 - [Homepage](https://thedeliberatepause.com/)
 - [Read the essays](https://thedeliberatepause.com/read)
-- [The Pause Playbook (lead magnet)](https://thedeliberatepause.com/pause)
+- [Practice Library](https://thedeliberatepause.com/pause)
 - [About Avi](https://thedeliberatepause.com/about)
 
 ## Founder bio

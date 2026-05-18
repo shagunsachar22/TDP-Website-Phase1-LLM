@@ -8,7 +8,7 @@ This is the setup. Run it once, then every time the site changes you get a scree
 
 ## What it does
 
-For every page (homepage, about, read, all 4 practices, lead magnet, essay template), Playwright will:
+For every page (homepage, about, read, all 4 practices, Phase 2 asset, essay template), Playwright will:
 
 1. Open it in Chromium, Firefox, and WebKit (Safari engine — this is the one that caught the mobile menu bug)
 2. Screenshot at 8 viewports: iPhone SE (375), iPhone 14 Pro (393), iPad Mini (768), iPad Pro (1024), MacBook 13" (1280), Desktop 1440, Desktop 1920, ultra-wide 2560
