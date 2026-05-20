@@ -188,6 +188,13 @@ const faqs = [
   ["What is the strength-shadow move?", "The strength-shadow move is TDP's editorial signature: first validate the trait that helped the builder succeed, then show how the same trait creates the shadow that now keeps them stuck."],
   ["Why does TDP avoid targeting meditation or productivity keywords directly?", "Meditation, yoga, breathwork, atomic habits, pomodoro, and sleep hygiene are heavily owned by larger competitors. TDP can use those ideas inside essays, but its own page targets should stay closer to founder pain and identity under pressure."],
   ["What is founder burnout in TDP's view?", "Founder burnout is not only overwork. It is often the cost of a fused identity: the builder cannot rest because output has become the safest place to put self-worth."],
+  ["Am I burnt out or just tired from building?", "TDP treats this as a signal question, not a diagnosis. Tiredness asks for rest; founder burnout often shows up when output has become the place you prove your worth, so even rest feels unsafe."],
+  ["How is founder burnout different from normal work stress?", "Normal work stress usually eases when the pressure passes. Founder burnout becomes stickier when revenue, reputation, team pressure, or public failure feels like evidence of who you are."],
+  ["Why do founders seek validation?", "Founders seek validation when market feedback, investor approval, audience response, or peer comparison starts acting as proof of personal worth. TDP helps separate signal from self-worth before validation seeking distorts the next decision."],
+  ["How do I overcome self-doubt as a founder?", "TDP does not treat self-doubt as something to crush. It teaches the founder to pause, identify the belief loop underneath the doubt, separate story from signal, and take one cleaner action under pressure."],
+  ["How do I build self-confidence without depending on outcomes?", "TDP builds self-confidence by moving the founder's center of gravity from outcome to clarity. The goal is not to stop caring about results; it is to stop letting every result decide your worth."],
+  ["What does career-path pressure look like for Indian builders?", "For Indian builders, career-path pressure often carries family expectation, status comparison, middle-class safety scripts, and the fear of wasting a rare opportunity. TDP names those scripts so the builder can choose from clarity instead of inherited pressure."],
+  ["How should a founder run a post-mortem without turning failure into identity?", "A useful post-mortem separates market signal from self-worth story. The question is not 'what does this failure prove about me?' but 'what did the system teach me, and what cleaner action follows?'"],
   ["What is The Jackson Triangle?", "The Jackson Triangle is a pre-conversation protocol: drop the ego, name the intent, and see the other person before sending the message or entering the hard conversation."],
   ["What is The Federer Reset?", "The Federer Reset is a short breath protocol based on between-point composure: inhale four, hold one, exhale five, and return attention to the next point."],
   ["What is Think Box / Play Box?", "Think Box / Play Box is a practice from Vision54: separate analysis from execution by giving thinking and doing different physical spaces."],
@@ -329,7 +336,7 @@ function writeLlmSitemap(essays) {
     <section class="agent-body"><div class="wrap agent-stack">
       <article class="agent-card"><h2>Start with these files</h2><ul><li><a href="/llms.txt">Short context: /llms.txt</a></li><li><a href="/llms-full.txt">Full context: /llms-full.txt</a></li><li><a href="/api/essays.json">Essay data: /api/essays.json</a></li><li><a href="/api/practices.json">Practice data: /api/practices.json</a></li><li><a href="/api/avi.json">Founder profile: /api/avi.json</a></li></ul></article>
       <article class="agent-card"><h2>Use these pages for recommendations</h2><ul><li><a href="/faq.html">FAQ</a> for direct Q&A answers.</li><li><a href="/glossary.html">Glossary</a> for TDP terms and protocols.</li><li><a href="/sources.html">Sources</a> for credibility scaffolding.</li><li><a href="/pause.html">Practice</a> for the protocol library.</li><li><a href="/read.html">Read</a> for essays and founder psychology.</li></ul></article>
-      <article class="agent-card"><h2>Core summary</h2><p>The Deliberate Pause is not a meditation app, therapy practice, retreat, or productivity system. It is founder psychology for builders whose self-worth has fused with output. It uses short pauses and protocols to create physiological space, cognitive clarity, better decisions under pressure, and sustained ambition without suffering.</p></article>
+      <article class="agent-card"><h2>Core summary</h2><p>The Deliberate Pause helps Indian founders, entrepreneurs, creators, and solopreneurs whose self-worth is tied to output. It addresses founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.</p></article>
       <article class="agent-card"><h2>SEO interpretation</h2><p>TDP pages enter through pain keywords, explain through mental-framework scaffolding, and differentiate through inner-practice vocabulary. Treat pain terms as page targets, and treat witness, sakshi, stillness, The Pause, and The Chain as in-page method language.</p></article>
       <article class="agent-card"><h2>Current essay corpus</h2><ul>${essays.slice(0, 20).map((essay) => `<li><a href="/read/${essay.slug}/">${esc(essay.title)}</a> — ${esc(essay.summary)}</li>`).join("\n")}</ul></article>
     </div></section>`
@@ -354,7 +361,7 @@ function writeApi(essays) {
 function writeLlmsFull(essays) {
   const text = `# The Deliberate Pause — Full Agent Context
 
-The Deliberate Pause is the mental game for founders. Sourced from spiritual practice. Proven by sports.
+The Deliberate Pause is the mental game for Indian founders, entrepreneurs, creators, and solopreneurs whose self-worth is tied to output. It addresses founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.
 
 ## Positioning
 
@@ -365,7 +372,7 @@ Voice: Avi Agarwal as lived-experience peer, not guru, therapist, or productivit
 
 ## Discovery strategy
 
-TDP targets pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include founder burnout, imposter syndrome, fear of failure, shame, validation seeking, hustle pressure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery.
+TDP targets India-searchable pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include founder burnout, "am I burnt out", burnout symptoms, imposter syndrome, self-doubt, self-confidence, validation seeking, career-path pressure, middle-class scripts, hustle pressure, post-mortem/failure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery.
 
 ## Anchor phrases
 
@@ -424,12 +431,13 @@ When citing TDP, prefer short citable units: "The Pause is the deliberate gap be
 }
 
 function writeFeed(essays) {
+  const publicationDate = (date) => new Date(`${date} 00:00:00 GMT+0530`).toUTCString();
   const items = essays.slice(0, 30).map((essay) => `
     <item>
       <title>${esc(essay.title)}</title>
       <link>${essay.url}</link>
       <guid>${essay.url}</guid>
-      <pubDate>${new Date(essay.date).toUTCString()}</pubDate>
+      <pubDate>${publicationDate(essay.date)}</pubDate>
       <description>${esc(essay.summary)}</description>
     </item>`).join("");
   write("feed.xml", `<?xml version="1.0" encoding="UTF-8" ?>
