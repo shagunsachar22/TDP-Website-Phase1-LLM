@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy Option C — Founder Psychology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body { background: #111; color: var(--text-cream); }
+    .mockup { min-height: 100vh; display: grid; align-items: center; padding: 64px var(--gutter); background: linear-gradient(180deg, #111 0%, #1a1714 100%); }
+    .mockup-inner { width: min(1160px, 100%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 72px; align-items: end; }
+    .mockup-label { color: var(--accent-amber); font: 600 11px/1 var(--font-sans); letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 28px; }
+    .mockup h1 { color: var(--accent-amber); font-size: clamp(40px, 7.5vw, 110px); line-height: 0.94; letter-spacing: -0.025em; max-width: 11ch; margin: 0 0 28px; overflow-wrap: break-word; }
+    .mobile-h1 { display: none; }
+    .mockup .lead { color: rgba(245,239,229,0.84); max-width: 640px; font-size: clamp(18px, 2vw, 23px); line-height: 1.48; margin-bottom: 34px; }
+    .mockup-panel { border: 1px solid rgba(245,239,229,0.18); padding: 28px; }
+    .mockup-panel h2 { color: var(--text-cream); font-size: 28px; margin-bottom: 18px; }
+    .mockup-panel ol { margin: 0; padding-left: 20px; color: var(--text-muted-dark); line-height: 1.7; }
+    @media (max-width: 860px) { .mockup-inner { grid-template-columns: 1fr; gap: 48px; } }
+    @media (max-width: 520px) {
+      .mockup { padding: 42px 20px; }
+      .desktop-h1 { display: none; }
+      .mobile-h1 { display: inline; }
+      .mockup h1 { font-size: 38px; line-height: 1.02; max-width: 100%; overflow-wrap: normal; }
+      .mockup .lead { font-size: 17px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .mockup-panel { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="mockup">
+    <div class="mockup-inner">
+      <section>
+        <div class="mockup-label">Option C · Category doorway: founder psychology</div>
+        <h1><span class="desktop-h1">Founder psychology for Indian entrepreneurs.</span><span class="mobile-h1">Founder psychology for Indian builders.</span></h1>
+        <p class="lead">Avi Agarwal built CreditVidya, sold it to CRED, then learned what ambition costs when the body breaks first. The Deliberate Pause is the map he wished he had while building.</p>
+        <div class="hero-actions">
+          <a class="btn btn-magnetic" href="../about.html">Meet Avi <span class="arrow">→</span></a>
+          <a class="btn btn-magnetic btn-secondary" href="../read.html">Read the essays <span class="arrow">→</span></a>
+        </div>
+      </section>
+      <aside class="mockup-panel">
+        <h2>The Chain</h2>
+        <ol>
+          <li>Pressure hits.</li>
+          <li>The story starts.</li>
+          <li>The Pause creates physiological space.</li>
+          <li>Clarity returns.</li>
+          <li>The next decision gets cleaner.</li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
