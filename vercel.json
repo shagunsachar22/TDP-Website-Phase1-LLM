@@ -1,6 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/pause", "destination": "/faq", "permanent": false },
+    { "source": "/pause.html", "destination": "/faq", "permanent": false },
+    { "source": "/practice-federer-reset", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-federer-reset.html", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-jackson-triangle", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-jackson-triangle.html", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-think-box-play-box", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-think-box-play-box.html", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-90-second-recovery", "destination": "/glossary", "permanent": false },
+    { "source": "/practice-90-second-recovery.html", "destination": "/glossary", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",

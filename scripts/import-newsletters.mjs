@@ -209,7 +209,7 @@ function excerptFrom(body, description) {
 
 function categoryFor(title, body) {
   const haystack = `${title} ${stripTags(body)}`.toLowerCase();
-  if (/\b(breath|fasting|routine|calendar|phone|social media|rejection experiment|90-hour|hustle culture)\b/.test(haystack)) return "Practice";
+  if (/\b(breath|fasting|routine|calendar|phone|social media|rejection experiment|90-hour|hustle culture)\b/.test(haystack)) return "Framework";
   if (/goggins|jobs|vijay|cartoonist|creditvidya|brown box|welcome to the deliberate pause/.test(haystack)) return "Story";
   return "Essay";
 }
@@ -375,9 +375,9 @@ function articlePage(issue, allIssues) {
       </div>
     </section>
     <aside class="toolkit-band" data-scroll-fx>
-      <span class="label">Or get the toolkit</span>
-      <h3>Practice Library<span class="sub">Four sport-translated practices.</span></h3>
-      <a href="/pause.html" class="btn btn-magnetic">Try a practice <span class="arrow">→</span></a>
+      <span class="label">Keep reading</span>
+      <h3>Founder psychology<span class="sub">Essays, FAQ, glossary, and sources for Phase 1.</span></h3>
+      <a href="/faq.html" class="btn btn-magnetic">Start with the FAQ <span class="arrow">→</span></a>
     </aside>
   </main>
   ${footerHtml("../../")}
@@ -397,11 +397,11 @@ function navHtml(prefix = "") {
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="/read.html" aria-current="page">Read</a></li>
-          <li><a href="/pause.html">Practice</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/about.html">About</a></li>
         </ul>
       </nav>
-      <a href="/pause.html" class="btn btn-magnetic nav-cta">
+      <a href="/faq.html" class="btn btn-magnetic nav-cta">
         <span class="label-long">Start here</span>
         <span class="label-short">Start here</span>
         <span class="arrow">→</span>
@@ -417,8 +417,8 @@ function footerHtml(prefix = "") {
       <div class="footer-top">
         <div class="footer-brand">
           <div class="logo">The Deliberate Pause</div>
-          <div class="tagline">The mental game for founders.</div>
-          <p>Tools and essays for startup founders on building companies without breaking themselves. Sourced from spiritual practice. Proven by sport.</p>
+          <div class="tagline">The mental game for Indian entrepreneurs.</div>
+          <p>Essays and founder psychology for entrepreneurs building without burning out, losing clarity, or turning output into identity.</p>
         </div>
         <div class="footer-newsletter">
           <h4>Pause for 5 minutes.</h4>
@@ -431,13 +431,12 @@ function footerHtml(prefix = "") {
         </div>
       </div>
       <div class="footer-cols">
-        <div><h5>Read</h5><ul><li><a href="/read.html">All essays</a></li></ul></div>
-        <div><h5>Practice</h5><ul>
-          <li><a href="/pause.html">Practice Library</a></li>
-          <li><a href="/practice-federer-reset.html">Federer Reset</a></li>
-          <li><a href="/practice-jackson-triangle.html">Jackson Triangle</a></li>
-          <li><a href="/practice-think-box-play-box.html">Think Box · Play Box</a></li>
-          <li><a href="/practice-90-second-recovery.html">90-Second Recovery</a></li>
+        <div><h5>Read</h5><ul><li><a href="/read.html">All essays</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/glossary.html">Glossary</a></li><li><a href="/sources.html">Sources</a></li></ul></div>
+        <div><h5>Learn</h5><ul>
+          <li><a href="/faq.html">Founder burnout FAQ</a></li>
+          <li><a href="/glossary.html">TDP terms</a></li>
+          <li><a href="/sources.html">Sources</a></li>
+          <li><a href="/llms-sitemap.html">Agent sitemap</a></li>
         </ul></div>
         <div><h5>About</h5><ul><li><a href="/about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
         <div><h5>Follow</h5><ul><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li><li><a href="https://twitter.com/" rel="noopener">X</a></li></ul></div>
@@ -474,12 +473,7 @@ function sitemap(allIssues) {
   const staticUrls = [
     ["https://thedeliberatepause.com/", "weekly", "1.0"],
     ["https://thedeliberatepause.com/read", "weekly", "0.9"],
-    ["https://thedeliberatepause.com/pause", "monthly", "0.8"],
     ["https://thedeliberatepause.com/about", "monthly", "0.7"],
-    ["https://thedeliberatepause.com/practice-federer-reset", "monthly", "0.6"],
-    ["https://thedeliberatepause.com/practice-jackson-triangle", "monthly", "0.6"],
-    ["https://thedeliberatepause.com/practice-think-box-play-box", "monthly", "0.6"],
-    ["https://thedeliberatepause.com/practice-90-second-recovery", "monthly", "0.6"],
   ];
   const urls = [
     ...staticUrls.map(([loc, changefreq, priority]) => `  <url><loc>${loc}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`),
@@ -558,7 +552,7 @@ async function main() {
   read = read.replace(/All <span class="count">\d+<\/span>/, `All <span class="count">${imported.length}</span>`);
   read = read.replace(/Stories <span class="count">\d+<\/span>/, `Stories <span class="count">${counts.Story || 0}</span>`);
   read = read.replace(/Essays <span class="count">\d+<\/span>/, `Essays <span class="count">${counts.Essay || 0}</span>`);
-  read = read.replace(/Practice <span class="count">\d+<\/span>/, `Practice <span class="count">${counts.Practice || 0}</span>`);
+  read = read.replace(/(?:Practice|Framework) <span class="count">\d+<\/span>/, `Framework <span class="count">${counts.Framework || 0}</span>`);
   read = read.replace(/Notes <span class="count">\d+<\/span>/, `Notes <span class="count">0</span>`);
   read = read.replace(/font-size: clamp\(56px, 8vw, 116px\);([\s\S]*?)max-width: 14ch;/, "font-size: clamp(48px, 7.4vw, 104px);$1max-width: min(16ch, 100%);");
   read = read.replace(/grid-template-columns: 1fr 320px;/, "grid-template-columns: minmax(0, 1fr) 320px;");

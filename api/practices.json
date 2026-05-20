@@ -1,54 +1,26 @@
-[
-  {
-    "name": "The Jackson Triangle",
-    "slug": "practice-jackson-triangle",
-    "url": "https://thedeliberatepause.com/practice-jackson-triangle.html",
-    "source": "Phil Jackson and Sacred Hoops",
-    "outcome": "Improve focus before hard conversations.",
-    "protocol": [
-      "Drop the ego.",
-      "Name the intent.",
-      "See the other person.",
-      "Send the message from clarity."
-    ]
-  },
-  {
-    "name": "Think Box / Play Box",
-    "slug": "practice-think-box-play-box",
-    "url": "https://thedeliberatepause.com/practice-think-box-play-box.html",
-    "source": "Vision54 and Annika Sorenstam",
-    "outcome": "Separate analysis from execution.",
-    "protocol": [
-      "Stand in the think box.",
-      "Name the decision.",
-      "Cross the line.",
-      "Execute without reopening the analysis."
-    ]
-  },
-  {
-    "name": "The 90-Second Recovery",
-    "slug": "practice-90-second-recovery",
-    "url": "https://thedeliberatepause.com/practice-90-second-recovery.html",
-    "source": "Jill Bolte Taylor, tennis recovery rhythm, and Djokovic-style reset logic",
-    "outcome": "Recover before the next point.",
-    "protocol": [
-      "Start the ninety-second timer.",
-      "Do not reopen the trigger.",
-      "Let the physiological wave pass.",
-      "Choose the next move after the body settles."
-    ]
-  },
-  {
-    "name": "The Federer Reset",
-    "slug": "practice-federer-reset",
-    "url": "https://thedeliberatepause.com/practice-federer-reset.html",
-    "source": "Roger Federer between-point composure",
-    "outcome": "Drop heart rate and clear the next decision.",
-    "protocol": [
-      "Inhale for four.",
-      "Hold for one.",
-      "Exhale for five.",
-      "Repeat until the next point feels clean."
-    ]
-  }
-]
+{
+  "status": "reserved_for_phase_2",
+  "note": "The full practice/tool library is not public in Phase 1 because it may become the lead magnet. Phase 1 exposes only light method definitions in FAQ, glossary, sources, and essays.",
+  "publicTerms": [
+    {
+      "name": "The Jackson Triangle",
+      "source": "Phil Jackson and Sacred Hoops",
+      "outcome": "Improve focus before hard conversations."
+    },
+    {
+      "name": "Think Box / Play Box",
+      "source": "Vision54 and Annika Sorenstam",
+      "outcome": "Separate analysis from execution."
+    },
+    {
+      "name": "The 90-Second Recovery",
+      "source": "Jill Bolte Taylor, tennis recovery rhythm, and Djokovic-style reset logic",
+      "outcome": "Recover before the next point."
+    },
+    {
+      "name": "The Federer Reset",
+      "source": "Roger Federer between-point composure",
+      "outcome": "Drop heart rate and clear the next decision."
+    }
+  ]
+}

@@ -37,22 +37,13 @@
         </div>
         <ul class="mobile-menu-list">
           <li><a href="read.html">Read</a></li>
-          <li>
-            <details>
-              <summary>Practice</summary>
-              <ul class="mobile-menu-sub">
-                <li><a href="pause.html">Practice Library</a></li>
-                <li><a href="practice-federer-reset.html">Federer Reset</a></li>
-                <li><a href="practice-jackson-triangle.html">Jackson Triangle</a></li>
-                <li><a href="practice-think-box-play-box.html">Think Box · Play Box</a></li>
-                <li><a href="practice-90-second-recovery.html">90-Second Recovery</a></li>
-              </ul>
-            </details>
-          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+          <li><a href="sources.html">Sources</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
-          <a href="pause.html" class="btn">Start here <span class="arrow">→</span></a>
+          <a href="faq.html" class="btn">Start here <span class="arrow">→</span></a>
           <p class="micro">Every Monday · 11:11 AM</p>
         </div>
       </aside>

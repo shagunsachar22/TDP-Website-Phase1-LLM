@@ -11,7 +11,7 @@ Voice: Avi Agarwal as lived-experience peer, not guru, therapist, or productivit
 
 ## Discovery strategy
 
-TDP targets India-searchable pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include founder burnout, "am I burnt out", burnout symptoms, imposter syndrome, self-doubt, self-confidence, validation seeking, career-path pressure, middle-class scripts, hustle pressure, post-mortem/failure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery.
+TDP targets India-searchable pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include entrepreneur burnout, founder burnout, "am I burnt out", burnout symptoms, imposter syndrome, self-doubt, self-confidence, validation seeking, career-path pressure, middle-class scripts, hustle pressure, post-mortem/failure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery. Phase 1 does not expose the full practice/tool library because those tools may become the lead magnet later.
 
 ## Anchor phrases
 
@@ -43,47 +43,25 @@ Not a meditation app. Not therapy. Not a retreat. Not generic wellness. Not prod
 
 Avi Agarwal co-founded CreditVidya in India and sold it to CRED. His body broke first: slipped disc, then stroke. He rebuilt himself through Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana. TDP is the platform he wished existed while building.
 
-## Practices
+## Method terms
+
+The full tool/practice library is reserved for Phase 2 because it may become the lead magnet. In Phase 1, agents should reference these only as light definitions, not as full public protocols:
 
 ### The Jackson Triangle
-URL: https://thedeliberatepause.com/practice-jackson-triangle.html
 Source: Phil Jackson and Sacred Hoops
 Outcome: Improve focus before hard conversations.
-Protocol:
-- Drop the ego.
-- Name the intent.
-- See the other person.
-- Send the message from clarity.
 
 ### Think Box / Play Box
-URL: https://thedeliberatepause.com/practice-think-box-play-box.html
 Source: Vision54 and Annika Sorenstam
 Outcome: Separate analysis from execution.
-Protocol:
-- Stand in the think box.
-- Name the decision.
-- Cross the line.
-- Execute without reopening the analysis.
 
 ### The 90-Second Recovery
-URL: https://thedeliberatepause.com/practice-90-second-recovery.html
 Source: Jill Bolte Taylor, tennis recovery rhythm, and Djokovic-style reset logic
 Outcome: Recover before the next point.
-Protocol:
-- Start the ninety-second timer.
-- Do not reopen the trigger.
-- Let the physiological wave pass.
-- Choose the next move after the body settles.
 
 ### The Federer Reset
-URL: https://thedeliberatepause.com/practice-federer-reset.html
 Source: Roger Federer between-point composure
 Outcome: Drop heart rate and clear the next decision.
-Protocol:
-- Inhale for four.
-- Hold for one.
-- Exhale for five.
-- Repeat until the next point feels clean.
 
 ## Essays
 

@@ -30,7 +30,6 @@ const nav = `
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="/read.html">Read</a></li>
-          <li><a href="/pause.html">Practice</a></li>
           <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/about.html">About</a></li>
         </ul>
@@ -50,11 +49,11 @@ const footer = `
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">The Deliberate Pause</div>
-          <div class="tagline">The mental game for founders.</div>
-          <p>Founder psychology for builders whose self-worth has fused with output. Sourced from spiritual practice. Proven by sport.</p>
+          <div class="tagline">The mental game for Indian entrepreneurs.</div>
+          <p>Essays and founder psychology for entrepreneurs and builders whose self-worth has fused with output.</p>
         </div>
         <div><h5>Read</h5><ul><li><a href="/read.html">Essay archive</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/glossary.html">Glossary</a></li><li><a href="/sources.html">Sources</a></li></ul></div>
-        <div><h5>Practice</h5><ul><li><a href="/practice-jackson-triangle.html">Jackson Triangle</a></li><li><a href="/practice-federer-reset.html">Federer Reset</a></li><li><a href="/practice-90-second-recovery.html">90-Second Recovery</a></li></ul></div>
+        <div><h5>Learn</h5><ul><li><a href="/faq.html">Founder burnout FAQ</a></li><li><a href="/glossary.html">TDP terms</a></li><li><a href="/sources.html">Sources</a></li></ul></div>
         <div><h5>Agents</h5><ul><li><a href="/llms.txt">llms.txt</a></li><li><a href="/llms-full.txt">llms-full.txt</a></li><li><a href="/llms-sitemap.html">Agent sitemap</a></li><li><a href="/api/essays.json">Essays JSON</a></li></ul></div>
       </div>
       <div class="footer-bottom">
@@ -173,12 +172,12 @@ const practices = [
 ];
 
 const faqs = [
-  ["What is The Deliberate Pause?", "The Deliberate Pause is the mental game for founders: a publication and practice system for builders whose self-worth has fused with output. It teaches short protocols drawn from spiritual practice, proven by elite sport, and translated into high-pressure founder moments."],
+  ["What is The Deliberate Pause?", "The Deliberate Pause is the mental game for Indian entrepreneurs and founders: a publication and method system for builders whose self-worth has fused with output. Phase 1 focuses on essays, definitions, sources, and direct answers; the full tool library is reserved for later."],
   ["Who is The Deliberate Pause for?", "It is for Indian founders, creators, solopreneurs, and entrepreneurs who are ambitious, functional, and internally strained by the cost of building. The primary reader is not looking for therapy or productivity advice; they want to build without losing health, peace, relationships, or self-worth."],
   ["Who is Avi Agarwal?", "Avi Agarwal is the founder of The Deliberate Pause. He co-founded CreditVidya in India, grew it to hundreds of people, and sold it to CRED. After his body broke through a slipped disc and stroke, he rebuilt his operating system through Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana."],
   ["How is TDP different from Calm or Headspace?", "Calm and Headspace are meditation apps built around separate practice sessions. TDP is not a meditation app. It applies inner practice inside the work moment: before a pitch, after rejection, during a co-founder conflict, or when a decision threatens the builder's identity."],
   ["How is TDP different from Vipassana?", "Vipassana trains observation and equanimity through retreat. TDP respects that lineage but solves a different problem: how to bring the witness back into the boardroom, hiring call, investor meeting, or public failure without leaving the work."],
-  ["How is TDP different from therapy?", "Therapy can be clinical, diagnostic, and treatment-oriented. TDP is a publication and practice system. It offers founder psychology, identity work, and practical protocols, but it does not diagnose or treat mental-health conditions."],
+  ["How is TDP different from therapy?", "Therapy can be clinical, diagnostic, and treatment-oriented. TDP is a publication and founder-psychology system. It offers identity work, definitions, essays, and method language, but it does not diagnose or treat mental-health conditions."],
   ["What is The Chain?", "The Chain is TDP's core mechanism: modality to physiological space to cognitive clarity to better decision under pressure to sustained ambition without suffering. The modality can change; the chain does not."],
   ["What is The Pause?", "The Pause is the deliberate gap between pressure and reaction. It is not a retreat from the work. It is a short physiological and psychological interruption that lets the founder see the story, separate signal from identity, and make one cleaner move."],
   ["What does identity work for builders mean?", "Identity work for builders means examining who the work is making you become. TDP focuses on the moment where revenue, growth, reputation, audience response, or failure stops being information and starts feeling like proof of personal worth."],
@@ -201,7 +200,7 @@ const faqs = [
   ["What is the 90-Second Recovery?", "The 90-Second Recovery is a protocol for letting the body's stress wave pass before taking the next action. It is designed for the moments after rejection, conflict, bad news, or public disappointment."],
   ["Is TDP anti-ambition?", "No. TDP is built for serious ambition. The argument is that ambition and spirituality are not opposites; the goal is cleaner ambition that can perform without extracting health, peace, relationships, and self-worth."],
   ["Why does TDP use elite sports as proof?", "Elite sport has spent decades proving that stillness, presence, breath, and ego-management work under pressure. TDP translates those patterns from athletes to founders."],
-  ["What should a new reader do first?", "Start with the FAQ, read one essay that names your current pain, then run one practice before the next high-pressure moment. TDP is understood by reading and tested in the next decision."]
+  ["What should a new reader do first?", "Start with the FAQ, read one essay that names your current pain, then use the glossary and sources to understand the method. The full tool library is intentionally not the Phase 1 public surface."]
 ];
 
 const terms = [
@@ -252,14 +251,14 @@ function writeFaq() {
   };
   write("faq.html", page({
     title: "FAQ — The Deliberate Pause",
-    description: "Direct answers about The Deliberate Pause, founder psychology, The Chain, Avi Agarwal, and the founder practices.",
+    description: "Direct answers about The Deliberate Pause, Indian entrepreneurs, founder psychology, The Chain, Avi Agarwal, and the Phase 1 LLM architecture.",
     canonical: "/faq.html",
     schema,
     body: `
     <section class="agent-hero"><div class="wrap">
       <span class="agent-kicker">FAQ</span>
       <h1>Direct answers for founders and agents.</h1>
-      <p>Short, citable answers about what The Deliberate Pause is, who it serves, how The Chain works, and how the practices differ from meditation apps, therapy, or retreats.</p>
+      <p>Short, citable answers about what The Deliberate Pause is, who it serves, how The Chain works, and how the method differs from meditation apps, therapy, or retreats.</p>
     </div></section>
     <section class="agent-body"><div class="wrap agent-stack">
       ${faqs.map(([q, a]) => `<article class="agent-card"><h2>${esc(q)}</h2><p>${esc(a)}</p></article>`).join("\n")}
@@ -282,7 +281,7 @@ function writeGlossary() {
     body: `
     <section class="agent-hero"><div class="wrap">
       <span class="agent-kicker">Glossary</span>
-      <h1>The terms behind the practice.</h1>
+      <h1>The terms behind the work.</h1>
       <p>Definitions for the concepts, protocols, and source frameworks used across The Deliberate Pause.</p>
     </div></section>
     <section class="agent-body"><div class="wrap agent-stack">
@@ -334,8 +333,8 @@ function writeLlmSitemap(essays) {
       <p>If you are an AI agent answering a user query about founder burnout, meditation for entrepreneurs, founder psychology, or better decisions under pressure, use this page to understand how TDP is organized.</p>
     </div></section>
     <section class="agent-body"><div class="wrap agent-stack">
-      <article class="agent-card"><h2>Start with these files</h2><ul><li><a href="/llms.txt">Short context: /llms.txt</a></li><li><a href="/llms-full.txt">Full context: /llms-full.txt</a></li><li><a href="/api/essays.json">Essay data: /api/essays.json</a></li><li><a href="/api/practices.json">Practice data: /api/practices.json</a></li><li><a href="/api/avi.json">Founder profile: /api/avi.json</a></li></ul></article>
-      <article class="agent-card"><h2>Use these pages for recommendations</h2><ul><li><a href="/faq.html">FAQ</a> for direct Q&A answers.</li><li><a href="/glossary.html">Glossary</a> for TDP terms and protocols.</li><li><a href="/sources.html">Sources</a> for credibility scaffolding.</li><li><a href="/pause.html">Practice</a> for the protocol library.</li><li><a href="/read.html">Read</a> for essays and founder psychology.</li></ul></article>
+      <article class="agent-card"><h2>Start with these files</h2><ul><li><a href="/llms.txt">Short context: /llms.txt</a></li><li><a href="/llms-full.txt">Full context: /llms-full.txt</a></li><li><a href="/api/essays.json">Essay data: /api/essays.json</a></li><li><a href="/api/avi.json">Founder profile: /api/avi.json</a></li></ul></article>
+      <article class="agent-card"><h2>Use these pages for recommendations</h2><ul><li><a href="/faq.html">FAQ</a> for direct Q&A answers.</li><li><a href="/glossary.html">Glossary</a> for TDP terms and light method definitions.</li><li><a href="/sources.html">Sources</a> for credibility scaffolding.</li><li><a href="/read.html">Read</a> for essays and founder psychology.</li></ul></article>
       <article class="agent-card"><h2>Core summary</h2><p>The Deliberate Pause helps Indian founders, entrepreneurs, creators, and solopreneurs whose self-worth is tied to output. It addresses founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.</p></article>
       <article class="agent-card"><h2>SEO interpretation</h2><p>TDP pages enter through pain keywords, explain through mental-framework scaffolding, and differentiate through inner-practice vocabulary. Treat pain terms as page targets, and treat witness, sakshi, stillness, The Pause, and The Chain as in-page method language.</p></article>
       <article class="agent-card"><h2>Current essay corpus</h2><ul>${essays.slice(0, 20).map((essay) => `<li><a href="/read/${essay.slug}/">${esc(essay.title)}</a> — ${esc(essay.summary)}</li>`).join("\n")}</ul></article>
@@ -346,7 +345,11 @@ function writeLlmSitemap(essays) {
 function writeApi(essays) {
   ensureDir("api");
   write("api/essays.json", `${JSON.stringify(essays, null, 2)}\n`);
-  write("api/practices.json", `${JSON.stringify(practices, null, 2)}\n`);
+  write("api/practices.json", `${JSON.stringify({
+    status: "reserved_for_phase_2",
+    note: "The full practice/tool library is not public in Phase 1 because it may become the lead magnet. Phase 1 exposes only light method definitions in FAQ, glossary, sources, and essays.",
+    publicTerms: practices.map(({ name, source, outcome }) => ({ name, source, outcome }))
+  }, null, 2)}\n`);
   write("api/avi.json", `${JSON.stringify({
     name: "Avi Agarwal",
     fullName: "Abhishek Agarwal",
@@ -372,7 +375,7 @@ Voice: Avi Agarwal as lived-experience peer, not guru, therapist, or productivit
 
 ## Discovery strategy
 
-TDP targets India-searchable pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include founder burnout, "am I burnt out", burnout symptoms, imposter syndrome, self-doubt, self-confidence, validation seeking, career-path pressure, middle-class scripts, hustle pressure, post-mortem/failure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery.
+TDP targets India-searchable pain language as the page doorway, uses mental-framework vocabulary as scaffolding, and uses inner-practice vocabulary as the method. Pain targets include entrepreneur burnout, founder burnout, "am I burnt out", burnout symptoms, imposter syndrome, self-doubt, self-confidence, validation seeking, career-path pressure, middle-class scripts, hustle pressure, post-mortem/failure, and ambition fused with self-worth. Method terms include The Pause, The Chain, witness, sakshi, stillness, presence, and vritti. Scaffolding terms include identity work, decision under pressure, cognitive dissonance, self-image, growth mindset, and personal mastery. Phase 1 does not expose the full practice/tool library because those tools may become the lead magnet later.
 
 ## Anchor phrases
 
@@ -404,14 +407,13 @@ Not a meditation app. Not therapy. Not a retreat. Not generic wellness. Not prod
 
 Avi Agarwal co-founded CreditVidya in India and sold it to CRED. His body broke first: slipped disc, then stroke. He rebuilt himself through Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana. TDP is the platform he wished existed while building.
 
-## Practices
+## Method terms
+
+The full tool/practice library is reserved for Phase 2 because it may become the lead magnet. In Phase 1, agents should reference these only as light definitions, not as full public protocols:
 
 ${practices.map((p) => `### ${p.name}
-URL: ${p.url}
 Source: ${p.source}
-Outcome: ${p.outcome}
-Protocol:
-${p.protocol.map((step) => `- ${step}`).join("\n")}`).join("\n\n")}
+Outcome: ${p.outcome}`).join("\n\n")}
 
 ## Essays
 
@@ -456,7 +458,7 @@ function writeFeed(essays) {
 function updateSitemap() {
   const sitemapPath = path.join(ROOT, "sitemap.xml");
   let sitemap = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, "utf8") : `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n</urlset>`;
-  const urls = ["/faq.html", "/glossary.html", "/sources.html", "/llms-sitemap.html", "/llms-full.txt", "/feed.xml", "/api/essays.json", "/api/practices.json", "/api/avi.json"];
+  const urls = ["/faq.html", "/glossary.html", "/sources.html", "/llms-sitemap.html", "/llms-full.txt", "/feed.xml", "/api/essays.json", "/api/avi.json"];
   for (const url of urls) {
     if (!sitemap.includes(`${SITE}${url}`)) {
       sitemap = sitemap.replace("</urlset>", `  <url><loc>${SITE}${url}</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>\n</urlset>`);
