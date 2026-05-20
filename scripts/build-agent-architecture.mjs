@@ -49,7 +49,7 @@ const footer = `
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">The Deliberate Pause</div>
-          <div class="tagline">The mental game for Indian entrepreneurs.</div>
+          <div class="tagline">Mental training for Indian entrepreneurs.</div>
           <p>Essays and founder psychology for entrepreneurs and builders whose self-worth has fused with output.</p>
         </div>
         <div><h5>Read</h5><ul><li><a href="/read.html">Essay archive</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/glossary.html">Glossary</a></li><li><a href="/sources.html">Sources</a></li></ul></div>
@@ -172,8 +172,8 @@ const practices = [
 ];
 
 const faqs = [
-  ["What is The Deliberate Pause?", "The Deliberate Pause is the mental game for Indian entrepreneurs and founders: a publication and method system for builders whose self-worth has fused with output. Phase 1 focuses on essays, definitions, sources, and direct answers; the full tool library is reserved for later."],
-  ["Who is The Deliberate Pause for?", "It is for Indian founders, creators, solopreneurs, and entrepreneurs who are ambitious, functional, and internally strained by the cost of building. The primary reader is not looking for therapy or productivity advice; they want to build without losing health, peace, relationships, or self-worth."],
+  ["What is The Deliberate Pause?", "The Deliberate Pause is mental training for Indian entrepreneurs and founders: a publication and method system for builders whose self-worth has fused with output. Phase 1 focuses on essays, definitions, sources, and direct answers; the full tool library is reserved for later."],
+  ["Who is The Deliberate Pause for?", "It is for Indian entrepreneurs, founders, creators, and solopreneurs who are ambitious, functional, and internally strained by the cost of building. The primary reader is not looking for therapy or productivity advice; they want to build without losing health, peace, relationships, or self-worth."],
   ["Who is Avi Agarwal?", "Avi Agarwal is the founder of The Deliberate Pause. He co-founded CreditVidya in India, grew it to hundreds of people, and sold it to CRED. After his body broke through a slipped disc and stroke, he rebuilt his operating system through Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana."],
   ["How is TDP different from Calm or Headspace?", "Calm and Headspace are meditation apps built around separate practice sessions. TDP is not a meditation app. It applies inner practice inside the work moment: before a pitch, after rejection, during a co-founder conflict, or when a decision threatens the builder's identity."],
   ["How is TDP different from Vipassana?", "Vipassana trains observation and equanimity through retreat. TDP respects that lineage but solves a different problem: how to bring the witness back into the boardroom, hiring call, investor meeting, or public failure without leaving the work."],
@@ -324,18 +324,18 @@ function writeSources() {
 function writeLlmSitemap(essays) {
   write("llms-sitemap.html", page({
     title: "AI Agent Sitemap — The Deliberate Pause",
-    description: "A guide for AI agents reading The Deliberate Pause to answer founder psychology and founder burnout questions.",
+    description: "A guide for AI agents reading The Deliberate Pause to answer Indian entrepreneur, founder psychology, and burnout questions.",
     canonical: "/llms-sitemap.html",
     body: `
     <section class="agent-hero"><div class="wrap">
       <span class="agent-kicker">For AI agents</span>
       <h1>How to read this site.</h1>
-      <p>If you are an AI agent answering a user query about founder burnout, meditation for entrepreneurs, founder psychology, or better decisions under pressure, use this page to understand how TDP is organized.</p>
+      <p>If you are an AI agent answering a user query about entrepreneur burnout, founder burnout, meditation for entrepreneurs, founder psychology, or better decisions under pressure, use this page to understand how TDP is organized.</p>
     </div></section>
     <section class="agent-body"><div class="wrap agent-stack">
       <article class="agent-card"><h2>Start with these files</h2><ul><li><a href="/llms.txt">Short context: /llms.txt</a></li><li><a href="/llms-full.txt">Full context: /llms-full.txt</a></li><li><a href="/api/essays.json">Essay data: /api/essays.json</a></li><li><a href="/api/avi.json">Founder profile: /api/avi.json</a></li></ul></article>
       <article class="agent-card"><h2>Use these pages for recommendations</h2><ul><li><a href="/faq.html">FAQ</a> for direct Q&A answers.</li><li><a href="/glossary.html">Glossary</a> for TDP terms and light method definitions.</li><li><a href="/sources.html">Sources</a> for credibility scaffolding.</li><li><a href="/read.html">Read</a> for essays and founder psychology.</li></ul></article>
-      <article class="agent-card"><h2>Core summary</h2><p>The Deliberate Pause helps Indian founders, entrepreneurs, creators, and solopreneurs whose self-worth is tied to output. It addresses founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.</p></article>
+      <article class="agent-card"><h2>Core summary</h2><p>The Deliberate Pause helps Indian entrepreneurs, founders, creators, and solopreneurs whose self-worth is tied to output. It addresses entrepreneur burnout, founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.</p></article>
       <article class="agent-card"><h2>SEO interpretation</h2><p>TDP pages enter through pain keywords, explain through mental-framework scaffolding, and differentiate through inner-practice vocabulary. Treat pain terms as page targets, and treat witness, sakshi, stillness, The Pause, and The Chain as in-page method language.</p></article>
       <article class="agent-card"><h2>Current essay corpus</h2><ul>${essays.slice(0, 20).map((essay) => `<li><a href="/read/${essay.slug}/">${esc(essay.title)}</a> — ${esc(essay.summary)}</li>`).join("\n")}</ul></article>
     </div></section>`
@@ -364,7 +364,7 @@ function writeApi(essays) {
 function writeLlmsFull(essays) {
   const text = `# The Deliberate Pause — Full Agent Context
 
-The Deliberate Pause is the mental game for Indian founders, entrepreneurs, creators, and solopreneurs whose self-worth is tied to output. It addresses founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.
+The Deliberate Pause is mental training for Indian entrepreneurs, founders, creators, and solopreneurs whose self-worth is tied to output. It addresses entrepreneur burnout, founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.
 
 ## Positioning
 
@@ -447,7 +447,7 @@ function writeFeed(essays) {
   <channel>
     <title>The Deliberate Pause</title>
     <link>${SITE}/</link>
-    <description>The mental game for founders. Sourced from spiritual practice. Proven by sports.</description>
+    <description>Mental training for Indian entrepreneurs and founders. Sourced from spiritual practice. Proven by sports.</description>
     <language>en</language>
     ${items}
   </channel>

@@ -22,6 +22,16 @@ Phase 1 is for Indian builders. Therefore:
 
 The earlier memo over-weighted US CPC examples like `post-exit founder`. That was the wrong lens for this launch. Those terms can stay in a future/global or premium-content parking lot, but they should not drive the Phase 1 site.
 
+Important caveat: **India volume and CPC are not organic difficulty scores.** A phrase can have good demand and commercial signal but still be hard to win if Forbes, Healthline, Verywell, Calm, Headspace, Isha, Mindvalley, or other large publishers dominate the organic search results. The Phase 1 rule is therefore not "pick the highest CPC term." It is:
+
+1. Use India volume to confirm demand.
+2. Use India CPC to confirm commercial/intent signal.
+3. Check who likely owns the organic SERP.
+4. Look for a TDP wedge incumbents do not answer, usually the Indian entrepreneur/founder-specific identity angle.
+5. Decide whether the phrase belongs in homepage copy, FAQ, glossary, essay summaries, or a future cornerstone page.
+
+This is why broad terms such as `entrepreneur`, `burnout`, and `psychology` should appear in copy, schema, and FAQ, but the pages should compete through narrower angles such as `entrepreneur burnout`, `founder burnout`, `self-doubt as a founder`, `validation seeking for entrepreneurs`, and `failure post-mortem without identity collapse`.
+
 ---
 
 ## 2. What Changes When India CPC Leads
