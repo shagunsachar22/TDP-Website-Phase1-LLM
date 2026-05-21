@@ -17,6 +17,7 @@ Repo:
 What is included:
 
 - Homepage revised around India-first SEO language.
+- Homepage lead-magnet/newsletter signup sections removed.
 - Practice/tool pages removed from public navigation.
 - `/pause` and `/practice-*` routes redirected away on Vercel.
 - `/faq.html` with FAQPage schema.
@@ -65,6 +66,7 @@ Supporting strategy docs:
 - `STORYBRAND_SEO_COPY_PASS_2026_05_20.md`
 - `WORD_CHOICE_AND_SEO_RESEARCH_MEMO.md`
 - `SEO_INPUT_REVIEW_2026_05_18.md`
+- `GOOGLE_AI_SEARCH_IMPLEMENTATION_NOTE_2026_05_21.md`
 
 What it covers:
 
