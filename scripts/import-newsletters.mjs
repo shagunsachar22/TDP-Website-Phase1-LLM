@@ -264,6 +264,7 @@ function articlePage(issue, allIssues) {
     "@type": "Article",
     "headline": ${JSON.stringify(issue.title)},
     "description": ${JSON.stringify(issue.excerpt)},
+    "abstract": ${JSON.stringify(issue.excerpt)},
     "author": { "@type": "Person", "name": "Avi Agarwal" },
     "datePublished": ${JSON.stringify(issue.isoDate)},
     "publisher": { "@type": "Organization", "name": "The Deliberate Pause" }
@@ -281,6 +282,9 @@ function articlePage(issue, allIssues) {
     .article-header .byline .dot { color: var(--accent-amber); margin: 0 8px; }
     .cover { max-width: 1080px; margin: 0 auto 80px; padding: 0 var(--gutter); }
     .cover-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border-on-cream); border-radius: 8px; display: block; background: rgba(26, 26, 26, 0.06); }
+    .article-summary { max-width: 720px; margin: -32px auto 72px; padding: 28px 32px; border-top: 1px solid var(--border-on-cream); border-bottom: 1px solid var(--border-on-cream); }
+    .article-summary .label { display: block; margin-bottom: 12px; font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-amber); font-weight: 600; }
+    .article-summary p { margin: 0; font-family: var(--font-serif); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; color: var(--text-dark); letter-spacing: -0.006em; }
     .article-body { padding: 0 0 96px; }
     .article-body .wrap { max-width: 720px; }
     .article-body p, .article-body h2, .article-body h3, .article-body blockquote, .article-body ul, .article-body ol, .article-body figure { max-width: 720px; }
@@ -338,6 +342,10 @@ function articlePage(issue, allIssues) {
       </div>
     </header>
     ${issue.cover ? `<div class="cover"><img class="cover-img" data-scroll-fx="zoom" src="${escapeAttr(issue.cover)}" alt="${escapeAttr(issue.title)}" /></div>` : ""}
+    <aside id="summary" class="article-summary" aria-label="Essay summary" data-scroll-fx>
+      <span class="label">In short</span>
+      <p>${escapeHtml(issue.excerpt)}</p>
+    </aside>
     <article class="article-body">
       <div class="wrap">
         ${issue.body}

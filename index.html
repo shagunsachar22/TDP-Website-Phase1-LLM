@@ -717,7 +717,75 @@
       .definition-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    /* ---------- 11 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
+    /* ---------- 11 · HOW TDP IS DIFFERENT (cream) ---------- */
+    .difference { padding: 96px 0 120px; border-top: 1px solid var(--border-on-cream); }
+    .difference .wrap { max-width: 1100px; }
+    .difference-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .difference h2 {
+      font-size: clamp(36px, 4.6vw, 64px);
+      letter-spacing: -0.026em;
+      line-height: 1.02;
+      margin: 0;
+      max-width: 720px;
+    }
+    .difference .lead {
+      font-size: clamp(15px, 1.2vw, 17px);
+      line-height: 1.65;
+      color: var(--text-muted-light);
+      margin: 0;
+    }
+    .difference-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .difference-card {
+      min-height: 280px;
+      border: 1px solid var(--border-on-cream);
+      border-radius: 6px;
+      padding: 28px 24px;
+      background: rgba(255, 255, 255, 0.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .difference-card .label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .difference-card h3 {
+      font-size: clamp(22px, 2.2vw, 28px);
+      line-height: 1.08;
+      letter-spacing: -0.018em;
+      margin: 0 0 18px;
+    }
+    .difference-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted-light);
+      margin: 0;
+    }
+    @media (max-width: 1024px) {
+      .difference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .difference-header { grid-template-columns: 1fr; gap: 20px; }
+      .difference-grid { grid-template-columns: 1fr; }
+      .difference-card { min-height: 0; }
+    }
+
+    /* ---------- 12 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
     .avi-intro { padding: 96px 0 140px; }
     .avi-intro .wrap { max-width: 1100px; }
     .avi-intro-grid {
@@ -1108,7 +1176,52 @@
     </section>
 
     <!-- ============================================================
-         11 · I'M AVI (cream) — wired to /images/avi-peer.jpg
+         11 · HOW TDP IS DIFFERENT (cream)
+         ============================================================ -->
+    <section class="difference theme-cream" aria-labelledby="difference-headline">
+      <div class="wrap">
+        <div class="difference-header">
+          <div>
+            <span class="eyebrow" data-scroll-fx>How TDP is different</span>
+            <h2 id="difference-headline" data-scroll-fx>Not another meditation app. Not another productivity system.</h2>
+          </div>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">The Deliberate Pause sits between spiritual practice, founder psychology, and elite sport. It is built for pressure moments inside the work, not for escaping the work.</p>
+        </div>
+        <div class="difference-grid">
+          <article class="difference-card" data-scroll-fx>
+            <div>
+              <div class="label">TDP vs Calm / Headspace</div>
+              <h3>Not just relief.</h3>
+            </div>
+            <p>Calm and Headspace help with stress, sleep, and relaxation. TDP works one layer lower: the identity loop that makes the founder need stress, speed, and proof in the first place.</p>
+          </article>
+          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.05s;">
+            <div>
+              <div class="label">TDP vs Vipassana / Sadhguru</div>
+              <h3>Stillness inside the arena.</h3>
+            </div>
+            <p>Traditional practice often asks you to step away from the world. TDP translates the same witness principle into board meetings, cofounder conflict, rejection, and the week a metric falls.</p>
+          </article>
+          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.1s;">
+            <div>
+              <div class="label">TDP vs founder therapy</div>
+              <h3>Before the spiral.</h3>
+            </div>
+            <p>Therapy can help process what happened. TDP helps you notice the pressure story while it is happening, so the next decision comes from clarity instead of collapse.</p>
+          </article>
+          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.15s;">
+            <div>
+              <div class="label">TDP vs productivity systems</div>
+              <h3>Not more output.</h3>
+            </div>
+            <p>Atomic Habits and deep-work systems improve behaviour. TDP asks why output became identity at all, then gives entrepreneurs a way to stay ambitious without being run by proof.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12 · I'M AVI (cream) — wired to /images/avi-peer.jpg
          ============================================================ -->
     <section class="avi-intro theme-cream" aria-labelledby="avi-intro-headline">
       <div class="wrap">

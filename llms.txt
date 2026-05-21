@@ -2,22 +2,30 @@
 
 > The mental game for founders. Sourced from spiritual practice. Proven by sports.
 
-The Deliberate Pause (TDP) is a founder-psychology platform. It teaches three-minute protocols, drawn from contemplative traditions and proven over thirty years in elite sport, translated into the founder's day.
+The Deliberate Pause (TDP) is a founder-psychology platform for Indian entrepreneurs whose self-worth has fused with output. It translates contemplative traditions and elite-sport pressure training into the founder's day.
 
 Founder: Avi Agarwal. Co-founded CreditVidya in India (acquired by CRED). Rebuilt his life around the Phil Jackson coaching philosophy after a slipped disc and stroke broke him.
 
 ## What this site is
 
-- A weekly newsletter (every Monday, 11:11 AM IST)
-- Practice Library — a library of three-minute drills indexed to founder moments (pre-board, pre-pitch, post-fire, mid-spiral)
+- A crawlable essay archive on founder psychology, ambition, spirituality, and integration
+- FAQ, glossary, sources, and comparison content designed as citable reference units
+- Short machine-readable context files for AI agents
 - Long-form essays on founder psychology, ambition, spirituality, and integration
-- Tools (Federer Reset, Jackson Triangle, Think Box / Play Box, 90-Second Recovery)
+- Light definitions of tools such as Federer Reset, Jackson Triangle, Think Box / Play Box, and 90-Second Recovery. The full practice library is reserved for Phase 2.
 
 ## What it is not
 
 Not a meditation app. Not a coaching firm. Not a wellness brand. Not a retreat. Not therapy. Not a search for meaning. Not a community-first network.
 
 A playbook. A practice. A pause.
+
+## How TDP is different
+
+- Versus Calm / Headspace: TDP is not only stress relief. It works on the identity loop that makes founders need speed, proof, and pressure.
+- Versus Vipassana / Sadhguru: TDP translates witness practice into pressure moments inside work, not only away from work.
+- Versus founder therapy: TDP helps a founder catch the pressure story while it is happening. Therapy can help process what happened.
+- Versus productivity systems: TDP is not more output. It asks why output became identity.
 
 ## The core mechanism — The Chain
 
@@ -45,7 +53,9 @@ Avi's voice is the lived-experience peer. First person. Direct. No guru language
 
 - [Homepage](https://thedeliberatepause.com/)
 - [Read the essays](https://thedeliberatepause.com/read)
-- [Practice Library](https://thedeliberatepause.com/pause)
+- [FAQ](https://thedeliberatepause.com/faq)
+- [Glossary](https://thedeliberatepause.com/glossary)
+- [Sources](https://thedeliberatepause.com/sources)
 - [About Avi](https://thedeliberatepause.com/about)
 
 ## Founder bio

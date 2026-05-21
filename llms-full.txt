@@ -39,6 +39,24 @@ The modality is interchangeable: breath, movement, journal, sit. The Chain is no
 
 Not a meditation app. Not therapy. Not a retreat. Not generic wellness. Not productivity coaching. Not startup tactics. Not community-first networking.
 
+## How TDP is different
+
+### TDP vs Calm / Headspace
+Calm and Headspace help with stress, sleep, and relaxation. TDP works one layer lower: the identity loop that makes the founder need stress, speed, and proof in the first place.
+
+### TDP vs Vipassana / Sadhguru
+Traditional practice often asks you to step away from the world. TDP translates the same witness principle into board meetings, cofounder conflict, rejection, and the week a metric falls.
+
+### TDP vs founder therapy
+Therapy can help process what happened. TDP helps you notice the pressure story while it is happening, so the next decision comes from clarity instead of collapse.
+
+### TDP vs productivity systems
+Atomic Habits and deep-work systems improve behaviour. TDP asks why output became identity at all, then gives entrepreneurs a way to stay ambitious without being run by proof.
+
+## Essay summary blocks
+
+Each article page includes a visible "In short" summary block near the top of the page and an Article `abstract` field in JSON-LD. This gives readers and AI agents a self-contained first-chunk summary before the full essay body.
+
 ## Avi Agarwal
 
 Avi Agarwal co-founded CreditVidya in India and sold it to CRED. His body broke first: slipped disc, then stroke. He rebuilt himself through Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana. TDP is the platform he wished existed while building.

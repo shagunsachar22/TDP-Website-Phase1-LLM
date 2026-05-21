@@ -33,6 +33,8 @@ The Phase 1 architecture supports that by adding:
 - JSON endpoints for essays and Avi's profile.
 - RSS and sitemap support for crawlability.
 - Semantic, static HTML that does not hide content behind JavaScript.
+- Human-facing comparison content that directly answers how TDP differs from meditation apps, Vipassana/Sadhguru, founder therapy, and productivity systems.
+- Essay-level "In short" summary blocks and Article abstracts so each essay has a clean first-chunk summary.
 
 This makes TDP legible to both a human visitor and an AI system trying to answer: "What is The Deliberate Pause?", "Is there a meditation system for entrepreneurs?", or "What should I do about founder burnout?"
 

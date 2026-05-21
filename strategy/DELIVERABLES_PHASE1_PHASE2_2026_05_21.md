@@ -18,6 +18,7 @@ What is included:
 
 - Homepage revised around India-first SEO language.
 - Homepage lead-magnet/newsletter signup sections removed.
+- Homepage adds a human-facing comparison section: TDP vs Calm/Headspace, Vipassana/Sadhguru, founder therapy, and productivity systems.
 - Practice/tool pages removed from public navigation.
 - `/pause` and `/practice-*` routes redirected away on Vercel.
 - `/faq.html` with FAQPage schema.
@@ -29,6 +30,7 @@ What is included:
 - `/api/avi.json`.
 - `/feed.xml`.
 - Full essay archive preserved under `/read`.
+- Essay pages include quiet `In short` summary blocks and Article `abstract` fields for first-chunk citability.
 
 What is intentionally not included:
 
