@@ -4,34 +4,365 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subscribe - The Deliberate Pause</title>
-  <meta name="description" content="Subscribe to The Deliberate Pause, a weekly newsletter on founder psychology and mental training for Indian entrepreneurs." />
+  <meta name="description" content="Subscribe to The Deliberate Pause, a weekly newsletter on founder psychology, burnout, ambition, self-doubt, and mental training for Indian entrepreneurs." />
   <link rel="canonical" href="https://thedeliberatepause.com/newsletter.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Subscribe - The Deliberate Pause" />
-  <meta property="og:description" content="5 minutes of founder psychology and mental training, every Monday at 11:11." />
+  <meta property="og:description" content="A weekly pause for entrepreneurs building under pressure. Start here if you came from Instagram, LinkedIn, Substack, or a shared essay." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Subscribe to The Deliberate Pause",
+    "description": "A weekly newsletter on founder psychology, burnout, ambition, self-doubt, and mental training for Indian entrepreneurs.",
+    "url": "https://thedeliberatepause.com/newsletter",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "The Deliberate Pause",
+      "url": "https://thedeliberatepause.com"
+    },
+    "potentialAction": {
+      "@type": "SubscribeAction",
+      "target": "https://thedeliberatepause.com/newsletter"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where do The Deliberate Pause essays live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The public essay archive lives on Substack. The Deliberate Pause website remains the main brand, SEO, FAQ, and conversion layer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when I subscribe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get the weekly Deliberate Pause letter. Kit/ConvertKit remains the source of truth for the email list, tagging, and automations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the newsletter for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The newsletter is for Indian entrepreneurs, founders, creators, and builders dealing with burnout, self-doubt, validation loops, ambition, failure, and the pressure to turn output into proof of worth."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .newsletter-hero { min-height: 88vh; display: grid; align-items: center; padding: 132px 0 76px; }
-    .newsletter-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.58fr); gap: 64px; align-items: center; }
-    .newsletter-hero h1 { max-width: 880px; }
-    .newsletter-hero .lead { max-width: 700px; color: rgba(245,239,229,0.78); font-family: var(--font-serif); font-size: clamp(20px, 2vw, 27px); line-height: 1.45; }
-    .newsletter-form-card { border: 1px solid rgba(245,239,229,0.18); padding: 34px; background: rgba(245,239,229,0.04); }
-    .newsletter-form-card h2 { margin-bottom: 12px; }
-    .newsletter-form-card p { color: var(--text-muted-dark); line-height: 1.6; }
-    .newsletter-form-card .form-row { margin-top: 24px; display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .newsletter-form-card input { min-height: 56px; }
-    .newsletter-form-card .btn { width: 100%; justify-content: center; }
-    .proof-strip { padding: 72px 0 96px; border-top: 1px solid var(--border-on-dark); }
-    .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-    .proof-item { border-top: 1px solid rgba(245,239,229,0.18); padding-top: 20px; }
-    .proof-item h3 { color: var(--text-cream); margin-bottom: 8px; }
-    .proof-item p { color: var(--text-muted-dark); line-height: 1.6; }
-    @media (max-width: 900px) {
-      .newsletter-grid, .proof-grid { grid-template-columns: 1fr; }
-      .newsletter-form-card { padding: 24px; }
+    .newsletter-hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      padding: 148px 0 88px;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: var(--border-on-dark);
+    }
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.56fr);
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .newsletter-copy h1 {
+      max-width: 940px;
+      margin-bottom: 28px;
+    }
+    .newsletter-copy .lead {
+      max-width: 730px;
+      color: rgba(245,239,229,0.78);
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2vw, 27px);
+      line-height: 1.45;
+    }
+    .newsletter-kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .newsletter-kicker span {
+      border: 1px solid rgba(245,239,229,0.16);
+      color: rgba(245,239,229,0.76);
+      padding: 8px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .arrival-strip {
+      padding: 34px 0;
+      border-top: 1px solid var(--border-on-dark);
+      border-bottom: 1px solid var(--border-on-dark);
+      background: #171717;
+    }
+    .arrival-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+    .arrival-grid p {
+      color: var(--text-muted-dark);
+      line-height: 1.62;
+      margin: 0;
+      max-width: 900px;
+    }
+    .arrival-grid strong {
+      color: var(--text-cream);
+      font-weight: 700;
+    }
+    .arrival-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .arrival-links a {
+      color: rgba(245,239,229,0.76);
+      border-bottom: 1px solid rgba(245,239,229,0.24);
+      padding-bottom: 3px;
+    }
+    .arrival-links a:hover {
+      color: var(--accent-amber);
+      border-color: var(--accent-amber);
+    }
+    .newsletter-form-card {
+      border: 1px solid rgba(245,239,229,0.18);
+      padding: 34px;
+      background: rgba(245,239,229,0.045);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.26);
+    }
+    .newsletter-form-card h2 {
+      margin-bottom: 12px;
+      color: var(--text-cream);
+    }
+    .newsletter-form-card p {
+      color: var(--text-muted-dark);
+      line-height: 1.6;
+    }
+    .newsletter-form-card .form-row {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .newsletter-form-card input {
+      min-height: 56px;
+    }
+    .newsletter-form-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .signup-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(245,239,229,0.58);
+    }
+    .landing-band {
+      padding: 102px 0;
+    }
+    .section-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 46px;
+    }
+    .section-intro p {
+      color: var(--text-muted-light);
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .dark-intro p {
+      color: var(--text-muted-dark);
+    }
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--border-on-cream);
+      border-left: 1px solid var(--border-on-cream);
+    }
+    .promise-card {
+      min-height: 285px;
+      padding: 26px;
+      border-right: 1px solid var(--border-on-cream);
+      border-bottom: 1px solid var(--border-on-cream);
+    }
+    .promise-card .num {
+      color: var(--accent-amber);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .promise-card h3 {
+      margin-top: 44px;
+      margin-bottom: 14px;
+    }
+    .promise-card p {
+      color: var(--text-muted-light);
+      line-height: 1.58;
+    }
+    .substack-explainer {
+      border-top: 1px solid var(--border-on-dark);
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .explainer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
+    }
+    .explainer-copy p {
+      color: var(--text-muted-dark);
+      line-height: 1.68;
+      font-size: 18px;
+    }
+    .flow-list {
+      display: grid;
+      gap: 16px;
+    }
+    .flow-item {
+      border: 1px solid rgba(245,239,229,0.15);
+      padding: 22px;
+      background: rgba(245,239,229,0.035);
+    }
+    .flow-item strong {
+      display: block;
+      color: var(--text-cream);
+      margin-bottom: 6px;
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.12;
+    }
+    .flow-item span {
+      color: var(--text-muted-dark);
+      line-height: 1.58;
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: 1px solid var(--border-on-cream);
+      border-left: 1px solid var(--border-on-cream);
+    }
+    .path-card {
+      min-height: 235px;
+      padding: 22px;
+      border-right: 1px solid var(--border-on-cream);
+      border-bottom: 1px solid var(--border-on-cream);
+    }
+    .path-card h3 {
+      font-size: clamp(22px, 2.1vw, 30px);
+      margin-bottom: 14px;
+    }
+    .path-card p {
+      color: var(--text-muted-light);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .conversion-strip {
+      padding: 92px 0;
+      border-top: 1px solid var(--border-on-dark);
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .conversion-box {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.64fr);
+      gap: 54px;
+      align-items: center;
+      border: 1px solid rgba(245,239,229,0.16);
+      padding: 36px;
+      background: rgba(245,239,229,0.045);
+    }
+    .conversion-box p {
+      color: var(--text-muted-dark);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .conversion-box .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .conversion-box .btn {
+      width: 100%;
+    }
+    .faq-mini {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+    .faq-mini article {
+      border-top: 1px solid var(--border-on-cream);
+      padding-top: 20px;
+    }
+    .faq-mini p {
+      color: var(--text-muted-light);
+      line-height: 1.6;
+    }
+    .footer-simple {
+      padding-top: 62px;
+    }
+    @media (max-width: 1000px) {
+      .newsletter-grid,
+      .section-intro,
+      .explainer-grid,
+      .conversion-box {
+        grid-template-columns: 1fr;
+      }
+      .promise-grid,
+      .paths-grid,
+      .faq-mini {
+        grid-template-columns: 1fr;
+      }
+      .arrival-grid {
+        grid-template-columns: 1fr;
+      }
+      .arrival-links {
+        justify-content: flex-start;
+      }
+      .newsletter-hero {
+        min-height: auto;
+        padding-top: 126px;
+      }
+    }
+    @media (max-width: 600px) {
+      .newsletter-form-card,
+      .conversion-box {
+        padding: 24px;
+      }
+      .newsletter-kicker span {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -62,51 +393,194 @@
   <main>
     <section class="newsletter-hero theme-dark">
       <div class="wrap newsletter-grid">
-        <div>
-          <span class="eyebrow" data-scroll-fx>Newsletter</span>
-          <h1 data-scroll-fx="fade-up-lg">5 minutes of founder psychology, every Monday at 11:11.</h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">The Deliberate Pause is for Indian entrepreneurs whose ambition still works, but whose nervous system is starting to pay the bill.</p>
+        <div class="newsletter-copy">
+          <span class="eyebrow" data-scroll-fx>Weekly letter</span>
+          <h1 data-scroll-fx="fade-up-lg">A weekly pause for entrepreneurs building under pressure.</h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">If you came from Instagram, LinkedIn, Substack, or a forwarded essay, start here. The Deliberate Pause is for Indian entrepreneurs whose ambition still works, but whose nervous system is starting to pay the bill.</p>
+          <div class="newsletter-kicker" data-scroll-fx style="--fx-delay: 0.25s;">
+            <span>Every Monday</span>
+            <span>11:11 am</span>
+            <span>5 minutes</span>
+          </div>
         </div>
+
         <aside class="newsletter-form-card" data-scroll-fx="fade-left" aria-label="Newsletter signup">
-          <h2>Subscribe to newsletter.</h2>
-          <p>Essays on burnout, self-doubt, validation, failure, attention, recovery, and the inner cost of building.</p>
-          <form class="form-row" action="#" method="post" data-source="newsletter-landing">
+          <h2>Subscribe to the Monday letter.</h2>
+          <p>One essay on burnout, self-doubt, validation, failure, attention, recovery, and the inner cost of building.</p>
+          <form class="form-row" action="#" method="post" data-source="newsletter-landing-hero">
             <label for="newsletter-email" class="visually-hidden">Email address</label>
             <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required />
             <button type="submit" class="btn btn-magnetic">Subscribe to newsletter <span class="arrow">→</span></button>
           </form>
-          <p class="form-disclaimer">Kit owns the email list. No spam. Unsubscribe in one click.</p>
+          <div class="signup-note">Kit owns the email list. Substack hosts the public archive. No spam.</div>
         </aside>
       </div>
     </section>
 
-    <section class="proof-strip theme-dark">
-      <div class="wrap proof-grid">
-        <article class="proof-item">
-          <h3>Not a productivity hack.</h3>
-          <p>This is not about extracting more output from the founder. It is about the cost of making output the self.</p>
-        </article>
-        <article class="proof-item">
-          <h3>Not a meditation app.</h3>
-          <p>The pause belongs inside the work: before the pitch, after rejection, during conflict, and inside the decision.</p>
-        </article>
-        <article class="proof-item">
-          <h3>Not therapy.</h3>
-          <p>TDP does not diagnose. It gives founders language for pressure, identity, and clearer action.</p>
-        </article>
+    <section class="arrival-strip theme-dark" aria-label="New reader orientation">
+      <div class="wrap arrival-grid">
+        <p><strong>New here?</strong> TDP is not a productivity newsletter. It is a weekly essay on the inner cost of building: burnout, self-doubt, validation, ambition, failure, attention, and recovery.</p>
+        <div class="arrival-links" aria-label="Quick orientation links">
+          <a href="read.html">Browse essays</a>
+          <a href="faq.html">Read FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band theme-cream" aria-labelledby="promise-headline">
+      <div class="wrap">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">What you get</span>
+            <h2 id="promise-headline">Not more content. A cleaner way to read your own pressure.</h2>
+          </div>
+          <p>Most founder advice tries to make you move faster. This letter slows the one thing that quietly drives the whole machine: the belief that every outcome is proof of who you are.</p>
+        </div>
+        <div class="promise-grid">
+          <article class="promise-card" data-scroll-fx>
+            <span class="num">01</span>
+            <h3>Language for the thing you can feel but cannot name.</h3>
+            <p>Burnout, validation loops, self-doubt, rejection, comparison, and the strange emptiness that can arrive after a win.</p>
+          </article>
+          <article class="promise-card" data-scroll-fx style="--fx-delay: 0.1s;">
+            <span class="num">02</span>
+            <h3>Founder psychology without turning it into therapy-speak.</h3>
+            <p>Clear frames drawn from spiritual practice, elite sport, and lived startup experience.</p>
+          </article>
+          <article class="promise-card" data-scroll-fx style="--fx-delay: 0.2s;">
+            <span class="num">03</span>
+            <h3>A weekly pause before the week decides who you are.</h3>
+            <p>One short essay. One useful frame. One question you can carry into the work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band substack-explainer theme-dark" aria-labelledby="substack-headline">
+      <div class="wrap explainer-grid">
+        <div class="explainer-copy">
+          <span class="eyebrow">Substack + Kit</span>
+          <h2 id="substack-headline">Read on Substack. Subscribe through Kit.</h2>
+          <p>Substack is the reading room. It holds the public essay archive and gives readers a familiar place to browse older pieces.</p>
+          <p>Kit stays the source of truth for email. That keeps the list owned, portable, taggable, and useful when Webflow becomes the final site.</p>
+        </div>
+        <div class="flow-list" aria-label="How the newsletter flow works">
+          <div class="flow-item" data-scroll-fx>
+            <strong>1. Discover TDP on the website.</strong>
+            <span>The main site carries the brand argument, SEO pages, FAQ, and LLM-readable structure.</span>
+          </div>
+          <div class="flow-item" data-scroll-fx style="--fx-delay: 0.1s;">
+            <strong>2. Subscribe through Kit.</strong>
+            <span>The signup form will connect to Kit once the real embed or form action is added.</span>
+          </div>
+          <div class="flow-item" data-scroll-fx style="--fx-delay: 0.2s;">
+            <strong>3. Browse essays on Substack.</strong>
+            <span>The archive can live at the Substack URL now, and later at a branded read subdomain.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band theme-cream" aria-labelledby="paths-headline">
+      <div class="wrap">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">Essay paths</span>
+            <h2 id="paths-headline">The archive is organized around the cost of building.</h2>
+          </div>
+          <p>These five paths should carry through the footer, Read page, and eventually Substack sections or tags. They make the archive easier to scan without turning it into a tag cloud.</p>
+        </div>
+        <div class="paths-grid">
+          <article class="path-card">
+            <h3>Burnout & Identity</h3>
+            <p>When output becomes proof of worth.</p>
+          </article>
+          <article class="path-card">
+            <h3>Failure & Rejection</h3>
+            <p>When no starts feeling like a verdict.</p>
+          </article>
+          <article class="path-card">
+            <h3>Ambition & Success</h3>
+            <p>When winning still does not settle the self.</p>
+          </article>
+          <article class="path-card">
+            <h3>Decision Clarity</h3>
+            <p>When pressure starts making the choice for you.</p>
+          </article>
+          <article class="path-card">
+            <h3>Attention & Recovery</h3>
+            <p>When the mind is always on, but rarely clear.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="conversion-strip theme-dark" aria-labelledby="conversion-headline">
+      <div class="wrap">
+        <div class="conversion-box">
+          <div>
+            <span class="eyebrow">Subscribe</span>
+            <h2 id="conversion-headline">Get the next Monday letter.</h2>
+            <p>Five minutes on founder psychology, mental training, and the invisible cost of building. Sent weekly. Built to be read before the week takes over.</p>
+          </div>
+          <form class="form-row" action="#" method="post" data-source="newsletter-landing-bottom">
+            <label for="newsletter-email-bottom" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email-bottom" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn btn-magnetic">Subscribe to newsletter <span class="arrow">→</span></button>
+            <span class="form-disclaimer">No spam. Unsubscribe in one click.</span>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band theme-cream" aria-labelledby="newsletter-faq-headline">
+      <div class="wrap">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">Quick answers</span>
+            <h2 id="newsletter-faq-headline">A few things worth making explicit.</h2>
+          </div>
+          <p>This page is also meant to answer the obvious architecture questions cleanly: where the archive lives, who owns the list, and what the newsletter is actually for.</p>
+        </div>
+        <div class="faq-mini">
+          <article>
+            <h3>Is this the Substack page?</h3>
+            <p>No. This is the website conversion page. Substack is the public reading archive. This page should convert the reader into the newsletter list.</p>
+          </article>
+          <article>
+            <h3>Why not let Substack own the list?</h3>
+            <p>Because Avi wants Kit to remain the email source of truth. That gives us better ownership, segmentation, automations, and portability into Webflow.</p>
+          </article>
+          <article>
+            <h3>What should Substack look like?</h3>
+            <p>Simple, editorial, and archive-first. It should feel like a reading room, not a second homepage competing with the main site.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer theme-dark">
+  <footer class="footer footer-simple theme-dark" role="contentinfo">
     <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">The Deliberate Pause</div>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Essays and founder psychology for Indian entrepreneurs building without burning out, losing clarity, or turning output into identity.</p>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Read</h5><ul><li><a href="read.html">Substack archive</a></li><li><a href="newsletter.html">Subscribe</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+        <div><h5>Essay paths</h5><ul><li><a href="read.html#categories">Burnout & Identity</a></li><li><a href="read.html#categories">Failure & Rejection</a></li><li><a href="read.html#categories">Ambition & Success</a></li><li><a href="read.html#categories">Decision Clarity</a></li><li><a href="read.html#categories">Attention & Recovery</a></li></ul></div>
+        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://thedeliberatepause.substack.com/" rel="noopener">Substack</a></li><li><a href="https://instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com/" rel="noopener">LinkedIn</a></li></ul></div>
+      </div>
       <div class="footer-bottom">
         <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi Agarwal</div>
-        <ul><li><a href="read.html">Read</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li></ul>
+        <ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/contact">Contact</a></li></ul>
       </div>
     </div>
   </footer>
   <script src="scroll-fx.js?v=phase1-20260525" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
