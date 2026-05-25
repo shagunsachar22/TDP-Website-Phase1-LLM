@@ -42,7 +42,7 @@
           <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
-          <a href="newsletter.html" class="btn">Subscribe to newsletter <span class="arrow">→</span></a>
+          <a href="newsletter.html" class="btn">Subscribe <span class="arrow">→</span></a>
           <p class="micro">Every Monday · 11:11 AM</p>
         </div>
       </aside>
