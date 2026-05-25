@@ -182,10 +182,7 @@
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
-      .pullquote { padding: 96px 0 80px; }
-      .pullquote h2 { font-size: clamp(26px, 6.5vw, 36px); }
-      .pain { padding-bottom: 96px; }
-      .pivot { padding: 72px 0 96px; }
+      .pain { padding: 96px 0; }
       .reading { padding: 96px 0; }
       .pause { padding: 96px 0; }
       .testimonials { padding: 96px 0; }
@@ -230,28 +227,59 @@
       .logobar-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
-    /* ---------- 3 · PULL QUOTE (cream) ---------- */
-    .pullquote { padding: 160px 0 120px; }
-    .pullquote .wrap { max-width: 980px; text-align: center; }
-    .pullquote h2 {
+    /* ---------- 3 · PAIN ENUMERATION + AVI CREDENTIAL (cream) ---------- */
+    .pain { padding: 150px 0 132px; }
+    .pain .wrap { max-width: 1080px; }
+    .pain-opener {
+      text-align: center;
+      max-width: 840px;
+      margin: 0 auto 64px;
+    }
+    .pain-opener .small {
       font-family: var(--font-serif);
-      font-size: clamp(32px, 5vw, 64px);
       font-style: italic;
+      font-size: clamp(20px, 2vw, 26px);
+      color: var(--text-dark);
+      margin: 0 0 16px;
+      letter-spacing: -0.005em;
+    }
+    .pain-opener .small .counter {
+      color: var(--cta);
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.25em;
+    }
+    .pain-opener h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(56px, 9vw, 104px);
+      color: var(--accent-amber);
+      letter-spacing: -0.035em;
+      line-height: 0.95;
+      font-weight: 600;
+      margin: 0 0 36px;
+    }
+    .pain-opener h2 .line { display: block; white-space: nowrap; }
+    .pain-opener .sub {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 52px);
       font-weight: 400;
-      letter-spacing: -0.015em;
-      line-height: 1.2;
-      margin: 0;
+      line-height: 1.15;
+      letter-spacing: -0.018em;
+      max-width: 820px;
+      margin: 0 auto 32px;
       color: var(--text-dark);
     }
-    .pullquote em.amber {
+    .pain-opener .sub em {
       font-style: italic;
       color: var(--accent-amber);
       font-weight: 500;
     }
-
-    /* ---------- 4 · PAIN CHECKLIST (cream) ---------- */
-    .pain { padding: 0 0 140px; }
-    .pain .wrap { max-width: 1080px; }
+    .pain-opener .micro {
+      color: var(--text-muted-light);
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
     .pain-list {
       list-style: none;
       padding: 0;
@@ -289,73 +317,30 @@
     }
     .pain-list li:hover::before { background: var(--accent-amber); color: var(--bg-dark); border-color: var(--accent-amber); }
     .pain-list b { color: var(--text-dark); font-weight: 600; }
-    @media (max-width: 768px) {
-      .pain-list { grid-template-columns: 1fr; }
-    }
-
-    /* ---------- 5 · AVI BLOCK QUOTE (cream) ---------- */
-    .avi-quote { padding: 80px 0 80px; }
-    .avi-quote .wrap { max-width: 880px; text-align: center; }
-    .avi-quote p {
+    .pain-credential {
       font-family: var(--font-serif);
       font-size: clamp(20px, 2.2vw, 26px);
       line-height: 1.55;
       font-style: italic;
       color: var(--text-dark);
-      margin: 0;
+      max-width: 880px;
+      margin: 64px auto 0;
+      text-align: center;
     }
-
-    /* ---------- 6 · NINE OUT OF TEN PIVOT (cream) — counter + word reveal ---------- */
-    .pivot { padding: 100px 0 140px; text-align: center; }
-    .pivot .wrap { max-width: 820px; }
-    .pivot .small {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: clamp(20px, 2vw, 26px);
-      color: var(--text-dark);
-      margin: 0 0 16px;
-      letter-spacing: -0.005em;
-    }
-    .pivot .small .counter {
-      color: var(--cta);
-      font-weight: 500;
-      font-style: normal;
-      font-size: 1.25em;
-    }
-    .pivot h2 {
-      font-family: var(--font-serif);
-      font-size: 104px;
-      color: var(--accent-amber);
-      letter-spacing: -0.035em;
-      line-height: 0.95;
-      font-weight: 600;
-      margin: 0 0 56px;
-    }
-    .pivot h2 .line {
-      display: block;
-      white-space: nowrap;
-    }
-    .pivot .sub {
-      font-size: clamp(16px, 1.4vw, 19px);
-      font-weight: 600;
-      color: var(--text-dark);
-      margin: 0 0 32px;
-    }
-    .pivot .form-row { margin: 0 auto; }
-    .pivot .form-disclaimer { text-align: center; }
     @media (max-width: 768px) {
-      .pivot h2 { font-size: 68px; }
-    }
-    @media (max-width: 600px) {
-      .pivot h2 { font-size: 46px; }
+      .pain-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 420px) {
-      .pivot h2 { font-size: 36px; letter-spacing: -0.028em; }
+      .pain-opener h2 { font-size: 46px; letter-spacing: -0.028em; }
     }
 
     /* ---------- 7 · WHAT OTHER FOUNDERS ARE READING (cream) ---------- */
     .reading { padding: 120px 0; border-top: 1px solid var(--border-on-cream); }
-    .reading .eyebrow { margin-bottom: 56px; }
+    .reading .eyebrow { margin-bottom: 18px; }
+    .reading h2 {
+      max-width: 780px;
+      margin-bottom: 56px;
+    }
     .reading-grid {
       display: grid;
       grid-template-columns: 1.7fr 1fr;
@@ -403,6 +388,16 @@
     .reading-meta { font-size: 13px; color: var(--text-muted-light); }
     .reading-meta a { color: var(--text-dark); font-weight: 500; transition: color 0.2s var(--ease); }
     .reading-meta a:hover { color: var(--cta); }
+    .reading-more {
+      margin-top: 34px;
+      display: inline-flex;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border-on-cream);
+      padding-bottom: 4px;
+      transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .reading-more:hover { color: var(--cta); border-color: var(--cta); }
 
     .reading-side { display: flex; flex-direction: column; gap: 28px; padding-top: 6px; }
     .reading-card {
@@ -717,74 +712,6 @@
       .definition-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    /* ---------- 11 · HOW TDP IS DIFFERENT (cream) ---------- */
-    .difference { padding: 96px 0 120px; border-top: 1px solid var(--border-on-cream); }
-    .difference .wrap { max-width: 1100px; }
-    .difference-header {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
-      gap: 64px;
-      align-items: end;
-      margin-bottom: 56px;
-    }
-    .difference h2 {
-      font-size: clamp(36px, 4.6vw, 64px);
-      letter-spacing: -0.026em;
-      line-height: 1.02;
-      margin: 0;
-      max-width: 720px;
-    }
-    .difference .lead {
-      font-size: clamp(15px, 1.2vw, 17px);
-      line-height: 1.65;
-      color: var(--text-muted-light);
-      margin: 0;
-    }
-    .difference-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .difference-card {
-      min-height: 280px;
-      border: 1px solid var(--border-on-cream);
-      border-radius: 6px;
-      padding: 28px 24px;
-      background: rgba(255, 255, 255, 0.18);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .difference-card .label {
-      font-family: var(--font-sans);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-amber);
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-    .difference-card h3 {
-      font-size: clamp(22px, 2.2vw, 28px);
-      line-height: 1.08;
-      letter-spacing: -0.018em;
-      margin: 0 0 18px;
-    }
-    .difference-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text-muted-light);
-      margin: 0;
-    }
-    @media (max-width: 1024px) {
-      .difference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 760px) {
-      .difference-header { grid-template-columns: 1fr; gap: 20px; }
-      .difference-grid { grid-template-columns: 1fr; }
-      .difference-card { min-height: 0; }
-    }
-
     /* ---------- 12 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
     .avi-intro { padding: 96px 0 140px; }
     .avi-intro .wrap { max-width: 1100px; }
@@ -935,19 +862,17 @@
     </section>
 
     <!-- ============================================================
-         3 · PULL QUOTE  (cream)
+         3 · PAIN ENUMERATION + AVI CREDENTIAL (cream)
          ============================================================ -->
-    <section class="pullquote theme-cream" aria-label="The cost">
+    <section class="pain theme-cream" aria-label="Pain enumeration and Avi credential">
       <div class="wrap">
-        <h2 data-scroll-fx="fade-up-lg">Your physical and mental health were never the price of winning. <em class="amber">They are how you win.</em></h2>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         4 · PAIN CHECKLIST (cream)
-         ============================================================ -->
-    <section class="pain theme-cream" aria-label="What entrepreneurs are juggling">
-      <div class="wrap">
+        <div class="pain-opener">
+          <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
+          <h2 data-scroll-fx="fade-up-lg"><span class="line">But yours </span><span class="line">doesn't have to.</span></h2>
+          <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
+          <a class="btn btn-magnetic" href="newsletter.html" data-scroll-fx style="--fx-delay: 0.25s;">Subscribe <span class="arrow">→</span></a>
+          <p class="micro" data-scroll-fx style="--fx-delay: 0.35s;">The Pause is the highest leverage performance move in a founder's day.</p>
+        </div>
         <ul class="pain-list">
           <li data-scroll-fx><span><b>Pressure.</b> The week starts deciding who you are before you do.</span></li>
           <li data-scroll-fx style="--fx-delay: 0.05s;"><span><b>Clarity.</b> Too many inputs, not enough space to hear the signal.</span></li>
@@ -956,30 +881,7 @@
           <li data-scroll-fx style="--fx-delay: 0.2s;"><span><b>Recovery.</b> The best reflect sooner, learn faster, and recover sooner.</span></li>
           <li data-scroll-fx style="--fx-delay: 0.25s;"><span><b>Courage.</b> The pause helps you decide before fear decides for you.</span></li>
         </ul>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5 · AVI BLOCK QUOTE (cream)
-         ============================================================ -->
-    <section class="avi-quote theme-cream" aria-label="A note from Avi">
-      <div class="wrap">
-        <p data-scroll-fx>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on the philosophy Phil Jackson used to win 11 NBA championships. Presence. Stillness. Dropping the ego.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         6 · PIVOT (cream) — counter + word reveal on the loud moment
-         ============================================================ -->
-    <section class="pivot theme-cream" aria-labelledby="pivot-headline">
-      <div class="wrap">
-        <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
-        <h2 id="pivot-headline" data-scroll-fx="fade-up-lg"><span class="line">But yours</span><span class="line">doesn't have to.</span></h2>
-        <p class="sub" data-scroll-fx style="--fx-delay: 0.7s;">The Pause is the highest leverage performance move in a founder's day.</p>
-
-        <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.85s; justify-content: center;">
-          <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
-        </div>
+        <p class="pain-credential" data-scroll-fx>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
       </div>
     </section>
 
@@ -988,14 +890,15 @@
          ============================================================ -->
     <section class="reading theme-cream" aria-labelledby="reading-headline">
       <div class="wrap">
-        <span class="eyebrow" id="reading-headline" data-scroll-fx>What other founders are reading</span>
+        <span class="eyebrow" data-scroll-fx>Read</span>
+        <h2 id="reading-headline" data-scroll-fx>What other founders are reading.</h2>
         <div class="reading-grid">
           <article class="reading-featured" data-scroll-fx="fade-right">
             <a href="read/the-unicorn-trap-and-the-road-to-enlightenment/"><div class="thumb" role="img" aria-label="The Unicorn Trap essay cover"></div></a>
             <div class="reading-tag">Essay</div>
             <h3><a href="read/the-unicorn-trap-and-the-road-to-enlightenment/">The Unicorn Trap.</a></h3>
             <p>The story you tell yourself about scale — and why the body files an objection long before the cap table does.</p>
-            <div class="reading-meta">8 min · <a href="read/the-unicorn-trap-and-the-road-to-enlightenment/">Read more →</a></div>
+            <div class="reading-meta">8 min · <a href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay →</a></div>
           </article>
 
           <div class="reading-side">
@@ -1025,6 +928,7 @@
             </article>
           </div>
         </div>
+        <a class="reading-more" href="read.html">More from TDP →</a>
       </div>
     </section>
 
@@ -1042,7 +946,7 @@
             <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.2s;">
               <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
             </div>
-            <p class="micro" data-scroll-fx style="--fx-delay: 0.4s;">No spam. Unsubscribe in one click.</p>
+            <p class="micro" data-scroll-fx style="--fx-delay: 0.4s;">No spam. Ever.</p>
           </div>
 
           <div class="protocol-grid">
@@ -1175,51 +1079,6 @@
     </section>
 
     <!-- ============================================================
-         11 · HOW TDP IS DIFFERENT (cream)
-         ============================================================ -->
-    <section class="difference theme-cream" aria-labelledby="difference-headline">
-      <div class="wrap">
-        <div class="difference-header">
-          <div>
-            <span class="eyebrow" data-scroll-fx>How TDP is different</span>
-            <h2 id="difference-headline" data-scroll-fx>Not another meditation app. Not another productivity system.</h2>
-          </div>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">The Deliberate Pause sits between spiritual practice, founder psychology, and elite sport. It is built for pressure moments inside the work, not for escaping the work.</p>
-        </div>
-        <div class="difference-grid">
-          <article class="difference-card" data-scroll-fx>
-            <div>
-              <div class="label">TDP vs Calm / Headspace</div>
-              <h3>Not just relief.</h3>
-            </div>
-            <p>Calm and Headspace help with stress, sleep, and relaxation. TDP works one layer lower: the identity loop that makes the founder need stress, speed, and proof in the first place.</p>
-          </article>
-          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.05s;">
-            <div>
-              <div class="label">TDP vs Vipassana / Sadhguru</div>
-              <h3>Stillness inside the arena.</h3>
-            </div>
-            <p>Traditional practice often asks you to step away from the world. TDP translates the same witness principle into board meetings, cofounder conflict, rejection, and the week a metric falls.</p>
-          </article>
-          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.1s;">
-            <div>
-              <div class="label">TDP vs founder therapy</div>
-              <h3>Before the spiral.</h3>
-            </div>
-            <p>Therapy can help process what happened. TDP helps you notice the pressure story while it is happening, so the next decision comes from clarity instead of collapse.</p>
-          </article>
-          <article class="difference-card" data-scroll-fx style="--fx-delay: 0.15s;">
-            <div>
-              <div class="label">TDP vs productivity systems</div>
-              <h3>Not more output.</h3>
-            </div>
-            <p>Atomic Habits and deep-work systems improve behaviour. TDP asks why output became identity at all, then gives entrepreneurs a way to stay ambitious without being run by proof.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
          12 · I'M AVI (cream) — wired to /images/avi-peer.jpg
          ============================================================ -->
     <section class="avi-intro theme-cream" aria-labelledby="avi-intro-headline">
@@ -1256,6 +1115,11 @@
           <div class="logo">The Deliberate Pause</div>
           <div class="tagline">Mental training for Indian entrepreneurs.</div>
           <p>Essays and founder psychology for Indian entrepreneurs building without burning out, losing clarity, or turning output into identity.</p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Get the Monday letter.</h4>
+          <p class="sub">Five minutes. Every Monday at 11:11.</p>
+          <a class="btn" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
         </div>
       </div>
 
