@@ -233,6 +233,15 @@
       color: var(--text-muted-light);
       line-height: 1.58;
     }
+    .promise-band .section-intro {
+      grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.68fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+    .promise-band .section-intro p {
+      max-width: 680px;
+    }
     .substack-explainer {
       border-top: 1px solid var(--border-on-dark);
       border-bottom: 1px solid var(--border-on-dark);
@@ -405,6 +414,7 @@
     @media (max-width: 1000px) {
       .newsletter-grid,
       .section-intro,
+      .promise-band .section-intro,
       .explainer-grid,
       .conversion-box,
       .avi-landing-grid {
@@ -498,7 +508,7 @@
       </div>
     </section>
 
-    <section class="landing-band theme-cream" aria-labelledby="promise-headline">
+    <section class="landing-band promise-band theme-cream" aria-labelledby="promise-headline">
       <div class="wrap">
         <div class="section-intro">
           <div>
