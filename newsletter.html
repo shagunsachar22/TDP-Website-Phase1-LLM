@@ -289,6 +289,60 @@
       line-height: 1.55;
       margin: 0;
     }
+    .avi-landing {
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .avi-landing-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+    .avi-portrait-card {
+      min-height: 520px;
+      border: 1px solid var(--border-on-cream);
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.06)),
+        rgba(26,26,26,0.045);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted-light);
+      padding: 28px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .avi-copy h2 {
+      max-width: 760px;
+    }
+    .avi-copy p {
+      color: var(--text-muted-light);
+      font-size: 18px;
+      line-height: 1.68;
+      margin: 0 0 16px;
+      max-width: 760px;
+    }
+    .avi-copy p.short-line {
+      color: var(--text-dark);
+      font-family: var(--font-serif);
+      font-size: clamp(23px, 2.6vw, 34px);
+      line-height: 1.25;
+      margin: 26px 0;
+    }
+    .avi-copy .more {
+      display: inline-flex;
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border-on-cream);
+      padding-bottom: 4px;
+      transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .avi-copy .more:hover {
+      color: var(--cta);
+      border-color: var(--cta);
+    }
     .conversion-strip {
       padding: 92px 0;
       border-top: 1px solid var(--border-on-dark);
@@ -336,7 +390,8 @@
       .newsletter-grid,
       .section-intro,
       .explainer-grid,
-      .conversion-box {
+      .conversion-box,
+      .avi-landing-grid {
         grid-template-columns: 1fr;
       }
       .promise-grid,
@@ -515,6 +570,26 @@
       </div>
     </section>
 
+    <section class="landing-band avi-landing theme-cream" aria-labelledby="avi-landing-headline">
+      <div class="wrap avi-landing-grid">
+        <div class="avi-portrait-card" data-scroll-fx="fade-right">
+          Avi portrait<br />drop image later: <code>images/avi-peer.jpg</code>
+        </div>
+        <div class="avi-copy" data-scroll-fx="fade-left">
+          <span class="eyebrow">About Avi</span>
+          <h2 id="avi-landing-headline">I'm Avi.</h2>
+          <p>From selling shoes on the streets of Kathmandu to Wall Street to building CreditVidya in India and selling it to CRED, I learned one thing the hard way: ambition and spirituality are not opposites.</p>
+          <p>The Yoga Sutras of Patanjali gave me the practice: presence, stillness, and the ability to watch myself without becoming what I was watching. Elite sport gave me the proof: pause is not a retreat from pressure. It is how the best performers enter it.</p>
+          <p>It carried me through the slipped disc, the stroke scare, and the quiet moments where I realized ambition alone could not save me.</p>
+          <p>The calmest people in the highest-pressure rooms are not calm by accident. They have trained for it. That is the bridge I am building for founders: ancient practice, elite performance, modern pressure.</p>
+          <p>Presence is not an escape from ambition. It is how excellence gets built.</p>
+          <p class="short-line">Better decisions.<br />Better leaders.<br />Better humans.</p>
+          <p>I built The Deliberate Pause because I needed it first. Now I'm handing it to you, one essay at a time.</p>
+          <a href="about.html" class="more">More of the story →</a>
+        </div>
+      </div>
+    </section>
+
     <section class="conversion-strip theme-dark" aria-labelledby="conversion-headline">
       <div class="wrap">
         <div class="conversion-box">
@@ -527,7 +602,6 @@
             <label for="newsletter-email-bottom" class="visually-hidden">Email address</label>
             <input type="email" id="newsletter-email-bottom" name="email_address" placeholder="your@email.com" required />
             <button type="submit" class="btn btn-magnetic">Subscribe <span class="arrow">→</span></button>
-            <span class="form-disclaimer">No spam. Ever.</span>
           </form>
         </div>
       </div>
