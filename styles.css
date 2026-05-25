@@ -282,9 +282,10 @@ blockquote {
 .form-row .btn { border-radius: 0 4px 4px 0; }
 
 .form-disclaimer {
-  font-size: 12px;
+  font-size: 15px;
+  line-height: 1.4;
   color: var(--text-muted-dark);
-  margin: 12px 0 0;
+  margin: 14px 0 0;
 }
 .theme-cream .form-disclaimer { color: var(--text-muted-light); }
 
