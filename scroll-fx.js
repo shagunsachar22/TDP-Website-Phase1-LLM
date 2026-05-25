@@ -38,12 +38,11 @@
         <ul class="mobile-menu-list">
           <li><a href="read.html">Read</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="sources.html">Sources</a></li>
+          <li><a href="newsletter.html">Subscribe</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
-          <a href="faq.html" class="btn">Start here <span class="arrow">→</span></a>
+          <a href="newsletter.html" class="btn">Subscribe to newsletter <span class="arrow">→</span></a>
           <p class="micro">Every Monday · 11:11 AM</p>
         </div>
       </aside>

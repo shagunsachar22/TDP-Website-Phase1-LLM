@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscribe - The Deliberate Pause</title>
+  <meta name="description" content="Subscribe to The Deliberate Pause, a weekly newsletter on founder psychology and mental training for Indian entrepreneurs." />
+  <link rel="canonical" href="https://thedeliberatepause.com/newsletter.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Subscribe - The Deliberate Pause" />
+  <meta property="og:description" content="5 minutes of founder psychology and mental training, every Monday at 11:11." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .newsletter-hero { min-height: 88vh; display: grid; align-items: center; padding: 132px 0 76px; }
+    .newsletter-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.58fr); gap: 64px; align-items: center; }
+    .newsletter-hero h1 { max-width: 880px; }
+    .newsletter-hero .lead { max-width: 700px; color: rgba(245,239,229,0.78); font-family: var(--font-serif); font-size: clamp(20px, 2vw, 27px); line-height: 1.45; }
+    .newsletter-form-card { border: 1px solid rgba(245,239,229,0.18); padding: 34px; background: rgba(245,239,229,0.04); }
+    .newsletter-form-card h2 { margin-bottom: 12px; }
+    .newsletter-form-card p { color: var(--text-muted-dark); line-height: 1.6; }
+    .newsletter-form-card .form-row { margin-top: 24px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .newsletter-form-card input { min-height: 56px; }
+    .newsletter-form-card .btn { width: 100%; justify-content: center; }
+    .proof-strip { padding: 72px 0 96px; border-top: 1px solid var(--border-on-dark); }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .proof-item { border-top: 1px solid rgba(245,239,229,0.18); padding-top: 20px; }
+    .proof-item h3 { color: var(--text-cream); margin-bottom: 8px; }
+    .proof-item p { color: var(--text-muted-dark); line-height: 1.6; }
+    @media (max-width: 900px) {
+      .newsletter-grid, .proof-grid { grid-template-columns: 1fr; }
+      .newsletter-form-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="The Deliberate Pause home">
+        <img class="nav-logo-img" src="images/logo.svg" alt="" onerror="this.style.display='none'" />
+        <span class="nav-logo-text">The Deliberate Pause</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="read.html">Read</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <a href="newsletter.html" class="btn btn-magnetic nav-cta" aria-current="page">
+        <span class="label-long">Subscribe to newsletter</span>
+        <span class="label-short">Subscribe</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="newsletter-hero theme-dark">
+      <div class="wrap newsletter-grid">
+        <div>
+          <span class="eyebrow" data-scroll-fx>Newsletter</span>
+          <h1 data-scroll-fx="fade-up-lg">5 minutes of founder psychology, every Monday at 11:11.</h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">The Deliberate Pause is for Indian entrepreneurs whose ambition still works, but whose nervous system is starting to pay the bill.</p>
+        </div>
+        <aside class="newsletter-form-card" data-scroll-fx="fade-left" aria-label="Newsletter signup">
+          <h2>Subscribe to newsletter.</h2>
+          <p>Essays on burnout, self-doubt, validation, failure, attention, recovery, and the inner cost of building.</p>
+          <form class="form-row" action="#" method="post" data-source="newsletter-landing">
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required />
+            <button type="submit" class="btn btn-magnetic">Subscribe to newsletter <span class="arrow">→</span></button>
+          </form>
+          <p class="form-disclaimer">Kit owns the email list. No spam. Unsubscribe in one click.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="proof-strip theme-dark">
+      <div class="wrap proof-grid">
+        <article class="proof-item">
+          <h3>Not a productivity hack.</h3>
+          <p>This is not about extracting more output from the founder. It is about the cost of making output the self.</p>
+        </article>
+        <article class="proof-item">
+          <h3>Not a meditation app.</h3>
+          <p>The pause belongs inside the work: before the pitch, after rejection, during conflict, and inside the decision.</p>
+        </article>
+        <article class="proof-item">
+          <h3>Not therapy.</h3>
+          <p>TDP does not diagnose. It gives founders language for pressure, identity, and clearer action.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer theme-dark">
+    <div class="wrap">
+      <div class="footer-bottom">
+        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi Agarwal</div>
+        <ul><li><a href="read.html">Read</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li></ul>
+      </div>
+    </div>
+  </footer>
+  <script src="scroll-fx.js?v=phase1-20260525" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
