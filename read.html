@@ -4,42 +4,309 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Read - The Deliberate Pause</title>
-  <meta name="description" content="Read The Deliberate Pause on Substack, organized by founder psychology, burnout, failure, ambition, decision clarity, attention, and recovery." />
+  <meta name="description" content="Read The Deliberate Pause essays on founder psychology, burnout, failure, ambition, decision clarity, attention, and recovery." />
   <link rel="canonical" href="https://thedeliberatepause.com/read.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Read - The Deliberate Pause" />
-  <meta property="og:description" content="Read The Deliberate Pause essays on Substack, organized by burnout, failure, ambition, decision clarity, attention, and recovery." />
+  <meta property="og:description" content="Essays for Indian entrepreneurs building under pressure. Browse The Deliberate Pause essays and get the Monday letter." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .read-hero { padding: 144px 0 92px; }
-    .read-hero .wrap { max-width: 980px; }
-    .read-hero h1 { max-width: 980px; }
-    .read-hero .lead { max-width: 720px; font-family: var(--font-serif); font-size: clamp(19px, 2vw, 25px); line-height: 1.45; color: rgba(245,239,229,0.78); }
-    .read-actions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-top: 34px; }
-    .substack-link { color: rgba(245,239,229,0.82); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(245,239,229,0.32); padding-bottom: 3px; }
-    .substack-link:hover { color: var(--cta); border-color: var(--cta); }
-    .category-section { padding: 92px 0 112px; }
-    .category-header { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 48px; align-items: end; margin-bottom: 42px; }
-    .category-header h2 { max-width: 760px; }
-    .category-header p { color: var(--text-muted-light); font-size: 18px; line-height: 1.6; margin: 0; }
-    .category-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--border-on-cream); border-left: 1px solid var(--border-on-cream); }
-    .category-card { min-height: 300px; padding: 24px; border-right: 1px solid var(--border-on-cream); border-bottom: 1px solid var(--border-on-cream); text-decoration: none; color: var(--text-dark); display: flex; flex-direction: column; justify-content: space-between; transition: background 0.25s var(--ease), transform 0.25s var(--ease); }
-    .category-card:hover { background: rgba(214,168,110,0.1); transform: translateY(-2px); }
-    .category-card .num { color: var(--accent-amber); font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; }
-    .category-card h3 { font-size: clamp(26px, 2.5vw, 36px); line-height: 1.05; margin: 34px 0 16px; }
-    .category-card p { color: var(--text-muted-light); line-height: 1.55; margin: 0; }
-    .category-card .examples { margin-top: 24px; color: var(--text-muted-light); font-family: var(--font-sans); font-size: 13px; line-height: 1.55; }
-    .substack-band { padding: 96px 0; border-top: 1px solid var(--border-on-dark); }
-    .substack-band .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr); gap: 56px; align-items: center; }
-    .substack-panel { border: 1px solid rgba(245,239,229,0.18); padding: 30px; }
-    .substack-panel p { color: var(--text-muted-dark); line-height: 1.65; }
-    @media (max-width: 980px) {
-      .category-header, .substack-band .wrap { grid-template-columns: 1fr; }
-      .category-grid { grid-template-columns: 1fr; }
-      .category-card { min-height: 0; }
+    .publication-hero {
+      padding: 142px 0 86px;
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .publication-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.54fr);
+      gap: clamp(40px, 7vw, 104px);
+      align-items: end;
+    }
+    .publication-hero h1 {
+      max-width: 930px;
+      font-size: clamp(52px, 8vw, 118px);
+      line-height: 0.94;
+      margin-bottom: 28px;
+    }
+    .publication-hero .lead {
+      max-width: 740px;
+      color: var(--text-muted-dark);
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2vw, 27px);
+      line-height: 1.42;
+    }
+    .publication-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-top: 34px;
+    }
+    .publication-link {
+      color: rgba(245,239,229,0.82);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(245,239,229,0.34);
+      padding-bottom: 3px;
+      transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .publication-link:hover { color: var(--cta); border-color: var(--cta); }
+    .featured-essay {
+      border: 1px solid var(--border-on-dark);
+      background: rgba(245,239,229,0.045);
+      padding: 28px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .publication-hero [data-scroll-fx="fade-left"] {
+      transform: translateY(32px);
+    }
+    .publication-hero [data-scroll-fx="fade-left"].is-visible {
+      transform: translateY(0);
+    }
+    .featured-essay .cover {
+      aspect-ratio: 5 / 3.2;
+      border: 1px solid rgba(245,239,229,0.12);
+      background:
+        radial-gradient(circle at 72% 24%, rgba(214,168,110,0.24), transparent 34%),
+        linear-gradient(135deg, rgba(245,239,229,0.14), rgba(245,239,229,0.04));
+      margin-bottom: 24px;
+    }
+    .featured-essay .meta,
+    .essay-card .meta,
+    .latest-row .meta {
+      color: var(--accent-amber);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .featured-essay h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .featured-essay p {
+      color: var(--text-muted-dark);
+      line-height: 1.58;
+      margin: 0 0 24px;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-cream);
+      font-weight: 700;
+      transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+    .read-more:hover {
+      color: var(--accent-amber);
+      transform: translateX(3px);
+    }
+    .popular-section {
+      padding: 62px 0 78px;
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .row-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+    .row-heading h2 {
+      font-size: clamp(26px, 3.2vw, 42px);
+      margin: 0;
+    }
+    .row-heading a {
+      color: var(--text-muted-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .essay-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .essay-card {
+      min-height: 260px;
+      border-top: 1px solid var(--border-on-dark);
+      padding-top: 18px;
+      color: var(--text-cream);
+    }
+    .essay-card .thumb {
+      aspect-ratio: 1.4 / 1;
+      border: 1px solid rgba(245,239,229,0.12);
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.2), rgba(245,239,229,0.05)),
+        rgba(245,239,229,0.035);
+      margin-bottom: 16px;
+    }
+    .essay-card h3 {
+      font-size: clamp(22px, 2.3vw, 30px);
+      margin-bottom: 10px;
+    }
+    .essay-card p {
+      margin: 0;
+      color: var(--text-muted-dark);
+      line-height: 1.52;
+      font-size: 15px;
+    }
+    .paths-section {
+      padding: 92px 0 104px;
+    }
+    .paths-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 0.85fr);
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+    .paths-header h2 { margin-bottom: 0; }
+    .paths-header p {
+      color: var(--text-muted-light);
+      font-size: 18px;
+      line-height: 1.62;
+      margin: 0;
+    }
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: 1px solid var(--border-on-cream);
+      border-left: 1px solid var(--border-on-cream);
+    }
+    .path-card {
+      min-height: 250px;
+      padding: 22px;
+      border-right: 1px solid var(--border-on-cream);
+      border-bottom: 1px solid var(--border-on-cream);
+      text-decoration: none;
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .path-card:hover {
+      background: rgba(214,168,110,0.1);
+      transform: translateY(-2px);
+    }
+    .path-card .num {
+      color: var(--accent-amber);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .path-card h3 {
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.05;
+      margin: 34px 0 14px;
+    }
+    .path-card p,
+    .path-card .examples {
+      color: var(--text-muted-light);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .path-card .examples {
+      margin-top: 22px;
+      font-size: 13px;
+    }
+    .latest-section {
+      padding: 88px 0 104px;
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .latest-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+      gap: clamp(42px, 8vw, 112px);
+      align-items: start;
+    }
+    .latest-intro {
+      position: sticky;
+      top: 116px;
+    }
+    .latest-intro h2 {
+      margin-bottom: 18px;
+    }
+    .latest-intro p {
+      color: var(--text-muted-light);
+      line-height: 1.62;
+      margin: 0 0 24px;
+    }
+    .latest-list {
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .latest-row {
+      display: grid;
+      grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
+      gap: 28px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border-on-cream);
+      color: var(--text-dark);
+    }
+    .latest-row h3 {
+      font-size: clamp(24px, 2.7vw, 38px);
+      margin-bottom: 10px;
+    }
+    .latest-row p {
+      color: var(--text-muted-light);
+      line-height: 1.58;
+      margin: 0;
+    }
+    .latest-row .read-more {
+      color: var(--text-dark);
+      margin-top: 14px;
+    }
+    .latest-row .read-more:hover {
+      color: var(--cta);
+    }
+    @media (max-width: 1050px) {
+      .publication-hero-grid,
+      .paths-header,
+      .latest-grid {
+        grid-template-columns: 1fr;
+      }
+      .latest-intro {
+        position: static;
+      }
+      .essay-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .path-grid {
+        grid-template-columns: 1fr;
+      }
+      .path-card {
+        min-height: 0;
+      }
+    }
+    @media (max-width: 640px) {
+      .publication-hero {
+        padding: 118px 0 66px;
+      }
+      .publication-hero h1 {
+        font-size: clamp(46px, 16vw, 64px);
+      }
+      .featured-essay {
+        min-height: 0;
+        padding: 22px;
+      }
+      .essay-row,
+      .latest-row {
+        grid-template-columns: 1fr;
+      }
+      .row-heading {
+        align-items: start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -68,81 +335,160 @@
   </header>
 
   <main>
-    <section class="read-hero theme-dark">
+    <section class="publication-hero theme-dark">
+      <div class="wrap publication-hero-grid">
+        <div>
+          <span class="eyebrow" data-scroll-fx>The Deliberate Pause essays</span>
+          <h1 data-scroll-fx="fade-up-lg">The inner work of building.</h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Essays on founder psychology, yogic philosophy, ambition, burnout, recovery, and better decisions under pressure.</p>
+          <div class="publication-actions" data-scroll-fx style="--fx-delay: 0.25s;">
+            <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
+            <a class="publication-link" href="https://thedeliberatepause.substack.com/" rel="noopener">Browse essays on Substack →</a>
+          </div>
+        </div>
+
+        <article class="featured-essay" data-scroll-fx="fade-left">
+          <div>
+            <div class="cover" aria-hidden="true"></div>
+            <div class="meta">Start here</div>
+            <h2>The Unicorn Trap.</h2>
+            <p>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</p>
+          </div>
+          <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="popular-section theme-dark" aria-labelledby="popular-headline">
       <div class="wrap">
-        <span class="eyebrow" data-scroll-fx>Read</span>
-        <h1 data-scroll-fx="fade-up-lg">The essays are live on Substack.</h1>
-        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">The Deliberate Pause essays are organized around the inner cost of building: burnout, failure, ambition, validation, decision clarity, attention, and recovery.</p>
-        <div class="read-actions" data-scroll-fx style="--fx-delay: 0.25s;">
-          <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
-          <a class="substack-link" href="https://thedeliberatepause.substack.com/" rel="noopener">Browse essays on Substack →</a>
+        <div class="row-heading">
+          <h2 id="popular-headline">Most read.</h2>
+          <a href="https://thedeliberatepause.substack.com/" rel="noopener">View all essays</a>
+        </div>
+        <div class="essay-row">
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="meta">Burnout & identity</div>
+            <h3>Low Status Moat.</h3>
+            <p>The work nobody photographs is the work that compounds.</p>
+          </a>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="meta">Decision clarity</div>
+            <h3>The Rehearsal Tax.</h3>
+            <p>The cost of living the same conversation before it ever happens.</p>
+          </a>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="meta">Attention & recovery</div>
+            <h3>Your Attention Span Holds a Secret.</h3>
+            <p>What your scattered mind is trying to tell you about pressure.</p>
+          </a>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="meta">Ambition & success</div>
+            <h3>When Success Still Feels Empty.</h3>
+            <p>The hollow feeling after the exit no one warns founders about.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="category-section theme-cream" id="categories">
+    <section class="paths-section theme-cream" id="categories" aria-labelledby="paths-headline">
       <div class="wrap">
-        <div class="category-header">
+        <div class="paths-header">
           <div>
-            <span class="eyebrow">Five reading paths</span>
-            <h2>Read by the pressure you are carrying.</h2>
+            <span class="eyebrow">Reading paths</span>
+            <h2 id="paths-headline">Read by the pressure you are carrying.</h2>
           </div>
-          <p>These five paths make the essays easier to use. Start with the pressure you are actually carrying, then follow the pieces that speak to that moment.</p>
+          <p>Start with the pressure that feels loudest this week. The essays are organized around burnout, failure, ambition, decision clarity, attention, and recovery.</p>
         </div>
-        <div class="category-grid">
-          <a class="category-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+        <div class="path-grid">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
             <div>
               <div class="num">01</div>
               <h3>Burnout & Identity</h3>
-              <p>For essays about output becoming self-worth, success feeling empty, and the body objecting before the founder does.</p>
+              <p>When output becomes self-worth and rest starts to feel unsafe.</p>
             </div>
-            <div class="examples">Start here for: burnout, self-worth, identity fusion, happiness, aliveness.</div>
+            <div class="examples">Start here for: burnout, self-worth, identity fusion.</div>
           </a>
-          <a class="category-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
             <div>
               <div class="num">02</div>
               <h3>Failure & Rejection</h3>
-              <p>For essays about rejection, post-mortems, shame, quitting, asking for help, and separating signal from identity.</p>
+              <p>When no starts feeling like a verdict instead of information.</p>
             </div>
-            <div class="examples">Start here for: failure, rejection, resilience, agency, help-seeking.</div>
+            <div class="examples">Start here for: rejection, resilience, agency.</div>
           </a>
-          <a class="category-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
             <div>
               <div class="num">03</div>
               <h3>Ambition & Success</h3>
-              <p>For essays about the scoreboard, status, career pressure, the middle-class script, and ambition without the suffering.</p>
+              <p>When winning still does not settle the self.</p>
             </div>
-            <div class="examples">Start here for: success, status, career path, enoughness, compounding.</div>
+            <div class="examples">Start here for: status, enoughness, compounding.</div>
           </a>
-          <a class="category-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
             <div>
               <div class="num">04</div>
               <h3>Decision Clarity</h3>
-              <p>For essays about honest opinion, conflict, overthinking, false agency, cofounder conversations, and better moves under pressure.</p>
+              <p>When pressure starts making the choice before you do.</p>
             </div>
-            <div class="examples">Start here for: clarity, conflict, decision-making, self-doubt, validation.</div>
+            <div class="examples">Start here for: conflict, overthinking, validation.</div>
           </a>
-          <a class="category-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/" rel="noopener">
             <div>
               <div class="num">05</div>
               <h3>Attention & Recovery</h3>
-              <p>For essays about focus, sleep, recovery, AI speed, routines, calendars, and founder performance that compounds.</p>
+              <p>When the mind is always on, but rarely clear.</p>
             </div>
-            <div class="examples">Start here for: attention, rest, recovery, routine, performance, AI.</div>
+            <div class="examples">Start here for: focus, rest, routine, performance.</div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="substack-band theme-dark">
-      <div class="wrap">
-        <div>
-          <span class="eyebrow">Read</span>
-          <h2>Read the essays. Get the next one on Monday.</h2>
+    <section class="latest-section theme-cream" aria-labelledby="latest-headline">
+      <div class="wrap latest-grid">
+        <div class="latest-intro">
+          <span class="eyebrow">Latest essays</span>
+          <h2 id="latest-headline">Read before the week takes over.</h2>
+          <p>New essays land with the Monday letter. The full reading experience lives on Substack now, and a branded reading domain can come next.</p>
+          <a class="btn btn-magnetic" href="newsletter.html">Get the Monday letter <span class="arrow">→</span></a>
         </div>
-        <div class="substack-panel">
-          <p>Browse the essays on Substack, then subscribe when you want the next Monday letter in your inbox at 11:11.</p>
-          <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
+        <div class="latest-list">
+          <article class="latest-row">
+            <div class="meta">Attention & recovery</div>
+            <div>
+              <h3>The Clauddiction Trap.</h3>
+              <p>When the tool that speeds you up quietly starts deciding what counts as thought.</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="meta">Burnout & identity</div>
+            <div>
+              <h3>The Hidden Cost of Not Choosing Yourself.</h3>
+              <p>The founder tax that compounds when every decision is optimized for everyone else.</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="meta">Failure & rejection</div>
+            <div>
+              <h3>Heroes Ask for Help.</h3>
+              <p>The strongest people in hard rooms are usually the first to tell the truth.</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="meta">Ambition & success</div>
+            <div>
+              <h3>Until Death, All Defeat Is Psychological.</h3>
+              <p>Why the story you attach to a setback can become heavier than the setback itself.</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>

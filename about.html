@@ -133,7 +133,7 @@
     }
     .identity-stack {
       font-family: var(--font-serif);
-      font-size: clamp(56px, 8vw, 120px);
+      font-size: clamp(42px, 6vw, 88px);
       line-height: 1;
       color: var(--text-cream);
       letter-spacing: -0.03em;
@@ -201,6 +201,9 @@
     }
     @media (max-width: 768px) {
       .numbers-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    }
+    @media (max-width: 420px) {
+      .numbers-grid { grid-template-columns: 1fr; }
     }
 
     /* ---------- 3 · CredentIAL BAND (dark) ---------- */

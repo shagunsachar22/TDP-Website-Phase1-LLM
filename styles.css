@@ -325,6 +325,7 @@ blockquote {
   font-weight: 600;
   letter-spacing: -0.02em;
   transition: letter-spacing 0.3s var(--ease);
+  min-width: 0;
 }
 .nav-logo:hover { letter-spacing: -0.01em; }
 .nav-logo-img {
@@ -332,7 +333,7 @@ blockquote {
   width: auto;
   display: block;
 }
-.nav-logo-text { display: inline-block; }
+.nav-logo-text { display: inline-block; min-width: 0; }
 /* If logo.svg doesn't exist yet, only the wordmark shows. When you drop the file in, both render side-by-side; hide the text via CSS if you want logo-only. */
 .nav-links {
   display: flex;
@@ -390,11 +391,28 @@ blockquote {
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
+  .nav-logo {
+    flex: 1 1 auto;
+  }
+  .nav-logo-text {
+    max-width: min(52vw, 240px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .nav-cta .label-long { display: none; }
   .nav-cta .label-short { display: inline; }
   .nav-mobile-toggle { display: inline-flex; }
 }
 .nav-cta .label-short { display: none; }
+
+@media (max-width: 380px) {
+  .nav-cta {
+    width: 58px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 /* ====== mobile slide-in menu ====== */
 .mobile-menu {
@@ -403,6 +421,8 @@ blockquote {
   z-index: 200;
   pointer-events: none;
   visibility: hidden;
+  overflow: clip;
+  contain: paint;
 }
 .mobile-menu.is-open { pointer-events: auto; visibility: visible; }
 .mobile-menu-overlay {
@@ -987,10 +1007,14 @@ body.menu-open { overflow: hidden; }
 
 [data-scroll-fx="fade"] { transform: translateY(0); }
 [data-scroll-fx="fade-up-lg"] { transform: translateY(56px); }
-[data-scroll-fx="fade-left"]  { transform: translateX(40px) translateY(0); }
-[data-scroll-fx="fade-left"].is-visible  { transform: translateX(0); }
-[data-scroll-fx="fade-right"] { transform: translateX(-40px) translateY(0); }
-[data-scroll-fx="fade-right"].is-visible { transform: translateX(0); }
+[data-scroll-fx="fade-left"],
+[data-scroll-fx="fade-right"] {
+  transform: translateY(32px);
+}
+[data-scroll-fx="fade-left"].is-visible,
+[data-scroll-fx="fade-right"].is-visible {
+  transform: translateY(0);
+}
 [data-scroll-fx="zoom"]       { transform: scale(0.96); opacity: 0; }
 [data-scroll-fx="zoom"].is-visible { transform: scale(1); opacity: 1; }
 
