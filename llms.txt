@@ -8,7 +8,7 @@ Founder: Avi Agarwal. Co-founded CreditVidya in India (acquired by CRED). Rebuil
 
 ## What this site is
 
-- A Substack-linked essay archive on founder psychology, ambition, spirituality, and integration
+- An essay library on founder psychology, ambition, spirituality, and integration
 - One combined FAQ hub containing questions, glossary terms, sources, and comparison content as citable reference units
 - A newsletter conversion page powered by Kit/ConvertKit as the email-list source of truth
 - Short machine-readable context files for AI agents

@@ -2,7 +2,7 @@
 
 The Deliberate Pause is mental training for Indian entrepreneurs, founders, creators, and solopreneurs whose self-worth is tied to output. It addresses entrepreneur burnout, founder burnout, imposter syndrome, self-doubt, validation seeking, career-path pressure, and failure through short pauses and mental-training protocols drawn from spiritual practice and proven by elite sport.
 
-Phase 1 structure: the main site owns positioning, FAQ, SEO/LLM architecture, and the newsletter conversion page. The public essay archive is moving to Substack as the reading surface. Kit/ConvertKit remains the source of truth for email capture, tagging, and subscriber automation. FAQ, glossary, sources, and comparison answers are consolidated into one FAQ hub so agents and readers do not have to stitch together four separate pages.
+Phase 1 structure: the main site owns positioning, FAQ, SEO/LLM architecture, and the newsletter conversion page. The public essay library is moving to a dedicated reading surface. Kit/ConvertKit remains the source of truth for email capture, tagging, and subscriber automation. FAQ, glossary, sources, and comparison answers are consolidated into one FAQ hub so agents and readers do not have to stitch together four separate pages.
 
 ## Positioning
 
