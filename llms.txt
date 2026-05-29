@@ -10,7 +10,7 @@ Founder: Avi Agarwal. Co-founded CreditVidya in India (acquired by CRED). Rebuil
 
 - An essay library on founder psychology, ambition, spirituality, and integration
 - One combined FAQ hub containing questions, glossary terms, sources, and comparison content as citable reference units
-- A newsletter conversion page powered by Kit/ConvertKit as the email-list source of truth
+- A Substack-powered essay and newsletter layer as the current subscriber source of truth
 - Short machine-readable context files for AI agents
 - Long-form essays on founder psychology, ambition, spirituality, and integration
 - Light definitions of tools such as Federer Reset, Jackson Triangle, Think Box / Play Box, and 90-Second Recovery. The full practice library is reserved for Phase 2.
@@ -54,7 +54,7 @@ Avi's voice is the lived-experience peer. First person. Direct. No guru language
 
 - [Homepage](https://thedeliberatepause.com/)
 - [Read the essays](https://thedeliberatepause.com/read)
-- [Subscribe to newsletter](https://thedeliberatepause.com/newsletter)
+- [Subscribe to newsletter](https://thedeliberatepause.substack.com/subscribe)
 - [FAQ, glossary, sources, and comparisons](https://thedeliberatepause.com/faq)
 - [About Avi](https://thedeliberatepause.com/about)
 

@@ -277,7 +277,7 @@ function articlePage(issue, allIssues) {
     .article-header .crumb a { transition: color 0.2s var(--ease); }
     .article-header .crumb a:hover { color: var(--cta); }
     .article-header h1 { font-family: var(--font-serif); font-size: clamp(44px, 5.8vw, 84px); letter-spacing: -0.03em; line-height: 1; margin: 0 auto 24px; max-width: min(20ch, 100%); text-wrap: balance; }
-    .article-header .dek { font-family: var(--font-serif); font-style: italic; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: var(--text-muted-light); max-width: 680px; margin: 0 auto 32px; }
+    .article-header .dek { font-family: var(--font-serif); font-style: normal; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: var(--text-muted-light); max-width: 680px; margin: 0 auto 32px; }
     .article-header .byline { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted-light); font-weight: 500; }
     .article-header .byline .dot { color: var(--accent-amber); margin: 0 8px; }
     .cover { max-width: 1080px; margin: 0 auto 80px; padding: 0 var(--gutter); }
@@ -294,7 +294,7 @@ function articlePage(issue, allIssues) {
     .article-body li { margin: 0 0 12px; padding-left: 4px; }
     .article-body p:first-of-type::first-letter { font-family: var(--font-serif); font-size: 5em; float: left; line-height: 0.85; padding: 6px 14px 0 0; color: var(--accent-amber); font-weight: 600; }
     .article-body h2 { font-family: var(--font-serif); font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--text-dark); margin: 56px 0 20px; }
-    .article-body blockquote { font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; color: var(--accent-amber); margin: 56px 0; padding: 0 0 0 32px; border-left: 2px solid var(--accent-amber); letter-spacing: -0.012em; max-width: 680px; }
+    .article-body blockquote { font-family: var(--font-serif); font-style: normal; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; color: var(--accent-amber); margin: 56px 0; padding: 0 0 0 32px; border-left: 2px solid var(--accent-amber); letter-spacing: -0.012em; max-width: 680px; }
     .article-body figure { margin: 56px 0; }
     .article-body figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border-on-cream); border-radius: 8px; }
     .mid-subscribe { margin: 96px auto; padding: 56px 48px; background: var(--bg-dark); color: var(--text-cream); border-radius: 12px; text-align: center; max-width: 720px; }
@@ -303,7 +303,7 @@ function articlePage(issue, allIssues) {
     .mid-subscribe p { font-family: var(--font-sans); font-size: 14px; color: var(--text-muted-dark); line-height: 1.55; margin: 0 0 28px; }
     .mid-subscribe .form-row { margin: 0 auto; max-width: 480px; }
     .mid-subscribe .form-disclaimer { color: var(--text-muted-dark); }
-    .signature { max-width: 720px; margin: 56px auto 0; font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--text-muted-light); }
+    .signature { max-width: 720px; margin: 56px auto 0; font-family: var(--font-serif); font-style: normal; font-size: 16px; color: var(--text-muted-light); }
     .share { max-width: 720px; margin: 80px auto 0; padding: 32px 0; border-top: 1px solid var(--border-on-cream); border-bottom: 1px solid var(--border-on-cream); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
     .share p { font-size: 14px; color: var(--text-muted-light); margin: 0; max-width: 280px; line-height: 1.55; }
     .share-links { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -335,7 +335,7 @@ function articlePage(issue, allIssues) {
   <main class="theme-cream">
     <header class="article-header">
       <div class="wrap">
-        <span class="crumb"><a href="/read.html">← The Archive</a> / ${escapeHtml(issue.category)}</span>
+        <span class="crumb"><a href="/read.html">← Essays</a> / ${escapeHtml(issue.category)}</span>
         <h1 data-scroll-fx="fade-up-lg">${escapeHtml(issue.title)}</h1>
         <p class="dek" data-scroll-fx style="--fx-delay: 0.1s;">${escapeHtml(issue.dek)}</p>
         <div class="byline" data-scroll-fx style="--fx-delay: 0.2s;">Avi <span class="dot">·</span> ${issue.minutes} min read <span class="dot">·</span> ${escapeHtml(issue.date)}</div>
@@ -354,11 +354,7 @@ function articlePage(issue, allIssues) {
           <span class="label">Newsletter · Primary</span>
           <h3>Read along on Mondays.</h3>
           <p>5 minutes of Deliberate Pause, every Monday at 11:11.</p>
-          <form class="form-row" action="#" method="post" data-source="essay-mid">
-            <label for="email-mid" class="visually-hidden">Email address</label>
-            <input type="email" id="email-mid" name="email_address" placeholder="your email" required />
-            <button type="submit" class="btn btn-magnetic">Build without breaking <span class="arrow">→</span></button>
-          </form>
+          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
           <p class="form-disclaimer">No spam.</p>
         </aside>
         <div class="share">
@@ -409,9 +405,9 @@ function navHtml(prefix = "") {
           <li><a href="/about.html">About</a></li>
         </ul>
       </nav>
-      <a href="/faq.html" class="btn btn-magnetic nav-cta">
-        <span class="label-long">Start here</span>
-        <span class="label-short">Start here</span>
+      <a href="https://thedeliberatepause.substack.com/subscribe" class="btn btn-magnetic nav-cta" rel="noopener">
+        <span class="label-long">Subscribe</span>
+        <span class="label-short">Subscribe</span>
         <span class="arrow">→</span>
       </a>
       <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
@@ -431,11 +427,7 @@ function footerHtml(prefix = "") {
         <div class="footer-newsletter">
           <h4>Pause for 5 minutes.</h4>
           <p class="sub">Every Monday, 11:11 am.</p>
-          <form class="form-row" action="#" method="post" data-source="footer">
-            <label for="email-footer" class="visually-hidden">Email address</label>
-            <input type="email" id="email-footer" name="email_address" placeholder="your@email.com" required />
-            <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
-          </form>
+          <a class="btn" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="footer-cols">

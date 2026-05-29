@@ -38,11 +38,11 @@
         <ul class="mobile-menu-list">
           <li><a href="read.html">Read</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="newsletter.html">Subscribe</a></li>
+          <li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
-          <a href="newsletter.html" class="btn">Subscribe <span class="arrow">→</span></a>
+          <a href="https://thedeliberatepause.substack.com/subscribe" class="btn" rel="noopener">Subscribe <span class="arrow">→</span></a>
           <p class="micro">Every Monday · 11:11 AM</p>
         </div>
       </aside>
@@ -69,6 +69,66 @@
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+  });
+
+  /* ---------- Newsletter popup ---------- */
+  let popup = document.querySelector('.tdp-popup');
+  if (!popup) {
+    popup = document.createElement('div');
+    popup.className = 'tdp-popup';
+    popup.setAttribute('aria-hidden', 'true');
+    popup.innerHTML = `
+      <div class="tdp-popup__overlay" data-popup-close></div>
+      <section class="tdp-popup__panel" role="dialog" aria-modal="true" aria-labelledby="tdp-popup-title">
+        <button class="tdp-popup__close" type="button" aria-label="Close popup" data-popup-close>×</button>
+        <div class="tdp-popup__content">
+          <div class="tdp-popup__copy">
+            <h2 id="tdp-popup-title">You have a courage problem.</h2>
+            <p>Join founders training mental models for pressure, uncertainty, and better decisions. Mondays at 11:11.</p>
+            <div class="tdp-popup__actions">
+              <a class="popup-primary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+              <a class="popup-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="tdp-popup__image" aria-hidden="true"></div>
+        </div>
+      </section>
+    `;
+    document.body.appendChild(popup);
+  }
+
+  const popupDismissedKey = 'tdp-popup-dismissed';
+  let popupTimer = null;
+  function openPopup() {
+    if (sessionStorage.getItem(popupDismissedKey) === '1') return;
+    if (popup.classList.contains('is-open') || document.body.classList.contains('menu-open')) return;
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('popup-open');
+  }
+  function closePopup() {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('popup-open');
+    sessionStorage.setItem(popupDismissedKey, '1');
+  }
+  popup.querySelectorAll('[data-popup-close]').forEach((el) => el.addEventListener('click', closePopup));
+  popup.querySelectorAll('a').forEach((a) => a.addEventListener('click', closePopup));
+  document.querySelectorAll('[data-popup-trigger]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      sessionStorage.removeItem(popupDismissedKey);
+      openPopup();
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup();
+  });
+  if (!sessionStorage.getItem(popupDismissedKey)) {
+    popupTimer = window.setTimeout(openPopup, 9000);
+  }
+  window.addEventListener('beforeunload', () => {
+    if (popupTimer) window.clearTimeout(popupTimer);
   });
 
   /* ---------- Nav: condense on scroll ---------- */

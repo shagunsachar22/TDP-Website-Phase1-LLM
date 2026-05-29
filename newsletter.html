@@ -24,7 +24,7 @@
     },
     "potentialAction": {
       "@type": "SubscribeAction",
-      "target": "https://thedeliberatepause.com/newsletter"
+      "target": "https://thedeliberatepause.substack.com/subscribe"
     }
   }
   </script>
@@ -168,7 +168,8 @@
       color: var(--text-muted-dark);
       line-height: 1.6;
     }
-    .newsletter-form-card .form-row {
+    .newsletter-form-card .form-row,
+    .newsletter-actions {
       margin-top: 24px;
       display: grid;
       grid-template-columns: 1fr;
@@ -177,7 +178,8 @@
     .newsletter-form-card input {
       min-height: 56px;
     }
-    .newsletter-form-card .btn {
+    .newsletter-form-card .btn,
+    .newsletter-actions .btn {
       width: 100%;
       justify-content: center;
     }
@@ -372,13 +374,16 @@
       line-height: 1.65;
       margin: 0;
     }
-    .conversion-box .form-row {
+    .conversion-box .form-row,
+    .conversion-actions {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
     }
-    .conversion-box .btn {
+    .conversion-box .btn,
+    .conversion-actions .btn {
       width: 100%;
+      justify-content: center;
     }
     .faq-mini {
       display: grid;
@@ -465,7 +470,7 @@
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <a href="newsletter.html" class="btn btn-magnetic nav-cta" aria-current="page">
+      <a href="https://thedeliberatepause.substack.com/subscribe" class="btn btn-magnetic nav-cta" rel="noopener" aria-current="page">
         <span class="label-long">Subscribe</span>
         <span class="label-short">Subscribe</span>
         <span class="arrow">→</span>
@@ -491,11 +496,10 @@
         <aside class="newsletter-form-card" data-scroll-fx="fade-left" aria-label="Newsletter signup">
           <h2>Subscribe.</h2>
           <p>One essay every Monday on pressure, clarity, better decisions, and the inner cost of building.</p>
-          <form class="form-row" action="#" method="post" data-source="newsletter-landing-hero">
-            <label for="newsletter-email" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required />
-            <button type="submit" class="btn btn-magnetic">Subscribe <span class="arrow">→</span></button>
-          </form>
+          <div class="newsletter-actions">
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
+          </div>
           <div class="signup-note">No spam. Ever.</div>
         </aside>
       </div>
@@ -627,11 +631,10 @@
             <h2 id="conversion-headline">Get the next Monday letter.</h2>
             <p>Five minutes on mental training rooted in yogic philosophy. Sent weekly. Built to be read before the week takes over.</p>
           </div>
-          <form class="form-row" action="#" method="post" data-source="newsletter-landing-bottom">
-            <label for="newsletter-email-bottom" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletter-email-bottom" name="email_address" placeholder="your@email.com" required />
-            <button type="submit" class="btn btn-magnetic">Subscribe <span class="arrow">→</span></button>
-          </form>
+          <div class="conversion-actions">
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -674,11 +677,11 @@
         <div class="footer-newsletter">
           <h4>Get the Monday letter.</h4>
           <p class="sub">One essay every Monday at 11:11.</p>
-          <a class="btn" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
+          <a class="btn" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="footer-cols">
-        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li><li><a href="newsletter.html">Subscribe</a></li><li><a href="read.html#categories">Essay paths</a></li></ul></div>
+        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li><li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li><li><a href="read.html#categories">Essay paths</a></li></ul></div>
         <div><h5>Essay paths</h5><ul><li><a href="read.html#categories">Burnout & Identity</a></li><li><a href="read.html#categories">Failure & Rejection</a></li><li><a href="read.html#categories">Ambition & Success</a></li><li><a href="read.html#categories">Decision Clarity</a></li><li><a href="read.html#categories">Attention & Recovery</a></li></ul></div>
         <div><h5>FAQ</h5><ul><li><a href="faq.html">Questions</a></li><li><a href="faq.html#glossary">Glossary</a></li><li><a href="faq.html#sources">Sources</a></li></ul></div>
         <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays</a></li></ul></div>

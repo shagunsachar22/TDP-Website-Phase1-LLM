@@ -5,22 +5,23 @@
 
 :root {
   /* Color */
-  --bg-dark:       #131313;
-  --bg-cream:      #F5EFE5;
-  --text-cream:    #F5EFE5;
-  --text-dark:     #1A1A1A;
-  --text-muted-dark:  rgba(245, 239, 229, 0.65);
-  --text-muted-light: rgba(26, 26, 26, 0.65);
-  --accent-amber:   #D6A86E;
-  --accent-amber-bright: #E8B97A;
-  --cta:            #C56B45;
-  --cta-hover:      #B05D3B;
-  --border-on-dark:  rgba(245, 239, 229, 0.12);
-  --border-on-cream: rgba(26, 26, 26, 0.10);
+  --bg-dark:       #111100;
+  --bg-cream:      #FFFFF6;
+  --text-cream:    #FFFFF6;
+  --text-dark:     #111100;
+  --text-muted-dark:  rgba(255, 255, 246, 0.70);
+  --text-muted-light: #6F6A61;
+  --accent-amber:   #C1B59F;
+  --accent-amber-bright: #E7D7BC;
+  --accent-rust:    #C46E4C;
+  --cta:            #111100;
+  --cta-hover:      #3D332B;
+  --border-on-dark:  rgba(255, 255, 246, 0.18);
+  --border-on-cream: rgba(17, 17, 0, 0.12);
 
   /* Type */
-  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Satoshi", Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:  "Satoshi", Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Layout */
   --max-width:           1280px;
@@ -32,6 +33,35 @@
   --ease:        cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.prod.website-files.com/66f6a474c8b21aa4209bc790/6879f28393f66670f9fdfa9f_Satoshi-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.prod.website-files.com/66f6a474c8b21aa4209bc790/6879f2af4b31105ab85a65ec_Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.prod.website-files.com/66f6a474c8b21aa4209bc790/6879f2efd2fb3c86955039e4_Satoshi-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.prod.website-files.com/66f6a474c8b21aa4209bc790/6879f2d56c34b38991cdb901_Satoshi-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* ====== reset ====== */
@@ -96,24 +126,24 @@ section { padding-top: var(--section-pad-y); padding-bottom: var(--section-pad-y
 /* ====== type ====== */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.04;
   margin: 0 0 24px;
   /* iOS Safari font-rendering refinement */
   text-rendering: optimizeLegibility;
   text-wrap: balance;
   overflow-wrap: normal;
 }
-h1 { font-size: clamp(44px, 7vw, 96px); letter-spacing: -0.032em; }
-h2 { font-size: clamp(30px, 4.5vw, 56px); letter-spacing: -0.026em; }
-h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -0.018em; }
-h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.25; letter-spacing: -0.012em; }
+h1 { font-size: clamp(44px, 7vw, 96px); letter-spacing: 0; }
+h2 { font-size: clamp(30px, 4.5vw, 56px); letter-spacing: 0; }
+h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: 0; }
+h4 { font-size: clamp(18px, 2vw, 22px); line-height: 1.25; letter-spacing: 0; }
 
 /* Improved muted text contrast — was washing out on bright screens */
 :root {
-  --text-muted-dark:  rgba(245, 239, 229, 0.72);
-  --text-muted-light: rgba(26, 26, 26, 0.68);
+  --text-muted-dark:  rgba(255, 255, 246, 0.72);
+  --text-muted-light: #6F6A61;
 }
 
 .lead {
@@ -419,12 +449,13 @@ blockquote {
   position: fixed;
   inset: 0;
   z-index: 200;
+  display: none;
   pointer-events: none;
   visibility: hidden;
   overflow: clip;
   contain: paint;
 }
-.mobile-menu.is-open { pointer-events: auto; visibility: visible; }
+.mobile-menu.is-open { display: block; pointer-events: auto; visibility: visible; }
 .mobile-menu-overlay {
   position: absolute;
   inset: 0;
@@ -755,12 +786,12 @@ body.menu-open { overflow: hidden; }
   margin: 0 auto 28px;
   max-width: min(20ch, 100%);
 }
-.practice-hero h1 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+.practice-hero h1 em { color: var(--accent-amber); font-style: normal; font-weight: 500; }
 .practice-hero h1 .keep-together { white-space: nowrap; }
 .theme-dark.practice-hero h1 { color: var(--text-cream); }
 .practice-hero .sub {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(17px, 1.7vw, 22px);
   line-height: 1.5;
   margin: 0 auto 56px;
@@ -809,7 +840,7 @@ body.menu-open { overflow: hidden; }
 }
 .origin blockquote {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(18px, 1.8vw, 22px);
   line-height: 1.5;
   color: var(--text-dark);
@@ -856,7 +887,7 @@ body.menu-open { overflow: hidden; }
   margin: 0 0 16px;
   max-width: 18ch;
 }
-.when-to-use h2 em { color: var(--accent-amber); font-style: italic; font-weight: 500; }
+.when-to-use h2 em { color: var(--accent-amber); font-style: normal; font-weight: 500; }
 .when-to-use h2 ~ hr {
   margin: 0 0 56px;
   border: none;
@@ -880,7 +911,7 @@ body.menu-open { overflow: hidden; }
 .situation:first-child, .situation:nth-child(2) { border-top: none; }
 .situation .num {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: 18px;
   color: var(--accent-amber);
   font-weight: 500;
@@ -967,7 +998,7 @@ body.menu-open { overflow: hidden; }
   letter-spacing: -0.018em;
   line-height: 1.2;
   margin: 0;
-  font-style: italic;
+  font-style: normal;
   color: var(--accent-amber);
   font-weight: 500;
 }
@@ -1058,6 +1089,435 @@ body.menu-open { overflow: hidden; }
 
 /* Counter — for animated 9 etc. */
 .counter { font-variant-numeric: tabular-nums; }
+
+/* ===========================================================
+   LIVE-SITE ALIGNMENT — typography, color, popup
+   Mirrors the current Webflow palette and strict Satoshi hierarchy.
+   =========================================================== */
+body {
+  font-family: var(--font-sans) !important;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-dark);
+  background: var(--bg-cream);
+}
+
+body h1,
+.hero-headline,
+.publication-hero h1,
+.newsletter-copy h1,
+.about-hero h1,
+.practice-hero h1,
+.article-header h1,
+.title-h1 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(36px, 5.2vw, 64px) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
+body h2,
+.pain-opener h2,
+.reading h2,
+.pause-left h2,
+.definition h2,
+.avi-intro h2,
+.newsletter-form-card h2,
+.conversion-box h2,
+.latest-intro h2,
+.paths-header h2,
+.section-intro h2,
+.supporting_rich-text h2 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(28px, 4vw, 44px) !important;
+  line-height: 1.06 !important;
+  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
+body h3,
+body h4,
+.protocol-card h4,
+.testimonial blockquote,
+.reading-featured h3,
+.reading-card h4,
+.essay-card h3,
+.path-card h3,
+.latest-row h3,
+.footer h4,
+.related-row h3 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(19px, 2vw, 26px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
+.hero-headline {
+  color: var(--text-cream) !important;
+  max-width: 12ch;
+}
+
+.pain-opener {
+  max-width: 760px !important;
+}
+
+.pain-opener .small {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+.pain-opener h2 {
+  color: var(--text-dark) !important;
+}
+
+.pain-opener .sub {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(22px, 2.4vw, 30px) !important;
+  line-height: 1.22 !important;
+  font-weight: 500 !important;
+}
+
+.pain-opener .sub em {
+  color: var(--text-dark) !important;
+  display: inline !important;
+  font-weight: 700 !important;
+}
+
+.pain-proof-card {
+  background: var(--bg-dark) !important;
+  color: var(--text-cream) !important;
+  border-color: var(--bg-dark) !important;
+  text-align: left !important;
+}
+
+.pain-proof-card p {
+  color: var(--text-cream) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(17px, 1.6vw, 21px) !important;
+  line-height: 1.55 !important;
+}
+
+.proof-strip {
+  border-color: var(--border-on-dark) !important;
+}
+
+.proof-strip span,
+.pain-proof-card .proof-kicker {
+  color: var(--accent-amber) !important;
+}
+
+.reading h2 {
+  max-width: 640px !important;
+}
+
+.reading-featured .thumb,
+.reading-card .thumb-sm {
+  background: rgba(17, 17, 0, 0.04) !important;
+}
+
+.reading-featured h3,
+.reading-card h4,
+.footer-brand .logo,
+.footer-newsletter h4 {
+  letter-spacing: 0 !important;
+}
+
+.footer {
+  padding-top: 64px;
+}
+
+.footer-top {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.footer-brand .logo {
+  font-size: 16px;
+}
+
+.footer-newsletter {
+  justify-self: end;
+  width: auto;
+  min-width: 260px;
+}
+
+.footer-cols {
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .footer-newsletter {
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tdp-popup__panel {
+  background: var(--bg-cream);
+  color: var(--text-dark);
+}
+
+.tdp-popup__copy p {
+  color: var(--text-muted-light);
+}
+
+.tdp-popup__image {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(193, 181, 159, 0.42), transparent 34%),
+    linear-gradient(145deg, #FFFFF6, #D9C8AD 52%, #111100);
+}
+
+p,
+li,
+.lead,
+.dek,
+.sub,
+.article-body,
+.article-body p,
+.pain-proof-card p,
+.poup-descripton {
+  font-family: var(--font-sans) !important;
+  letter-spacing: 0 !important;
+  font-style: normal !important;
+}
+
+em,
+i,
+blockquote,
+.signature,
+.pain-opener .sub em,
+.about-hero h1 em,
+.identity-stack span,
+.practice-hero h1 em,
+.when-to-use h2 em,
+.resume-band h2 em,
+.related-row h3,
+.pause-left .micro {
+  font-style: normal !important;
+}
+
+.theme-dark {
+  background: var(--bg-dark);
+  color: var(--text-cream);
+}
+
+.theme-cream {
+  background: var(--bg-cream);
+  color: var(--text-dark);
+}
+
+body.popup-open {
+  overflow: hidden;
+}
+
+.btn,
+.button,
+.nav-cta,
+.popup-primary,
+.popup-secondary {
+  border-radius: 232px !important;
+  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+}
+
+.btn,
+.nav-cta,
+.popup-primary {
+  background: var(--bg-dark);
+  color: var(--text-cream);
+  border-color: transparent;
+}
+
+.theme-dark .btn,
+.theme-dark .nav-cta,
+.popup-primary {
+  background: var(--text-cream);
+  color: var(--text-dark);
+}
+
+.btn:hover,
+.nav-cta:hover,
+.popup-primary:hover {
+  background: var(--accent-amber);
+  color: var(--text-dark);
+}
+
+.eyebrow,
+.reading-tag,
+.meta,
+.proof-kicker,
+.athlete,
+.label,
+.tag {
+  font-family: var(--font-sans) !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 700 !important;
+}
+
+.tdp-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s var(--ease);
+}
+
+.tdp-popup.is-open {
+  display: grid;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tdp-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.68);
+}
+
+.tdp-popup__panel {
+  position: relative;
+  width: min(920px, 100%);
+  background: #F7F7F6;
+  color: var(--text-dark);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 36px 110px rgba(0, 0, 0, 0.28);
+  transform: scale(0.96);
+  transition: transform 0.24s var(--ease-out);
+}
+
+.tdp-popup.is-open .tdp-popup__panel {
+  transform: scale(1);
+}
+
+.tdp-popup__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(26, 25, 23, 0.08);
+  color: var(--text-dark);
+  font-size: 24px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.tdp-popup__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.8fr);
+  min-height: 430px;
+}
+
+.tdp-popup__copy {
+  padding: clamp(36px, 6vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.tdp-popup__copy h2 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 56px) !important;
+  line-height: 1.05 !important;
+}
+
+.tdp-popup__copy p {
+  color: #87817A;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.tdp-popup__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.popup-primary,
+.popup-secondary {
+  min-height: 54px;
+  padding: 15px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-primary {
+  background: var(--bg-dark);
+  color: var(--text-cream);
+}
+
+.popup-secondary {
+  border: 1px solid #CBC8C4;
+  color: var(--text-dark);
+}
+
+.tdp-popup__image {
+  background:
+    radial-gradient(circle at 55% 28%, rgba(193, 181, 159, 0.5), transparent 32%),
+    linear-gradient(135deg, #F4E7D4, #C1B59F 55%, #5C3B2E);
+  min-height: 100%;
+}
+
+.tdp-popup__panel {
+  background: var(--bg-cream);
+  color: var(--text-dark);
+}
+
+.tdp-popup__copy p {
+  color: var(--text-muted-light);
+}
+
+.tdp-popup__image {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(193, 181, 159, 0.42), transparent 34%),
+    linear-gradient(145deg, #FFFFF6, #D9C8AD 52%, #111100);
+}
+
+@media (max-width: 760px) {
+  .tdp-popup__content {
+    grid-template-columns: 1fr;
+  }
+  .tdp-popup__image {
+    min-height: 150px;
+    order: -1;
+  }
+  .tdp-popup__panel {
+    border-radius: 18px;
+  }
+  .tdp-popup__actions {
+    flex-direction: column;
+  }
+  .popup-primary,
+  .popup-secondary {
+    width: 100%;
+  }
+}
 
 /* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
