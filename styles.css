@@ -5,17 +5,20 @@
 
 :root {
   /* Color */
-  --bg-dark:       #111100;
-  --bg-cream:      #FFFFF6;
+  --bg-dark:       #1F1E19;
+  --bg-cream:      #F7F3E8;
+  --bg-taupe:      #8A8372;
+  --bg-clay:       #66594F;
+  --bg-mocha:      #332A24;
   --text-cream:    #FFFFF6;
   --text-dark:     #111100;
   --text-muted-dark:  rgba(255, 255, 246, 0.70);
-  --text-muted-light: #6F6A61;
-  --accent-amber:   #C1B59F;
-  --accent-amber-bright: #E7D7BC;
-  --accent-rust:    #C46E4C;
-  --cta:            #111100;
-  --cta-hover:      #3D332B;
+  --text-muted-light: #6B6258;
+  --accent-amber:   #BDAA8E;
+  --accent-amber-bright: #E4D0AE;
+  --accent-rust:    #B87556;
+  --cta:            #6A4E40;
+  --cta-hover:      #1F1E19;
   --border-on-dark:  rgba(255, 255, 246, 0.18);
   --border-on-cream: rgba(17, 17, 0, 0.12);
 
@@ -1527,9 +1530,9 @@ body.popup-open {
 }
 
 .pain-opener .small {
-  font-size: clamp(30px, 3.6vw, 48px) !important;
+  font-size: clamp(38px, 5.2vw, 76px) !important;
   line-height: 1.1 !important;
-  margin-bottom: 22px !important;
+  margin-bottom: 26px !important;
 }
 
 .pain-opener .small .counter {
@@ -1539,7 +1542,7 @@ body.popup-open {
 }
 
 .pain-opener h2 {
-  font-size: clamp(40px, 4.8vw, 66px) !important;
+  font-size: clamp(34px, 4vw, 58px) !important;
   line-height: 0.9 !important;
   margin-bottom: 42px !important;
   color: var(--text-dark) !important;
@@ -1561,7 +1564,7 @@ body.popup-open {
   margin-bottom: 0 !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  text-align: left !important;
+  text-align: center !important;
 }
 
 .pain-opener .sub em {
@@ -1661,12 +1664,12 @@ body.popup-open {
 
 @media (max-width: 520px) {
   .pain-opener .small {
-    font-size: 28px !important;
+    font-size: 36px !important;
     margin-bottom: 18px !important;
   }
 
   .pain-opener h2 {
-    font-size: 42px !important;
+    font-size: 36px !important;
     line-height: 0.92 !important;
     margin-bottom: 30px !important;
   }
@@ -1674,6 +1677,96 @@ body.popup-open {
   .pain-opener .sub {
     font-size: 21px !important;
   }
+}
+
+/* Old-site palette pass: warmer taupe, clay, and mocha from the live brand world. */
+.nav {
+  background: rgba(31, 30, 25, 0.78);
+}
+
+.nav.is-scrolled {
+  background: rgba(31, 30, 25, 0.94);
+}
+
+.hero-video-bg {
+  background:
+    radial-gradient(ellipse 62% 46% at 50% 34%, rgba(189, 170, 142, 0.10), transparent 70%),
+    linear-gradient(135deg, var(--bg-mocha), var(--bg-dark) 58%, #0f0f0b);
+}
+
+.logobar,
+.footer {
+  background: var(--bg-dark);
+}
+
+.pain {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(189, 170, 142, 0.20), transparent 34%),
+    linear-gradient(180deg, var(--bg-cream) 0%, #EEE5D5 100%) !important;
+}
+
+.reading,
+.avi-intro {
+  background: #F2EBDD !important;
+}
+
+.pause {
+  background:
+    linear-gradient(90deg, rgba(31, 30, 25, 0.26), transparent 44%),
+    var(--bg-clay) !important;
+}
+
+.protocol-card {
+  background: rgba(31, 30, 25, 0.18) !important;
+  border-color: rgba(255, 255, 246, 0.18) !important;
+}
+
+.protocol-card:hover {
+  background: rgba(31, 30, 25, 0.26) !important;
+}
+
+.testimonials {
+  background: #EDE4D5 !important;
+}
+
+.testimonial {
+  background: #FFFBF1 !important;
+}
+
+.definition {
+  background: var(--bg-taupe) !important;
+  color: var(--text-cream) !important;
+}
+
+.definition p,
+.definition .lead {
+  color: rgba(255, 255, 246, 0.82) !important;
+}
+
+.definition p:last-child {
+  color: var(--text-cream) !important;
+}
+
+.pain-proof-card {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(189, 170, 142, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(189, 170, 142, 0.10), transparent 52%),
+    var(--bg-clay) !important;
+  border-color: rgba(255, 255, 246, 0.18) !important;
+}
+
+.pain-proof-card .proof-kicker {
+  color: var(--accent-amber-bright) !important;
+}
+
+.tdp-popup__panel {
+  background: var(--bg-cream) !important;
+}
+
+.tdp-popup__image {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(189, 170, 142, 0.42), transparent 34%),
+    linear-gradient(145deg, var(--bg-cream), var(--bg-taupe) 52%, var(--bg-mocha)) !important;
 }
 
 /* Reduce motion — respect user preference */
