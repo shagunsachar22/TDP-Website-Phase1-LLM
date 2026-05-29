@@ -314,6 +314,29 @@ blockquote {
 }
 .form-row .btn { border-radius: 0 4px 4px 0; }
 
+.subscribe-inline {
+  width: min(100%, 680px);
+}
+
+.subscribe-inline input[type="email"] {
+  min-height: 58px;
+  padding: 16px 24px;
+  font-size: clamp(17px, 1.4vw, 22px);
+  background: rgba(255, 255, 246, 0.035);
+  border-color: rgba(255, 255, 246, 0.16);
+}
+
+.subscribe-inline .btn {
+  min-height: 58px;
+  padding-inline: clamp(24px, 3.2vw, 42px);
+  font-size: clamp(16px, 1.25vw, 20px);
+  white-space: nowrap;
+}
+
+.theme-cream .subscribe-inline input[type="email"] {
+  background: rgba(17, 17, 0, 0.035);
+}
+
 .form-disclaimer {
   font-size: 15px;
   line-height: 1.4;

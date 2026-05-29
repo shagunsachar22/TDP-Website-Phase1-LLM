@@ -168,17 +168,20 @@
       color: var(--text-muted-dark);
       line-height: 1.6;
     }
-    .newsletter-form-card .form-row,
     .newsletter-actions {
       margin-top: 24px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
     }
+    .newsletter-form-card .subscribe-inline,
+    .conversion-box .subscribe-inline {
+      margin-top: 24px;
+      max-width: 100%;
+    }
     .newsletter-form-card input {
       min-height: 56px;
     }
-    .newsletter-form-card .btn,
     .newsletter-actions .btn {
       width: 100%;
       justify-content: center;
@@ -374,13 +377,11 @@
       line-height: 1.65;
       margin: 0;
     }
-    .conversion-box .form-row,
     .conversion-actions {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
     }
-    .conversion-box .btn,
     .conversion-actions .btn {
       width: 100%;
       justify-content: center;
@@ -496,11 +497,12 @@
         <aside class="newsletter-form-card" data-scroll-fx="fade-left" aria-label="Newsletter signup">
           <h2>Subscribe.</h2>
           <p>One essay every Monday on pressure, clarity, better decisions, and the inner cost of building.</p>
-          <div class="newsletter-actions">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
-          </div>
-          <div class="signup-note">No spam. Ever.</div>
+          <form class="form-row subscribe-inline" action="https://thedeliberatepause.substack.com/subscribe" method="get">
+            <label class="visually-hidden" for="newsletter-hero-email">Email address</label>
+            <input id="newsletter-hero-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+            <button class="btn btn-magnetic" type="submit">Subscribe <span class="arrow">→</span></button>
+          </form>
+          <div class="signup-note">No spam ever. Unsubscribe in one click.</div>
         </aside>
       </div>
     </section>
@@ -631,10 +633,11 @@
             <h2 id="conversion-headline">Get the next Monday letter.</h2>
             <p>Five minutes on mental training rooted in yogic philosophy. Sent weekly. Built to be read before the week takes over.</p>
           </div>
-          <div class="conversion-actions">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
-          </div>
+          <form class="form-row subscribe-inline" action="https://thedeliberatepause.substack.com/subscribe" method="get">
+            <label class="visually-hidden" for="newsletter-bottom-email">Email address</label>
+            <input id="newsletter-bottom-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+            <button class="btn btn-magnetic" type="submit">Subscribe <span class="arrow">→</span></button>
+          </form>
         </div>
       </div>
     </section>

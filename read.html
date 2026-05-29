@@ -342,7 +342,11 @@
           <h1 data-scroll-fx="fade-up-lg">The inner work of building.</h1>
           <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Essays on founder psychology, yogic philosophy, ambition, burnout, recovery, and better decisions under pressure.</p>
           <div class="publication-actions" data-scroll-fx style="--fx-delay: 0.25s;">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+            <form class="form-row subscribe-inline" action="https://thedeliberatepause.substack.com/subscribe" method="get">
+              <label class="visually-hidden" for="read-hero-email">Email address</label>
+              <input id="read-hero-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+              <button class="btn btn-magnetic" type="submit">Subscribe <span class="arrow">→</span></button>
+            </form>
             <a class="publication-link" href="https://thedeliberatepause.substack.com/" rel="noopener">Browse essays →</a>
           </div>
         </div>
@@ -454,7 +458,11 @@
           <span class="eyebrow">Latest essays</span>
           <h2 id="latest-headline">Read before the week takes over.</h2>
           <p>New essays land with the Monday letter. Start with the latest pieces below, then follow the reading path that matches the week you are in.</p>
-          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Get the Monday letter <span class="arrow">→</span></a>
+          <form class="form-row subscribe-inline" action="https://thedeliberatepause.substack.com/subscribe" method="get">
+            <label class="visually-hidden" for="read-latest-email">Email address</label>
+            <input id="read-latest-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+            <button class="btn btn-magnetic" type="submit">Subscribe <span class="arrow">→</span></button>
+          </form>
         </div>
         <div class="latest-list">
           <article class="latest-row">
