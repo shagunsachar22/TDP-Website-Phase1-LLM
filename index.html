@@ -297,55 +297,52 @@
       font-size: 13px;
       font-weight: 700;
     }
-    .pain-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 80px;
-      row-gap: 32px;
-    }
-    .pain-list li {
-      display: grid;
-      grid-template-columns: 24px 1fr;
-      gap: 16px;
-      align-items: start;
-      font-size: 16px;
-      line-height: 1.55;
-      color: var(--text-muted-light);
-      padding-top: 20px;
-      border-top: 1px solid var(--border-on-cream);
-      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
-    }
-    .pain-list li:hover { border-top-color: var(--accent-amber); transform: translateX(4px); }
-    .pain-list li::before {
-      content: "✓";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px; height: 22px;
+    .pain-proof-card {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(28px, 4vw, 44px);
       border: 1px solid var(--border-on-cream);
-      border-radius: 3px;
-      font-size: 12px;
-      color: var(--text-dark);
-      margin-top: 2px;
-      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 26px 80px -62px rgba(26, 26, 26, 0.55);
+      text-align: center;
     }
-    .pain-list li:hover::before { background: var(--accent-amber); color: var(--bg-dark); border-color: var(--accent-amber); }
-    .pain-list b { color: var(--text-dark); font-weight: 600; }
-    .pain-credential {
+    .pain-proof-card .proof-kicker {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-rust);
+      margin: 0 0 18px;
+    }
+    .pain-proof-card p {
       font-family: var(--font-serif);
       font-size: clamp(20px, 2.2vw, 26px);
       line-height: 1.55;
       font-style: italic;
       color: var(--text-dark);
-      max-width: 880px;
-      margin: 64px auto 0;
-      text-align: center;
+      margin: 0;
     }
-    @media (max-width: 768px) {
-      .pain-list { grid-template-columns: 1fr; }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .proof-strip span {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted-light);
+    }
+    @media (max-width: 700px) {
+      .pain-proof-card { text-align: left; }
+      .proof-strip { grid-template-columns: 1fr; gap: 10px; }
     }
     @media (max-width: 420px) {
       .pain-opener h2 { font-size: 38px; letter-spacing: -0.018em; }
@@ -445,7 +442,7 @@
       .reading-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    /* ---------- 8 · 05 / THE PAUSE (dark) ---------- */
+    /* ---------- 8 · THE PAUSE (dark) ---------- */
     .pause { padding: 140px 0 140px; }
     .pause-grid {
       display: grid;
@@ -481,8 +478,8 @@
 
     .protocol-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
     .protocol-card {
       background: rgba(245, 239, 229, 0.03);
@@ -547,60 +544,8 @@
       border-top: 1px solid var(--border-on-dark);
     }
 
-    .pause-benefits {
-      grid-column: 1 / -1;
-      margin-top: 72px;
-      padding-top: 56px;
-      border-top: 1px solid var(--border-on-dark);
-    }
-    .pause-benefits h3 {
-      font-family: var(--font-serif);
-      font-size: clamp(28px, 3vw, 36px);
-      font-style: italic;
-      color: var(--text-cream);
-      margin: 0 0 36px;
-      letter-spacing: -0.015em;
-      font-weight: 500;
-    }
-    .pause-benefits ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .pause-benefits li {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-cream);
-      padding: 11px 18px;
-      border: 1px solid var(--border-on-dark);
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
-      cursor: default;
-    }
-    .pause-benefits li:hover {
-      background: rgba(214, 168, 110, 0.12);
-      border-color: var(--accent-amber);
-    }
-    .pause-benefits li::before {
-      content: "";
-      display: inline-block;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--accent-amber);
-      box-shadow: 0 0 8px rgba(214, 168, 110, 0.7);
-    }
     @media (max-width: 1180px) {
       .pause-grid { grid-template-columns: 1fr; gap: 56px; }
-      .protocol-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .pause-left .lead { max-width: 620px; }
     }
     @media (max-width: 900px) {
@@ -889,15 +834,15 @@
           <h2 data-scroll-fx="fade-up-lg"><span class="line">But yours </span><span class="line">doesn't have to.</span></h2>
           <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
         </div>
-        <ul class="pain-list">
-          <li data-scroll-fx><span><b>Pressure.</b> The week starts deciding who you are before you do.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.05s;"><span><b>Clarity.</b> Too many inputs, not enough space to hear the signal.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.1s;"><span><b>Better decisions.</b> Fear is fast. The Pause makes you faster than fear.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.15s;"><span><b>Self-worth.</b> Output is useful. It was never meant to become identity.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.2s;"><span><b>Recovery.</b> The best reflect sooner, learn faster, and recover sooner.</span></li>
-          <li data-scroll-fx style="--fx-delay: 0.25s;"><span><b>Courage.</b> The pause helps you decide before fear decides for you.</span></li>
-        </ul>
-        <p class="pain-credential" data-scroll-fx>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
+        <article class="pain-proof-card" data-scroll-fx>
+          <p class="proof-kicker">Avi's field note</p>
+          <p>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
+          <div class="proof-strip" aria-label="Avi background">
+            <span>CreditVidya</span>
+            <span>740 people</span>
+            <span>Sold to CRED</span>
+          </div>
+        </article>
         <div class="pain-cta" data-scroll-fx>
           <a class="btn btn-magnetic" href="newsletter.html">Subscribe <span class="arrow">→</span></a>
           <p class="micro">The Pause is the highest leverage performance move in a founder's day.</p>
@@ -953,13 +898,13 @@
     </section>
 
     <!-- ============================================================
-         8 · 05 / THE MAP  (dark)
+         8 · THE MAP  (dark)
          ============================================================ -->
     <section class="pause theme-dark" aria-labelledby="pause-headline">
       <div class="wrap">
         <div class="pause-grid">
           <div class="pause-left">
-            <span class="eyebrow" data-scroll-fx>05 / The Pause</span>
+            <span class="eyebrow" data-scroll-fx>The Pause</span>
             <h2 id="pause-headline" data-scroll-fx>Tools the top 1% already use.</h2>
             <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">Presence, stillness, and dropping the ego. These are not soft ideas. They are performance skills.</p>
 
@@ -989,17 +934,6 @@
               <p>Keep the work big without letting the work become the whole self.</p>
               <div class="athlete">Agency · Choice</div>
             </a>
-          </div>
-
-          <div class="pause-benefits" data-scroll-fx>
-            <h3>Pause is not a productivity hack. It is identity work for entrepreneurs.</h3>
-            <ul>
-              <li>Catch yourself before the spiral</li>
-              <li>Think clearly under pressure</li>
-              <li>Decide from clarity, not fear</li>
-              <li>Recover faster from setbacks</li>
-              <li>Stay ambitious without breaking</li>
-            </ul>
           </div>
         </div>
       </div>

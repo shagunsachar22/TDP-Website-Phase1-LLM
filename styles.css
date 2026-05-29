@@ -329,12 +329,12 @@ blockquote {
 }
 .nav-logo:hover { letter-spacing: -0.01em; }
 .nav-logo-img {
-  height: 28px;
+  height: 38px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
-.nav-logo-text { display: inline-block; min-width: 0; }
-/* If logo.svg doesn't exist yet, only the wordmark shows. When you drop the file in, both render side-by-side; hide the text via CSS if you want logo-only. */
+.nav-logo-text { display: none; min-width: 0; }
 .nav-links {
   display: flex;
   gap: 32px;
