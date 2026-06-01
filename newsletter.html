@@ -314,19 +314,17 @@
       align-items: start;
     }
     .avi-portrait-card {
+      aspect-ratio: 4 / 5;
       min-height: 520px;
       border: 1px solid var(--border-on-cream);
-      background:
-        linear-gradient(135deg, rgba(214,168,110,0.16), rgba(197,107,69,0.06)),
-        rgba(26,26,26,0.045);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted-light);
-      padding: 28px;
-      text-align: center;
-      font-size: 13px;
-      line-height: 1.55;
+      background: rgba(26,26,26,0.045);
+      overflow: hidden;
+    }
+    .avi-portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .avi-copy h2 {
       max-width: 760px;
@@ -606,7 +604,7 @@
     <section class="landing-band avi-landing theme-cream" aria-labelledby="avi-landing-headline">
       <div class="wrap avi-landing-grid">
         <div class="avi-portrait-card" data-scroll-fx="fade-right">
-          Avi portrait<br />drop image later: <code>images/avi-peer.jpg</code>
+          <img src="images/avi-peer.jpg" alt="Avi Agarwal portrait" loading="lazy" />
         </div>
         <div class="avi-copy" data-scroll-fx="fade-left">
           <span class="eyebrow">About Avi</span>
