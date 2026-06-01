@@ -38,7 +38,7 @@
        PAGE-SPECIFIC — about
        =========================================================== */
 
-    /* ---------- 1 · CINEMATIC HERO (warm guideline palette) ---------- */
+    /* ---------- 1 · CINEMATIC HERO (dark) ---------- */
     .about-hero {
       padding: 0;
       min-height: 92vh;
@@ -46,10 +46,6 @@
       position: relative;
       display: flex;
       align-items: stretch;
-      background:
-        radial-gradient(circle at 50% 28%, rgba(189, 170, 142, 0.26), transparent 34%),
-        linear-gradient(180deg, #FFFFF6 0%, var(--bg-cream) 58%, #EDE4D5 100%);
-      color: var(--text-dark);
     }
     .about-hero-bg {
       position: absolute;
@@ -63,18 +59,14 @@
       object-position: center 20%;
       transform: scale(1.04);
       will-change: transform;
-      opacity: 0.18;
-      mix-blend-mode: multiply;
-      filter: saturate(0.8) contrast(0.86);
     }
     .about-hero-bg::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 28%, rgba(189, 170, 142, 0.22), transparent 38%),
-        linear-gradient(180deg, rgba(255,255,246,0.92) 0%, rgba(247,243,232,0.88) 58%, rgba(237,228,213,0.96) 100%),
-        linear-gradient(90deg, rgba(255,255,246,0.92) 0%, rgba(247,243,232,0.64) 44%, rgba(138,131,114,0.30) 100%);
+        linear-gradient(180deg, rgba(31,30,25,0.10) 0%, rgba(31,30,25,0.24) 42%, rgba(31,30,25,0.86) 90%, var(--bg-dark) 100%),
+        linear-gradient(90deg, rgba(31,30,25,0.76) 0%, rgba(102,89,79,0.48) 45%, rgba(138,131,114,0.14) 100%);
     }
     .about-hero-bg .placeholder {
       position: absolute;
@@ -86,8 +78,8 @@
       font-size: 13px;
       text-align: center;
       background:
-        radial-gradient(ellipse at center, rgba(189,170,142,0.26), transparent 62%),
-        linear-gradient(135deg, #FFFFF6, var(--bg-cream) 48%, var(--bg-taupe));
+        radial-gradient(ellipse at center, rgba(189,170,142,0.20), transparent 62%),
+        linear-gradient(135deg, var(--bg-clay), var(--bg-taupe));
       letter-spacing: 0.02em;
     }
     .about-hero-bg img[src]:not([src=""]) ~ .placeholder { display: none; }
@@ -103,11 +95,11 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-    .about-hero .eyebrow { color: var(--cta); margin-bottom: 32px; }
+    .about-hero .eyebrow { color: var(--accent-amber); margin-bottom: 32px; }
     .about-hero h1 {
       font-family: var(--font-serif);
       font-size: clamp(48px, 7.2vw, 104px);
-      color: var(--text-dark);
+      color: var(--text-cream);
       line-height: 0.95;
       letter-spacing: -0.03em;
       max-width: min(16ch, 100%);
@@ -119,7 +111,7 @@
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-muted-light);
+      color: var(--text-muted-dark);
       margin-top: 56px;
       display: inline-flex;
       align-items: center;
