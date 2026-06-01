@@ -680,20 +680,17 @@
     .definition p:last-child { color: var(--text-dark); font-weight: 500; }
     .mechanism-slot {
       aspect-ratio: 4 / 3;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(214, 168, 110, 0.18), transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(197, 107, 69, 0.12), transparent 55%),
-        rgba(26, 26, 26, 0.04);
-      border: 1px dashed var(--border-on-cream);
+      background: rgba(26, 26, 26, 0.04);
+      border: 1px solid rgba(255,255,246,0.14);
       border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted-light);
-      font-size: 13px;
-      padding: 24px;
-      text-align: center;
-      line-height: 1.55;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(17, 17, 0, 0.16);
+    }
+    .mechanism-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     @media (max-width: 900px) {
       .definition-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1048,8 +1045,8 @@
             <p>All of it begins with one skill: the ability to pause under pressure.</p>
             <p>The pause is the founder psychology tool nobody built for you. So I'm writing it down.</p>
           </div>
-          <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain · breath · body (placeholder)">
-            figure / mechanism illustration<br />(brain · breath · body — placeholder)
+          <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain, breath, and body">
+            <img src="images/pause-mechanism.png" alt="Abstract mechanism illustration for The Deliberate Pause" loading="lazy" />
           </div>
         </div>
       </div>
