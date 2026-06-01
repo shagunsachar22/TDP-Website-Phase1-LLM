@@ -1790,13 +1790,29 @@ body.popup-open {
 }
 
 .tdp-popup__panel {
+  width: min(780px, calc(100vw - 32px));
   background: var(--bg-cream) !important;
+}
+
+.tdp-popup__content {
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.82fr);
+  min-height: 360px;
 }
 
 .tdp-popup__image {
   background:
     radial-gradient(circle at 50% 28%, rgba(189, 170, 142, 0.42), transparent 34%),
-    linear-gradient(145deg, var(--bg-cream), var(--bg-taupe) 52%, var(--bg-mocha)) !important;
+  linear-gradient(145deg, var(--bg-cream), var(--bg-taupe) 52%, var(--bg-mocha)) !important;
+}
+
+@media (max-width: 760px) {
+  .tdp-popup__content {
+    grid-template-columns: 1fr;
+  }
+
+  .tdp-popup__image {
+    min-height: 188px;
+  }
 }
 
 /* Reduce motion — respect user preference */
