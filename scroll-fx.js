@@ -98,6 +98,7 @@
   }
 
   const popupDismissedKey = 'tdp-popup-dismissed';
+  const forcePopup = new URLSearchParams(window.location.search).has('popup') || window.location.hash === '#popup';
   let popupTimer = null;
   function openPopup() {
     if (sessionStorage.getItem(popupDismissedKey) === '1') return;
@@ -124,7 +125,10 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup();
   });
-  if (!sessionStorage.getItem(popupDismissedKey)) {
+  if (forcePopup) {
+    sessionStorage.removeItem(popupDismissedKey);
+    popupTimer = window.setTimeout(openPopup, 350);
+  } else if (!sessionStorage.getItem(popupDismissedKey)) {
     popupTimer = window.setTimeout(openPopup, 9000);
   }
   window.addEventListener('beforeunload', () => {
