@@ -172,7 +172,7 @@
       gap: 32px;
     }
     .number-cell {
-      text-align: left;
+      text-align: center;
     }
     .number-cell .figure {
       font-family: var(--font-serif);
@@ -183,6 +183,9 @@
       line-height: 0.95;
       margin: 0 0 8px;
       font-variant-numeric: tabular-nums;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
     }
     .number-cell .figure .unit {
       font-size: 0.55em;
@@ -198,6 +201,8 @@
       color: var(--text-muted-dark);
       font-weight: 600;
       line-height: 1.5;
+      max-width: 220px;
+      margin: 0 auto;
     }
     @media (max-width: 768px) {
       .numbers-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
