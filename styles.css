@@ -645,14 +645,14 @@ body.menu-open { overflow: hidden; }
 .footer-brand-mark {
   display: inline-flex;
   align-items: center;
-  width: min(128px, 42vw);
+  width: min(260px, 76vw);
   margin: 0 0 18px;
 }
 .footer-brand-mark img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 64px;
+  max-height: 48px;
   object-fit: contain;
   object-position: left center;
 }
@@ -770,7 +770,7 @@ body.menu-open { overflow: hidden; }
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-newsletter { justify-self: stretch; }
   .footer-cols { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .footer-brand-mark { width: min(118px, 44vw); }
+  .footer-brand-mark { width: min(230px, 82vw); }
   .footer-bottom { align-items: flex-start; }
 }
 
