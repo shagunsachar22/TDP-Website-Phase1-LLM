@@ -256,24 +256,42 @@
     }
     .latest-row {
       display: grid;
-      grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
-      gap: 28px;
+      grid-template-columns: minmax(128px, 176px) minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
       padding: 26px 0;
       border-bottom: 1px solid var(--border-on-cream);
       color: var(--text-dark);
+    }
+    .latest-thumb {
+      aspect-ratio: 1.18 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.16), rgba(19,19,17,0.04)),
+        rgba(19,19,17,0.04);
+    }
+    .latest-thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
     .latest-row h3 {
       font-size: clamp(24px, 2.7vw, 38px);
       margin-bottom: 10px;
     }
-    .latest-row p {
+    .latest-date {
       color: var(--text-muted-light);
-      line-height: 1.58;
-      margin: 0;
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 0 0 20px;
+      font-weight: 700;
     }
     .latest-row .read-more {
       color: var(--text-dark);
-      margin-top: 14px;
+      margin-top: 0;
+      font-size: 19px;
     }
     .latest-row .read-more:hover {
       color: var(--cta);
@@ -476,35 +494,43 @@
         </div>
         <div class="latest-list">
           <article class="latest-row">
-            <div class="meta">Attention & recovery</div>
+            <div class="latest-thumb">
+              <img src="images/essays/perfectionism-self-sabotage-cover.webp" alt="Perfectionism Is Self-Sabotage in Disguise essay cover" loading="lazy" />
+            </div>
             <div>
-              <h3>The Clauddiction Trap.</h3>
-              <p>When the tool that speeds you up quietly starts deciding what counts as thought.</p>
-              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+              <h3>Perfectionism Is Self-Sabotage in Disguise</h3>
+              <p class="latest-date">May 25, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read More <span>→</span></a>
             </div>
           </article>
           <article class="latest-row">
-            <div class="meta">Burnout & identity</div>
+            <div class="latest-thumb">
+              <img src="images/essays/cost-of-becoming-people-pleaser-cover.webp" alt="The Cost of Becoming a People Pleaser essay cover" loading="lazy" />
+            </div>
             <div>
-              <h3>The Hidden Cost of Not Choosing Yourself.</h3>
-              <p>The founder tax that compounds when every decision is optimized for everyone else.</p>
-              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+              <h3>The Cost of Becoming a People Pleaser</h3>
+              <p class="latest-date">May 18, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read More <span>→</span></a>
             </div>
           </article>
           <article class="latest-row">
-            <div class="meta">Failure & rejection</div>
+            <div class="latest-thumb">
+              <img src="images/essays/hidden-cost-not-choosing-yourself-cover.webp" alt="The Hidden Cost of Not Choosing Yourself essay cover" loading="lazy" />
+            </div>
             <div>
-              <h3>Heroes Ask for Help.</h3>
-              <p>The strongest people in hard rooms are usually the first to tell the truth.</p>
-              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+              <h3>The Hidden Cost of Not Choosing Yourself</h3>
+              <p class="latest-date">May 11, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read More <span>→</span></a>
             </div>
           </article>
           <article class="latest-row">
-            <div class="meta">Ambition & success</div>
+            <div class="latest-thumb">
+              <img src="images/essays/clauddiction-trap-cover.webp" alt="The Clauddiction Trap essay cover" loading="lazy" />
+            </div>
             <div>
-              <h3>Until Death, All Defeat Is Psychological.</h3>
-              <p>Why the story you attach to a setback can become heavier than the setback itself.</p>
-              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read full essay <span>→</span></a>
+              <h3>The Clauddiction Trap</h3>
+              <p class="latest-date">May 4, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/" rel="noopener">Read More <span>→</span></a>
             </div>
           </article>
         </div>
