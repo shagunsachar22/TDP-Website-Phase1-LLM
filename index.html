@@ -209,18 +209,22 @@
     }
     .logo-marquee .logo-slot {
       width: clamp(112px, 13vw, 188px);
-      height: 28px;
-      border: 1px dashed var(--border-on-dark);
+      height: 44px;
       border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted-dark);
       flex-shrink: 0;
+      padding: 8px 16px;
+      opacity: 0.72;
       transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .logo-marquee .logo-slot img {
+      display: block;
+      max-width: 100%;
+      max-height: 30px;
+      object-fit: contain;
+      filter: grayscale(1);
     }
     .logo-marquee .logo-slot:hover { opacity: 1; transform: scale(1.06); }
     .logo-marquee { opacity: 0.6; }
@@ -826,23 +830,21 @@
     <section class="logobar theme-dark" aria-label="Press and supporters">
       <div class="wrap">
         <div class="logobar-grid">
-          <div class="logobar-labels" data-scroll-fx="fade-right">
-            AVI'S WORK<br />SPANS
-          </div>
+          <div class="logobar-labels" data-scroll-fx="fade-right">Avi's work<br />spans</div>
           <div class="marquee logo-marquee" data-scroll-fx="fade-left" aria-hidden="true">
             <div class="marquee-track">
-              <div class="logo-slot">CRED</div>
-              <div class="logo-slot">CreditVidya</div>
-              <div class="logo-slot">Kalaari</div>
-              <div class="logo-slot">Matrix India</div>
-              <div class="logo-slot">London Business School</div>
-              <div class="logo-slot">UCLA Anderson</div>
-              <div class="logo-slot">CRED</div>
-              <div class="logo-slot">CreditVidya</div>
-              <div class="logo-slot">Kalaari</div>
-              <div class="logo-slot">Matrix India</div>
-              <div class="logo-slot">London Business School</div>
-              <div class="logo-slot">UCLA Anderson</div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="CRED" /></div>
+              <div class="logo-slot"><img src="images/logos/creditvidya.svg" alt="CreditVidya" /></div>
+              <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="Kalaari" /></div>
+              <div class="logo-slot"><img src="images/logos/matrix-india.svg" alt="Matrix India" /></div>
+              <div class="logo-slot"><img src="images/logos/lbs.svg" alt="London Business School" /></div>
+              <div class="logo-slot"><img src="images/logos/ucla-anderson.svg" alt="UCLA Anderson" /></div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/creditvidya.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/matrix-india.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/lbs.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/ucla-anderson.svg" alt="" /></div>
             </div>
           </div>
         </div>
@@ -1090,7 +1092,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="logo">The Deliberate Pause</div>
+          <a class="footer-brand-mark" href="/" aria-label="The Deliberate Pause home"><img src="images/logo.svg" alt="The Deliberate Pause" /></a>
           <div class="tagline">Mental training for Indian entrepreneurs.</div>
           <p>Essays on founder psychology, yogic philosophy, and better decisions under pressure.</p>
         </div>

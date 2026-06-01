@@ -642,12 +642,19 @@ body.menu-open { overflow: hidden; }
   padding-bottom: 44px;
   border-bottom: 1px solid var(--border-on-dark);
 }
-.footer-brand .logo {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
+.footer-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  width: min(240px, 76vw);
+  margin: 0 0 18px;
+}
+.footer-brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 42px;
+  object-fit: contain;
+  object-position: left center;
 }
 .footer-brand .tagline {
   font-family: var(--font-sans);
@@ -739,6 +746,7 @@ body.menu-open { overflow: hidden; }
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-newsletter { justify-self: stretch; }
   .footer-cols { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .footer-brand-mark { width: min(220px, 82vw); }
 }
 
 /* ====== utilities ====== */
@@ -1249,7 +1257,6 @@ body h4,
 
 .reading-featured h3,
 .reading-card h4,
-.footer-brand .logo,
 .footer-newsletter h4 {
   letter-spacing: 0 !important;
 }
@@ -1261,10 +1268,6 @@ body h4,
 .footer-top {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
-}
-
-.footer-brand .logo {
-  font-size: 16px;
 }
 
 .footer-newsletter {
