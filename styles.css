@@ -655,8 +655,7 @@ body.menu-open { overflow: hidden; }
   max-height: 48px;
   object-fit: contain;
   object-position: left center;
-  filter: invert(1) brightness(1.85);
-  opacity: 0.92;
+  opacity: 0.94;
 }
 .footer-brand .tagline {
   font-family: var(--font-sans);
