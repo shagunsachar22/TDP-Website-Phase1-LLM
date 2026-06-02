@@ -30,6 +30,17 @@
         <feFuncA type="table" tableValues="0 0.08"/>
       </feComponentTransfer>
     </filter>
+    <style>
+      @keyframes pausePulse {
+        0%, 100% { opacity: 0.48; transform: scale(0.96); }
+        50% { opacity: 0.95; transform: scale(1.04); }
+      }
+      .pause-pulse {
+        animation: pausePulse 2.8s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+    </style>
   </defs>
   <rect width="1600" height="1200" fill="url(#paperGlow)"/>
   <rect width="1600" height="1200" filter="url(#grain)" opacity="0.42"/>
@@ -53,27 +64,29 @@
   </g>
   <g fill="none" stroke="#FFF8E8" stroke-linecap="round" stroke-linejoin="round">
     <g transform="translate(800 276)" opacity="0.86">
-      <circle cx="0" cy="0" r="78" stroke-width="3.5" opacity="0.7"/>
-      <circle cx="0" cy="0" r="42" stroke-width="3" opacity="0.82"/>
-      <path d="M0-92V92" stroke-width="3" opacity="0.52"/>
-      <path d="M-88 0H88" stroke-width="3" opacity="0.34"/>
-      <path d="M-56-38c24-22 56-22 80 0M-56 38c24 22 56 22 80 0" stroke-width="4"/>
-      <path d="M56-38c-24-22-56-22-80 0M56 38c-24 22-56 22-80 0" stroke-width="2.4" opacity="0.6"/>
+      <path d="M-66 2c-18-34 8-72 44-62 9-25 48-25 58 0 35-8 60 30 42 62 24 22 10 64-24 66-16 31-57 28-70 0-33 7-60-25-49-58" stroke-width="4.4"/>
+      <path d="M-22-60c-2 30 1 56 16 78M35-60c-6 28-3 55 13 82" stroke-width="2.8" opacity="0.62"/>
+      <g class="pause-pulse">
+        <path d="M-15 12v44M18 12v44" stroke-width="8"/>
+        <circle cx="1" cy="-22" r="8" fill="#FFF8E8" stroke="none"/>
+      </g>
+      <path d="M-82 78c44 22 116 22 160 0" stroke-width="2.2" opacity="0.42"/>
     </g>
     <g transform="translate(444 758)" opacity="0.88">
-      <path d="M-112-26C-70-58-24-58 18-26S88 6 128-26" stroke-width="4.8"/>
-      <path d="M-112 16C-70-16-24-16 18 16S88 48 128 16" stroke-width="3.4" opacity="0.78"/>
-      <path d="M-112 58C-70 26-24 26 18 58S88 90 128 58" stroke-width="2.6" opacity="0.55"/>
-      <circle cx="-126" cy="-26" r="4" fill="#FFF8E8" stroke="none" opacity="0.7"/>
-      <circle cx="142" cy="-26" r="4" fill="#FFF8E8" stroke="none" opacity="0.7"/>
+      <path d="M-118 0H40" stroke-width="5.2"/>
+      <path d="M20-22 48 0 20 22" stroke-width="5.2"/>
+      <circle cx="76" cy="0" r="24" stroke-width="4.2"/>
+      <circle cx="76" cy="0" r="7" fill="#FFF8E8" stroke="none"/>
+      <path d="M-116-52c34-22 74-22 108 0M-116 52c34 22 74 22 108 0" stroke-width="3.2" opacity="0.64"/>
+      <path d="M-128-82c48-34 104-34 152 0M-128 82c48 34 104 34 152 0" stroke-width="2.2" opacity="0.36"/>
     </g>
     <g transform="translate(1156 758)" opacity="0.84">
-      <path d="M0-104V110" stroke-width="4.2"/>
-      <path d="M0-62c-34 24-58 58-70 103M0-62c34 24 58 58 70 103" stroke-width="3.2" opacity="0.82"/>
-      <path d="M0-16c-46 28-78 71-92 127M0-16c46 28 78 71 92 127" stroke-width="2.8" opacity="0.62"/>
-      <path d="M0 32c-26 25-42 52-50 82M0 32c26 25 42 52 50 82" stroke-width="2.2" opacity="0.48"/>
-      <circle cx="0" cy="-104" r="11" stroke-width="3.2"/>
-      <circle cx="0" cy="110" r="5" fill="#FFF8E8" stroke="none" opacity="0.72"/>
+      <circle cx="-70" cy="0" r="24" stroke-width="4.2"/>
+      <circle cx="-70" cy="0" r="7" fill="#FFF8E8" stroke="none"/>
+      <path d="M-42 0H116" stroke-width="5.2"/>
+      <path d="M90-22 118 0 90 22" stroke-width="5.2"/>
+      <path d="M18-52c34-22 74-22 108 0M18 52c34 22 74 22 108 0" stroke-width="3.2" opacity="0.64"/>
+      <path d="M-6-82c48-34 104-34 152 0M-6 82c48 34 104 34 152 0" stroke-width="2.2" opacity="0.36"/>
     </g>
   </g>
   <g fill="#B87556">
