@@ -47,8 +47,8 @@
     .hero {
       padding: 0;
       /* vh fallback first, then dvh (dynamic viewport — accounts for iOS Safari's address bar). */
-      min-height: 74vh;
-      min-height: 74dvh;
+      min-height: 66vh;
+      min-height: 66dvh;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -107,7 +107,7 @@
       position: relative;
       z-index: 3;
       width: 100%;
-      padding: 0 var(--gutter) 72px;
+      padding: 0 var(--gutter) 56px;
       max-width: var(--max-width);
       margin: 0 auto;
     }
@@ -178,7 +178,7 @@
       50%      { transform: translate(-50%, 4px); opacity: 0.95; }
     }
     @media (max-width: 768px) {
-      .hero { min-height: 80vh; min-height: 80dvh; }
+      .hero { min-height: 74vh; min-height: 74dvh; }
       .hero-content { padding: 0 var(--gutter) 56px; }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
@@ -191,7 +191,7 @@
       .avi-intro { padding: 72px 0 96px; }
     }
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
-    .logobar { padding: 40px 0 64px; border-top: 1px solid var(--border-on-dark); }
+    .logobar { padding: 32px 0 56px; border-top: 1px solid var(--border-on-dark); }
     .logobar-grid {
       display: grid;
       grid-template-columns: minmax(170px, 230px) 1fr;
