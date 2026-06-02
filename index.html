@@ -194,7 +194,7 @@
     .logobar { padding: 56px 0 88px; border-top: 1px solid var(--border-on-dark); }
     .logobar-grid {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: minmax(170px, 230px) 1fr;
       gap: 48px;
       align-items: center;
     }
@@ -204,8 +204,8 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-muted-dark);
-      line-height: 2;
-      white-space: nowrap;
+      line-height: 1.65;
+      max-width: 220px;
     }
     .logo-marquee .logo-slot {
       width: clamp(190px, 21vw, 300px);
@@ -925,24 +925,24 @@
     <!-- ============================================================
          2 · LOGO BAR (dark) — labels left, infinite marquee right
          ============================================================ -->
-    <section class="logobar theme-dark" aria-label="Press and supporters">
+    <section class="logobar theme-dark" aria-label="Reader ecosystem">
       <div class="wrap">
         <div class="logobar-grid">
-          <div class="logobar-labels" data-scroll-fx="fade-right">Our work<br />spans</div>
+          <div class="logobar-labels" data-scroll-fx="fade-right">Read by founders and operators connected to</div>
           <div class="marquee logo-marquee" data-scroll-fx="fade-left" aria-hidden="true">
             <div class="marquee-track">
-              <div class="logo-slot"><img src="images/logos/cred.svg" alt="CRED" /></div>
-              <div class="logo-slot"><img src="images/logos/creditvidya.svg" alt="CreditVidya" /></div>
               <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="Kalaari" /></div>
-              <div class="logo-slot"><img src="images/logos/matrix-india.svg" alt="Matrix India" /></div>
-              <div class="logo-slot"><img src="images/logos/lbs.svg" alt="London Business School" /></div>
-              <div class="logo-slot"><img src="images/logos/ucla-anderson.svg" alt="UCLA Anderson" /></div>
-              <div class="logo-slot"><img src="images/logos/cred.svg" alt="" /></div>
-              <div class="logo-slot"><img src="images/logos/creditvidya.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/inmobi.svg" alt="InMobi" /></div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="CRED" /></div>
+              <div class="logo-slot"><img src="images/logos/z47.svg" alt="Z47, formerly Matrix Partners India" /></div>
+              <div class="logo-slot"><img src="images/logos/alpha-wave-global.svg" alt="Alpha Wave Global" /></div>
+              <div class="logo-slot"><img src="images/logos/bharat-innovation-fund.svg" alt="Bharat Innovation Fund" /></div>
               <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="" /></div>
-              <div class="logo-slot"><img src="images/logos/matrix-india.svg" alt="" /></div>
-              <div class="logo-slot"><img src="images/logos/lbs.svg" alt="" /></div>
-              <div class="logo-slot"><img src="images/logos/ucla-anderson.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/inmobi.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/z47.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/alpha-wave-global.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/bharat-innovation-fund.svg" alt="" /></div>
             </div>
           </div>
         </div>
