@@ -663,35 +663,97 @@
     }
 
     /* ---------- 10 · WHAT IS THE DELIBERATE PAUSE? (cream) ---------- */
-    .definition { padding: 140px 0 96px; }
-    .definition .wrap { max-width: 1100px; }
+    .definition {
+      padding: 140px 0 112px;
+      background:
+        radial-gradient(circle at 75% 28%, rgba(228, 208, 174, 0.14), transparent 30%),
+        linear-gradient(135deg, #8A8372 0%, #706457 48%, #5D5148 100%) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .definition::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 246, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 246, 0.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 72% 42%, black, transparent 68%);
+      opacity: 0.5;
+    }
+    .definition .wrap {
+      max-width: 1180px;
+      position: relative;
+      z-index: 1;
+    }
     .definition-grid {
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 80px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 84px;
       align-items: center;
+    }
+    .definition-copy {
+      max-width: 520px;
     }
     .definition h2 {
       font-size: clamp(36px, 4.4vw, 56px);
       margin-bottom: 32px;
       letter-spacing: -0.022em;
       line-height: 1.05;
+      color: var(--text-cream);
     }
     .definition p {
       font-size: clamp(16px, 1.3vw, 18px);
       line-height: 1.65;
-      color: var(--text-muted-light);
+      color: rgba(255, 255, 246, 0.78);
       margin: 0 0 16px;
       max-width: 480px;
     }
-    .definition p:last-child { color: var(--text-dark); font-weight: 500; }
+    .definition p:last-child { color: var(--text-cream); font-weight: 600; }
     .mechanism-slot {
-      aspect-ratio: 4 / 3;
-      background: rgba(26, 26, 26, 0.04);
-      border: 1px solid rgba(255,255,246,0.14);
-      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 246, 0.08), rgba(255, 255, 246, 0.03)),
+        rgba(31, 30, 25, 0.18);
+      border: 1px solid rgba(255, 255, 246, 0.16);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(17, 17, 0, 0.16);
+      box-shadow: 0 34px 110px rgba(17, 17, 0, 0.28);
+      padding: 18px;
+    }
+    .mechanism-topline,
+    .mechanism-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 246, 0.64);
+    }
+    .mechanism-topline span:last-child {
+      color: var(--accent-amber-bright);
+    }
+    .mechanism-figure {
+      margin: 18px 0;
+      aspect-ratio: 4 / 3;
+      border: 1px solid rgba(255, 255, 246, 0.14);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: rgba(17, 17, 0, 0.10);
+    }
+    .mechanism-figure::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 63% 38%, rgba(228, 208, 174, 0.18), transparent 24%),
+        linear-gradient(180deg, transparent 40%, rgba(31, 30, 25, 0.18));
+      pointer-events: none;
     }
     .mechanism-slot img {
       width: 100%;
@@ -699,8 +761,41 @@
       object-fit: cover;
       display: block;
     }
+    .mechanism-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255, 255, 246, 0.14);
+      padding-top: 16px;
+    }
+    .mechanism-step {
+      display: grid;
+      gap: 8px;
+      color: rgba(255, 255, 246, 0.48);
+    }
+    .mechanism-step strong {
+      font-size: clamp(24px, 3.2vw, 44px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--accent-amber-bright);
+      text-transform: none;
+    }
+    .mechanism-step span {
+      font-size: 10px;
+      line-height: 1.35;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
     @media (max-width: 900px) {
-      .definition-grid { grid-template-columns: 1fr; gap: 40px; }
+      .definition-grid { grid-template-columns: 1fr; gap: 44px; }
+      .definition-copy { max-width: 680px; }
+      .mechanism-slot { max-width: 620px; }
+    }
+    @media (max-width: 600px) {
+      .definition { padding: 88px 0 72px; }
+      .mechanism-slot { padding: 12px; border-radius: 10px; }
+      .mechanism-topline { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mechanism-footer { gap: 10px; }
+      .mechanism-step strong { font-size: 30px; }
     }
 
     /* ---------- 12 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
@@ -1046,7 +1141,7 @@
     <section class="definition theme-cream" aria-labelledby="definition-headline">
       <div class="wrap">
         <div class="definition-grid">
-          <div data-scroll-fx="fade-right">
+          <div class="definition-copy" data-scroll-fx="fade-right">
             <h2 id="definition-headline">What is The Deliberate Pause?</h2>
             <p>Something happens. You react. Most of life happens so fast there is no space between the two.</p>
             <p>The Deliberate Pause is that space.</p>
@@ -1055,7 +1150,27 @@
             <p>The pause is the founder psychology tool nobody built for you. So I'm writing it down.</p>
           </div>
           <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain, breath, and body">
-            <img src="images/pause-mechanism.png" alt="Abstract mechanism illustration for The Deliberate Pause" loading="lazy" />
+            <div class="mechanism-topline">
+              <span>Brain · breath · body</span>
+              <span>The space between</span>
+            </div>
+            <div class="mechanism-figure">
+              <img src="images/pause-mechanism.png" alt="Abstract mechanism illustration for The Deliberate Pause" loading="lazy" />
+            </div>
+            <div class="mechanism-footer" aria-hidden="true">
+              <div class="mechanism-step">
+                <strong>01</strong>
+                <span>Notice the signal</span>
+              </div>
+              <div class="mechanism-step">
+                <strong>02</strong>
+                <span>Create the space</span>
+              </div>
+              <div class="mechanism-step">
+                <strong>03</strong>
+                <span>Choose the response</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
