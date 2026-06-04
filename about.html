@@ -337,10 +337,8 @@
     }
     .journey-img {
       aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(135deg, rgba(214,168,110,0.14), rgba(197,107,69,0.05)),
-        rgba(245, 239, 229, 0.03);
-      border: 1px dashed var(--border-on-dark);
+      background: rgba(245, 239, 229, 0.03);
+      border: 1px solid var(--border-on-dark);
       border-radius: 6px;
       display: flex;
       align-items: center;
@@ -350,6 +348,21 @@
       text-align: center;
       padding: 16px;
       line-height: 1.55;
+      margin: 0;
+      overflow: hidden;
+    }
+    .journey-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .journey-img-portrait {
+      aspect-ratio: 4 / 5;
+      max-height: 520px;
+    }
+    .journey-img-portrait img {
+      object-position: center 42%;
     }
     @media (max-width: 900px) {
       .journey-beat { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
@@ -582,8 +595,8 @@
          ============================================================ -->
     <section class="about-hero theme-dark">
       <div class="about-hero-bg parallax-wrap">
-        <img class="parallax-img" data-parallax="0.06" src="images/avi-cinematic.jpg" alt="Avi Agarwal portrait — cinematic, environmental" loading="eager" onerror="this.style.display='none'" />
-        <div class="placeholder">cinematic photo of Avi · environmental · peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi-cinematic.jpg</code></div>
+        <img class="parallax-img" data-parallax="0.06" src="images/avi/about-hero-speaking.png" alt="Avi Agarwal speaking to a room of founders" loading="eager" onerror="this.style.display='none'" />
+        <div class="placeholder">cinematic photo of Avi · environmental · peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi/about-hero-speaking.png</code></div>
       </div>
       <div class="about-hero-inner">
         <span class="eyebrow" data-scroll-fx>Avi's Story</span>
@@ -667,7 +680,9 @@
             <blockquote class="pull">The version of me from those years didn't pause. He sprinted.</blockquote>
             <p>That version got the company built. He also got me broken. I just didn't know it yet.</p>
           </div>
-          <div class="journey-img">building photo · 800×600<br />drop: <code>images/avi-building.jpg</code></div>
+          <figure class="journey-img journey-img-portrait">
+            <img src="images/avi/avi-young-origin.png" alt="Young Avi flexing as a child" loading="lazy" />
+          </figure>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
@@ -679,7 +694,9 @@
             <blockquote class="pull">Some founders break in the boardroom. I broke in the body. The company kept running. I didn't.</blockquote>
             <p>Building the company had been visible. What it was costing me hadn't been — until it suddenly was. And then nothing else mattered.</p>
           </div>
-          <div class="journey-img">hospital bed photo · proof "build without breaking" isn't a metaphor<br />drop: <code>images/avi-breaking.jpg</code></div>
+          <figure class="journey-img">
+            <img src="images/avi/avi-hospital-story.png" alt="Hospital collage from Avi's health scare" loading="lazy" />
+          </figure>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
@@ -691,7 +708,9 @@
             <blockquote class="pull">The integration was the actual work. Not the side project. Not the retreat. Not "after the company."</blockquote>
             <p>The Deliberate Pause is what I built once I knew that. The principles behind championship composure, translated for an entrepreneur's day. I'm bringing both to you.</p>
           </div>
-          <div class="journey-img">contemporary Avi at desk · Yoga Sutras nearby · post-recovery<br />drop: <code>images/avi-rebuilding.jpg</code></div>
+          <figure class="journey-img">
+            <img src="images/avi/avi-practice-integration.png" alt="Avi in a guided practice session" loading="lazy" />
+          </figure>
         </article>
       </div>
     </section>
@@ -720,8 +739,8 @@
       <div class="wrap">
         <div class="pivot-reader-grid">
           <div class="photo parallax-wrap" data-scroll-fx="zoom">
-            <img class="parallax-img" data-parallax="0.07" src="images/avi-peer.jpg" alt="Avi Agarwal — peer-direct portrait, warm, settled" loading="lazy" onerror="this.style.display='none'" />
-            <div class="placeholder">peer-direct photo of Avi looking at camera<br />warm · settled · Avi-with-reader<br /><br />drop file: <code>images/avi-peer.jpg</code></div>
+            <img class="parallax-img" data-parallax="0.07" src="images/avi/avi-portrait-warm.png" alt="Avi Agarwal — peer-direct portrait, warm, settled" loading="lazy" onerror="this.style.display='none'" />
+            <div class="placeholder">peer-direct photo of Avi looking at camera<br />warm · settled · Avi-with-reader<br /><br />drop file: <code>images/avi/avi-portrait-warm.png</code></div>
           </div>
           <div data-scroll-fx="fade-left">
             <span class="eyebrow">Reader Pivot</span>
