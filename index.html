@@ -75,6 +75,17 @@
       position: absolute;
       inset: 0;
     }
+    .hero-video-bg > img {
+      width: min(72vw, 1120px);
+      height: calc(100% - 18px);
+      left: auto;
+      right: clamp(-140px, -5vw, -54px);
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      object-fit: contain;
+      object-position: center center;
+    }
     .hero-video-bg::before {
       /* shimmer sweep — implies motion when no video yet */
       content: "";
@@ -180,6 +191,13 @@
     @media (max-width: 768px) {
       .hero { min-height: 74vh; min-height: 74dvh; }
       .hero-content { padding: 0 var(--gutter) 56px; }
+      .hero-video-bg > img {
+        width: 118%;
+        height: 100%;
+        right: -24%;
+        object-fit: cover;
+        object-position: 58% 46%;
+      }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
