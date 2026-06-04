@@ -1837,7 +1837,7 @@ body.popup-open {
 .tdp-popup__image {
   background:
     linear-gradient(180deg, rgba(31, 30, 25, 0.02), rgba(31, 30, 25, 0.16)),
-    url("images/avi/popup-avi-portrait.png") center 28% / cover no-repeat,
+    url("images/avi/avi-portrait-warm.png") center center / cover no-repeat,
     radial-gradient(circle at 50% 28%, rgba(189, 170, 142, 0.42), transparent 34%),
   linear-gradient(145deg, var(--bg-cream), var(--bg-taupe) 52%, var(--bg-mocha)) !important;
 }
