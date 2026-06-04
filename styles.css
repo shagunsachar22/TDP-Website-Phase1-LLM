@@ -1754,11 +1754,11 @@ body.popup-open {
 }
 
 .hero-video-bg > img {
-  width: min(72vw, 1120px);
-  height: calc(100% - 18px);
+  width: min(54vw, 980px);
+  height: calc(100% - 80px);
   left: auto;
-  right: clamp(-140px, -5vw, -54px);
-  top: 50%;
+  right: clamp(24px, 6vw, 120px);
+  top: 52%;
   bottom: auto;
   transform: translateY(-50%);
   object-fit: contain;
