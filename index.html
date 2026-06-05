@@ -168,6 +168,7 @@
       border-bottom: 1px solid rgba(31, 30, 25, 0.14);
       color: var(--text-dark);
       text-decoration: none;
+      cursor: default;
     }
     .hero-featured-image {
       display: block;
@@ -186,8 +187,8 @@
       transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
     }
     .hero-featured-essay:hover .hero-featured-image img {
-      transform: scale(1.035);
-      filter: saturate(1) contrast(1);
+      transform: none;
+      filter: saturate(0.88) contrast(0.96);
     }
     .hero-read-kicker {
       display: block;
@@ -219,9 +220,9 @@
       display: grid;
       gap: 12px;
     }
-    .hero-mini-essays a {
+    .hero-mini-essays .hero-mini-essay {
       display: grid;
-      grid-template-columns: 40px 1fr auto;
+      grid-template-columns: 40px 1fr;
       gap: 12px;
       align-items: center;
       color: var(--text-dark);
@@ -230,7 +231,7 @@
       border-bottom: 1px solid rgba(31, 30, 25, 0.12);
       font-weight: 700;
     }
-    .hero-mini-essays a:last-child {
+    .hero-mini-essays .hero-mini-essay:last-child {
       border-bottom: 0;
       padding-bottom: 0;
     }
@@ -341,8 +342,8 @@
       .hero-mini-essays {
         gap: 8px;
       }
-      .hero-mini-essays a {
-        grid-template-columns: 38px 1fr auto;
+      .hero-mini-essays .hero-mini-essay {
+        grid-template-columns: 38px 1fr;
         gap: 10px;
         padding-bottom: 8px;
       }
@@ -1101,36 +1102,33 @@
           <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
           </div>
         </div>
 
         <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
           <span class="eyebrow">Start reading</span>
-          <a class="hero-featured-essay" href="read/the-unicorn-trap-and-the-road-to-enlightenment/">
+          <article class="hero-featured-essay" aria-label="Featured essay preview">
             <span class="hero-featured-image" aria-hidden="true">
               <img src="images/essays/the-unicorn-trap-cover.webp" alt="" loading="eager" />
             </span>
             <span class="hero-read-kicker">Featured essay</span>
             <strong>The Unicorn Trap.</strong>
             <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
-          </a>
+          </article>
           <div class="hero-mini-essays" aria-label="More essays">
-            <a href="read/the-low-status-moat-matters/">
+            <div class="hero-mini-essay">
               <img src="images/essays/the-low-status-moat-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-title">Low Status Moat.</span>
-              <span>→</span>
-            </a>
-            <a href="read/does-happiness-feel-different/">
+            </div>
+            <div class="hero-mini-essay">
               <img src="images/essays/does-happiness-feel-different-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-title">Does happiness feel different?</span>
-              <span>→</span>
-            </a>
-            <a href="read/when-success-still-feels-empty/">
+            </div>
+            <div class="hero-mini-essay">
               <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-title">When success still feels empty.</span>
-              <span>→</span>
-            </a>
+            </div>
           </div>
         </aside>
       </div>
