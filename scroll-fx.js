@@ -100,8 +100,8 @@
   const popupDismissedKey = 'tdp-popup-dismissed';
   const forcePopup = new URLSearchParams(window.location.search).has('popup') || window.location.hash === '#popup';
   let popupTimer = null;
-  function openPopup() {
-    if (sessionStorage.getItem(popupDismissedKey) === '1') return;
+  function openPopup(options = {}) {
+    if (!options.ignoreDismissed && sessionStorage.getItem(popupDismissedKey) === '1') return;
     if (popup.classList.contains('is-open') || document.body.classList.contains('menu-open')) return;
     popup.classList.add('is-open');
     popup.setAttribute('aria-hidden', 'false');
@@ -115,11 +115,11 @@
   }
   popup.querySelectorAll('[data-popup-close]').forEach((el) => el.addEventListener('click', closePopup));
   popup.querySelectorAll('a').forEach((a) => a.addEventListener('click', closePopup));
-  document.querySelectorAll('[data-popup-trigger]').forEach((el) => {
+  document.querySelectorAll('[data-popup-trigger], a[href="https://thedeliberatepause.substack.com/subscribe"]:not(.popup-primary)').forEach((el) => {
     el.addEventListener('click', (event) => {
       event.preventDefault();
       sessionStorage.removeItem(popupDismissedKey);
-      openPopup();
+      openPopup({ ignoreDismissed: true });
     });
   });
   document.addEventListener('keydown', (e) => {
@@ -127,7 +127,7 @@
   });
   if (forcePopup) {
     sessionStorage.removeItem(popupDismissedKey);
-    popupTimer = window.setTimeout(openPopup, 350);
+    popupTimer = window.setTimeout(() => openPopup({ ignoreDismissed: true }), 350);
   } else if (!sessionStorage.getItem(popupDismissedKey)) {
     popupTimer = window.setTimeout(openPopup, 4500);
   }
