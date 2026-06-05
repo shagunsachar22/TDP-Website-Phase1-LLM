@@ -1974,6 +1974,90 @@ body.popup-open {
   }
 }
 
+/* Mobile popup final override: keeps the image attached to the top of the card. */
+@media (max-width: 760px) {
+  .tdp-popup.is-open {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .tdp-popup__panel {
+    width: min(430px, calc(100vw - 28px)) !important;
+    max-height: min(720px, calc(100dvh - 28px)) !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+  }
+
+  .tdp-popup__content {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .tdp-popup__image {
+    order: initial !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-height: 168px !important;
+    height: 168px !important;
+    background-position:
+      center center,
+      center 31%,
+      center 28%,
+      center center !important;
+  }
+
+  .tdp-popup__copy {
+    grid-row: 2 !important;
+    padding: 28px 28px 30px !important;
+    gap: 17px !important;
+  }
+
+  .tdp-popup__copy h2 {
+    font-size: clamp(30px, 8.4vw, 38px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .tdp-popup__copy p {
+    font-size: 17px !important;
+    line-height: 1.42 !important;
+  }
+
+  .tdp-popup__close {
+    top: 16px !important;
+    right: 16px !important;
+    background: rgba(255, 255, 246, 0.88) !important;
+    color: var(--text-dark) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .tdp-popup__panel {
+    width: calc(100vw - 24px) !important;
+  }
+
+  .tdp-popup__image {
+    height: 142px !important;
+    min-height: 142px !important;
+    background-position:
+      center center,
+      center 34%,
+      center 28%,
+      center center !important;
+  }
+
+  .tdp-popup__copy {
+    padding: 22px 22px 24px !important;
+  }
+
+  .popup-primary,
+  .popup-secondary {
+    min-height: 50px !important;
+  }
+}
+
 /* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
