@@ -291,17 +291,72 @@
       .hero { min-height: auto; }
       .hero-content {
         grid-template-columns: 1fr;
-        padding: 110px var(--gutter) 36px;
-        gap: 30px;
+        padding: 56px var(--gutter) 28px;
+        gap: 24px;
       }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
-      .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
-      .hero-content .lead { font-size: 16px; }
-      .hero-reads { justify-self: stretch; width: 100%; padding: 20px; }
-      .hero-featured-image { aspect-ratio: 1.85 / 1; }
-      .hero-mini-essays a { grid-template-columns: 44px 1fr auto; }
-      .hero-mini-essays img { width: 44px; height: 44px; }
-      .hero-featured-essay strong { font-size: clamp(28px, 8vw, 38px); }
+      .hero-headline {
+        font-size: clamp(38px, 12vw, 48px) !important;
+        line-height: 0.98 !important;
+        max-width: 10.6ch;
+        margin-bottom: 22px;
+      }
+      .hero-content .lead {
+        font-size: 16px;
+        line-height: 1.48;
+        margin-bottom: 26px;
+        max-width: 32ch;
+      }
+      .hero-reads {
+        justify-self: stretch;
+        width: 100%;
+        padding: 16px;
+        box-shadow: 0 18px 52px rgba(31, 30, 25, 0.22);
+      }
+      .hero-reads .eyebrow {
+        margin-bottom: 12px;
+      }
+      .hero-featured-essay {
+        padding-bottom: 14px;
+        margin-bottom: 10px;
+      }
+      .hero-featured-image {
+        aspect-ratio: 2.2 / 1;
+        margin-bottom: 12px;
+      }
+      .hero-read-kicker {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        margin-bottom: 8px;
+      }
+      .hero-featured-essay strong {
+        font-size: clamp(27px, 8.2vw, 34px) !important;
+        line-height: 1 !important;
+        margin-bottom: 8px;
+      }
+      .hero-featured-essay span:last-child {
+        font-size: 12px;
+        line-height: 1.38;
+      }
+      .hero-mini-essays {
+        gap: 8px;
+      }
+      .hero-mini-essays a {
+        grid-template-columns: 38px 1fr auto;
+        gap: 10px;
+        padding-bottom: 8px;
+      }
+      .hero-mini-essays img {
+        width: 38px;
+        height: 38px;
+      }
+      .hero-mini-essays .hero-mini-title {
+        font-size: 13px;
+        line-height: 1.14;
+      }
+      .hero-mini-essays span {
+        font-size: 15px;
+      }
       .hero-scroll-cue { display: none; }
       .pain { padding: 96px 0; }
       .reading { padding: 96px 0; }
@@ -309,6 +364,20 @@
       .testimonials { padding: 96px 0; }
       .definition { padding: 96px 0 72px; }
       .avi-intro { padding: 72px 0 96px; }
+    }
+    @media (max-width: 390px) {
+      .hero-content {
+        padding-top: 44px;
+      }
+      .hero-headline {
+        font-size: 39px !important;
+      }
+      .hero-content .lead {
+        font-size: 15px;
+      }
+      .hero-featured-essay span:last-child {
+        display: none;
+      }
     }
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
     .logobar { padding: 32px 0 56px; border-top: 1px solid var(--border-on-dark); }
