@@ -1994,7 +1994,7 @@ body.popup-open {
   .tdp-popup__content {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto 1fr !important;
+    grid-template-rows: 178px auto !important;
     min-height: 0 !important;
   }
 
@@ -2006,7 +2006,7 @@ body.popup-open {
     height: 168px !important;
     background-position:
       center center,
-      center 31%,
+      center 9%,
       center 28%,
       center center !important;
   }
@@ -2041,11 +2041,11 @@ body.popup-open {
   }
 
   .tdp-popup__image {
-    height: 142px !important;
-    min-height: 142px !important;
+    height: 152px !important;
+    min-height: 152px !important;
     background-position:
       center center,
-      center 34%,
+      center 8%,
       center 28%,
       center center !important;
   }
