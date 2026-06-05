@@ -167,6 +167,26 @@
       color: var(--text-dark);
       text-decoration: none;
     }
+    .hero-featured-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 20px;
+      overflow: hidden;
+      background: rgba(31, 30, 25, 0.08);
+    }
+    .hero-featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88) contrast(0.96);
+      transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
+    }
+    .hero-featured-essay:hover .hero-featured-image img {
+      transform: scale(1.035);
+      filter: saturate(1) contrast(1);
+    }
     .hero-read-kicker {
       display: block;
       font-family: var(--font-sans);
@@ -195,16 +215,16 @@
     }
     .hero-mini-essays {
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
     .hero-mini-essays a {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
+      grid-template-columns: 58px 1fr auto;
+      gap: 14px;
       align-items: center;
       color: var(--text-dark);
       text-decoration: none;
-      padding: 0 0 14px;
+      padding: 0 0 12px;
       border-bottom: 1px solid rgba(31, 30, 25, 0.12);
       font-weight: 700;
     }
@@ -212,9 +232,20 @@
       border-bottom: 0;
       padding-bottom: 0;
     }
+    .hero-mini-essays img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      display: block;
+      background: rgba(31, 30, 25, 0.08);
+      filter: saturate(0.86) contrast(0.96);
+    }
     .hero-mini-essays span {
       color: rgba(31, 30, 25, 0.46);
       font-size: 18px;
+    }
+    .hero-mini-essays .hero-mini-title {
+      line-height: 1.16;
     }
     .hero-actions .btn-secondary {
       background: rgba(245, 239, 229, 0.08);
@@ -263,6 +294,9 @@
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
       .hero-reads { padding: 22px; }
+      .hero-featured-image { aspect-ratio: 1.45 / 1; }
+      .hero-mini-essays a { grid-template-columns: 52px 1fr auto; }
+      .hero-mini-essays img { width: 52px; height: 52px; }
       .hero-featured-essay strong { font-size: clamp(30px, 9vw, 42px); }
       .hero-scroll-cue { display: none; }
       .pain { padding: 96px 0; }
@@ -1001,14 +1035,29 @@
         <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
           <span class="eyebrow">Start reading</span>
           <a class="hero-featured-essay" href="read/the-unicorn-trap-and-the-road-to-enlightenment/">
+            <span class="hero-featured-image" aria-hidden="true">
+              <img src="images/essays/the-unicorn-trap-cover.webp" alt="" loading="eager" />
+            </span>
             <span class="hero-read-kicker">Featured essay</span>
             <strong>The Unicorn Trap.</strong>
             <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
           </a>
           <div class="hero-mini-essays" aria-label="More essays">
-            <a href="read/the-low-status-moat-matters/">Low Status Moat. <span>→</span></a>
-            <a href="read/does-happiness-feel-different/">Does happiness feel different? <span>→</span></a>
-            <a href="read/when-success-still-feels-empty/">When success still feels empty. <span>→</span></a>
+            <a href="read/the-low-status-moat-matters/">
+              <img src="images/essays/the-low-status-moat-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-title">Low Status Moat.</span>
+              <span>→</span>
+            </a>
+            <a href="read/does-happiness-feel-different/">
+              <img src="images/essays/does-happiness-feel-different-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-title">Does happiness feel different?</span>
+              <span>→</span>
+            </a>
+            <a href="read/when-success-still-feels-empty/">
+              <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-title">When success still feels empty.</span>
+              <span>→</span>
+            </a>
           </div>
         </aside>
       </div>
