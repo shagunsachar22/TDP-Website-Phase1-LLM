@@ -47,8 +47,8 @@
     .hero {
       padding: 0;
       /* vh fallback first, then dvh (dynamic viewport — accounts for iOS Safari's address bar). */
-      min-height: 74vh;
-      min-height: 74dvh;
+      min-height: calc(100vh - 76px);
+      min-height: calc(100dvh - 76px);
       position: relative;
       display: flex;
       align-items: stretch;
@@ -94,13 +94,13 @@
       z-index: 3;
       width: 100%;
       min-height: inherit;
-      padding: 118px var(--gutter) 54px;
+      padding: 88px var(--gutter) 48px;
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.58fr);
-      gap: clamp(44px, 7vw, 116px);
-      align-items: end;
+      grid-template-columns: minmax(0, 0.86fr) minmax(330px, 0.50fr);
+      gap: clamp(38px, 6vw, 96px);
+      align-items: center;
     }
     .hero-copy {
       max-width: 760px;
@@ -108,7 +108,7 @@
     .hero-headline {
       font-family: var(--font-serif);
       color: var(--text-cream);
-      font-size: clamp(56px, 7.8vw, 112px);
+      font-size: clamp(52px, 6.6vw, 92px);
       font-weight: 600;
       line-height: 0.95;
       letter-spacing: -0.025em;
@@ -136,13 +136,15 @@
       align-items: center;
     }
     .hero-reads {
-      align-self: end;
+      align-self: center;
+      justify-self: end;
+      width: min(100%, 430px);
       color: var(--text-dark);
       border: 1px solid rgba(245, 239, 229, 0.32);
       background:
         linear-gradient(180deg, rgba(255, 252, 242, 0.96), rgba(239, 229, 211, 0.92));
       box-shadow: 0 28px 80px rgba(31, 30, 25, 0.22);
-      padding: clamp(20px, 2.2vw, 28px);
+      padding: clamp(18px, 2vw, 24px);
       position: relative;
       overflow: hidden;
     }
@@ -170,8 +172,8 @@
     .hero-featured-image {
       display: block;
       width: 100%;
-      aspect-ratio: 2.15 / 1;
-      margin-bottom: 16px;
+      aspect-ratio: 2.45 / 1;
+      margin-bottom: 14px;
       overflow: hidden;
       background: rgba(31, 30, 25, 0.08);
     }
@@ -200,17 +202,17 @@
     .hero-featured-essay strong {
       display: block;
       font-family: var(--font-serif);
-      font-size: clamp(30px, 3.2vw, 44px);
+      font-size: clamp(28px, 2.8vw, 38px);
       font-weight: 650;
       line-height: 0.98;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .hero-featured-essay span:last-child {
       display: block;
       color: rgba(31, 30, 25, 0.62);
-      font-size: 14px;
-      line-height: 1.45;
+      font-size: 13px;
+      line-height: 1.42;
       max-width: 420px;
     }
     .hero-mini-essays {
@@ -219,7 +221,7 @@
     }
     .hero-mini-essays a {
       display: grid;
-      grid-template-columns: 46px 1fr auto;
+      grid-template-columns: 40px 1fr auto;
       gap: 12px;
       align-items: center;
       color: var(--text-dark);
@@ -233,8 +235,8 @@
       padding-bottom: 0;
     }
     .hero-mini-essays img {
-      width: 46px;
-      height: 46px;
+      width: 40px;
+      height: 40px;
       object-fit: cover;
       display: block;
       background: rgba(31, 30, 25, 0.08);
@@ -289,13 +291,13 @@
       .hero { min-height: auto; }
       .hero-content {
         grid-template-columns: 1fr;
-        padding: 124px var(--gutter) 36px;
+        padding: 110px var(--gutter) 36px;
         gap: 30px;
       }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
-      .hero-reads { padding: 20px; }
+      .hero-reads { justify-self: stretch; width: 100%; padding: 20px; }
       .hero-featured-image { aspect-ratio: 1.85 / 1; }
       .hero-mini-essays a { grid-template-columns: 44px 1fr auto; }
       .hero-mini-essays img { width: 44px; height: 44px; }
