@@ -976,21 +976,33 @@
          1 · HERO (dark) — full-bleed video, headline OVERLAID
          ============================================================ -->
     <section class="hero theme-dark" aria-labelledby="hero-headline">
-      <!-- Full-bleed video background. When the .mp4 lands, it auto-plays muted/looping. -->
       <div class="hero-video-bg" role="presentation" aria-hidden="true">
-        <!-- <video autoplay muted loop playsinline poster="images/hero-poster.jpg" src="videos/hero.mp4"></video> -->
-        <img src="images/avi/home-hero-integration.png" alt="" loading="eager" />
         <span class="hero-video-tag" aria-hidden="true"></span>
       </div>
 
-      <!-- Overlay content — sits on top of video, lower-left -->
       <div class="hero-content">
-        <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
-        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
+        <div class="hero-copy">
+          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
 
-        <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
-          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+          <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+          </div>
         </div>
+
+        <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
+          <span class="eyebrow">Start reading</span>
+          <a class="hero-featured-essay" href="read/the-unicorn-trap-and-the-road-to-enlightenment/">
+            <span class="hero-read-kicker">Featured essay</span>
+            <strong>The Unicorn Trap.</strong>
+            <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
+          </a>
+          <div class="hero-mini-essays" aria-label="More essays">
+            <a href="read/the-low-status-moat-matters/">Low Status Moat. <span>→</span></a>
+            <a href="read/does-happiness-feel-different/">Does happiness feel different? <span>→</span></a>
+            <a href="read/when-success-still-feels-empty/">When success still feels empty. <span>→</span></a>
+          </div>
+        </aside>
       </div>
 
       <span class="hero-scroll-cue" aria-hidden="true">Scroll ↓</span>
