@@ -224,7 +224,7 @@
       display: grid;
       grid-template-columns: 40px 1fr;
       gap: 12px;
-      align-items: center;
+      align-items: start;
       color: var(--text-dark);
       text-decoration: none;
       padding: 0 0 10px;
@@ -247,10 +247,20 @@
       color: rgba(31, 30, 25, 0.46);
       font-size: 18px;
     }
+    .hero-mini-copy {
+      display: grid;
+      gap: 4px;
+    }
     .hero-mini-essays .hero-mini-title {
       color: var(--text-dark);
       font-weight: 750;
       line-height: 1.16;
+    }
+    .hero-mini-dek {
+      color: rgba(31, 30, 25, 0.58) !important;
+      font-size: 11px !important;
+      font-weight: 500;
+      line-height: 1.34;
     }
     .hero-actions .btn-secondary {
       background: rgba(245, 239, 229, 0.08);
@@ -297,16 +307,21 @@
       }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline {
-        font-size: clamp(38px, 12vw, 48px) !important;
-        line-height: 0.98 !important;
-        max-width: 10.6ch;
-        margin-bottom: 22px;
+        font-size: clamp(33px, 10.5vw, 42px) !important;
+        line-height: 1.02 !important;
+        max-width: 11.4ch;
+        margin-bottom: 18px;
       }
       .hero-content .lead {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.48;
-        margin-bottom: 26px;
+        margin-bottom: 22px;
         max-width: 32ch;
+      }
+      .hero-actions .btn {
+        min-height: 54px;
+        padding: 0 24px;
+        font-size: 16px;
       }
       .hero-reads {
         justify-self: stretch;
@@ -331,7 +346,7 @@
         margin-bottom: 8px;
       }
       .hero-featured-essay strong {
-        font-size: clamp(27px, 8.2vw, 34px) !important;
+        font-size: clamp(23px, 7vw, 29px) !important;
         line-height: 1 !important;
         margin-bottom: 8px;
       }
@@ -355,6 +370,10 @@
         font-size: 13px;
         line-height: 1.14;
       }
+      .hero-mini-dek {
+        font-size: 11px !important;
+        line-height: 1.3;
+      }
       .hero-mini-essays span {
         font-size: 15px;
       }
@@ -371,14 +390,15 @@
         padding-top: 44px;
       }
       .hero-headline {
-        font-size: 39px !important;
+        font-size: 34px !important;
       }
       .hero-content .lead {
-        font-size: 15px;
+        font-size: 14px;
       }
       .hero-featured-essay span:last-child {
-        display: none;
+        font-size: 11px;
       }
+      .hero-mini-dek { display: none; }
     }
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
     .logobar { padding: 32px 0 56px; border-top: 1px solid var(--border-on-dark); }
@@ -1119,15 +1139,24 @@
           <div class="hero-mini-essays" aria-label="More essays">
             <div class="hero-mini-essay">
               <img src="images/essays/the-low-status-moat-cover.webp" alt="" loading="eager" />
-              <span class="hero-mini-title">Low Status Moat.</span>
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">Low Status Moat.</span>
+                <span class="hero-mini-dek">The work nobody photographs is the work that compounds.</span>
+              </span>
             </div>
             <div class="hero-mini-essay">
               <img src="images/essays/does-happiness-feel-different-cover.webp" alt="" loading="eager" />
-              <span class="hero-mini-title">Does happiness feel different?</span>
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">Does happiness feel different?</span>
+                <span class="hero-mini-dek">Notes on contentment, winning, and what actually lasts.</span>
+              </span>
             </div>
             <div class="hero-mini-essay">
               <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="" loading="eager" />
-              <span class="hero-mini-title">When success still feels empty.</span>
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">When success still feels empty.</span>
+                <span class="hero-mini-dek">The hollow feeling after the exit nobody warns founders about.</span>
+              </span>
             </div>
           </div>
         </aside>
