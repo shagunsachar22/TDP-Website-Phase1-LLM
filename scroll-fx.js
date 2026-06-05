@@ -114,7 +114,7 @@
   }
   popup.querySelectorAll('[data-popup-close]').forEach((el) => el.addEventListener('click', closePopup));
   popup.querySelectorAll('a').forEach((a) => a.addEventListener('click', closePopup));
-  document.querySelectorAll('[data-popup-trigger], a[href="https://thedeliberatepause.substack.com/subscribe"]:not(.popup-primary)').forEach((el) => {
+  document.querySelectorAll('[data-popup-trigger]').forEach((el) => {
     el.addEventListener('click', (event) => {
       event.preventDefault();
       sessionStorage.removeItem(popupDismissedKey);
