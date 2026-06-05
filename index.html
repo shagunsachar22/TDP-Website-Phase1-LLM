@@ -262,6 +262,17 @@
       font-weight: 500;
       line-height: 1.34;
     }
+    .hero-preview-note {
+      display: block;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 30, 25, 0.12);
+      color: rgba(31, 30, 25, 0.5);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
     .hero-actions .btn-secondary {
       background: rgba(245, 239, 229, 0.08);
       color: var(--text-cream);
@@ -373,6 +384,12 @@
       .hero-mini-dek {
         font-size: 11px !important;
         line-height: 1.3;
+      }
+      .hero-preview-note {
+        margin-top: 10px;
+        padding-top: 10px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
       }
       .hero-mini-essays span {
         font-size: 15px;
@@ -1127,7 +1144,7 @@
         </div>
 
         <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
-          <span class="eyebrow">Start reading</span>
+          <span class="eyebrow">Essay preview</span>
           <article class="hero-featured-essay" aria-label="Featured essay preview">
             <span class="hero-featured-image" aria-hidden="true">
               <img src="images/essays/the-unicorn-trap-cover.webp" alt="" loading="eager" />
@@ -1159,6 +1176,7 @@
               </span>
             </div>
           </div>
+          <span class="hero-preview-note">Subscribe to read the full Monday letter.</span>
         </aside>
       </div>
 
