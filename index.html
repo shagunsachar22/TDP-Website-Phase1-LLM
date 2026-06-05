@@ -163,12 +163,17 @@
     }
     .hero-featured-essay {
       display: block;
+      width: 100%;
       padding-bottom: 18px;
       margin-bottom: 14px;
+      border: 0;
       border-bottom: 1px solid rgba(31, 30, 25, 0.14);
+      background: transparent;
       color: var(--text-dark);
       text-decoration: none;
-      cursor: default;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
     }
     .hero-featured-image {
       display: block;
@@ -189,6 +194,11 @@
     .hero-featured-essay:hover .hero-featured-image img {
       transform: none;
       filter: saturate(0.88) contrast(0.96);
+    }
+    .hero-featured-essay:focus-visible,
+    .hero-mini-essay:focus-visible {
+      outline: 2px solid rgba(199, 111, 71, 0.75);
+      outline-offset: 4px;
     }
     .hero-read-kicker {
       display: block;
@@ -229,6 +239,10 @@
       text-decoration: none;
       padding: 0 0 10px;
       border-bottom: 1px solid rgba(31, 30, 25, 0.12);
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
       font-weight: 700;
     }
     .hero-mini-essays .hero-mini-essay:last-child {
@@ -1145,36 +1159,36 @@
 
         <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
           <span class="eyebrow">Essay preview</span>
-          <article class="hero-featured-essay" aria-label="Featured essay preview">
+          <button class="hero-featured-essay" type="button" data-popup-trigger aria-label="Preview The Unicorn Trap and subscribe">
             <span class="hero-featured-image" aria-hidden="true">
               <img src="images/essays/the-unicorn-trap-cover.webp" alt="" loading="eager" />
             </span>
             <span class="hero-read-kicker">Featured essay</span>
             <strong>The Unicorn Trap.</strong>
             <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
-          </article>
+          </button>
           <div class="hero-mini-essays" aria-label="More essays">
-            <div class="hero-mini-essay">
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Low Status Moat and subscribe">
               <img src="images/essays/the-low-status-moat-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-copy">
                 <span class="hero-mini-title">Low Status Moat.</span>
                 <span class="hero-mini-dek">The work nobody photographs is the work that compounds.</span>
               </span>
-            </div>
-            <div class="hero-mini-essay">
+            </button>
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Does happiness feel different and subscribe">
               <img src="images/essays/does-happiness-feel-different-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-copy">
                 <span class="hero-mini-title">Does happiness feel different?</span>
                 <span class="hero-mini-dek">Notes on contentment, winning, and what actually lasts.</span>
               </span>
-            </div>
-            <div class="hero-mini-essay">
+            </button>
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview When success still feels empty and subscribe">
               <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="" loading="eager" />
               <span class="hero-mini-copy">
                 <span class="hero-mini-title">When success still feels empty.</span>
                 <span class="hero-mini-dek">The hollow feeling after the exit nobody warns founders about.</span>
               </span>
-            </div>
+            </button>
           </div>
           <span class="hero-preview-note">Subscribe to read the full Monday letter.</span>
         </aside>
