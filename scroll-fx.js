@@ -87,7 +87,6 @@
             <p>Join founders training mental models for pressure, uncertainty, and better decisions. Mondays at 11:11.</p>
             <div class="tdp-popup__actions">
               <a class="popup-primary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-              <a class="popup-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
             </div>
           </div>
           <div class="tdp-popup__image" aria-hidden="true"></div>
