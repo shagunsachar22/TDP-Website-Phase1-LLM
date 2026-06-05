@@ -1994,7 +1994,7 @@ body.popup-open {
   .tdp-popup__content {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: 178px auto !important;
+    grid-template-rows: 220px auto !important;
     min-height: 0 !important;
   }
 
@@ -2002,11 +2002,11 @@ body.popup-open {
     order: initial !important;
     grid-row: 1 !important;
     width: 100% !important;
-    min-height: 168px !important;
-    height: 168px !important;
+    min-height: 220px !important;
+    height: 220px !important;
     background-position:
       center center,
-      center 9%,
+      center top,
       center 28%,
       center center !important;
   }
@@ -2041,11 +2041,11 @@ body.popup-open {
   }
 
   .tdp-popup__image {
-    height: 152px !important;
-    min-height: 152px !important;
+    height: 190px !important;
+    min-height: 190px !important;
     background-position:
       center center,
-      center 8%,
+      center top,
       center 28%,
       center center !important;
   }
