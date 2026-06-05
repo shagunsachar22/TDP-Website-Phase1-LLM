@@ -60,8 +60,9 @@
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(ellipse 60% 48% at 50% 20%, rgba(214, 186, 137, 0.10), transparent 64%),
-        linear-gradient(135deg, #2A2923 0%, #1C1B17 56%, #12120F 100%);
+        linear-gradient(118deg, rgba(245, 239, 229, 0.10) 0%, rgba(245, 239, 229, 0.02) 38%, rgba(31, 30, 25, 0.18) 100%),
+        radial-gradient(ellipse 72% 62% at 78% 18%, rgba(214, 186, 137, 0.18), transparent 62%),
+        linear-gradient(135deg, #766B5D 0%, #5E5046 44%, #23221D 100%);
       overflow: hidden;
     }
     .hero-video-bg::before {
@@ -69,8 +70,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(245, 239, 229, 0.035) 0%, transparent 32%, transparent 68%, rgba(245, 239, 229, 0.035) 100%),
-        linear-gradient(180deg, rgba(245, 239, 229, 0.02) 0%, rgba(31, 30, 25, 0.20) 100%);
+        linear-gradient(90deg, rgba(31, 30, 25, 0.28) 0%, transparent 44%),
+        linear-gradient(180deg, transparent 0%, rgba(31, 30, 25, 0.20) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -93,13 +94,13 @@
       z-index: 3;
       width: 100%;
       min-height: inherit;
-      padding: 96px var(--gutter) 70px;
+      padding: 88px var(--gutter) 48px;
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.54fr);
-      gap: clamp(40px, 7vw, 104px);
-      align-items: end;
+      grid-template-columns: minmax(0, 0.86fr) minmax(330px, 0.50fr);
+      gap: clamp(38px, 6vw, 96px);
+      align-items: center;
     }
     .hero-copy {
       max-width: 760px;
@@ -107,7 +108,7 @@
     .hero-headline {
       font-family: var(--font-serif);
       color: var(--text-cream);
-      font-size: clamp(52px, 7vw, 104px);
+      font-size: clamp(52px, 6.6vw, 92px);
       font-weight: 600;
       line-height: 0.95;
       letter-spacing: -0.025em;
@@ -135,32 +136,44 @@
       align-items: center;
     }
     .hero-reads {
-      align-self: end;
+      align-self: center;
       justify-self: end;
-      width: min(100%, 440px);
-      color: var(--text-cream);
-      border: 1px solid var(--border-on-dark);
-      background: rgba(245, 239, 229, 0.045);
-      box-shadow: none;
-      padding: 28px;
+      width: min(100%, 430px);
+      color: var(--text-dark);
+      border: 1px solid rgba(245, 239, 229, 0.32);
+      background:
+        linear-gradient(180deg, rgba(255, 252, 242, 0.96), rgba(239, 229, 211, 0.92));
+      box-shadow: 0 28px 80px rgba(31, 30, 25, 0.22);
+      padding: clamp(18px, 2vw, 24px);
       position: relative;
       overflow: hidden;
     }
+    .hero-reads::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--cta), var(--accent-amber));
+    }
     .hero-reads .eyebrow {
-      color: var(--accent-amber);
-      margin: 0 0 16px;
+      color: rgba(31, 30, 25, 0.56);
+      margin-bottom: 18px;
     }
     .hero-featured-essay {
       display: block;
-      color: var(--text-cream);
+      padding-bottom: 18px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(31, 30, 25, 0.14);
+      color: var(--text-dark);
       text-decoration: none;
     }
     .hero-featured-image {
       display: block;
       width: 100%;
-      aspect-ratio: 5 / 3.2;
-      margin-bottom: 22px;
-      border: 1px solid rgba(245, 239, 229, 0.12);
+      aspect-ratio: 2.45 / 1;
+      margin-bottom: 14px;
       overflow: hidden;
       background: rgba(31, 30, 25, 0.08);
     }
@@ -189,31 +202,54 @@
     .hero-featured-essay strong {
       display: block;
       font-family: var(--font-serif);
-      font-size: clamp(30px, 3.6vw, 48px);
+      font-size: clamp(28px, 2.8vw, 38px);
       font-weight: 650;
-      line-height: 1;
+      line-height: 0.98;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .hero-featured-essay span:last-child {
       display: block;
-      color: var(--text-muted-dark);
-      font-size: 15px;
-      line-height: 1.55;
+      color: rgba(31, 30, 25, 0.62);
+      font-size: 13px;
+      line-height: 1.42;
       max-width: 420px;
     }
-    .hero-featured-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: var(--text-cream);
-      font-weight: 700;
-      transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+    .hero-mini-essays {
+      display: grid;
+      gap: 12px;
     }
-    .hero-featured-link:hover {
-      color: var(--accent-amber);
-      transform: translateX(3px);
+    .hero-mini-essays a {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 0 0 10px;
+      border-bottom: 1px solid rgba(31, 30, 25, 0.12);
+      font-weight: 700;
+    }
+    .hero-mini-essays a:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .hero-mini-essays img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      display: block;
+      background: rgba(31, 30, 25, 0.08);
+      filter: saturate(0.86) contrast(0.96);
+    }
+    .hero-mini-essays span {
+      color: rgba(31, 30, 25, 0.46);
+      font-size: 18px;
+    }
+    .hero-mini-essays .hero-mini-title {
+      color: var(--text-dark);
+      font-weight: 750;
+      line-height: 1.16;
     }
     .hero-actions .btn-secondary {
       background: rgba(245, 239, 229, 0.08);
@@ -261,8 +297,10 @@
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
       .hero-content .lead { font-size: 16px; }
-      .hero-reads { justify-self: stretch; width: 100%; padding: 22px; }
-      .hero-featured-image { aspect-ratio: 1.45 / 1; }
+      .hero-reads { justify-self: stretch; width: 100%; padding: 20px; }
+      .hero-featured-image { aspect-ratio: 1.85 / 1; }
+      .hero-mini-essays a { grid-template-columns: 44px 1fr auto; }
+      .hero-mini-essays img { width: 44px; height: 44px; }
       .hero-featured-essay strong { font-size: clamp(28px, 8vw, 38px); }
       .hero-scroll-cue { display: none; }
       .pain { padding: 96px 0; }
