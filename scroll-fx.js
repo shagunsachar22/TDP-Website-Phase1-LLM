@@ -129,7 +129,7 @@
     sessionStorage.removeItem(popupDismissedKey);
     popupTimer = window.setTimeout(openPopup, 350);
   } else if (!sessionStorage.getItem(popupDismissedKey)) {
-    popupTimer = window.setTimeout(openPopup, 9000);
+    popupTimer = window.setTimeout(openPopup, 4500);
   }
   window.addEventListener('beforeunload', () => {
     if (popupTimer) window.clearTimeout(popupTimer);
