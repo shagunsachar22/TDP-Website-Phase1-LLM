@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pause Playbook Download - The Deliberate Pause</title>
-  <meta name="description" content="Placeholder lead magnet download page for The Deliberate Pause Kit integration test." />
+  <title>The Pause Playbook - The Deliberate Pause</title>
+  <meta name="description" content="Get The Pause Playbook, a short reset for founders and entrepreneurs building under pressure." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://thedeliberatepause.com/pause-playbook" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Pause Playbook Download - The Deliberate Pause" />
-  <meta property="og:description" content="A placeholder download flow for testing Kit, GA4, and Webflow integration." />
+  <meta property="og:title" content="The Pause Playbook - The Deliberate Pause" />
+  <meta property="og:description" content="A short reset for founders and entrepreneurs building under pressure." />
   <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,14 +107,6 @@
       line-height: 1.62;
       margin: 0;
     }
-    .kit-slot-note {
-      margin-top: 18px;
-      padding: 14px;
-      border: 1px dashed rgba(245, 239, 229, 0.22);
-      color: rgba(245, 239, 229, 0.62);
-      font-size: 14px;
-      line-height: 1.45;
-    }
     @media (max-width: 860px) {
       .lead-grid,
       .lead-checklist-grid {
@@ -152,15 +144,15 @@
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
       <div class="wrap lead-grid">
         <div class="lead-copy">
-          <span class="eyebrow">Placeholder lead magnet</span>
+          <span class="eyebrow">Free founder reset</span>
           <h1 id="lead-title">The Pause Playbook.</h1>
-          <p class="lead">A temporary download page to test the Kit signup flow before the real lead magnet is ready.</p>
-          <p class="lead-note">This page is intentionally hidden from search for now. It exists so the Webflow, Kit, and analytics flow can be built and tested before launch.</p>
+          <p class="lead">A short field guide for catching pressure before it turns into reaction.</p>
+          <p class="lead-note">Use it before a hard conversation, a Monday sprint, a board update, or any moment where speed is starting to cost you clarity.</p>
         </div>
 
         <aside class="lead-card" aria-label="Pause Playbook signup">
-          <h2>Get the dummy download.</h2>
-          <p>Enter an email to test the lead magnet flow. Replace this placeholder form with the real Kit embed or form action before launch.</p>
+          <h2>Get the playbook.</h2>
+          <p>Drop your email and we will send you the download link. You will also get The Deliberate Pause Monday letter.</p>
 
           <!-- Replace this placeholder form with the real Kit embed or update the form action once available. -->
           <form
@@ -172,13 +164,10 @@
             data-event-location="pause_playbook_hero"
           >
             <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
-            <button class="btn btn-magnetic" type="submit">Send PDF</button>
+            <button class="btn btn-magnetic" type="submit">Send the playbook</button>
           </form>
 
           <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
-          <div class="kit-slot-note">
-            Developer note: once Kit is ready, paste the Kit embed here or replace the form action/method with the Kit-provided HTML.
-          </div>
 
           <div class="lead-download">
             <a
@@ -188,9 +177,9 @@
               data-download-link
               data-event-location="pause_playbook_hero"
             >
-              Download placeholder PDF <span class="arrow">→</span>
+              Download the playbook <span class="arrow">→</span>
             </a>
-            <p class="form-disclaimer">For testing only. The real lead magnet can replace this PDF later.</p>
+            <p class="form-disclaimer">No spam. Just the occasional useful pause.</p>
           </div>
         </aside>
       </div>
@@ -198,20 +187,20 @@
 
     <section class="lead-checklist theme-cream" aria-labelledby="test-checklist">
       <div class="wrap">
-        <div class="section-kicker">What this page tests</div>
-        <h2 id="test-checklist">Kit, analytics, and download flow.</h2>
+        <div class="section-kicker">What is inside</div>
+        <h2 id="test-checklist">A pause you can use before the day takes over.</h2>
         <div class="lead-checklist-grid">
           <article>
-            <h3>Kit capture</h3>
-            <p>The form area is ready for the Kit embed/action so a subscriber can be captured and tagged.</p>
+            <h3>A pressure reset</h3>
+            <p>A simple way to notice when urgency is turning into reactivity.</p>
           </article>
           <article>
-            <h3>PDF delivery</h3>
-            <p>The placeholder PDF gives us a real download target for testing the lead magnet journey.</p>
+            <h3>A clearer next move</h3>
+            <p>A short prompt for separating the actual decision from the story around it.</p>
           </article>
           <article>
-            <h3>GA/GTM events</h3>
-            <p>The page pushes form view, submit attempt, and download events into the data layer.</p>
+            <h3>A founder-first lens</h3>
+            <p>Built for people whose ambition is real, but whose nervous system still needs a vote.</p>
           </article>
         </div>
       </div>
@@ -271,14 +260,14 @@
           var isPlaceholder = form.dataset.kitPlaceholder === 'true' || form.getAttribute('action') === '#kit-placeholder';
 
           track(isPlaceholder ? 'kit_form_submit_attempt' : 'kit_form_submit', {
-            cta_text: 'Send PDF',
+            cta_text: 'Send the playbook',
             cta_location: form.dataset.eventLocation || 'pause_playbook_hero',
             lead_magnet: 'pause_playbook_placeholder'
           });
 
           if (isPlaceholder) {
             event.preventDefault();
-            status.textContent = 'Placeholder only: add the real Kit form action or embed before this captures subscribers.';
+            status.textContent = 'Almost there. Email delivery is being connected; you can use the download link below for now.';
           }
         });
       }
@@ -286,7 +275,7 @@
       if (download) {
         download.addEventListener('click', function () {
           track('lead_magnet_download', {
-            cta_text: 'Download placeholder PDF',
+            cta_text: 'Download the playbook',
             cta_location: download.dataset.eventLocation || 'pause_playbook_hero',
             lead_magnet: 'pause_playbook_placeholder',
             destination_url: download.href
