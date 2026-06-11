@@ -474,51 +474,141 @@
     }
 
     /* ---------- 3 · PAIN ENUMERATION + AVI CREDENTIAL (cream) ---------- */
-    .pain { padding: 132px 0 126px; }
-    .pain .wrap { max-width: 1080px; }
-    .pain-opener {
-      text-align: center;
-      max-width: 840px;
-      margin: 0 auto 58px;
+    .pain { padding: 118px 0 112px; }
+    .pain .wrap { max-width: 1180px; }
+    .pain-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(380px, 0.84fr);
+      align-items: stretch;
+      gap: clamp(28px, 4.8vw, 64px);
+      padding: clamp(18px, 2.2vw, 28px);
+      border: 1px solid rgba(26, 26, 26, 0.10);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.22)),
+        rgba(245, 239, 229, 0.72);
+      box-shadow: 0 34px 110px -80px rgba(26, 26, 26, 0.62);
+    }
+    .pain-collage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(4, clamp(108px, 8vw, 136px));
+      gap: 8px;
+      background: rgba(26, 26, 26, 0.06);
+      padding: 8px;
+    }
+    .pain-collage figure {
+      margin: 0;
+      min-width: 0;
+      overflow: hidden;
+      background: rgba(26, 26, 26, 0.08);
+      border: 1px solid rgba(26, 26, 26, 0.10);
+    }
+    .pain-collage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.92) contrast(1.05) saturate(0.72);
+      transition: transform 0.7s var(--ease-out), filter 0.7s var(--ease-out);
+    }
+    .pain-collage figure:hover img {
+      transform: scale(1.035);
+      filter: grayscale(0.72) contrast(1.04) saturate(0.86);
+    }
+    .pain-collage .tile-wide { grid-column: span 2; }
+    .pain-collage .tile-tall { grid-row: span 2; }
+    .pain-collage .tile-large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .pain-collage figure:nth-child(1) {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+    .pain-collage figure:nth-child(2) {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+    .pain-collage figure:nth-child(3) {
+      grid-column: 3 / 4;
+      grid-row: 2 / 4;
+    }
+    .pain-collage figure:nth-child(4) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+    .pain-collage figure:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+    }
+    .pain-collage figure:nth-child(6) {
+      grid-column: 1 / 4;
+      grid-row: 4 / 5;
+    }
+    .pain-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: clamp(22px, 3.6vw, 48px) clamp(12px, 2vw, 28px);
+    }
+    .pain-layout .pain-opener {
+      max-width: 100% !important;
+      margin: 0 0 32px !important;
     }
     .pain-opener .small {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-style: normal;
-      font-size: clamp(20px, 2vw, 26px);
-      color: var(--text-dark);
-      margin: 0 0 20px;
-      letter-spacing: -0.005em;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0.24em !important;
+      text-align: left !important;
+      text-transform: uppercase !important;
+      color: var(--accent-rust);
+      margin: 0 0 18px !important;
     }
     .pain-opener .small .counter {
-      color: var(--cta);
-      font-weight: 500;
+      color: inherit;
+      font-weight: 700;
       font-style: normal;
-      font-size: 1.25em;
+      font-size: inherit !important;
     }
     .pain-opener h2 {
       font-family: var(--font-serif);
-      font-size: clamp(54px, 7vw, 86px);
-      color: var(--accent-amber);
-      letter-spacing: -0.03em;
-      line-height: 0.98;
-      font-weight: 600;
-      margin: 0 0 34px;
+      font-size: clamp(42px, 5.2vw, 70px) !important;
+      color: var(--text-dark) !important;
+      letter-spacing: -0.035em !important;
+      line-height: 0.96 !important;
+      font-weight: 600 !important;
+      margin: 0 0 26px !important;
+      text-align: left !important;
     }
-    .pain-opener h2 .line { display: block; white-space: nowrap; }
+    .pain-opener h2 .line {
+      display: block !important;
+      white-space: normal !important;
+    }
+    .pain-layout .pain-opener h2 .line + .line::before {
+      content: none !important;
+    }
+    .pain-layout .pain-opener .accent-word {
+      color: var(--accent-rust) !important;
+    }
     .pain-opener .sub {
       font-family: var(--font-serif);
-      font-size: clamp(24px, 2.8vw, 38px);
-      font-weight: 400;
-      line-height: 1.28;
-      letter-spacing: -0.012em;
-      max-width: 760px;
-      margin: 0 auto 32px;
-      color: var(--text-dark);
+      font-size: clamp(20px, 2vw, 28px) !important;
+      font-weight: 400 !important;
+      line-height: 1.38 !important;
+      letter-spacing: -0.012em !important;
+      max-width: 540px !important;
+      margin: 0 !important;
+      color: var(--text-dark) !important;
+      text-align: left !important;
     }
     .pain-opener .sub em {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.94em;
+      display: inline !important;
+      margin-top: 0 !important;
+      font-size: 1em !important;
       font-style: normal;
       color: var(--accent-amber);
       font-weight: 500;
@@ -531,10 +621,10 @@
     }
     .pain-cta {
       display: grid;
-      justify-items: center;
+      justify-items: start;
       gap: 12px;
-      margin-top: 42px;
-      text-align: center;
+      margin-top: 34px;
+      text-align: left;
     }
     .pain-cta .micro {
       color: var(--text-muted-light);
@@ -543,14 +633,14 @@
       font-weight: 700;
     }
     .pain-proof-card {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: clamp(28px, 4vw, 44px);
-      border: 1px solid var(--border-on-cream);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.28);
-      box-shadow: 0 26px 80px -62px rgba(26, 26, 26, 0.55);
-      text-align: center;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      text-align: left !important;
     }
     .pain-proof-card .proof-kicker {
       font-family: var(--font-sans);
@@ -563,7 +653,7 @@
     }
     .pain-proof-card p {
       font-family: var(--font-serif);
-      font-size: clamp(20px, 2.2vw, 26px);
+      font-size: clamp(18px, 1.55vw, 22px);
       line-height: 1.55;
       font-style: normal;
       color: var(--text-dark);
@@ -573,8 +663,8 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 30px;
-      padding-top: 24px;
+      margin-top: 28px;
+      padding-top: 22px;
       border-top: 1px solid var(--border-on-cream);
     }
     .proof-strip span {
@@ -585,11 +675,48 @@
       text-transform: uppercase;
       color: var(--text-muted-light);
     }
+    @media (max-width: 920px) {
+      .pain-layout {
+        grid-template-columns: 1fr;
+      }
+      .pain-collage {
+        min-height: 420px;
+      }
+      .pain-copy {
+        padding: clamp(18px, 4vw, 34px) clamp(8px, 2vw, 18px) clamp(14px, 2vw, 24px);
+      }
+    }
     @media (max-width: 700px) {
-      .pain-proof-card { text-align: left; }
+      .pain { padding: 82px 0 86px; }
+      .pain-collage {
+        grid-template-rows: none;
+        grid-auto-rows: 108px;
+        min-height: 0;
+      }
+      .pain-collage figure {
+        grid-column: auto !important;
+        grid-row: auto !important;
+      }
+      .pain-collage .tile-large {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .pain-collage .tile-tall {
+        grid-row: span 1;
+      }
       .proof-strip { grid-template-columns: 1fr; gap: 10px; }
     }
     @media (max-width: 420px) {
+      .pain-layout { padding: 12px; }
+      .pain-collage {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        padding: 6px;
+      }
+      .pain-collage .tile-wide,
+      .pain-collage .tile-large {
+        grid-column: span 1;
+      }
       .pain-opener h2 { font-size: 38px; letter-spacing: -0.018em; }
     }
 
@@ -1230,23 +1357,36 @@
          ============================================================ -->
     <section class="pain theme-cream" aria-label="Pain enumeration and Avi credential">
       <div class="wrap">
-        <div class="pain-opener">
-          <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
-          <h2 data-scroll-fx="fade-up-lg"><span class="line">But <span class="accent-word">yours</span></span><span class="line">doesn't have to.</span></h2>
-          <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
-        </div>
-        <article class="pain-proof-card" data-scroll-fx>
-          <p class="proof-kicker">Avi's field note</p>
-          <p>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
-          <div class="proof-strip" aria-label="Avi background">
-            <span>CreditVidya</span>
-            <span>740 people</span>
-            <span>Sold to CRED</span>
+        <div class="pain-layout" data-scroll-fx>
+          <div class="pain-collage" aria-label="Avi's journey in images">
+            <figure class="tile-large"><img src="images/avi/home-speaking-wide.png" alt="Avi speaking to an audience" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-practice-integration.png" alt="Avi practicing stillness" loading="lazy" /></figure>
+            <figure class="tile-tall"><img src="images/avi/about-hero-speaking.png" alt="Avi on stage" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-young-origin.png" alt="Avi's early founder journey" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-hospital-story.png" alt="Avi recovering in hospital" loading="lazy" /></figure>
+            <figure class="tile-wide"><img src="images/avi/avi-portrait-warm.png" alt="Avi Agarwal portrait" loading="lazy" /></figure>
           </div>
-        </article>
-        <div class="pain-cta" data-scroll-fx>
-          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
-          <p class="micro">The Pause is the highest leverage performance move in a founder's day.</p>
+
+          <div class="pain-copy">
+            <div class="pain-opener">
+              <p class="small"><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
+              <h2><span class="line">But <span class="accent-word">yours</span></span> <span class="line">doesn't have to.</span></h2>
+              <p class="sub">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
+            </div>
+            <article class="pain-proof-card">
+              <p class="proof-kicker">Avi's field note</p>
+              <p>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
+              <div class="proof-strip" aria-label="Avi background">
+                <span>CreditVidya</span>
+                <span>740 people</span>
+                <span>Sold to CRED</span>
+              </div>
+            </article>
+            <div class="pain-cta">
+              <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+              <p class="micro">The Pause is the highest leverage performance move in a founder's day.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
