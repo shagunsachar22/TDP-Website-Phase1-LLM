@@ -491,7 +491,7 @@
     .pain-collage {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: repeat(4, clamp(108px, 8vw, 136px));
+      grid-template-rows: repeat(3, clamp(124px, 9.8vw, 164px));
       align-self: center;
       gap: 8px;
       background: rgba(26, 26, 26, 0.06);
@@ -542,9 +542,8 @@
       grid-column: 2 / 3;
       grid-row: 3 / 4;
     }
-    .pain-collage figure:nth-child(6) {
-      grid-column: 1 / 4;
-      grid-row: 4 / 5;
+    .pain-collage figure:nth-child(3) img {
+      object-position: center top;
     }
     .pain-copy {
       display: flex;
@@ -560,27 +559,27 @@
     .pain-opener .small {
       font-family: var(--font-sans);
       font-style: normal;
-      font-size: 11px !important;
-      font-weight: 700 !important;
-      line-height: 1.35 !important;
-      letter-spacing: 0.24em !important;
+      font-size: clamp(48px, 5.4vw, 76px) !important;
+      font-weight: 900 !important;
+      line-height: 0.95 !important;
+      letter-spacing: -0.055em !important;
       text-align: left !important;
-      text-transform: uppercase !important;
-      color: var(--accent-rust);
+      text-transform: none !important;
+      color: var(--text-dark);
       margin: 0 0 18px !important;
     }
     .pain-opener .small .counter {
-      color: inherit;
-      font-weight: 700;
+      color: var(--accent-rust);
+      font-weight: 900;
       font-style: normal;
       font-size: inherit !important;
     }
     .pain-opener h2 {
       font-family: var(--font-serif);
-      font-size: clamp(38px, 4.1vw, 56px) !important;
+      font-size: clamp(30px, 3.1vw, 44px) !important;
       color: var(--text-dark) !important;
-      letter-spacing: -0.035em !important;
-      line-height: 0.96 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 1.02 !important;
       font-weight: 600 !important;
       margin: 0 0 26px !important;
       text-align: left !important;
@@ -1360,12 +1359,11 @@
       <div class="wrap">
         <div class="pain-layout" data-scroll-fx>
           <div class="pain-collage" aria-label="Avi's journey in images">
-            <figure class="tile-large"><img src="images/avi/home-speaking-wide.png" alt="Avi speaking to an audience" loading="lazy" /></figure>
+            <figure class="tile-large"><img src="images/avi/avi-hospital-story.png" alt="Avi recovering in hospital" loading="lazy" /></figure>
             <figure><img src="images/avi/avi-practice-integration.png" alt="Avi practicing stillness" loading="lazy" /></figure>
-            <figure class="tile-tall"><img src="images/avi/about-hero-speaking.png" alt="Avi on stage" loading="lazy" /></figure>
+            <figure class="tile-tall"><img src="images/avi/avi-portrait-warm.png" alt="Avi speaking to an audience" loading="lazy" /></figure>
             <figure><img src="images/avi/avi-young-origin.png" alt="Avi's early founder journey" loading="lazy" /></figure>
-            <figure><img src="images/avi/avi-hospital-story.png" alt="Avi recovering in hospital" loading="lazy" /></figure>
-            <figure class="tile-wide"><img src="images/avi/avi-portrait-warm.png" alt="Avi Agarwal portrait" loading="lazy" /></figure>
+            <figure><img src="images/avi/about-hero-speaking.png" alt="Avi on stage" loading="lazy" /></figure>
           </div>
 
           <div class="pain-copy">
