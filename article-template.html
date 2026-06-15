@@ -639,7 +639,8 @@
       </a>
       <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="read.html">Read</a></li>
+          <li><a href="/articles" aria-current="page">Articles</a></li>
+          <li><a href="/letters">Letters</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -748,6 +749,8 @@
                 <li>Title/H1</li>
                 <li>Dek</li>
                 <li>Category</li>
+                <li>Homepage Feature</li>
+                <li>Homepage Sort Order</li>
                 <li>Author/date/read time</li>
                 <li>Hero image</li>
                 <li>Rich text body</li>
@@ -757,6 +760,10 @@
             <div class="sidebar-card">
               <h3>SEO behavior</h3>
               <p>Final articles should be indexable, included in sitemap, and reflected in llms.txt. This preview page is noindexed because it is only a template.</p>
+            </div>
+            <div class="sidebar-card">
+              <h3>Homepage logic</h3>
+              <p>The tag/field “home” should be treated as a backend placement flag, not a public category. Articles can still keep their canonical /articles/[slug] URL while also appearing on the homepage.</p>
             </div>
             <div class="sidebar-card">
               <h3>Social scope</h3>
@@ -847,9 +854,9 @@
       </div>
       <div class="footer-cols">
         <div><h5>Articles</h5><ul><li><a href="/articles">All articles</a></li><li><a href="/articles/category/founder-burnout">Founder Burnout</a></li><li><a href="/articles/category/founder-resilience">Founder Resilience</a></li></ul></div>
+        <div><h5>Letters</h5><ul><li><a href="/letters">Weekly letters</a></li><li><a href="https://thedeliberatepause.substack.com/" rel="noopener">Substack archive</a></li><li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li></ul></div>
         <div><h5>Founder pain</h5><ul><li><a href="/articles/category/founder-loneliness">Founder Loneliness</a></li><li><a href="/articles/category/overthinking-anxiety">Overthinking & Anxiety</a></li><li><a href="/articles/category/performance-recovery">Performance & Recovery</a></li><li><a href="/articles/category/self-worth">Self-worth</a></li></ul></div>
         <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-        <div><h5>Follow</h5><ul><li><a href="https://www.instagram.com/pausewithavi/" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/agarwal86/" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/ThePauseClub" rel="noopener">X</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div>© <span id="year">2026</span> The Deliberate Pause · Article detail template</div>
