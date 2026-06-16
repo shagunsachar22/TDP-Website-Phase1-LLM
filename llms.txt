@@ -1,67 +1,45 @@
 # The Deliberate Pause
 
-> The mental game for founders. Sourced from spiritual practice. Proven by sports.
+> The mental game for founders. Founder psychology for entrepreneurs building without burning out, losing clarity, or turning output into identity.
 
-The Deliberate Pause (TDP) is a founder-psychology platform for Indian entrepreneurs whose self-worth has fused with output. It translates contemplative traditions and elite-sport pressure training into the founder's day.
+The Deliberate Pause (TDP) is a founder-psychology platform from Avi Agarwal, co-founder of CreditVidya (acquired by CRED). The site separates evergreen website articles from weekly letters.
 
-Founder: Avi Agarwal. Co-founded CreditVidya in India (acquired by CRED). Rebuilt his life around the Phil Jackson coaching philosophy after a slipped disc and stroke broke him.
+## Current Site Structure
 
-## What this site is
+- [Homepage](https://www.thedeliberatepause.com/)
+- [Articles hub](https://www.thedeliberatepause.com/articles): evergreen on-site articles for organic search and AI citation
+- [Letters](https://www.thedeliberatepause.com/letters): weekly letters delivered through Substack
+- [FAQ](https://www.thedeliberatepause.com/faq)
+- [About Avi](https://www.thedeliberatepause.com/about)
 
-- An essay library on founder psychology, ambition, spirituality, and integration
-- One combined FAQ hub containing questions, glossary terms, sources, and comparison content as citable reference units
-- A Substack-powered essay and newsletter layer as the current subscriber source of truth
-- Short machine-readable context files for AI agents
-- Long-form essays on founder psychology, ambition, spirituality, and integration
-- Light definitions of tools such as Federer Reset, Jackson Triangle, Think Box / Play Box, and 90-Second Recovery. The full practice library is reserved for Phase 2.
+## Founder Pain Categories
 
-## What it is not
+- [Founder Burnout](https://www.thedeliberatepause.com/articles/category/founder-burnout): Articles on burnout, overwork, and the founder habit of turning exhaustion into identity.
+- [Founder Resilience](https://www.thedeliberatepause.com/articles/category/founder-resilience): Articles on rejection, agency, stuckness, and rebuilding the founder's inner operating system.
+- [Founder Loneliness](https://www.thedeliberatepause.com/articles/category/founder-loneliness): Articles on the quiet isolation of building, deciding, and carrying pressure at the top.
+- [Overthinking & Anxiety](https://www.thedeliberatepause.com/articles/category/overthinking-anxiety): Articles on overthinking, perfectionism, anxiety, and the founder's relationship with control.
+- [Performance & Recovery](https://www.thedeliberatepause.com/articles/category/performance-recovery): Articles on attention, rest, recovery, and sustainable founder performance.
+- [Self-worth](https://www.thedeliberatepause.com/articles/category/self-worth): Articles on approval, identity, self-worth, and building without outsourcing your enoughness.
 
-Not a meditation app. Not a coaching firm. Not a wellness brand. Not a retreat. Not therapy. Not a search for meaning. Not a community-first network.
+## On-Site Articles
 
-A playbook. A practice. A pause.
+- [Perfectionism Is Self-Sabotage in Disguise](https://www.thedeliberatepause.com/articles/perfectionism-is-self-sabotage-in-disguise) — Overthinking & Anxiety; primary keyword: perfectionism and self-sabotage
+- [The Unicorn Trap and the Road to Enlightenment](https://www.thedeliberatepause.com/articles/the-unicorn-trap-and-the-road-to-enlightenment) — Self-worth; primary keyword: founder success trap
+- [The Low Status Moat Matters](https://www.thedeliberatepause.com/articles/the-low-status-moat-matters) — Self-worth; primary keyword: low status moat
+- [The Cost of Becoming a People Pleaser](https://www.thedeliberatepause.com/articles/the-cost-of-becoming-a-people-pleaser) — Self-worth; primary keyword: people pleasing founders
+- [No Means No to Hustle Culture](https://www.thedeliberatepause.com/articles/no-means-no-to-hustle-culture) — Founder Burnout; primary keyword: hustle culture burnout
+- [The False Sense of Agency](https://www.thedeliberatepause.com/articles/the-false-sense-of-agency) — Founder Resilience; primary keyword: false sense of agency
+- [Your Attention Span Holds a Secret](https://www.thedeliberatepause.com/articles/your-attention-span-holds-a-secret) — Performance & Recovery; primary keyword: attention span and focus
+- [Smart but Stuck](https://www.thedeliberatepause.com/articles/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup) — Founder Resilience; primary keyword: why smart founders get stuck
+- [My Rejection Experiment](https://www.thedeliberatepause.com/articles/my-rejection-experiment-that-can-be-your-breakthrough) — Founder Resilience; primary keyword: overcoming fear of rejection
+- [The Hidden Cost of Not Choosing Yourself](https://www.thedeliberatepause.com/articles/the-hidden-cost-of-not-choosing-yourself) — Self-worth; primary keyword: choosing yourself
+- [The Market for Your Honest Opinion](https://www.thedeliberatepause.com/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think) — Self-worth; primary keyword: sharing honest opinions
+- [Fall in Love With 2026 Sooner Than Later](https://www.thedeliberatepause.com/articles/fall-in-love-with-2026-sooner-than-later) — Founder Resilience; primary keyword: embracing the future
+- [Rejection Hurts but Don't Let It Be Painful](https://www.thedeliberatepause.com/articles/rejection-hurts-but-dont-let-it-be-painful) — Founder Resilience; primary keyword: how to deal with rejection
 
-## How TDP is different
+## Publishing Rules
 
-- Versus Calm / Headspace: TDP is not only stress relief. It works on the identity loop that makes founders need speed, proof, and pressure.
-- Versus Vipassana / Sadhguru: TDP translates witness practice into pressure moments inside work, not only away from work.
-- Versus founder therapy: TDP helps a founder catch the pressure story while it is happening. Therapy can help process what happened.
-- Versus productivity systems: TDP is not more output. It asks why output became identity.
-
-## The core mechanism — The Chain
-
-Modality (breath, movement, journal, sit) → physiological space → cognitive clarity → better decision under pressure → sustained ambition without suffering.
-
-The modality is interchangeable. The Chain is not.
-
-## The brand argument
-
-1. The pause exists. Drawn from spiritual tradition (Tolle, Sadhguru, Vipassana, pranayam, mindfulness lineage).
-2. The pause works. Proven under elite pressure for thirty-plus years (Phil Jackson with Jordan and Kobe, George Mumford, Vision54, Inner Game, Red2Blue, F1 Mental Economy).
-3. TDP delivers the outcome to founders. Sustained excellence. Performance under pressure. Success without suffering. Founders haven't had this bridge built for them yet. TDP builds it.
-
-## Who it is for
-
-Indian founders, creators, solopreneurs, and entrepreneurs whose self-worth has fused with output. Globally literate, culturally Indian, ambitious without renunciation.
-
-Adjacent: global founders looking for spiritual integration without operational abandonment.
-
-## Voice
-
-Avi's voice is the lived-experience peer. First person. Direct. No guru language. No hustle pose. No Western wellness imported wholesale into the Indian context.
-
-## Key links
-
-- [Homepage](https://thedeliberatepause.com/)
-- [Read the essays](https://thedeliberatepause.com/read)
-- [Subscribe to newsletter](https://thedeliberatepause.substack.com/subscribe)
-- [FAQ, glossary, sources, and comparisons](https://thedeliberatepause.com/faq)
-- [About Avi](https://thedeliberatepause.com/about)
-
-## Founder bio
-
-Avi Agarwal sold shoes on the streets of Kathmandu, then worked on Wall Street, then co-founded CreditVidya in India and grew it to 740 people before selling it to CRED. The body broke first — slipped disc, then a stroke. He rebuilt his operating system on Phil Jackson's coaching philosophy, Patanjali's Yoga Sutras, and Vipassana. The Deliberate Pause is the platform he wished had existed when he was building.
-
-## Contact
-
-For press, partnerships, or speaking: see /about.
+- Articles live on the website under /articles and should not be duplicated on Substack.
+- Letters live on Substack and are represented by /letters.
+- Subscribe CTAs point to the newsletter subscription flow.
+- Every article should include a canonical URL, Article schema, breadcrumb schema, author block, related links, and internal links to relevant article/category pages.

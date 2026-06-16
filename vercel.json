@@ -2,89 +2,352 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pause", "destination": "/faq", "permanent": false },
-    { "source": "/pause.html", "destination": "/faq", "permanent": false },
-    { "source": "/glossary", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/glossary.html", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/sources", "destination": "/faq#sources", "permanent": false },
-    { "source": "/sources.html", "destination": "/faq#sources", "permanent": false },
-    { "source": "/practice-federer-reset", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-federer-reset.html", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-jackson-triangle", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-jackson-triangle.html", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-think-box-play-box", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-think-box-play-box.html", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-90-second-recovery", "destination": "/faq#glossary", "permanent": false },
-    { "source": "/practice-90-second-recovery.html", "destination": "/faq#glossary", "permanent": false }
+    {
+      "source": "/read",
+      "destination": "/letters",
+      "permanent": true
+    },
+    {
+      "source": "/read.html",
+      "destination": "/letters",
+      "permanent": true
+    },
+    {
+      "source": "/read/perfectionism-is-self-sabotage-in-disguise",
+      "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-unicorn-trap-and-the-road-to-enlightenment",
+      "destination": "/articles/the-unicorn-trap-and-the-road-to-enlightenment",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-low-status-moat-matters",
+      "destination": "/articles/the-low-status-moat-matters",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-cost-of-becoming-a-people-pleaser",
+      "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
+      "permanent": true
+    },
+    {
+      "source": "/read/no-means-no-to-hustle-culture",
+      "destination": "/articles/no-means-no-to-hustle-culture",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-false-sense-of-agency",
+      "destination": "/articles/the-false-sense-of-agency",
+      "permanent": true
+    },
+    {
+      "source": "/read/your-attention-span-holds-a-secret",
+      "destination": "/articles/your-attention-span-holds-a-secret",
+      "permanent": true
+    },
+    {
+      "source": "/read/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "destination": "/articles/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "permanent": true
+    },
+    {
+      "source": "/read/my-rejection-experiment-that-can-be-your-breakthrough",
+      "destination": "/articles/my-rejection-experiment-that-can-be-your-breakthrough",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-hidden-cost-of-not-choosing-yourself",
+      "destination": "/articles/the-hidden-cost-of-not-choosing-yourself",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "destination": "/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "permanent": true
+    },
+    {
+      "source": "/read/fall-in-love-with-2026-sooner-than-later",
+      "destination": "/articles/fall-in-love-with-2026-sooner-than-later",
+      "permanent": true
+    },
+    {
+      "source": "/read/rejection-hurts-but-dont-let-it-be-painful",
+      "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
+      "source": "/read/perfectionism-is-self-sabotage-in-disguise/",
+      "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-unicorn-trap-and-the-road-to-enlightenment/",
+      "destination": "/articles/the-unicorn-trap-and-the-road-to-enlightenment",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-low-status-moat-matters/",
+      "destination": "/articles/the-low-status-moat-matters",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-cost-of-becoming-a-people-pleaser/",
+      "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
+      "permanent": true
+    },
+    {
+      "source": "/read/no-means-no-to-hustle-culture/",
+      "destination": "/articles/no-means-no-to-hustle-culture",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-false-sense-of-agency/",
+      "destination": "/articles/the-false-sense-of-agency",
+      "permanent": true
+    },
+    {
+      "source": "/read/your-attention-span-holds-a-secret/",
+      "destination": "/articles/your-attention-span-holds-a-secret",
+      "permanent": true
+    },
+    {
+      "source": "/read/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup/",
+      "destination": "/articles/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "permanent": true
+    },
+    {
+      "source": "/read/my-rejection-experiment-that-can-be-your-breakthrough/",
+      "destination": "/articles/my-rejection-experiment-that-can-be-your-breakthrough",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-hidden-cost-of-not-choosing-yourself/",
+      "destination": "/articles/the-hidden-cost-of-not-choosing-yourself",
+      "permanent": true
+    },
+    {
+      "source": "/read/the-market-for-your-honest-opinion-is-bigger-than-you-think/",
+      "destination": "/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "permanent": true
+    },
+    {
+      "source": "/read/fall-in-love-with-2026-sooner-than-later/",
+      "destination": "/articles/fall-in-love-with-2026-sooner-than-later",
+      "permanent": true
+    },
+    {
+      "source": "/read/rejection-hurts-but-dont-let-it-be-painful/",
+      "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
+      "source": "/read/welcome-to-the-deliberate-pause",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/read/welcome-to-the-deliberate-pause/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pause",
+      "destination": "/faq",
+      "permanent": false
+    },
+    {
+      "source": "/pause.html",
+      "destination": "/faq",
+      "permanent": false
+    },
+    {
+      "source": "/glossary",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/glossary.html",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/sources",
+      "destination": "/faq#sources",
+      "permanent": false
+    },
+    {
+      "source": "/sources.html",
+      "destination": "/faq#sources",
+      "permanent": false
+    },
+    {
+      "source": "/practice-federer-reset",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-federer-reset.html",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-jackson-triangle",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-jackson-triangle.html",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-think-box-play-box",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-think-box-play-box.html",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-90-second-recovery",
+      "destination": "/faq#glossary",
+      "permanent": false
+    },
+    {
+      "source": "/practice-90-second-recovery.html",
+      "destination": "/faq#glossary",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/llms-full.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/feed.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/pause-playbook",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/pause-playbook.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/downloads/pause-playbook-placeholder.pdf",
       "headers": [
-        { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     }
   ]
