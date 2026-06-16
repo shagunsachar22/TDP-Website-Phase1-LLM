@@ -65,8 +65,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, transparent 0%, transparent 40%, rgba(19,19,19,0.85) 90%, var(--bg-dark) 100%),
-        linear-gradient(90deg, rgba(19,19,19,0.6) 0%, transparent 60%);
+        linear-gradient(180deg, rgba(31,30,25,0.10) 0%, rgba(31,30,25,0.24) 42%, rgba(31,30,25,0.86) 90%, var(--bg-dark) 100%),
+        linear-gradient(90deg, rgba(31,30,25,0.76) 0%, rgba(102,89,79,0.48) 45%, rgba(138,131,114,0.14) 100%);
     }
     .about-hero-bg .placeholder {
       position: absolute;
@@ -78,8 +78,8 @@
       font-size: 13px;
       text-align: center;
       background:
-        radial-gradient(ellipse at center, rgba(214,168,110,0.1), transparent 60%),
-        var(--bg-dark);
+        radial-gradient(ellipse at center, rgba(189,170,142,0.20), transparent 62%),
+        linear-gradient(135deg, var(--bg-clay), var(--bg-taupe));
       letter-spacing: 0.02em;
     }
     .about-hero-bg img[src]:not([src=""]) ~ .placeholder { display: none; }
@@ -168,11 +168,11 @@
     }
     .numbers-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
     .number-cell {
-      text-align: left;
+      text-align: center;
     }
     .number-cell .figure {
       font-family: var(--font-serif);
@@ -183,6 +183,9 @@
       line-height: 0.95;
       margin: 0 0 8px;
       font-variant-numeric: tabular-nums;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
     }
     .number-cell .figure .unit {
       font-size: 0.55em;
@@ -198,6 +201,8 @@
       color: var(--text-muted-dark);
       font-weight: 600;
       line-height: 1.5;
+      max-width: 220px;
+      margin: 0 auto;
     }
     @media (max-width: 768px) {
       .numbers-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
@@ -332,10 +337,8 @@
     }
     .journey-img {
       aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(135deg, rgba(214,168,110,0.14), rgba(197,107,69,0.05)),
-        rgba(245, 239, 229, 0.03);
-      border: 1px dashed var(--border-on-dark);
+      background: rgba(245, 239, 229, 0.03);
+      border: 1px solid var(--border-on-dark);
       border-radius: 6px;
       display: flex;
       align-items: center;
@@ -343,8 +346,23 @@
       font-size: 11px;
       color: var(--text-muted-dark);
       text-align: center;
-      padding: 16px;
+      padding: 0;
       line-height: 1.55;
+      margin: 0;
+      overflow: hidden;
+    }
+    .journey-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .journey-img-portrait {
+      aspect-ratio: 4 / 5;
+      max-height: 520px;
+    }
+    .journey-img-portrait img {
+      object-position: center 42%;
     }
     @media (max-width: 900px) {
       .journey-beat { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
@@ -354,26 +372,29 @@
     /* ---------- 5 · FEATURED IN (dark) ---------- */
     .featured-in { padding: 80px 0; border-top: 1px solid var(--border-on-dark); text-align: center; }
     .featured-in .eyebrow { margin-bottom: 32px; color: var(--text-muted-dark); }
-    .featured-in .wrap { max-width: 920px; }
+    .featured-in .wrap { max-width: 1120px; }
     .featured-strip {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px 56px;
+      gap: 56px 88px;
       align-items: center;
-      opacity: 0.5;
+      opacity: 0.96;
     }
     .featured-strip .logo-slot {
-      width: 110px; height: 32px;
-      border: 1px dashed var(--border-on-dark);
+      width: clamp(220px, 22vw, 320px);
+      height: 88px;
       border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted-dark);
+      padding: 8px 20px;
+    }
+    .featured-strip .logo-slot img {
+      display: block;
+      max-width: 100%;
+      max-height: 72px;
+      object-fit: contain;
     }
     .featured-in .micro {
       font-family: var(--font-serif);
@@ -574,8 +595,8 @@
          ============================================================ -->
     <section class="about-hero theme-dark">
       <div class="about-hero-bg parallax-wrap">
-        <img class="parallax-img" data-parallax="0.06" src="images/avi-cinematic.jpg" alt="Avi Agarwal portrait — cinematic, environmental" loading="eager" onerror="this.style.display='none'" />
-        <div class="placeholder">cinematic photo of Avi · environmental · peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi-cinematic.jpg</code></div>
+        <img class="parallax-img" data-parallax="0.06" src="images/avi/about-hero-speaking.png" alt="Avi Agarwal speaking to a room of founders" loading="eager" onerror="this.style.display='none'" />
+        <div class="placeholder">cinematic photo of Avi · environmental · peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi/about-hero-speaking.png</code></div>
       </div>
       <div class="about-hero-inner">
         <span class="eyebrow" data-scroll-fx>Avi's Story</span>
@@ -589,7 +610,7 @@
          ============================================================ -->
     <section class="identity theme-dark" aria-labelledby="identity-headline">
       <div class="wrap">
-        <span class="eyebrow" data-scroll-fx>03 / Identity</span>
+        <span class="eyebrow" data-scroll-fx>Identity</span>
         <div class="identity-grid">
           <h2 class="identity-stack" id="identity-headline" data-scroll-fx="fade-right">
             <span>Entrepreneur.</span>
@@ -627,28 +648,11 @@
     </section>
 
     <!-- ============================================================
-         3 · CREDENTIAL BAND
-         ============================================================ -->
-    <section class="credential theme-dark">
-      <div class="wrap">
-        <div class="credential-card" data-scroll-fx>
-          <div class="credential-thumb">
-            press article — TechCrunch / YourStory<br />CreditVidya acquired by CRED
-          </div>
-          <div>
-            <p>"From humble beginnings."</p>
-            <span class="source">Primary-source credential</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
          4 · JOURNEY — three beats
          ============================================================ -->
     <section class="journey theme-dark" aria-labelledby="journey-headline">
       <div class="wrap">
-        <span class="eyebrow" id="journey-headline" data-scroll-fx>04 / Journey</span>
+        <span class="eyebrow" id="journey-headline" data-scroll-fx>Journey</span>
 
         <article class="journey-beat" data-scroll-fx>
           <div class="journey-num"><span class="chapter">Chapter</span>01</div>
@@ -659,7 +663,9 @@
             <blockquote class="pull">The version of me from those years didn't pause. He sprinted.</blockquote>
             <p>That version got the company built. He also got me broken. I just didn't know it yet.</p>
           </div>
-          <div class="journey-img">building photo · 800×600<br />drop: <code>images/avi-building.jpg</code></div>
+          <figure class="journey-img journey-img-portrait">
+            <img src="images/avi/avi-young-origin.png" alt="Young Avi flexing as a child" loading="lazy" />
+          </figure>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
@@ -671,7 +677,9 @@
             <blockquote class="pull">Some founders break in the boardroom. I broke in the body. The company kept running. I didn't.</blockquote>
             <p>Building the company had been visible. What it was costing me hadn't been — until it suddenly was. And then nothing else mattered.</p>
           </div>
-          <div class="journey-img">hospital bed photo · proof "build without breaking" isn't a metaphor<br />drop: <code>images/avi-breaking.jpg</code></div>
+          <figure class="journey-img">
+            <img src="images/avi/avi-hospital-story.png" alt="Hospital collage from Avi's health scare" loading="lazy" />
+          </figure>
         </article>
 
         <article class="journey-beat" data-scroll-fx>
@@ -683,7 +691,9 @@
             <blockquote class="pull">The integration was the actual work. Not the side project. Not the retreat. Not "after the company."</blockquote>
             <p>The Deliberate Pause is what I built once I knew that. The principles behind championship composure, translated for an entrepreneur's day. I'm bringing both to you.</p>
           </div>
-          <div class="journey-img">contemporary Avi at desk · Yoga Sutras nearby · post-recovery<br />drop: <code>images/avi-rebuilding.jpg</code></div>
+          <figure class="journey-img">
+            <img src="images/avi/avi-practice-integration.png" alt="Avi in a guided practice session" loading="lazy" />
+          </figure>
         </article>
       </div>
     </section>
@@ -693,16 +703,15 @@
          ============================================================ -->
     <section class="featured-in theme-dark">
       <div class="wrap">
-        <span class="eyebrow" data-scroll-fx>Featured in</span>
+        <span class="eyebrow" data-scroll-fx>Read across the startup ecosystem</span>
         <div class="featured-strip" data-scroll-fx>
-          <div class="logo-slot">Logo 1</div>
-          <div class="logo-slot">Logo 2</div>
-          <div class="logo-slot">Logo 3</div>
-          <div class="logo-slot">Logo 4</div>
-          <div class="logo-slot">Logo 5</div>
-          <div class="logo-slot">Logo 6</div>
+          <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="Kalaari" /></div>
+          <div class="logo-slot"><img src="images/logos/inmobi.svg" alt="InMobi" /></div>
+          <div class="logo-slot"><img src="images/logos/cred.svg" alt="CRED" /></div>
+          <div class="logo-slot"><img src="images/logos/z47.svg" alt="Z47, formerly Matrix Partners India" /></div>
+          <div class="logo-slot"><img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" /></div>
+          <div class="logo-slot"><img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" /></div>
         </div>
-        <p class="micro">Honesty rule: only ship real logos. If &lt;5 exist, this band waits to Phase 1.</p>
       </div>
     </section>
 
@@ -713,11 +722,11 @@
       <div class="wrap">
         <div class="pivot-reader-grid">
           <div class="photo parallax-wrap" data-scroll-fx="zoom">
-            <img class="parallax-img" data-parallax="0.07" src="images/avi-peer.jpg" alt="Avi Agarwal — peer-direct portrait, warm, settled" loading="lazy" onerror="this.style.display='none'" />
-            <div class="placeholder">peer-direct photo of Avi looking at camera<br />warm · settled · Avi-with-reader<br /><br />drop file: <code>images/avi-peer.jpg</code></div>
+            <img class="parallax-img" data-parallax="0.07" src="images/avi/avi-portrait-warm.png" alt="Avi Agarwal — peer-direct portrait, warm, settled" loading="lazy" onerror="this.style.display='none'" />
+            <div class="placeholder">peer-direct photo of Avi looking at camera<br />warm · settled · Avi-with-reader<br /><br />drop file: <code>images/avi/avi-portrait-warm.png</code></div>
           </div>
           <div data-scroll-fx="fade-left">
-            <span class="eyebrow">05 / Reader Pivot</span>
+            <span class="eyebrow">Reader Pivot</span>
             <h2 id="reader-headline">How can I help you?</h2>
             <p class="small">I can't help with everything. Here's what I can help with.</p>
             <ul class="help-list">
@@ -737,7 +746,7 @@
          ============================================================ -->
     <section class="two-doors theme-cream" aria-labelledby="doors-headline">
       <div class="wrap">
-        <span class="eyebrow" data-scroll-fx>06 / Where to start</span>
+        <span class="eyebrow" data-scroll-fx>Where to start</span>
         <h2 id="doors-headline" data-scroll-fx>Where to start.</h2>
         <div class="doors-grid">
           <article class="door" data-scroll-fx="fade-right">
@@ -762,7 +771,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="logo">The Deliberate Pause</div>
+          <a class="footer-brand-mark" href="/" aria-label="The Deliberate Pause home"><img src="images/logo-light.svg" alt="The Deliberate Pause" /></a>
           <div class="tagline">Mental training for Indian entrepreneurs.</div>
           <p>Essays on founder psychology, yogic philosophy, and better decisions under pressure.</p>
         </div>
@@ -773,17 +782,18 @@
         </div>
       </div>
       <div class="footer-cols">
-        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li><li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li><li><a href="read.html#categories">Essay paths</a></li></ul></div>
+        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li></ul></div>
         <div><h5>Essay paths</h5><ul><li><a href="read.html#categories">Burnout & Identity</a></li><li><a href="read.html#categories">Failure & Rejection</a></li><li><a href="read.html#categories">Ambition & Success</a></li><li><a href="read.html#categories">Decision Clarity</a></li><li><a href="read.html#categories">Attention & Recovery</a></li></ul></div>
         <div><h5>FAQ</h5><ul><li><a href="faq.html">Questions</a></li><li><a href="faq.html#glossary">Glossary</a></li><li><a href="faq.html#sources">Sources</a></li></ul></div>
-        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li><li><a href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays</a></li></ul></div>
+        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi Agarwal</div>
+        <div class="footer-socials" aria-label="Social links"><a href="https://www.instagram.com/pausewithavi/" aria-label="Instagram" rel="noopener"><img src="images/social-instagram.svg" alt="" /></a><a href="https://x.com/ThePauseClub" aria-label="X" rel="noopener"><img src="images/social-twitter.svg" alt="" /></a><a href="https://www.linkedin.com/in/agarwal86/" aria-label="LinkedIn" rel="noopener"><img src="images/social-linkedin.svg" alt="" /></a></div>
       </div>
     </div>
   </footer>
 
-  <script src="scroll-fx.js?v=phase1-20260525" defer></script>
+  <script src="scroll-fx.js?v=popup-20260604" defer></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The Deliberate Pause mechanism</title>
+  <desc id="desc">An abstract diagram showing stimulus, pause, and response through mind, breath, and body.</desc>
+  <defs>
+    <radialGradient id="paperGlow" cx="50%" cy="48%" r="62%">
+      <stop offset="0%" stop-color="#FFF8E8"/>
+      <stop offset="47%" stop-color="#EFE3D1"/>
+      <stop offset="100%" stop-color="#C6B69B"/>
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2D3A6" stop-opacity="0.95"/>
+      <stop offset="48%" stop-color="#E4D0AE" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#E4D0AE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="clayWash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B87556" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6A4E40" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="taupeWash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A8372" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#332A24" stop-opacity="0.68"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#332A24" flood-opacity="0.18"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paperGlow)"/>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.42"/>
+  <path d="M0 736C210 606 360 784 530 704C662 642 730 528 854 564C1034 616 1088 816 1280 682C1402 597 1505 583 1600 622V1200H0Z" fill="#8A8372" opacity="0.18"/>
+  <path d="M0 866C232 704 390 900 602 770C735 689 846 706 984 806C1128 910 1344 764 1600 808V1200H0Z" fill="#6A4E40" opacity="0.13"/>
+  <g opacity="0.5" fill="none" stroke="#FFFFF6" stroke-width="2">
+    <circle cx="800" cy="600" r="402"/>
+    <circle cx="800" cy="600" r="324"/>
+    <circle cx="800" cy="600" r="230"/>
+  </g>
+  <circle cx="800" cy="600" r="200" fill="url(#centerGlow)"/>
+  <g fill="none" stroke="#B87556" stroke-width="2.6" opacity="0.74">
+    <circle cx="800" cy="600" r="276"/>
+    <path d="M524 600c0-153 123-276 276-276"/>
+    <path d="M1076 600c0 153-123 276-276 276"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <circle cx="800" cy="276" r="128" fill="#8A8372" opacity="0.86"/>
+    <circle cx="444" cy="758" r="142" fill="url(#clayWash)"/>
+    <circle cx="1156" cy="758" r="142" fill="url(#taupeWash)"/>
+  </g>
+  <g fill="none" stroke="#FFF8E8" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(800 276)" opacity="0.86">
+      <circle cx="0" cy="0" r="78" stroke-width="3.5" opacity="0.7"/>
+      <circle cx="0" cy="0" r="42" stroke-width="3" opacity="0.82"/>
+      <path d="M0-92V92" stroke-width="3" opacity="0.52"/>
+      <path d="M-88 0H88" stroke-width="3" opacity="0.34"/>
+      <path d="M-56-38c24-22 56-22 80 0M-56 38c24 22 56 22 80 0" stroke-width="4"/>
+      <path d="M56-38c-24-22-56-22-80 0M56 38c-24 22-56 22-80 0" stroke-width="2.4" opacity="0.6"/>
+    </g>
+    <g transform="translate(444 758)" opacity="0.88">
+      <path d="M-112-26C-70-58-24-58 18-26S88 6 128-26" stroke-width="4.8"/>
+      <path d="M-112 16C-70-16-24-16 18 16S88 48 128 16" stroke-width="3.4" opacity="0.78"/>
+      <path d="M-112 58C-70 26-24 26 18 58S88 90 128 58" stroke-width="2.6" opacity="0.55"/>
+      <circle cx="-126" cy="-26" r="4" fill="#FFF8E8" stroke="none" opacity="0.7"/>
+      <circle cx="142" cy="-26" r="4" fill="#FFF8E8" stroke="none" opacity="0.7"/>
+    </g>
+    <g transform="translate(1156 758)" opacity="0.84">
+      <path d="M0-104V110" stroke-width="4.2"/>
+      <path d="M0-62c-34 24-58 58-70 103M0-62c34 24 58 58 70 103" stroke-width="3.2" opacity="0.82"/>
+      <path d="M0-16c-46 28-78 71-92 127M0-16c46 28 78 71 92 127" stroke-width="2.8" opacity="0.62"/>
+      <path d="M0 32c-26 25-42 52-50 82M0 32c26 25 42 52 50 82" stroke-width="2.2" opacity="0.48"/>
+      <circle cx="0" cy="-104" r="11" stroke-width="3.2"/>
+      <circle cx="0" cy="110" r="5" fill="#FFF8E8" stroke="none" opacity="0.72"/>
+    </g>
+  </g>
+  <g fill="#B87556">
+    <circle cx="800" cy="390" r="12"/>
+    <circle cx="524" cy="600" r="10"/>
+    <circle cx="1076" cy="600" r="10"/>
+    <circle cx="800" cy="876" r="8"/>
+  </g>
+  <g fill="none" stroke="#B87556" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 16" opacity="0.58">
+    <path d="M680 340C590 374 536 442 524 600"/>
+    <path d="M920 340c90 34 144 102 156 260"/>
+    <path d="M520 758c106 76 448 76 560 0"/>
+  </g>
+</svg>

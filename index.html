@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=popup-20260605" />
 
   <script type="application/ld+json">
   {
@@ -47,11 +47,11 @@
     .hero {
       padding: 0;
       /* vh fallback first, then dvh (dynamic viewport — accounts for iOS Safari's address bar). */
-      min-height: 88vh;
-      min-height: 88dvh;
+      min-height: calc(100vh - 76px);
+      min-height: calc(100dvh - 76px);
       position: relative;
       display: flex;
-      align-items: flex-end;
+      align-items: stretch;
       overflow: hidden;
       isolation: isolate;
     }
@@ -60,34 +60,20 @@
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(ellipse 60% 45% at 50% 35%, rgba(245, 239, 229, 0.04), transparent 70%),
-        var(--bg-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        linear-gradient(118deg, rgba(245, 239, 229, 0.10) 0%, rgba(245, 239, 229, 0.02) 38%, rgba(31, 30, 25, 0.18) 100%),
+        radial-gradient(ellipse 72% 62% at 78% 18%, rgba(214, 186, 137, 0.18), transparent 62%),
+        linear-gradient(135deg, #766B5D 0%, #5E5046 44%, #23221D 100%);
       overflow: hidden;
     }
-    .hero-video-bg video,
-    .hero-video-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
     .hero-video-bg::before {
-      /* shimmer sweep — implies motion when no video yet */
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(110deg, transparent 35%, rgba(214, 168, 110, 0.04) 50%, transparent 65%);
-      animation: hero-shimmer 9s linear infinite;
+      background:
+        linear-gradient(90deg, rgba(31, 30, 25, 0.28) 0%, transparent 44%),
+        linear-gradient(180deg, transparent 0%, rgba(31, 30, 25, 0.20) 100%);
       pointer-events: none;
       z-index: 1;
-    }
-    @keyframes hero-shimmer {
-      0%   { transform: translateX(-50%); }
-      100% { transform: translateX(50%); }
     }
     .hero-video-bg::after {
       /* legibility gradient — darker at the bottom-left where text sits */
@@ -95,8 +81,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(19,19,19,0.4) 0%, transparent 30%, transparent 50%, rgba(19,19,19,0.85) 100%),
-        linear-gradient(90deg, rgba(19,19,19,0.55) 0%, transparent 55%);
+        linear-gradient(180deg, rgba(31,30,25,0.04) 0%, rgba(31,30,25,0.16) 100%),
+        linear-gradient(90deg, rgba(31,30,25,0.12) 0%, rgba(31,30,25,0.02) 52%, rgba(31,30,25,0.28) 100%);
       pointer-events: none;
       z-index: 2;
     }
@@ -107,28 +93,36 @@
       position: relative;
       z-index: 3;
       width: 100%;
-      padding: 0 var(--gutter) 88px;
+      min-height: inherit;
+      padding: 88px var(--gutter) 48px;
       max-width: var(--max-width);
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(330px, 0.50fr);
+      gap: clamp(38px, 6vw, 96px);
+      align-items: center;
+    }
+    .hero-copy {
+      max-width: 760px;
     }
     .hero-headline {
       font-family: var(--font-serif);
-      color: var(--accent-amber);
-      font-size: clamp(56px, 8.4vw, 124px);
+      color: var(--text-cream);
+      font-size: clamp(52px, 6.6vw, 92px);
       font-weight: 600;
       line-height: 0.95;
       letter-spacing: -0.025em;
       margin: 0 0 32px;
-      text-shadow: 0 4px 32px rgba(0,0,0,0.4);
+      text-shadow: none;
     }
     .hero-headline .line { display: block; }
     .hero-content .lead {
-      color: rgba(245, 239, 229, 0.85);
+      color: rgba(255, 255, 246, 0.82);
       font-size: clamp(17px, 1.4vw, 21px);
       line-height: 1.55;
       max-width: 560px;
       margin: 0 0 36px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 18px rgba(31, 30, 25, 0.18);
     }
     .hero-content .form-disclaimer {
       color: rgba(245, 239, 229, 0.55);
@@ -140,6 +134,159 @@
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
+    }
+    .hero-reads {
+      align-self: center;
+      justify-self: end;
+      width: min(100%, 430px);
+      color: var(--text-dark);
+      border: 1px solid rgba(245, 239, 229, 0.32);
+      background:
+        linear-gradient(180deg, rgba(255, 252, 242, 0.96), rgba(239, 229, 211, 0.92));
+      box-shadow: 0 28px 80px rgba(31, 30, 25, 0.22);
+      padding: clamp(18px, 2vw, 24px);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-reads::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--cta), var(--accent-amber));
+    }
+    .hero-reads .eyebrow {
+      color: rgba(31, 30, 25, 0.56);
+      margin-bottom: 18px;
+    }
+    .hero-featured-essay {
+      display: block;
+      width: 100%;
+      padding-bottom: 18px;
+      margin-bottom: 14px;
+      border: 0;
+      border-bottom: 1px solid rgba(31, 30, 25, 0.14);
+      background: transparent;
+      color: var(--text-dark);
+      text-decoration: none;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+    .hero-featured-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 2.45 / 1;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: rgba(31, 30, 25, 0.08);
+    }
+    .hero-featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88) contrast(0.96);
+      transition: transform 0.55s var(--ease), filter 0.55s var(--ease);
+    }
+    .hero-featured-essay:hover .hero-featured-image img {
+      transform: none;
+      filter: saturate(0.88) contrast(0.96);
+    }
+    .hero-featured-essay:focus-visible,
+    .hero-mini-essay:focus-visible {
+      outline: 2px solid rgba(199, 111, 71, 0.75);
+      outline-offset: 4px;
+    }
+    .hero-read-kicker {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 12px;
+    }
+    .hero-featured-essay strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 2.8vw, 38px);
+      font-weight: 650;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .hero-featured-essay span:last-child {
+      display: block;
+      color: rgba(31, 30, 25, 0.62);
+      font-size: 13px;
+      line-height: 1.42;
+      max-width: 420px;
+    }
+    .hero-mini-essays {
+      display: grid;
+      gap: 12px;
+    }
+    .hero-mini-essays .hero-mini-essay {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 0 0 10px;
+      border: 0;
+      border-bottom: 1px solid rgba(31, 30, 25, 0.12);
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      font-weight: 700;
+    }
+    .hero-mini-essays .hero-mini-essay:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .hero-mini-essays img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      display: block;
+      background: rgba(31, 30, 25, 0.08);
+      filter: saturate(0.86) contrast(0.96);
+    }
+    .hero-mini-essays span {
+      color: rgba(31, 30, 25, 0.46);
+      font-size: 18px;
+    }
+    .hero-mini-copy {
+      display: grid;
+      gap: 4px;
+    }
+    .hero-mini-essays .hero-mini-title {
+      color: var(--text-dark);
+      font-weight: 750;
+      line-height: 1.16;
+    }
+    .hero-mini-dek {
+      color: rgba(31, 30, 25, 0.58) !important;
+      font-size: 11px !important;
+      font-weight: 500;
+      line-height: 1.34;
+    }
+    .hero-preview-note {
+      display: block;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 30, 25, 0.12);
+      color: rgba(31, 30, 25, 0.5);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
     .hero-actions .btn-secondary {
       background: rgba(245, 239, 229, 0.08);
@@ -169,7 +316,7 @@
       font-size: 10px;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--text-muted-dark);
+      color: rgba(255, 255, 246, 0.62);
       animation: scroll-bob 2.4s var(--ease-in-out) infinite;
       pointer-events: none;
     }
@@ -178,11 +325,91 @@
       50%      { transform: translate(-50%, 4px); opacity: 0.95; }
     }
     @media (max-width: 768px) {
-      .hero { min-height: 80vh; min-height: 80dvh; }
-      .hero-content { padding: 0 var(--gutter) 56px; }
+      .hero { min-height: auto; }
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 56px var(--gutter) 28px;
+        gap: 24px;
+      }
       /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
-      .hero-headline { font-size: clamp(32px, 9vw, 56px); line-height: 1; }
-      .hero-content .lead { font-size: 16px; }
+      .hero-headline {
+        font-size: clamp(33px, 10.5vw, 42px) !important;
+        line-height: 1.02 !important;
+        max-width: 11.4ch;
+        margin-bottom: 18px;
+      }
+      .hero-content .lead {
+        font-size: 15px;
+        line-height: 1.48;
+        margin-bottom: 22px;
+        max-width: 32ch;
+      }
+      .hero-actions .btn {
+        min-height: 54px;
+        padding: 0 24px;
+        font-size: 16px;
+      }
+      .hero-reads {
+        justify-self: stretch;
+        width: 100%;
+        padding: 16px;
+        box-shadow: 0 18px 52px rgba(31, 30, 25, 0.22);
+      }
+      .hero-reads .eyebrow {
+        margin-bottom: 12px;
+      }
+      .hero-featured-essay {
+        padding-bottom: 14px;
+        margin-bottom: 10px;
+      }
+      .hero-featured-image {
+        aspect-ratio: 2.2 / 1;
+        margin-bottom: 12px;
+      }
+      .hero-read-kicker {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        margin-bottom: 8px;
+      }
+      .hero-featured-essay strong {
+        font-size: clamp(23px, 7vw, 29px) !important;
+        line-height: 1 !important;
+        margin-bottom: 8px;
+      }
+      .hero-featured-essay span:last-child {
+        font-size: 12px;
+        line-height: 1.38;
+      }
+      .hero-mini-essays {
+        gap: 8px;
+      }
+      .hero-mini-essays .hero-mini-essay {
+        grid-template-columns: 38px 1fr;
+        gap: 10px;
+        padding-bottom: 8px;
+      }
+      .hero-mini-essays img {
+        width: 38px;
+        height: 38px;
+      }
+      .hero-mini-essays .hero-mini-title {
+        font-size: 13px;
+        line-height: 1.14;
+      }
+      .hero-mini-dek {
+        font-size: 11px !important;
+        line-height: 1.3;
+      }
+      .hero-preview-note {
+        margin-top: 10px;
+        padding-top: 10px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
+      .hero-mini-essays span {
+        font-size: 15px;
+      }
+      .hero-scroll-cue { display: none; }
       .pain { padding: 96px 0; }
       .reading { padding: 96px 0; }
       .pause { padding: 96px 0; }
@@ -190,11 +417,26 @@
       .definition { padding: 96px 0 72px; }
       .avi-intro { padding: 72px 0 96px; }
     }
+    @media (max-width: 390px) {
+      .hero-content {
+        padding-top: 44px;
+      }
+      .hero-headline {
+        font-size: 34px !important;
+      }
+      .hero-content .lead {
+        font-size: 14px;
+      }
+      .hero-featured-essay span:last-child {
+        font-size: 11px;
+      }
+      .hero-mini-dek { display: none; }
+    }
     /* ---------- 2 · LOGO BAR (dark) — labels left, marquee right ---------- */
-    .logobar { padding: 56px 0 88px; border-top: 1px solid var(--border-on-dark); }
+    .logobar { padding: 32px 0 56px; border-top: 1px solid var(--border-on-dark); }
     .logobar-grid {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: minmax(170px, 230px) 1fr;
       gap: 48px;
       align-items: center;
     }
@@ -204,76 +446,147 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-muted-dark);
-      line-height: 2;
-      white-space: nowrap;
+      line-height: 1.65;
+      max-width: 220px;
     }
     .logo-marquee .logo-slot {
-      width: 96px;
-      height: 28px;
-      border: 1px dashed var(--border-on-dark);
+      width: clamp(190px, 21vw, 300px);
+      height: 78px;
       border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted-dark);
       flex-shrink: 0;
+      padding: 8px 20px;
+      opacity: 0.94;
       transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
     }
+    .logo-marquee .logo-slot img {
+      display: block;
+      max-width: 100%;
+      max-height: 62px;
+      object-fit: contain;
+    }
     .logo-marquee .logo-slot:hover { opacity: 1; transform: scale(1.06); }
-    .logo-marquee { opacity: 0.6; }
+    .logo-marquee { opacity: 0.82; }
     @media (max-width: 768px) {
       .logobar-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
     /* ---------- 3 · PAIN ENUMERATION + AVI CREDENTIAL (cream) ---------- */
-    .pain { padding: 132px 0 126px; }
-    .pain .wrap { max-width: 1080px; }
-    .pain-opener {
-      text-align: center;
-      max-width: 840px;
-      margin: 0 auto 58px;
+    .pain { padding: 118px 0 112px; }
+    .pain .wrap { max-width: 1180px; }
+    .pain-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: clamp(28px, 4.8vw, 64px);
+      padding: clamp(18px, 2.2vw, 28px);
+      border: 1px solid rgba(26, 26, 26, 0.10);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.22)),
+        rgba(245, 239, 229, 0.72);
+      box-shadow: 0 34px 110px -80px rgba(26, 26, 26, 0.62);
+    }
+    .pain-collage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      aspect-ratio: 1;
+      align-self: center;
+      gap: 8px;
+      background: rgba(26, 26, 26, 0.06);
+      padding: 8px;
+    }
+    .pain-collage figure {
+      margin: 0;
+      min-width: 0;
+      overflow: hidden;
+      background: rgba(26, 26, 26, 0.08);
+      border: 1px solid rgba(26, 26, 26, 0.10);
+    }
+    .pain-collage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.92) contrast(1.05) saturate(0.72);
+      transition: transform 0.7s var(--ease-out), filter 0.7s var(--ease-out);
+    }
+    .pain-collage figure:hover img {
+      transform: scale(1.035);
+      filter: grayscale(0.72) contrast(1.04) saturate(0.86);
+    }
+    .pain-collage figure:nth-child(1) img,
+    .pain-collage figure:nth-child(5) img,
+    .pain-collage figure:nth-child(8) img {
+      object-position: center top;
+    }
+    .pain-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: stretch;
+      min-width: 0;
+      padding: clamp(26px, 4vw, 56px) clamp(12px, 2vw, 34px);
+    }
+    .pain-layout .pain-opener {
+      max-width: 100% !important;
+      margin: 0 0 34px !important;
     }
     .pain-opener .small {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-style: normal;
-      font-size: clamp(20px, 2vw, 26px);
+      font-size: clamp(42px, 4.5vw, 62px) !important;
+      font-weight: 600 !important;
+      line-height: 0.95 !important;
+      letter-spacing: -0.055em !important;
+      text-align: left !important;
+      text-transform: none !important;
       color: var(--text-dark);
-      margin: 0 0 20px;
-      letter-spacing: -0.005em;
+      margin: 0 0 18px !important;
     }
     .pain-opener .small .counter {
-      color: var(--cta);
-      font-weight: 500;
+      color: var(--accent-rust);
+      font-weight: 600;
       font-style: normal;
-      font-size: 1.25em;
+      font-size: inherit !important;
     }
     .pain-opener h2 {
       font-family: var(--font-serif);
-      font-size: clamp(54px, 7vw, 86px);
-      color: var(--accent-amber);
-      letter-spacing: -0.03em;
-      line-height: 0.98;
-      font-weight: 600;
-      margin: 0 0 34px;
+      font-size: clamp(28px, 2.7vw, 38px) !important;
+      color: var(--text-dark) !important;
+      letter-spacing: -0.04em !important;
+      line-height: 1.02 !important;
+      font-weight: 600 !important;
+      margin: 0 0 26px !important;
+      text-align: left !important;
     }
-    .pain-opener h2 .line { display: block; white-space: nowrap; }
+    .pain-opener h2 .line {
+      display: block !important;
+      white-space: normal !important;
+    }
+    .pain-layout .pain-opener h2 .line + .line::before {
+      content: none !important;
+    }
+    .pain-layout .pain-opener .accent-word {
+      color: var(--accent-rust) !important;
+    }
     .pain-opener .sub {
       font-family: var(--font-serif);
-      font-size: clamp(24px, 2.8vw, 38px);
-      font-weight: 400;
-      line-height: 1.28;
-      letter-spacing: -0.012em;
-      max-width: 760px;
-      margin: 0 auto 32px;
-      color: var(--text-dark);
+      font-size: clamp(18px, 1.65vw, 23px) !important;
+      font-weight: 400 !important;
+      line-height: 1.38 !important;
+      letter-spacing: -0.012em !important;
+      max-width: 540px !important;
+      margin: 0 !important;
+      color: var(--text-dark) !important;
+      text-align: left !important;
     }
     .pain-opener .sub em {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.94em;
+      display: inline !important;
+      margin-top: 0 !important;
+      font-size: 1em !important;
       font-style: normal;
       color: var(--accent-amber);
       font-weight: 500;
@@ -286,10 +599,10 @@
     }
     .pain-cta {
       display: grid;
-      justify-items: center;
+      justify-items: start;
       gap: 12px;
-      margin-top: 42px;
-      text-align: center;
+      margin-top: 0;
+      text-align: left;
     }
     .pain-cta .micro {
       color: var(--text-muted-light);
@@ -297,54 +610,32 @@
       font-size: 13px;
       font-weight: 700;
     }
-    .pain-proof-card {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: clamp(28px, 4vw, 44px);
-      border: 1px solid var(--border-on-cream);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.28);
-      box-shadow: 0 26px 80px -62px rgba(26, 26, 26, 0.55);
-      text-align: center;
-    }
-    .pain-proof-card .proof-kicker {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent-rust);
-      margin: 0 0 18px;
-    }
-    .pain-proof-card p {
-      font-family: var(--font-serif);
-      font-size: clamp(20px, 2.2vw, 26px);
-      line-height: 1.55;
-      font-style: normal;
-      color: var(--text-dark);
-      margin: 0;
-    }
-    .proof-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 30px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-on-cream);
-    }
-    .proof-strip span {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted-light);
+    @media (max-width: 920px) {
+      .pain-layout {
+        grid-template-columns: 1fr;
+      }
+      .pain-collage {
+        max-width: 620px;
+        width: 100%;
+        justify-self: center;
+      }
+      .pain-copy {
+        padding: clamp(18px, 4vw, 34px) clamp(8px, 2vw, 18px) clamp(14px, 2vw, 24px);
+      }
     }
     @media (max-width: 700px) {
-      .pain-proof-card { text-align: left; }
-      .proof-strip { grid-template-columns: 1fr; gap: 10px; }
+      .pain { padding: 82px 0 86px; }
+      .pain-collage {
+        gap: 6px;
+        padding: 6px;
+      }
     }
     @media (max-width: 420px) {
+      .pain-layout { padding: 12px; }
+      .pain-collage {
+        gap: 6px;
+        padding: 6px;
+      }
       .pain-opener h2 { font-size: 38px; letter-spacing: -0.018em; }
     }
 
@@ -639,6 +930,9 @@
       object-fit: cover;
       display: block;
     }
+    .testimonial-avatar img.avatar-jamil {
+      object-position: center 18%;
+    }
     .testimonial-avatar .initials {
       font-family: var(--font-serif);
       font-size: 13px;
@@ -656,35 +950,97 @@
     }
 
     /* ---------- 10 · WHAT IS THE DELIBERATE PAUSE? (cream) ---------- */
-    .definition { padding: 140px 0 96px; }
-    .definition .wrap { max-width: 1100px; }
+    .definition {
+      padding: 140px 0 112px;
+      background:
+        radial-gradient(circle at 75% 28%, rgba(228, 208, 174, 0.14), transparent 30%),
+        linear-gradient(135deg, #8A8372 0%, #706457 48%, #5D5148 100%) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .definition::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 246, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 246, 0.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 72% 42%, black, transparent 68%);
+      opacity: 0.5;
+    }
+    .definition .wrap {
+      max-width: 1180px;
+      position: relative;
+      z-index: 1;
+    }
     .definition-grid {
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 80px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 84px;
       align-items: center;
+    }
+    .definition-copy {
+      max-width: 520px;
     }
     .definition h2 {
       font-size: clamp(36px, 4.4vw, 56px);
       margin-bottom: 32px;
       letter-spacing: -0.022em;
       line-height: 1.05;
+      color: var(--text-cream);
     }
     .definition p {
       font-size: clamp(16px, 1.3vw, 18px);
       line-height: 1.65;
-      color: var(--text-muted-light);
+      color: rgba(255, 255, 246, 0.78);
       margin: 0 0 16px;
       max-width: 480px;
     }
-    .definition p:last-child { color: var(--text-dark); font-weight: 500; }
+    .definition p:last-child { color: var(--text-cream); font-weight: 600; }
     .mechanism-slot {
-      aspect-ratio: 4 / 3;
-      background: rgba(26, 26, 26, 0.04);
-      border: 1px solid rgba(255,255,246,0.14);
-      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 246, 0.08), rgba(255, 255, 246, 0.03)),
+        rgba(31, 30, 25, 0.18);
+      border: 1px solid rgba(255, 255, 246, 0.16);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(17, 17, 0, 0.16);
+      box-shadow: 0 34px 110px rgba(17, 17, 0, 0.28);
+      padding: 18px;
+    }
+    .mechanism-topline,
+    .mechanism-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 246, 0.64);
+    }
+    .mechanism-topline span:last-child {
+      color: var(--accent-amber-bright);
+    }
+    .mechanism-figure {
+      margin: 18px 0;
+      aspect-ratio: 4 / 3;
+      border: 1px solid rgba(255, 255, 246, 0.14);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: rgba(17, 17, 0, 0.10);
+    }
+    .mechanism-figure::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 63% 38%, rgba(228, 208, 174, 0.18), transparent 24%),
+        linear-gradient(180deg, transparent 40%, rgba(31, 30, 25, 0.18));
+      pointer-events: none;
     }
     .mechanism-slot img {
       width: 100%;
@@ -692,8 +1048,41 @@
       object-fit: cover;
       display: block;
     }
+    .mechanism-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255, 255, 246, 0.14);
+      padding-top: 16px;
+    }
+    .mechanism-step {
+      display: grid;
+      gap: 8px;
+      color: rgba(255, 255, 246, 0.48);
+    }
+    .mechanism-step strong {
+      font-size: clamp(24px, 3.2vw, 44px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--accent-amber-bright);
+      text-transform: none;
+    }
+    .mechanism-step span {
+      font-size: 10px;
+      line-height: 1.35;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
     @media (max-width: 900px) {
-      .definition-grid { grid-template-columns: 1fr; gap: 40px; }
+      .definition-grid { grid-template-columns: 1fr; gap: 44px; }
+      .definition-copy { max-width: 680px; }
+      .mechanism-slot { max-width: 620px; }
+    }
+    @media (max-width: 600px) {
+      .definition { padding: 88px 0 72px; }
+      .mechanism-slot { padding: 12px; border-radius: 10px; }
+      .mechanism-topline { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mechanism-footer { gap: 10px; }
+      .mechanism-step strong { font-size: 30px; }
     }
 
     /* ---------- 12 · I'M AVI (cream) — wired to /images/avi-peer.jpg ---------- */
@@ -801,20 +1190,55 @@
          1 · HERO (dark) — full-bleed video, headline OVERLAID
          ============================================================ -->
     <section class="hero theme-dark" aria-labelledby="hero-headline">
-      <!-- Full-bleed video background. When the .mp4 lands, it auto-plays muted/looping. -->
       <div class="hero-video-bg" role="presentation" aria-hidden="true">
-        <!-- <video autoplay muted loop playsinline poster="images/hero-poster.jpg" src="videos/hero.mp4"></video> -->
         <span class="hero-video-tag" aria-hidden="true"></span>
       </div>
 
-      <!-- Overlay content — sits on top of video, lower-left -->
       <div class="hero-content">
-        <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
-        <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
+        <div class="hero-copy">
+          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
 
-        <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
-          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+          <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+          </div>
         </div>
+
+        <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
+          <span class="eyebrow">Essay preview</span>
+          <button class="hero-featured-essay" type="button" data-popup-trigger aria-label="Preview The Unicorn Trap and subscribe">
+            <span class="hero-featured-image" aria-hidden="true">
+              <img src="images/essays/the-unicorn-trap-cover.webp" alt="" loading="eager" />
+            </span>
+            <span class="hero-read-kicker">Featured essay</span>
+            <strong>The Unicorn Trap.</strong>
+            <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
+          </button>
+          <div class="hero-mini-essays" aria-label="More essays">
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Low Status Moat and subscribe">
+              <img src="images/essays/the-low-status-moat-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">Low Status Moat.</span>
+                <span class="hero-mini-dek">The work nobody photographs is the work that compounds.</span>
+              </span>
+            </button>
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Does happiness feel different and subscribe">
+              <img src="images/essays/does-happiness-feel-different-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">Does happiness feel different?</span>
+                <span class="hero-mini-dek">Notes on contentment, winning, and what actually lasts.</span>
+              </span>
+            </button>
+            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview When success still feels empty and subscribe">
+              <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="" loading="eager" />
+              <span class="hero-mini-copy">
+                <span class="hero-mini-title">When success still feels empty.</span>
+                <span class="hero-mini-dek">The hollow feeling after the exit nobody warns founders about.</span>
+              </span>
+            </button>
+          </div>
+          <span class="hero-preview-note">Subscribe to read the full Monday letter.</span>
+        </aside>
       </div>
 
       <span class="hero-scroll-cue" aria-hidden="true">Scroll ↓</span>
@@ -823,22 +1247,24 @@
     <!-- ============================================================
          2 · LOGO BAR (dark) — labels left, infinite marquee right
          ============================================================ -->
-    <section class="logobar theme-dark" aria-label="Press and supporters">
+    <section class="logobar theme-dark" aria-label="Reader ecosystem">
       <div class="wrap">
         <div class="logobar-grid">
-          <div class="logobar-labels" data-scroll-fx="fade-right">
-            READ BY FOUNDERS<br />BACKED BY
-          </div>
+          <div class="logobar-labels" data-scroll-fx="fade-right">Read across the startup ecosystem</div>
           <div class="marquee logo-marquee" data-scroll-fx="fade-left" aria-hidden="true">
             <div class="marquee-track">
-              <div class="logo-slot">Logo 1</div>
-              <div class="logo-slot">Logo 2</div>
-              <div class="logo-slot">Logo 3</div>
-              <div class="logo-slot">Logo 4</div>
-              <div class="logo-slot">Logo 5</div>
-              <div class="logo-slot">Logo 6</div>
-              <div class="logo-slot">Logo 7</div>
-              <div class="logo-slot">Logo 8</div>
+              <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="Kalaari" /></div>
+              <div class="logo-slot"><img src="images/logos/inmobi.svg" alt="InMobi" /></div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="CRED" /></div>
+              <div class="logo-slot"><img src="images/logos/z47.svg" alt="Z47, formerly Matrix Partners India" /></div>
+              <div class="logo-slot"><img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" /></div>
+              <div class="logo-slot"><img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" /></div>
+              <div class="logo-slot"><img src="images/logos/kalaari.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/inmobi.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/cred.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/z47.svg" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/alpha-wave-global.png" alt="" /></div>
+              <div class="logo-slot"><img src="images/logos/bharat-innovation-fund.png" alt="" /></div>
             </div>
           </div>
         </div>
@@ -846,27 +1272,34 @@
     </section>
 
     <!-- ============================================================
-         3 · PAIN ENUMERATION + AVI CREDENTIAL (cream)
+         3 · PAIN ENUMERATION (cream)
          ============================================================ -->
-    <section class="pain theme-cream" aria-label="Pain enumeration and Avi credential">
+    <section class="pain theme-cream" aria-label="Founder performance reminder">
       <div class="wrap">
-        <div class="pain-opener">
-          <p class="small" data-scroll-fx><span class="counter" data-counter="9">0</span> out of 10 startups fail.</p>
-          <h2 data-scroll-fx="fade-up-lg"><span class="line">But <span class="accent-word">yours</span></span><span class="line">doesn't have to.</span></h2>
-          <p class="sub" data-scroll-fx style="--fx-delay: 0.15s;">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
-        </div>
-        <article class="pain-proof-card" data-scroll-fx>
-          <p class="proof-kicker">Avi's field note</p>
-          <p>I built CreditVidya to 740 people and sold it to CRED. The company looked like proof. The body told another story: a slipped disc, then a stroke. I rebuilt myself on presence, stillness, and dropping the ego.</p>
-          <div class="proof-strip" aria-label="Avi background">
-            <span>CreditVidya</span>
-            <span>740 people</span>
-            <span>Sold to CRED</span>
+        <div class="pain-layout" data-scroll-fx>
+          <div class="pain-collage" aria-label="Founder energy image grid">
+            <figure><img src="images/avi/avi-portrait-warm.png" alt="Avi smiling while speaking to an audience" loading="lazy" /></figure>
+            <figure><img src="images/avi/about-hero-speaking.png" alt="Avi speaking to a room of founders" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-practice-integration.png" alt="Avi in a guided practice session" loading="lazy" /></figure>
+            <figure><img src="images/testimonial-riya.jpg" alt="Founder portrait placeholder" loading="lazy" /></figure>
+            <figure><img src="images/avi/popup-avi-portrait.png" alt="Avi smiling in a warm portrait" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-young-origin.png" alt="Avi as a child" loading="lazy" /></figure>
+            <figure><img src="images/avi-cinematic.jpg" alt="Avi smiling in a blazer" loading="lazy" /></figure>
+            <figure><img src="images/avi-peer.jpg" alt="Avi smiling in a studio portrait" loading="lazy" /></figure>
+            <figure><img src="images/avi/avi-scooter-smile.webp" alt="Avi smiling on a scooter" loading="lazy" /></figure>
           </div>
-        </article>
-        <div class="pain-cta" data-scroll-fx>
-          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
-          <p class="micro">The Pause is the highest leverage performance move in a founder's day.</p>
+
+          <div class="pain-copy">
+            <div class="pain-opener">
+              <p class="small"><span class="counter">9</span> out of 10 startups fail.</p>
+              <h2><span class="line">But <span class="accent-word">yours</span></span> <span class="line">doesn't have to.</span></h2>
+              <p class="sub">Your physical and mental health were never the price of winning. <em>They are how you win.</em></p>
+            </div>
+            <div class="pain-cta">
+              <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/" rel="noopener">Read the essays <span class="arrow">→</span></a>
+              <p class="micro">The Pause is the highest leverage performance move in a founder's day.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -970,7 +1403,7 @@
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.05s;">
             <blockquote>"Finally sleeping through the night."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar"><span class="initials">J</span></div>
+              <div class="testimonial-avatar"><img class="avatar-jamil" src="images/testimonial-jamil.webp" alt="Jamil" data-initials="J" onerror="window.tdpAvatarFallback(this)" /></div>
               <div>
                 <div class="name">Jamil</div>
                 <div class="role">Founder, Camel Design</div>
@@ -1000,7 +1433,7 @@
           <article class="testimonial" data-scroll-fx style="--fx-delay: 0.35s;">
             <blockquote>"I stopped checking the phone after 9pm. The world keeps spinning. I sleep. Mornings finally belong to me."</blockquote>
             <div class="testimonial-author">
-              <div class="testimonial-avatar"><img src="images/testimonial-pravesh.jpg" alt="Pravesh Saraf" data-initials="PS" onerror="window.tdpAvatarFallback(this)" /></div>
+              <div class="testimonial-avatar"><img src="images/testimonial-pravesh.svg" alt="Pravesh Saraf" data-initials="PS" onerror="window.tdpAvatarFallback(this)" /></div>
               <div>
                 <div class="name">Pravesh Saraf</div>
                 <div class="role">Director, Barmy Wines</div>
@@ -1037,7 +1470,7 @@
     <section class="definition theme-cream" aria-labelledby="definition-headline">
       <div class="wrap">
         <div class="definition-grid">
-          <div data-scroll-fx="fade-right">
+          <div class="definition-copy" data-scroll-fx="fade-right">
             <h2 id="definition-headline">What is The Deliberate Pause?</h2>
             <p>Something happens. You react. Most of life happens so fast there is no space between the two.</p>
             <p>The Deliberate Pause is that space.</p>
@@ -1046,7 +1479,27 @@
             <p>The pause is the founder psychology tool nobody built for you. So I'm writing it down.</p>
           </div>
           <div class="mechanism-slot" data-scroll-fx="fade-left" role="img" aria-label="Mechanism illustration: brain, breath, and body">
-            <img src="images/pause-mechanism.png" alt="Abstract mechanism illustration for The Deliberate Pause" loading="lazy" />
+            <div class="mechanism-topline">
+              <span>Brain · breath · body</span>
+              <span>The space between</span>
+            </div>
+            <div class="mechanism-figure">
+              <img src="images/pause-mechanism.png" alt="Abstract mechanism illustration for The Deliberate Pause" loading="lazy" />
+            </div>
+            <div class="mechanism-footer" aria-hidden="true">
+              <div class="mechanism-step">
+                <strong>01</strong>
+                <span>Notice the signal</span>
+              </div>
+              <div class="mechanism-step">
+                <strong>02</strong>
+                <span>Create the space</span>
+              </div>
+              <div class="mechanism-step">
+                <strong>03</strong>
+                <span>Choose the response</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1059,8 +1512,8 @@
       <div class="wrap">
         <div class="avi-intro-grid">
           <div class="avi-portrait parallax-wrap" data-scroll-fx="zoom">
-            <img class="parallax-img" data-parallax="0.08" src="images/avi-peer.jpg" alt="Avi Agarwal — environmental, peer-coded portrait" loading="lazy" onerror="this.style.display='none'" />
-            <div class="placeholder">environmental photo of Avi<br />peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi-peer.jpg</code></div>
+            <img class="parallax-img" data-parallax="0.08" src="images/avi/avi-portrait-warm.png" alt="Avi Agarwal — environmental, peer-coded portrait" loading="lazy" onerror="this.style.display='none'" />
+            <div class="placeholder">environmental photo of Avi<br />peer-coded · NOT stage / studio<br /><br />drop file: <code>images/avi/avi-portrait-warm.png</code></div>
           </div>
           <div data-scroll-fx="fade-left">
             <h2 id="avi-intro-headline">I'm Avi.</h2>
@@ -1086,7 +1539,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="logo">The Deliberate Pause</div>
+          <a class="footer-brand-mark" href="/" aria-label="The Deliberate Pause home"><img src="images/logo-light.svg" alt="The Deliberate Pause" /></a>
           <div class="tagline">Mental training for Indian entrepreneurs.</div>
           <p>Essays on founder psychology, yogic philosophy, and better decisions under pressure.</p>
         </div>
@@ -1098,10 +1551,7 @@
       </div>
 
       <div class="footer-cols">
-        <div>
-          <h5>Read</h5>
-          <ul><li><a href="read.html">Essays</a></li><li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li><li><a href="read.html#categories">Essay paths</a></li></ul>
-        </div>
+        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li></ul></div>
         <div>
           <h5>Essay paths</h5>
           <ul><li><a href="read.html#categories">Burnout & Identity</a></li><li><a href="read.html#categories">Failure & Rejection</a></li><li><a href="read.html#categories">Ambition & Success</a></li><li><a href="read.html#categories">Decision Clarity</a></li><li><a href="read.html#categories">Attention & Recovery</a></li></ul>
@@ -1110,18 +1560,16 @@
           <h5>FAQ</h5>
           <ul><li><a href="faq.html">Questions</a></li><li><a href="faq.html#glossary">Glossary</a></li><li><a href="faq.html#sources">Sources</a></li></ul>
         </div>
-        <div>
-          <h5>About</h5>
-          <ul><li><a href="about.html">About Avi</a></li><li><a href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays</a></li></ul>
-        </div>
+        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li></ul></div>
       </div>
 
       <div class="footer-bottom">
         <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi Agarwal</div>
+        <div class="footer-socials" aria-label="Social links"><a href="https://www.instagram.com/pausewithavi/" aria-label="Instagram" rel="noopener"><img src="images/social-instagram.svg" alt="" /></a><a href="https://x.com/ThePauseClub" aria-label="X" rel="noopener"><img src="images/social-twitter.svg" alt="" /></a><a href="https://www.linkedin.com/in/agarwal86/" aria-label="LinkedIn" rel="noopener"><img src="images/social-linkedin.svg" alt="" /></a></div>
       </div>
     </div>
   </footer>
 
-  <script src="scroll-fx.js?v=phase1-20260525" defer></script>
+  <script src="scroll-fx.js?v=popup-20260605" defer></script>
 </body>
 </html>

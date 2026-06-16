@@ -87,7 +87,6 @@
             <p>Join founders training mental models for pressure, uncertainty, and better decisions. Mondays at 11:11.</p>
             <div class="tdp-popup__actions">
               <a class="popup-primary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-              <a class="popup-secondary" href="https://thedeliberatepause.substack.com/" rel="noopener">Read essays <span class="arrow">→</span></a>
             </div>
           </div>
           <div class="tdp-popup__image" aria-hidden="true"></div>
@@ -100,8 +99,8 @@
   const popupDismissedKey = 'tdp-popup-dismissed';
   const forcePopup = new URLSearchParams(window.location.search).has('popup') || window.location.hash === '#popup';
   let popupTimer = null;
-  function openPopup() {
-    if (sessionStorage.getItem(popupDismissedKey) === '1') return;
+  function openPopup(options = {}) {
+    if (!options.ignoreDismissed && sessionStorage.getItem(popupDismissedKey) === '1') return;
     if (popup.classList.contains('is-open') || document.body.classList.contains('menu-open')) return;
     popup.classList.add('is-open');
     popup.setAttribute('aria-hidden', 'false');
@@ -119,7 +118,7 @@
     el.addEventListener('click', (event) => {
       event.preventDefault();
       sessionStorage.removeItem(popupDismissedKey);
-      openPopup();
+      openPopup({ ignoreDismissed: true });
     });
   });
   document.addEventListener('keydown', (e) => {
@@ -127,9 +126,9 @@
   });
   if (forcePopup) {
     sessionStorage.removeItem(popupDismissedKey);
-    popupTimer = window.setTimeout(openPopup, 350);
+    popupTimer = window.setTimeout(() => openPopup({ ignoreDismissed: true }), 350);
   } else if (!sessionStorage.getItem(popupDismissedKey)) {
-    popupTimer = window.setTimeout(openPopup, 9000);
+    popupTimer = window.setTimeout(openPopup, 4500);
   }
   window.addEventListener('beforeunload', () => {
     if (popupTimer) window.clearTimeout(popupTimer);
