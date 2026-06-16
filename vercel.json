@@ -28,6 +28,11 @@
       "permanent": true
     },
     {
+      "source": "/read/welcome-to-the-deliberate-pause",
+      "destination": "/articles/welcome-to-the-deliberate-pause",
+      "permanent": true
+    },
+    {
       "source": "/read/the-cost-of-becoming-a-people-pleaser",
       "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
       "permanent": true
@@ -93,6 +98,11 @@
       "permanent": true
     },
     {
+      "source": "/read/welcome-to-the-deliberate-pause/",
+      "destination": "/articles/welcome-to-the-deliberate-pause",
+      "permanent": true
+    },
+    {
       "source": "/read/the-cost-of-becoming-a-people-pleaser/",
       "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
       "permanent": true
@@ -140,16 +150,6 @@
     {
       "source": "/read/rejection-hurts-but-dont-let-it-be-painful/",
       "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
-      "permanent": true
-    },
-    {
-      "source": "/read/welcome-to-the-deliberate-pause",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/read/welcome-to-the-deliberate-pause/",
-      "destination": "/",
       "permanent": true
     },
     {
