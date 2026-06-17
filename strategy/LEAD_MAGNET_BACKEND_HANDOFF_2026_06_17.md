@@ -229,18 +229,6 @@ or set it to:
 data-kit-placeholder="false"
 ```
 
-## Things Avi Needs To Confirm
-
-Before this is fully wired, we need:
-
-1. Final playbook PDF or asset.
-2. Whether Kit or Substack is the main subscriber list.
-3. Kit tag name.
-4. Kit sequence or form name.
-5. Whether Substack sync is needed immediately.
-6. Whether Webflow native forms can post directly to the Make webhook, or if we need a small custom embed.
-7. Final success state: inline message, thank-you page, or direct download.
-
 ## Useful References Checked
 
 - Make custom webhooks can create a URL that forms can post to.
