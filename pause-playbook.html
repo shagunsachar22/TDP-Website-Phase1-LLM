@@ -3,18 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Pause Playbook - The Deliberate Pause</title>
-  <meta name="description" content="Get The Pause Playbook, a short reset for founders and entrepreneurs building under pressure." />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://thedeliberatepause.com/pause-playbook" />
+  <title>Free Pause Playbook for Founders | The Deliberate Pause</title>
+  <meta name="description" content="Get The Pause Playbook, a short founder reset for pressure, decision clarity, and recovering before you react." />
+  <meta name="author" content="Avi Agarwal" />
+  <link rel="canonical" href="https://www.thedeliberatepause.com/pause-playbook" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="The Pause Playbook - The Deliberate Pause" />
-  <meta property="og:description" content="A short reset for founders and entrepreneurs building under pressure." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.thedeliberatepause.com/pause-playbook" />
+  <meta property="og:title" content="Free Pause Playbook for Founders | The Deliberate Pause" />
+  <meta property="og:description" content="A short reset for founders who need pressure to become clarity, not reactivity." />
+  <meta property="og:image" content="https://www.thedeliberatepause.com/images/avi/home-speaking-wide.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Pause Playbook for Founders | The Deliberate Pause" />
+  <meta name="twitter:description" content="A short reset for founders who need pressure to become clarity, not reactivity." />
+  <meta name="twitter:image" content="https://www.thedeliberatepause.com/images/avi/home-speaking-wide.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "The Pause Playbook",
+    "url": "https://www.thedeliberatepause.com/pause-playbook",
+    "description": "A short founder reset for pressure, decision clarity, and recovering before you react.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "The Deliberate Pause",
+      "url": "https://www.thedeliberatepause.com/"
+    },
+    "about": [
+      "founder psychology",
+      "decision clarity",
+      "founder recovery",
+      "pressure management"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Avi Agarwal",
+      "url": "https://www.thedeliberatepause.com/about"
+    },
+    "potentialAction": {
+      "@type": "SubscribeAction",
+      "target": "https://www.thedeliberatepause.com/pause-playbook"
+    }
+  }
+  </script>
   <style>
     .lead-hero {
       min-height: calc(100vh - 76px);
@@ -51,6 +85,7 @@
       background: rgba(245, 239, 229, 0.045);
       box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
       padding: clamp(26px, 3vw, 38px);
+      border-radius: 8px;
     }
     .lead-card h2 {
       color: var(--text-cream);
@@ -81,6 +116,7 @@
       padding-top: 22px;
       border-top: 1px solid rgba(245, 239, 229, 0.14);
     }
+    .lead-download[hidden] { display: none; }
     .lead-download .btn {
       width: 100%;
       justify-content: center;
@@ -107,6 +143,23 @@
       line-height: 1.62;
       margin: 0;
     }
+    .lead-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .lead-proof span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(245, 239, 229, 0.16);
+      border-radius: 999px;
+      color: rgba(245, 239, 229, 0.72);
+      font-size: 13px;
+      font-weight: 600;
+    }
     @media (max-width: 860px) {
       .lead-grid,
       .lead-checklist-grid {
@@ -120,23 +173,26 @@
   </style>
 </head>
 <body>
-  <header class="nav theme-dark">
+  <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="The Deliberate Pause home">
-        <img src="images/logo-light.svg" alt="The Deliberate Pause" />
+        <img class="nav-logo-img" src="images/logo.svg" alt="" onerror="this.style.display='none'" />
+        <span class="nav-logo-text">The Deliberate Pause</span>
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <ul>
-          <li><a href="read.html">Read</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="about.html">About</a></li>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/letters">Letters</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
       <a href="https://thedeliberatepause.substack.com/subscribe" class="btn btn-magnetic nav-cta" rel="noopener">
         <span class="label-long">Subscribe</span>
         <span class="label-short">Subscribe</span>
+        <span class="arrow">-&gt;</span>
       </a>
-      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
+      <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">=</button>
     </div>
   </header>
 
@@ -146,15 +202,20 @@
         <div class="lead-copy">
           <span class="eyebrow">Free founder reset</span>
           <h1 id="lead-title">The Pause Playbook.</h1>
-          <p class="lead">A short field guide for catching pressure before it turns into reaction.</p>
+          <p class="lead">A short reset for catching pressure before it turns into reaction.</p>
           <p class="lead-note">Use it before a hard conversation, a Monday sprint, a board update, or any moment where speed is starting to cost you clarity.</p>
+          <div class="lead-proof" aria-label="What the playbook helps with">
+            <span>Pressure reset</span>
+            <span>Decision clarity</span>
+            <span>Founder recovery</span>
+          </div>
         </div>
 
         <aside class="lead-card" aria-label="Pause Playbook signup">
           <h2>Get the playbook.</h2>
-          <p>Drop your email and we will send you the download link. You will also get The Deliberate Pause Monday letter.</p>
+          <p>Drop your email and we will send you the playbook. You will also get The Deliberate Pause Monday Letter.</p>
 
-          <!-- Replace this placeholder form with the real Kit embed or update the form action once available. -->
+          <!-- Replace action with the live Kit/backend endpoint when Avi shares it. Tracking is already wired. -->
           <form
             class="form-row"
             id="kit-lead-form"
@@ -169,7 +230,7 @@
 
           <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
 
-          <div class="lead-download">
+          <div class="lead-download" id="lead-download-panel" hidden>
             <a
               class="btn btn-ghost"
               href="downloads/pause-playbook-placeholder.pdf"
@@ -177,7 +238,7 @@
               data-download-link
               data-event-location="pause_playbook_hero"
             >
-              Download the playbook <span class="arrow">→</span>
+              Download the playbook <span class="arrow">-&gt;</span>
             </a>
             <p class="form-disclaimer">No spam. Just the occasional useful pause.</p>
           </div>
@@ -212,24 +273,25 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="footer-brand-mark" href="/" aria-label="The Deliberate Pause home"><img src="images/logo-light.svg" alt="The Deliberate Pause" /></a>
-          <div class="tagline">Mental training for Indian entrepreneurs.</div>
-          <p>Essays on founder psychology, yogic philosophy, and better decisions under pressure.</p>
+          <div class="tagline">The mental game for founders.</div>
+          <p>Founder psychology for entrepreneurs building without burning out, losing clarity, or turning output into identity.</p>
         </div>
         <div class="footer-newsletter">
-          <h4>Get the Monday letter.</h4>
-          <p class="sub">One essay every Monday at 11:11.</p>
-          <a class="btn" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+          <h4>Get the Monday Letter</h4>
+          <p class="sub">A weekly note on founder resilience, recovery, and building well.</p>
+          <a class="btn" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">-&gt;</span></a>
         </div>
       </div>
       <div class="footer-cols">
-        <div><h5>Read</h5><ul><li><a href="read.html">Essays</a></li></ul></div>
-        <div><h5>Essay paths</h5><ul><li><a href="read.html#categories">Burnout & Identity</a></li><li><a href="read.html#categories">Failure & Rejection</a></li><li><a href="read.html#categories">Ambition & Success</a></li><li><a href="read.html#categories">Decision Clarity</a></li><li><a href="read.html#categories">Attention & Recovery</a></li></ul></div>
-        <div><h5>FAQ</h5><ul><li><a href="faq.html">Questions</a></li><li><a href="faq.html#glossary">Glossary</a></li><li><a href="faq.html#sources">Sources</a></li></ul></div>
-        <div><h5>About</h5><ul><li><a href="about.html">About Avi</a></li></ul></div>
+        <div><h5>Articles</h5><ul><li><a href="/articles">All articles</a></li><li><a href="/articles/category/founder-burnout">Founder Burnout</a></li><li><a href="/articles/category/founder-resilience">Founder Resilience</a></li><li><a href="/articles/category/founder-loneliness">Founder Loneliness</a></li><li><a href="/articles/category/overthinking-anxiety">Overthinking &amp; Anxiety</a></li><li><a href="/articles/category/performance-recovery">Performance &amp; Recovery</a></li><li><a href="/articles/category/self-worth">Self-worth</a></li></ul></div>
+        <div><h5>Letters</h5><ul><li><a href="/letters">Weekly letters</a></li><li><a href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">Read on Substack</a></li></ul></div>
+        <div><h5>Free tool</h5><ul><li><a href="/pause-playbook">Pause Playbook</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+        <div><h5>Follow</h5><ul><li><a href="https://www.instagram.com/pausewithavi/" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/agarwal86/" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/ThePauseClub" rel="noopener">X</a></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <div>© <span id="year">2026</span> The Deliberate Pause · Founded by Avi Agarwal</div>
+        <div>© <span id="year">2026</span> The Deliberate Pause · Pause Playbook</div>
         <div class="footer-socials" aria-label="Social links"><a href="https://www.instagram.com/pausewithavi/" aria-label="Instagram" rel="noopener"><img src="images/social-instagram.svg" alt="" /></a><a href="https://x.com/ThePauseClub" aria-label="X" rel="noopener"><img src="images/social-twitter.svg" alt="" /></a><a href="https://www.linkedin.com/in/agarwal86/" aria-label="LinkedIn" rel="noopener"><img src="images/social-linkedin.svg" alt="" /></a></div>
+        <ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/contact">Contact</a></li></ul>
       </div>
     </div>
   </footer>
@@ -249,10 +311,11 @@
       var form = document.getElementById('kit-lead-form');
       var status = document.getElementById('lead-status');
       var download = document.querySelector('[data-download-link]');
+      var downloadPanel = document.getElementById('lead-download-panel');
 
       track('kit_form_view', {
         cta_location: 'pause_playbook_hero',
-        lead_magnet: 'pause_playbook_placeholder'
+        lead_magnet: 'pause_playbook'
       });
 
       if (form) {
@@ -262,12 +325,13 @@
           track(isPlaceholder ? 'kit_form_submit_attempt' : 'kit_form_submit', {
             cta_text: 'Send the playbook',
             cta_location: form.dataset.eventLocation || 'pause_playbook_hero',
-            lead_magnet: 'pause_playbook_placeholder'
+            lead_magnet: 'pause_playbook'
           });
 
           if (isPlaceholder) {
             event.preventDefault();
             status.textContent = 'Almost there. Email delivery is being connected; you can use the download link below for now.';
+            if (downloadPanel) downloadPanel.hidden = false;
           }
         });
       }
@@ -277,7 +341,7 @@
           track('lead_magnet_download', {
             cta_text: 'Download the playbook',
             cta_location: download.dataset.eventLocation || 'pause_playbook_hero',
-            lead_magnet: 'pause_playbook_placeholder',
+            lead_magnet: 'pause_playbook',
             destination_url: download.href
           });
         });

@@ -447,24 +447,6 @@
       ]
     },
     {
-      "source": "/pause-playbook",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
-      "source": "/pause-playbook.html",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
       "source": "/downloads/pause-playbook-placeholder.pdf",
       "headers": [
         {
