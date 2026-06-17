@@ -153,6 +153,146 @@
       "permanent": true
     },
     {
+      "source": "/newsletter/perfectionism-is-self-sabotage-in-disguise",
+      "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-unicorn-trap-and-the-road-to-enlightenment",
+      "destination": "/articles/the-unicorn-trap-and-the-road-to-enlightenment",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-low-status-moat-matters",
+      "destination": "/articles/the-low-status-moat-matters",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/welcome-to-the-deliberate-pause",
+      "destination": "/articles/welcome-to-the-deliberate-pause",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-cost-of-becoming-a-people-pleaser",
+      "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/no-means-no-to-hustle-culture",
+      "destination": "/articles/no-means-no-to-hustle-culture",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-false-sense-of-agency",
+      "destination": "/articles/the-false-sense-of-agency",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/your-attention-span-holds-a-secret",
+      "destination": "/articles/your-attention-span-holds-a-secret",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "destination": "/articles/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/my-rejection-experiment-that-can-be-your-breakthrough",
+      "destination": "/articles/my-rejection-experiment-that-can-be-your-breakthrough",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-hidden-cost-of-not-choosing-yourself",
+      "destination": "/articles/the-hidden-cost-of-not-choosing-yourself",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "destination": "/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/fall-in-love-with-2026-sooner-than-later",
+      "destination": "/articles/fall-in-love-with-2026-sooner-than-later",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/rejection-hurts-but-dont-let-it-be-painful",
+      "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/perfectionism-is-self-sabotage-in-disguise/",
+      "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-unicorn-trap-and-the-road-to-enlightenment/",
+      "destination": "/articles/the-unicorn-trap-and-the-road-to-enlightenment",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-low-status-moat-matters/",
+      "destination": "/articles/the-low-status-moat-matters",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/welcome-to-the-deliberate-pause/",
+      "destination": "/articles/welcome-to-the-deliberate-pause",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-cost-of-becoming-a-people-pleaser/",
+      "destination": "/articles/the-cost-of-becoming-a-people-pleaser",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/no-means-no-to-hustle-culture/",
+      "destination": "/articles/no-means-no-to-hustle-culture",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-false-sense-of-agency/",
+      "destination": "/articles/the-false-sense-of-agency",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/your-attention-span-holds-a-secret/",
+      "destination": "/articles/your-attention-span-holds-a-secret",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup/",
+      "destination": "/articles/smart-but-stuck-when-intelligence-alone-falls-short-of-cracking-the-startup",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/my-rejection-experiment-that-can-be-your-breakthrough/",
+      "destination": "/articles/my-rejection-experiment-that-can-be-your-breakthrough",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-hidden-cost-of-not-choosing-yourself/",
+      "destination": "/articles/the-hidden-cost-of-not-choosing-yourself",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/the-market-for-your-honest-opinion-is-bigger-than-you-think/",
+      "destination": "/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/fall-in-love-with-2026-sooner-than-later/",
+      "destination": "/articles/fall-in-love-with-2026-sooner-than-later",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/rejection-hurts-but-dont-let-it-be-painful/",
+      "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
       "source": "/pause",
       "destination": "/faq",
       "permanent": false
