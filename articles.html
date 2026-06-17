@@ -81,10 +81,7 @@
       border-bottom: 1px solid var(--border-on-dark);
     }
     .articles-hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.45fr);
-      gap: clamp(40px, 7vw, 108px);
-      align-items: end;
+      max-width: 1040px;
     }
     .articles-hero h1 {
       max-width: 980px;
@@ -99,26 +96,6 @@
       font-size: clamp(19px, 1.7vw, 25px);
       line-height: 1.45;
     }
-    .articles-side-note {
-      padding: 26px;
-      border: 1px solid var(--border-on-dark);
-      border-radius: 8px;
-      background: rgba(255,255,246,0.045);
-    }
-    .articles-side-note h2 {
-      color: var(--text-cream);
-      font-size: clamp(24px, 2.4vw, 34px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 0 0 14px;
-    }
-    .articles-side-note p {
-      color: var(--text-muted-dark);
-      font-size: 15px;
-      line-height: 1.58;
-      margin: 0;
-    }
-
     .articles-page {
       background: var(--bg-cream);
       color: var(--text-dark);
@@ -289,7 +266,6 @@
       .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 900px) {
-      .articles-hero-grid,
       .featured-article,
       .section-heading,
       .articles-cta-grid {
@@ -334,15 +310,9 @@
     <section class="articles-hero theme-dark">
       <div class="wrap">
         <div class="articles-hero-grid">
-          <div>
-            <span class="eyebrow">Articles</span>
-            <h1>Articles on founder burnout, resilience, and recovery.</h1>
-            <p class="lead">A practical library for founders navigating self-worth, rejection, attention, agency, hustle culture, and the inner work of building well.</p>
-          </div>
-          <aside class="articles-side-note">
-            <h2>For the inner work of building.</h2>
-            <p>Start with the pressure you are carrying today: self-worth, burnout, rejection, attention, or the quiet fear of choosing yourself.</p>
-          </aside>
+          <span class="eyebrow">Articles</span>
+          <h1>Articles on founder burnout, resilience, and recovery.</h1>
+          <p class="lead">A practical library for founders navigating self-worth, rejection, attention, agency, hustle culture, and the inner work of building well.</p>
         </div>
       </div>
     </section>
