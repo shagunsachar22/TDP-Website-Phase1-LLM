@@ -1,46 +1,50 @@
-# Lead Magnet Backend Handoff
+# Lead Magnet Handoff
 
 Date: 2026-06-17
 
-## Decision
+## What We Decided
 
-Use a dedicated lead magnet page at:
+We should keep one proper lead magnet page:
 
 `/pause-playbook`
 
-This keeps the homepage focused on brand positioning while giving us one focused conversion URL for LinkedIn, Instagram, article CTAs, footer CTAs, and any future paid/social traffic.
+This gives us one clean link to use from the homepage, footer, articles, LinkedIn, Instagram, etc.
 
-## Current Frontend Status
+The homepage should still stay focused on the main TDP positioning. The playbook page can do the actual email capture job.
 
-Implemented page:
+## What Exists Right Now
+
+The page is already built here:
 
 `pause-playbook.html`
 
-Live route under Vercel clean URLs:
+The live route should be:
 
 `https://www.thedeliberatepause.com/pause-playbook`
 
-The page currently includes:
+Right now the page has:
 
-- Current TDP header/nav.
-- Current TDP footer.
-- Human-facing lead magnet copy.
-- Email capture form.
-- Success/status state after email submit.
-- Download panel revealed after submit.
-- Tracking events pushed to `window.dataLayer`.
-- Indexable page metadata.
-- `/pause-playbook` included in `sitemap.xml`.
+- the current TDP header and footer
+- lead magnet copy
+- an email form
+- a success message after submit
+- a download panel after submit
+- basic tracking events in `window.dataLayer`
+- page metadata
+- `/pause-playbook` added to `sitemap.xml`
 
-CTA routing keeps both acquisition paths visible:
+CTA setup right now:
 
-- Homepage hero shows `Subscribe` to Substack and `Get the playbook` to `/pause-playbook`.
-- Active public page footers show `Subscribe` to Substack and `Get the playbook` to `/pause-playbook`.
-- Header/nav Subscribe CTAs still point directly to Substack until the Kit/backend endpoint is confirmed.
+- Homepage has both `Subscribe` and `Get the playbook`.
+- Footers have both `Subscribe` and `Get the playbook`.
+- Header Subscribe still goes straight to Substack.
+- `Get the playbook` goes to `/pause-playbook`.
 
 ## Current Form State
 
-The form is intentionally using a placeholder action until the real Kit/backend endpoint is available:
+The form is not connected to Kit or Make yet. That is intentional.
+
+Current form:
 
 ```html
 <form
@@ -53,138 +57,80 @@ The form is intentionally using a placeholder action until the real Kit/backend 
 >
 ```
 
-When the placeholder is active, submit does not send email data to a third party. Instead it:
+Because it is still a placeholder, submitting the form does not send the email anywhere. It only:
 
-- prevents default form submission;
-- pushes a tracking event;
-- shows the user a status message;
-- reveals the playbook download link.
+- stops the default form submit
+- fires a tracking event
+- shows the user a success message
+- reveals the playbook download link
 
-## Tracking Events
+This is fine for now. No point doing the full Kit setup on the static site if we are moving this to Webflow.
 
-The current frontend emits:
+## Tracking
 
-| Event | When | Key Fields |
+The page currently fires these events:
+
+| Event | When | Fields |
 |---|---|---|
-| `kit_form_view` | Page form is shown | `page_path`, `page_title`, `cta_location`, `lead_magnet` |
+| `kit_form_view` | Form is shown | `page_path`, `page_title`, `cta_location`, `lead_magnet` |
 | `kit_form_submit_attempt` | Placeholder form is submitted | `cta_text`, `cta_location`, `lead_magnet` |
-| `kit_form_submit` | Real endpoint form is submitted | Same as above, once placeholder is removed |
+| `kit_form_submit` | Real form is submitted | Same fields, once placeholder is removed |
 | `lead_magnet_download` | Download link is clicked | `cta_text`, `cta_location`, `lead_magnet`, `destination_url` |
 
 Lead magnet value:
 
 `pause_playbook`
 
-Primary CTA location:
+Main CTA location:
 
 `pause_playbook_hero`
 
-## Backend Requirement
+## Backend Plan
 
-To complete the live capture workflow, we need one of the following:
+The cleanest setup later is:
 
-1. Kit embed/form action URL and required field names.
-2. A custom backend endpoint that accepts email and handles Kit/Substack sync.
-3. Confirmation that Substack should receive the email directly instead of Kit.
+`Webflow form -> Make webhook -> Kit -> Substack if needed`
 
-Recommended architecture:
+Make can act as the backend. We do not need to build a custom backend just for this.
 
-- Frontend form submits to Kit or a small backend endpoint.
-- Kit stores the subscriber and applies a lead-magnet tag.
-- Backend/automation syncs the subscriber to Substack if Substack must send the Monday Letter.
-- The page remains the conversion surface; Kit/Substack own delivery and list operations.
+My recommendation:
 
-## Make Endpoint Setup: Webflow/Form -> Make -> Kit -> Substack
+- Kit should be the main place where lead magnet subscribers are stored.
+- Kit should tag these people as playbook subscribers.
+- Kit should send the playbook email or trigger the right sequence.
+- Substack sync should only be added if there is a clean supported way to do it.
+- We should not use unofficial Substack endpoints or hacks.
 
-Make can serve as the "custom backend endpoint" for this flow. In that setup, the site form posts to a Make webhook URL, and Make handles the subscription workflow without us building or hosting a separate backend.
+## Make Setup Notes
 
-Recommended source of truth:
+In Make, create a scenario called something like:
 
-- Kit should be the primary subscriber system for the lead magnet.
-- Substack should remain the newsletter publishing/delivery surface unless Avi decides Kit will send the Monday Letter.
-- Substack sync should be treated as a secondary step, because Substack subscriber-write automation needs to be confirmed inside the actual Substack/Make account. Do not rely on unofficial/private Substack endpoints.
+`TDP - Pause Playbook Signup`
 
-### Make Scenario Shape
+The flow should be:
 
-1. Create a new Make scenario.
-2. Add trigger: `Webhooks` -> `Custom webhook`.
-3. Name it clearly, for example:
+1. Webflow form submits to a Make custom webhook.
+2. Make checks that the email is valid.
+3. Make adds or updates the subscriber in Kit.
+4. Make applies the Kit tag.
+5. Make adds the subscriber to the playbook sequence or form in Kit.
+6. Make tries to sync to Substack only if there is a supported way to do that.
+7. Make sends a success response back to Webflow.
 
-   `TDP - Pause Playbook Signup`
+## Form Fields We Should Send
 
-4. Copy the generated webhook URL.
-5. In Webflow, set the `/pause-playbook` form submit action to that webhook URL, or use a small Webflow embed/custom code form if the native form action is not flexible enough.
-6. Send a test submission from Webflow so Make can detect the fields.
-7. Expected fields:
+From Webflow, the form should send:
 
-   | Field | Required | Notes |
-   |---|---:|---|
-   | `email` or `email_address` | Yes | Normalize to lowercase and trim whitespace in Make. |
-   | `first_name` | Optional | Add later if the final form asks for it. |
-   | `source_page` | Recommended | Example: `/pause-playbook`. |
-   | `cta_location` | Recommended | Example: `pause_playbook_hero`, `footer`, `homepage_hero`. |
-   | `lead_magnet` | Recommended | Use `pause_playbook`. |
-   | `utm_source`, `utm_medium`, `utm_campaign` | Optional | Preserve if available for attribution. |
+| Field | Needed? | Notes |
+|---|---:|---|
+| `email` or `email_address` | Yes | Make should trim it and lowercase it. |
+| `first_name` | Optional | Only if we decide to ask for name. |
+| `source_page` | Useful | Example: `/pause-playbook`. |
+| `cta_location` | Useful | Example: `pause_playbook_hero`, `footer`, `homepage_hero`. |
+| `lead_magnet` | Useful | Use `pause_playbook`. |
+| `utm_source`, `utm_medium`, `utm_campaign` | Optional | Keep these if available. |
 
-### Make Steps
-
-1. Webhook receives the form payload.
-2. Add validation/filter:
-   - email exists;
-   - email contains `@`;
-   - honeypot field is empty if Webflow includes one;
-   - optional: block obvious test domains during production.
-3. Add/Update subscriber in Kit:
-   - Use the native Kit module if available in Make.
-   - If using HTTP instead, use Kit's API to create/upsert the subscriber. Kit's current docs describe `Create a subscriber` as an upsert: new emails are created and existing emails are updated.
-4. Apply Kit tag:
-   - Suggested tag: `lead_magnet_pause_playbook`.
-   - Optional source tags: `source_webflow`, `source_homepage`, `source_footer`.
-   - Kit's API supports tagging subscribers, including by email address, after the subscriber exists.
-5. Add subscriber to Kit sequence/form for delivery:
-   - Preferred delivery: a Kit sequence sends the Pause Playbook link and then the nurture/Monday Letter path.
-   - Alternative delivery: Make immediately sends a transactional email with the PDF link, but Kit sequence delivery is cleaner for analytics and lifecycle.
-6. Substack sync:
-   - First check whether Make has a supported Substack app/module in the workspace.
-   - If yes, add/update the subscriber there after Kit succeeds.
-   - If no supported Substack module/API is available, do not use scraped/private endpoints. Instead:
-     - keep Kit as the captured source of truth;
-     - send internal notification or write a Google Sheet row for new subscribers;
-     - batch import/export to Substack manually until an approved sync path exists.
-7. Add a `Webhook response` module at the end:
-   - success response: `200` with `{ "ok": true }`;
-   - validation failure: `400` with a short error;
-   - downstream failure: `500` or a friendly error response, depending on Webflow UX.
-
-### Error Handling
-
-- If Kit succeeds and Substack fails, do not lose the subscriber. Keep the Kit subscriber/tag and log the Substack failure for retry.
-- Add a Make error handler route that writes failures to one of:
-  - Google Sheet;
-  - Airtable;
-  - Slack/email alert;
-  - Make data store.
-- Store at minimum: email, timestamp, source page, failed step, error message.
-- Avoid logging sensitive tokens or API keys.
-
-### Webflow Implementation Notes
-
-Keep the visual design in Webflow/TDP styles. Do not embed a generic Kit form if it breaks the visual system.
-
-Recommended Webflow form fields:
-
-```html
-email
-first_name
-source_page
-cta_location
-lead_magnet
-utm_source
-utm_medium
-utm_campaign
-```
-
-Recommended hidden values for `/pause-playbook`:
+Hidden values for the playbook page:
 
 ```html
 source_page=/pause-playbook
@@ -192,62 +138,125 @@ cta_location=pause_playbook_hero
 lead_magnet=pause_playbook
 ```
 
-After the real Make webhook exists, update the frontend form action to that webhook URL and remove placeholder handling.
+## Kit Setup
 
-### Decisions Needed Before Build
+In Kit, we need:
 
-1. Kit API access method:
-   - Make native Kit connection, or
-   - HTTP module with Kit API token.
-2. Kit tag name:
-   - recommended: `lead_magnet_pause_playbook`.
-3. Kit sequence/form:
-   - sequence that sends the playbook, or
-   - form incentive email, or
-   - immediate Make email.
-4. Substack sync method:
-   - native Make/Substack module if available;
-   - approved Substack import/API path;
-   - temporary manual CSV import.
-5. Success UX:
-   - redirect to a thank-you state/page, or
-   - inline success message and download panel.
+- a tag for this lead magnet
+- a sequence or form that sends the playbook
+- confirmation on whether Kit is also sending the Monday Letter, or whether Substack stays as the newsletter tool
 
-### References Checked
+Suggested tag:
 
-- Make custom webhooks can create a URL that external forms can call, and webhooks can trigger scenarios immediately.
-- Make supports a `Webhook response` module for custom responses.
-- Kit's API supports creating/upserting subscribers, tagging subscribers, and adding subscribers to sequences/forms after they exist.
-- Substack subscriber automation must be confirmed in the actual Substack/Make account before implementation; avoid undocumented endpoints.
+`lead_magnet_pause_playbook`
 
-## Exact Frontend Swap Needed
+Suggested source tags:
 
-Once the live endpoint is available:
-
-1. Replace `action="#kit-placeholder"` with the real endpoint/action.
-2. Remove `data-kit-placeholder="true"` or set it to `false`.
-3. Confirm the email input name matches the backend requirement:
-
-```html
-<input type="email" name="email_address" ...>
+```text
+source_webflow
+source_homepage
+source_footer
 ```
 
-4. If Kit requires additional hidden fields/tags, add them inside the form.
+The ideal setup is that Kit sends the playbook email, because then the delivery and email analytics live in Kit.
 
-Example placeholders for future hidden fields:
+## Substack Sync
+
+This part needs checking inside the actual Make/Substack account.
+
+If Make has a clean Substack module that can add a subscriber, we can use that after Kit succeeds.
+
+If there is no clean supported method, then we should not force it.
+
+In that case:
+
+- keep Kit as the captured subscriber list
+- log the subscriber in a Google Sheet if needed
+- batch import to Substack manually until we find a proper sync method
+
+Important: if Kit succeeds and Substack fails, we should not lose the email. Kit should remain the backup record.
+
+## Error Handling
+
+Make should log any failed signups somewhere simple:
+
+- Google Sheet
+- Airtable
+- Slack/email alert
+- Make data store
+
+At minimum, log:
+
+- email
+- timestamp
+- source page
+- CTA location
+- failed step
+- error message
+
+Do not log API keys or private tokens.
+
+## Webflow Notes
+
+Keep the form visually designed in Webflow/TDP style.
+
+Do not embed a default Kit form if it looks off-brand.
+
+Better setup:
+
+- Webflow controls the design
+- Make handles the backend
+- Kit handles subscriber storage and delivery
+- Substack stays as the newsletter destination if needed
+
+Once the Make webhook is ready, update the form action from:
 
 ```html
-<input type="hidden" name="tags" value="pause-playbook" />
-<input type="hidden" name="source" value="tdp-pause-playbook" />
+action="#kit-placeholder"
 ```
 
-## Open Dependencies
+to the real Make webhook URL.
 
-- Final lead magnet asset. Current download file is `downloads/pause-playbook-placeholder.pdf`.
-- Real Kit/backend form endpoint.
-- Confirmation of whether Kit or Substack is the source of truth for subscribers.
-- If Substack is updated from the backend, confirmation of the sync method/API/automation.
+Then remove:
+
+```html
+data-kit-placeholder="true"
+```
+
+or set it to:
+
+```html
+data-kit-placeholder="false"
+```
+
+## Things Avi Needs To Confirm
+
+Before this is fully wired, we need:
+
+1. Final playbook PDF or asset.
+2. Whether Kit or Substack is the main subscriber list.
+3. Kit tag name.
+4. Kit sequence or form name.
+5. Whether Substack sync is needed immediately.
+6. Whether Webflow native forms can post directly to the Make webhook, or if we need a small custom embed.
+7. Final success state: inline message, thank-you page, or direct download.
+
+## Useful References Checked
+
+- Make custom webhooks can create a URL that forms can post to.
+- Make can send a webhook response back to the form.
+- Kit supports creating/updating subscribers, tagging subscribers, and adding subscribers to forms/sequences.
+- Substack automation still needs to be checked in the real account. Do not assume an unofficial API.
 
 ## Recommendation
 
-Keep `/pause-playbook` as the lead magnet landing page and point CTAs to it. Do not convert the homepage hero into an email form until the dedicated page has been reviewed and the backend capture workflow is live.
+Do not spend time building the full Kit flow on the current static site.
+
+Instead:
+
+- keep `/pause-playbook` ready as the lead magnet page
+- keep both CTAs visible
+- move the real form wiring into Webflow
+- use Make as the backend layer
+- use Kit for capture and delivery
+- add Substack sync only if there is a clean supported way to do it
