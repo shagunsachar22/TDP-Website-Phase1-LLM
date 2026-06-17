@@ -3,13 +3,23 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/letters",
+      "destination": "https://thedeliberatepause.substack.com/archive?sort=new",
+      "permanent": false
+    },
+    {
+      "source": "/letters.html",
+      "destination": "https://thedeliberatepause.substack.com/archive?sort=new",
+      "permanent": false
+    },
+    {
       "source": "/read",
-      "destination": "/letters",
+      "destination": "https://thedeliberatepause.substack.com/archive?sort=new",
       "permanent": true
     },
     {
       "source": "/read.html",
-      "destination": "/letters",
+      "destination": "https://thedeliberatepause.substack.com/archive?sort=new",
       "permanent": true
     },
     {
