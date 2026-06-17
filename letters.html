@@ -4,66 +4,354 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Letters - The Deliberate Pause</title>
-  <meta name="description" content="Subscribe to the Monday Letter from The Deliberate Pause: weekly notes on founder psychology, yogic philosophy, ambition, recovery, and building well." />
-  <link rel="canonical" href="https://www.thedeliberatepause.com/letters" />
+  <meta name="description" content="Weekly letters from The Deliberate Pause on founder psychology, resilience, recovery, and building well." />
+  <link rel="canonical" href="https://thedeliberatepause.com/letters" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Letters - The Deliberate Pause" />
-  <meta property="og:description" content="The Monday Letter from The Deliberate Pause. Weekly notes for founders on ambition, recovery, identity, and better decisions under pressure." />
+  <meta property="og:description" content="Letters for Indian entrepreneurs building under pressure. Browse The Deliberate Pause letters and get the Monday letter." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .letters-hero { padding: 150px 0 92px; border-bottom: 1px solid var(--border-on-dark); }
-    .letters-hero-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.48fr); gap: clamp(42px, 7vw, 108px); align-items: end; }
-    .letters-hero h1 { max-width: 980px; font-size: clamp(58px, 8.6vw, 124px); line-height: 0.92; margin-bottom: 28px; }
-    .letters-hero .lead { max-width: 760px; color: var(--text-muted-dark); font-family: var(--font-serif); font-size: clamp(21px, 2vw, 28px); line-height: 1.42; }
-    .letters-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 34px; }
-    .archive-link { color: rgba(245,239,229,0.82); font-weight: 800; border-bottom: 1px solid rgba(245,239,229,0.34); padding-bottom: 3px; }
-    .letter-promise { border: 1px solid var(--border-on-dark); background: rgba(245,239,229,0.045); padding: 28px; }
-    .letter-promise h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1; margin-bottom: 18px; }
-    .letter-promise p { color: var(--text-muted-dark); line-height: 1.62; margin: 0 0 22px; }
-    .letter-promise ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; color: var(--text-cream); }
-    .letter-promise li { border-top: 1px solid var(--border-on-dark); padding-top: 14px; color: rgba(245,239,229,0.82); }
-    .letters-section { padding: 84px 0 96px; }
-    .letters-heading { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.44fr); gap: 34px; align-items: end; margin-bottom: 34px; }
-    .letters-heading h2 { margin: 0; }
-    .letters-heading p { color: var(--text-muted-light); line-height: 1.62; margin: 0; }
-    .letter-feature { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.45fr); gap: 34px; align-items: stretch; border: 1px solid var(--border-on-cream); padding: clamp(24px, 4vw, 44px); margin-bottom: 22px; }
-    .letter-feature h3 { font-size: clamp(42px, 5.8vw, 82px); line-height: 0.96; margin: 10px 0 20px; }
-    .letter-feature p, .letter-card p { color: var(--text-muted-light); line-height: 1.58; margin: 0 0 24px; }
-    .letter-feature-visual { border-radius: 8px; min-height: 280px; border: 1px solid var(--border-on-cream); background: linear-gradient(135deg, rgba(214,168,110,0.2), rgba(19,19,17,0.04)), rgba(19,19,17,0.04); display: flex; align-items: end; padding: 22px; }
-    .letter-feature-visual span { color: var(--accent-amber); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
-    .letter-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-bottom: 54px; }
-    .letter-card { min-height: 310px; border: 1px solid var(--border-on-cream); padding: 22px; color: var(--text-dark); display: flex; flex-direction: column; justify-content: space-between; transition: background 0.2s var(--ease), transform 0.2s var(--ease); }
-    .letter-card:hover { background: rgba(214,168,110,0.1); transform: translateY(-2px); }
-    .letter-card h3 { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.04; margin: 14px 0 12px; }
-    .letter-meta { color: var(--accent-amber); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; }
-    .letter-date { color: var(--text-muted-light); font-weight: 700; margin-bottom: 12px; }
-    .letter-list { border-top: 1px solid var(--border-on-cream); }
-    .letter-row { display: grid; grid-template-columns: minmax(180px, 0.28fr) minmax(0, 1fr) auto; gap: 26px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--border-on-cream); color: var(--text-dark); }
-    .letter-row h3 { font-size: clamp(24px, 2.6vw, 38px); margin: 0 0 8px; }
-    .letter-row p { color: var(--text-muted-light); margin: 0; line-height: 1.48; }
-    .letters-cta { padding: 76px 0 88px; border-top: 1px solid var(--border-on-dark); }
-    .letters-cta-box { display: grid; grid-template-columns: minmax(0, 0.8fr) auto; gap: 32px; align-items: center; }
-    .letters-cta h2 { font-size: clamp(38px, 5vw, 72px); line-height: 0.98; margin: 0 0 16px; }
-    .letters-cta p { color: var(--text-muted-dark); margin: 0; font-size: 18px; line-height: 1.56; }
-    @media (max-width: 960px) {
-      .letters-hero-grid, .letters-heading, .letter-feature, .letters-cta-box { grid-template-columns: 1fr; }
-      .letter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .letter-row { grid-template-columns: 1fr; }
+    .publication-hero {
+      padding: 142px 0 86px;
+      border-bottom: 1px solid var(--border-on-dark);
     }
-    @media (max-width: 620px) {
-      .letters-hero { padding: 118px 0 68px; }
-      .letters-hero h1 { font-size: clamp(48px, 15vw, 66px); }
-      .letter-grid { grid-template-columns: 1fr; }
-      .letter-feature { padding: 22px; }
+    .publication-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.54fr);
+      gap: clamp(40px, 7vw, 104px);
+      align-items: end;
+    }
+    .publication-hero h1 {
+      max-width: 930px;
+      font-size: clamp(52px, 8vw, 118px);
+      line-height: 0.94;
+      margin-bottom: 28px;
+    }
+    .publication-hero .lead {
+      max-width: 740px;
+      color: var(--text-muted-dark);
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2vw, 27px);
+      line-height: 1.42;
+    }
+    .publication-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-top: 34px;
+    }
+    .publication-link {
+      color: rgba(245,239,229,0.82);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(245,239,229,0.34);
+      padding-bottom: 3px;
+      transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .publication-link:hover { color: var(--cta); border-color: var(--cta); }
+    .featured-essay {
+      border: 1px solid var(--border-on-dark);
+      background: rgba(245,239,229,0.045);
+      padding: 28px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .publication-hero [data-scroll-fx="fade-left"] {
+      transform: translateY(32px);
+    }
+    .publication-hero [data-scroll-fx="fade-left"].is-visible {
+      transform: translateY(0);
+    }
+    .featured-essay .cover {
+      aspect-ratio: 5 / 3.2;
+      border: 1px solid rgba(245,239,229,0.12);
+      background:
+        radial-gradient(circle at 72% 24%, rgba(214,168,110,0.24), transparent 34%),
+        linear-gradient(135deg, rgba(245,239,229,0.14), rgba(245,239,229,0.04));
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .featured-essay .cover img,
+    .essay-card .thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .featured-essay .meta,
+    .essay-card .meta,
+    .latest-row .meta {
+      color: var(--accent-amber);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .featured-essay h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .featured-essay p {
+      color: var(--text-muted-dark);
+      line-height: 1.58;
+      margin: 0 0 24px;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-cream);
+      font-weight: 700;
+      transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+    .read-more:hover {
+      color: var(--accent-amber);
+      transform: translateX(3px);
+    }
+    .popular-section {
+      padding: 62px 0 78px;
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .row-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+    .row-heading h2 {
+      font-size: clamp(26px, 3.2vw, 42px);
+      margin: 0;
+    }
+    .row-heading a {
+      color: var(--text-muted-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .essay-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .essay-card {
+      min-height: 260px;
+      border-top: 1px solid var(--border-on-dark);
+      padding-top: 18px;
+      color: var(--text-cream);
+    }
+    .essay-card .thumb {
+      aspect-ratio: 1.4 / 1;
+      border: 1px solid rgba(245,239,229,0.12);
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.2), rgba(245,239,229,0.05)),
+        rgba(245,239,229,0.035);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .letter-thumb-label {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      color: var(--text-cream);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .essay-card h3 {
+      font-size: clamp(22px, 2.3vw, 30px);
+      margin-bottom: 10px;
+    }
+    .essay-card p {
+      margin: 0;
+      color: var(--text-muted-dark);
+      line-height: 1.52;
+      font-size: 15px;
+    }
+    .paths-section {
+      padding: 92px 0 104px;
+    }
+    .paths-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 0.85fr);
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+    .paths-header h2 { margin-bottom: 0; }
+    .paths-header p {
+      color: var(--text-muted-light);
+      font-size: 18px;
+      line-height: 1.62;
+      margin: 0;
+    }
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: 1px solid var(--border-on-cream);
+      border-left: 1px solid var(--border-on-cream);
+    }
+    .path-card {
+      min-height: 250px;
+      padding: 22px;
+      border-right: 1px solid var(--border-on-cream);
+      border-bottom: 1px solid var(--border-on-cream);
+      text-decoration: none;
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .path-card:hover {
+      background: rgba(214,168,110,0.1);
+      transform: translateY(-2px);
+    }
+    .path-card .num {
+      color: var(--accent-amber);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .path-card h3 {
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.05;
+      margin: 34px 0 14px;
+    }
+    .path-card p,
+    .path-card .examples {
+      color: var(--text-muted-light);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .path-card .examples {
+      margin-top: 22px;
+      font-size: 13px;
+    }
+    .latest-section {
+      padding: 88px 0 104px;
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .latest-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+      gap: clamp(42px, 8vw, 112px);
+      align-items: start;
+    }
+    .latest-intro {
+      position: sticky;
+      top: 116px;
+    }
+    .latest-intro h2 {
+      margin-bottom: 18px;
+    }
+    .latest-intro p {
+      color: var(--text-muted-light);
+      line-height: 1.62;
+      margin: 0 0 24px;
+    }
+    .latest-list {
+      border-top: 1px solid var(--border-on-cream);
+    }
+    .latest-row {
+      display: grid;
+      grid-template-columns: minmax(128px, 176px) minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border-on-cream);
+      color: var(--text-dark);
+    }
+    .latest-thumb {
+      aspect-ratio: 1.18 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(214,168,110,0.16), rgba(19,19,17,0.04)),
+        rgba(19,19,17,0.04);
+    }
+    .latest-thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .latest-row h3 {
+      font-size: clamp(24px, 2.7vw, 38px);
+      margin-bottom: 10px;
+    }
+    .latest-date {
+      color: var(--text-muted-light);
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+    .latest-row .read-more {
+      color: var(--text-dark);
+      margin-top: 0;
+      font-size: 19px;
+    }
+    .latest-row .read-more:hover {
+      color: var(--cta);
+    }
+    @media (max-width: 1050px) {
+      .publication-hero-grid,
+      .paths-header,
+      .latest-grid {
+        grid-template-columns: 1fr;
+      }
+      .latest-intro {
+        position: static;
+      }
+      .essay-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .path-grid {
+        grid-template-columns: 1fr;
+      }
+      .path-card {
+        min-height: 0;
+      }
+    }
+    @media (max-width: 640px) {
+      .publication-hero {
+        padding: 118px 0 66px;
+      }
+      .publication-hero h1 {
+        font-size: clamp(46px, 16vw, 64px);
+      }
+      .featured-essay {
+        min-height: 0;
+        padding: 22px;
+      }
+      .essay-row,
+      .latest-row {
+        grid-template-columns: 1fr;
+      }
+      .row-heading {
+        align-items: start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
-  
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="The Deliberate Pause home">
@@ -81,142 +369,189 @@
       <a href="https://thedeliberatepause.substack.com/subscribe" class="btn btn-magnetic nav-cta" rel="noopener">
         <span class="label-long">Subscribe</span>
         <span class="label-short">Subscribe</span>
-        <span class="arrow">-&gt;</span>
+        <span class="arrow">→</span>
       </a>
-      <button class="nav-mobile-toggle" aria-label="Open menu">=</button>
+      <button class="nav-mobile-toggle" aria-label="Open menu">≡</button>
     </div>
   </header>
+
   <main>
-    <section class="letters-hero theme-dark">
-      <div class="wrap letters-hero-grid">
+    <section class="publication-hero theme-dark">
+      <div class="wrap publication-hero-grid">
         <div>
-          <span class="eyebrow" data-scroll-fx>The Monday Letter</span>
-          <h1 data-scroll-fx="fade-up-lg">A weekly pause for founders.</h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Letters on founder psychology, yogic philosophy, ambition, recovery, and the inner work of building without losing yourself.</p>
-          <div class="letters-actions" data-scroll-fx style="--fx-delay: 0.25s;">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">-&gt;</span></a>
-            <a class="archive-link" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">Browse the archive</a>
+          <span class="eyebrow" data-scroll-fx>The Deliberate Pause letters</span>
+          <h1 data-scroll-fx="fade-up-lg">The inner work of building.</h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Letters on founder psychology, yogic philosophy, ambition, burnout, recovery, and better decisions under pressure.</p>
+          <div class="publication-actions" data-scroll-fx style="--fx-delay: 0.25s;">
+            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">Read the letters <span class="arrow">→</span></a>
           </div>
         </div>
-        <aside class="letter-promise" data-scroll-fx="fade-left">
-          <h2>What arrives every Monday.</h2>
-          <p>One letter for founders who want more clarity under pressure, not more noise.</p>
-          <ul>
-            <li>Founder psychology without performance theatre.</li>
-            <li>Yogic ideas translated for real operating pressure.</li>
-            <li>Prompts you can carry into the week.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
 
-    <section class="letters-section theme-cream" aria-labelledby="letters-headline">
-      <div class="wrap">
-        <div class="letters-heading">
+        <article class="featured-essay" data-scroll-fx="fade-left">
           <div>
-            <span class="eyebrow">Latest letters</span>
-            <h2 id="letters-headline">From the Substack archive.</h2>
+            <div class="cover">
+              <img src="images/essays/clauddiction-trap-cover.webp" alt="The Clauddiction Trap letter cover" loading="lazy" />
+            </div>
+            <div class="meta">Attention & creation</div>
+            <h2>The Clauddiction Trap.</h2>
+            <p>Why the best founders think like artists, in stillness.</p>
           </div>
-          <p>These are weekly letters only. The articles selected for the website live separately under Articles.</p>
-        </div>
-        <article class="letter-feature">
-          <div>
-            <div class="letter-meta">Decision clarity</div>
-            <h3>Build to sell, not excel</h3>
-            <p>An idea discovered is a sales pitch in itself.</p>
-            <a class="btn" href="https://thedeliberatepause.substack.com/p/build-to-sell-not-excel" rel="noopener">Read on Substack <span class="arrow">-&gt;</span></a>
-          </div>
-          <div class="letter-feature-visual" aria-hidden="true"><span>June 8, 2026</span></div>
+          <a class="read-more" href="https://thedeliberatepause.substack.com/p/the-clauddiction-trap" rel="noopener">Read full letter <span>→</span></a>
         </article>
-        <div class="letter-grid">
-          <a class="letter-card" href="https://thedeliberatepause.substack.com/p/entrepreneurship-is-the-ultimate" rel="noopener">
-            <div>
-              <div class="letter-meta">Founder psychology</div>
-              <h3>Entrepreneurship is the ultimate subordination</h3>
-              <div class="letter-date">June 1, 2026</div>
-              <p>A weekly letter on surrender, ambition, and what entrepreneurship really asks of the founder.</p>
-            </div>
-            <span class="read-more">Read letter <span>-&gt;</span></span>
-          </a>
-          <a class="letter-card" href="https://thedeliberatepause.substack.com/p/the-clauddiction-trap" rel="noopener">
-            <div>
-              <div class="letter-meta">Attention &amp; creation</div>
-              <h3>The Clauddiction Trap</h3>
-              <div class="letter-date">May 4, 2026</div>
-              <p>Why the best founders think like artists, in stillness.</p>
-            </div>
-            <span class="read-more">Read letter <span>-&gt;</span></span>
-          </a>
-          <a class="letter-card" href="https://thedeliberatepause.substack.com/p/when-success-still-feels-empty" rel="noopener">
-            <div>
-              <div class="letter-meta">Ambition &amp; success</div>
-              <h3>When Success Still Feels Empty</h3>
-              <div class="letter-date">April 27, 2026</div>
-              <p>Why effort and rest are not enough, and the 20 minute audit that changes everything.</p>
-            </div>
-            <span class="read-more">Read letter <span>-&gt;</span></span>
-          </a>
-          <a class="letter-card" href="https://thedeliberatepause.substack.com/p/angry-young-vijays-disappointment" rel="noopener">
-            <div>
-              <div class="letter-meta">Relationships</div>
-              <h3>Angry Young Vijay's Disappointment</h3>
-              <div class="letter-date">April 20, 2026</div>
-              <p>Why the people closest to you can end up carrying the cost of your success.</p>
-            </div>
-            <span class="read-more">Read letter <span>-&gt;</span></span>
-          </a>
+      </div>
+    </section>
+
+    <section class="popular-section theme-dark" aria-labelledby="popular-headline">
+      <div class="wrap">
+        <div class="row-heading">
+          <h2 id="popular-headline">Most read.</h2>
+          <a href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">View all letters</a>
         </div>
-        <div class="letter-list">
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/does-happiness-feel-different" rel="noopener">
-            <div class="letter-meta">Happiness &amp; success</div>
-            <div><h3>Does happiness feel different?</h3><p>I built the life I wanted. And yet, I still do not have an answer.</p></div>
-            <div class="letter-date">April 13, 2026</div>
+        <div class="essay-row">
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/p/build-to-sell-not-excel" rel="noopener">
+            <div class="thumb">
+              <span class="letter-thumb-label">June 8, 2026</span>
+            </div>
+            <div class="meta">Decision clarity</div>
+            <h3>Build to sell, not excel.</h3>
+            <p>An idea discovered is a sales pitch in itself.</p>
           </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-rehearsal-tax" rel="noopener">
-            <div class="letter-meta">Overthinking</div>
-            <div><h3>The Rehearsal Tax</h3><p>Why founders mistake replay for reflection, and pay for it with a lack of clarity.</p></div>
-            <div class="letter-date">March 30, 2026</div>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/p/entrepreneurship-is-the-ultimate" rel="noopener">
+            <div class="thumb">
+              <span class="letter-thumb-label">June 1, 2026</span>
+            </div>
+            <div class="meta">Founder psychology</div>
+            <h3>Entrepreneurship is the ultimate subordination.</h3>
+            <p>A letter on surrender, ambition, and what entrepreneurship really asks of the founder.</p>
           </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-aliveness-paradox" rel="noopener">
-            <div class="letter-meta">Recovery</div>
-            <div><h3>The Aliveness Paradox</h3><p>Aliveness is not the reward for excellence. It is a prerequisite to excel.</p></div>
-            <div class="letter-date">March 23, 2026</div>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/p/when-success-still-feels-empty" rel="noopener">
+            <div class="thumb">
+              <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="When Success Still Feels Empty letter cover" loading="lazy" />
+            </div>
+            <div class="meta">Ambition & success</div>
+            <h3>When Success Still Feels Empty.</h3>
+            <p>Why effort and rest are not enough, and the 20 minute audit that changes everything.</p>
           </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-dark-side-of-self-love" rel="noopener">
-            <div class="letter-meta">Self-work</div>
-            <div><h3>The Dark Side of Self-Love</h3><p>Why the most popular advice in the world may be making you miserable.</p></div>
-            <div class="letter-date">March 16, 2026</div>
-          </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-thermostat-effect" rel="noopener">
-            <div class="letter-meta">Identity</div>
-            <div><h3>The Thermostat Effect</h3><p>Why thinking alone cannot build a new identity.</p></div>
-            <div class="letter-date">March 9, 2026</div>
-          </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-secret-inside-the-brown-box" rel="noopener">
-            <div class="letter-meta">Yogic philosophy</div>
-            <div><h3>The Secret Inside the Brown Box</h3><p>The world's most competitive people are discovering a book Steve Jobs read again and again.</p></div>
-            <div class="letter-date">March 2, 2026</div>
-          </a>
-          <a class="letter-row" href="https://thedeliberatepause.substack.com/p/the-founders-olympics-of-suffering" rel="noopener">
-            <div class="letter-meta">Burnout</div>
-            <div><h3>The founders' Olympics of suffering</h3><p>Where winning the wrong game is treated like an achievement.</p></div>
-            <div class="letter-date">February 23, 2026</div>
+          <a class="essay-card" href="https://thedeliberatepause.substack.com/p/does-happiness-feel-different" rel="noopener">
+            <div class="thumb">
+              <img src="images/essays/does-happiness-feel-different-cover.webp" alt="Does happiness feel different letter cover" loading="lazy" />
+            </div>
+            <div class="meta">Happiness & success</div>
+            <h3>Does happiness feel different?</h3>
+            <p>I built the life I wanted. And yet, I still do not have an answer.</p>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="letters-cta theme-dark">
-      <div class="wrap letters-cta-box">
-        <div>
-          <span class="eyebrow">Subscribe</span>
-          <h2>Get the Monday Letter</h2>
-          <p>One weekly note on resilience, recovery, and building well.</p>
+    <section class="paths-section theme-cream" id="categories" aria-labelledby="paths-headline">
+      <div class="wrap">
+        <div class="paths-header">
+          <div>
+            <span class="eyebrow">Reading paths</span>
+            <h2 id="paths-headline">Letters by the pressure you are carrying.</h2>
+          </div>
+          <p>Start with the pressure that feels loudest this week. The letters are organized around burnout, failure, ambition, decision clarity, attention, and recovery.</p>
         </div>
-        <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">-&gt;</span></a>
+        <div class="path-grid">
+          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
+            <div>
+              <div class="num">01</div>
+              <h3>Burnout & Identity</h3>
+              <p>When output becomes self-worth and rest starts to feel unsafe.</p>
+            </div>
+            <div class="examples">Start here for: burnout, self-worth, identity fusion.</div>
+          </a>
+          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
+            <div>
+              <div class="num">02</div>
+              <h3>Failure & Rejection</h3>
+              <p>When no starts feeling like a verdict instead of information.</p>
+            </div>
+            <div class="examples">Start here for: rejection, resilience, agency.</div>
+          </a>
+          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
+            <div>
+              <div class="num">03</div>
+              <h3>Ambition & Success</h3>
+              <p>When winning still does not settle the self.</p>
+            </div>
+            <div class="examples">Start here for: status, enoughness, compounding.</div>
+          </a>
+          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
+            <div>
+              <div class="num">04</div>
+              <h3>Decision Clarity</h3>
+              <p>When pressure starts making the choice before you do.</p>
+            </div>
+            <div class="examples">Start here for: conflict, overthinking, validation.</div>
+          </a>
+          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
+            <div>
+              <div class="num">05</div>
+              <h3>Attention & Recovery</h3>
+              <p>When the mind is always on, but rarely clear.</p>
+            </div>
+            <div class="examples">Start here for: focus, rest, routine, performance.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-section theme-cream" aria-labelledby="latest-headline">
+      <div class="wrap latest-grid">
+        <div class="latest-intro">
+          <span class="eyebrow">Latest letters</span>
+          <h2 id="latest-headline">Letters before the week takes over.</h2>
+          <p>New letters land with the Monday letter. Start with the latest pieces below, then follow the reading path that matches the week you are in.</p>
+          <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">Read the letters <span class="arrow">→</span></a>
+        </div>
+        <div class="latest-list">
+          <article class="latest-row">
+            <div class="latest-thumb">
+              <span class="letter-thumb-label">June 8</span>
+            </div>
+            <div>
+              <h3>Build to sell, not excel</h3>
+              <p class="latest-date">June 8, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/p/build-to-sell-not-excel" rel="noopener">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="latest-thumb">
+              <span class="letter-thumb-label">June 1</span>
+            </div>
+            <div>
+              <h3>Entrepreneurship is the ultimate subordination</h3>
+              <p class="latest-date">June 1, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/p/entrepreneurship-is-the-ultimate" rel="noopener">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="latest-thumb">
+              <img src="images/essays/clauddiction-trap-cover.webp" alt="The Clauddiction Trap letter cover" loading="lazy" />
+            </div>
+            <div>
+              <h3>The Clauddiction Trap</h3>
+              <p class="latest-date">May 4, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/p/the-clauddiction-trap" rel="noopener">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="latest-row">
+            <div class="latest-thumb">
+              <img src="images/essays/when-success-still-feels-empty-cover.webp" alt="When Success Still Feels Empty letter cover" loading="lazy" />
+            </div>
+            <div>
+              <h3>When Success Still Feels Empty</h3>
+              <p class="latest-date">April 27, 2026</p>
+              <a class="read-more" href="https://thedeliberatepause.substack.com/p/when-success-still-feels-empty" rel="noopener">Read More <span>→</span></a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
+
   
   <footer class="footer theme-dark" role="contentinfo">
     <div class="wrap">
@@ -245,7 +580,7 @@
       </div>
     </div>
   </footer>
-  <script src="scroll-fx.js?v=phase1-20260525" defer></script>
+  <script src="scroll-fx.js?v=popup-20260604" defer></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
