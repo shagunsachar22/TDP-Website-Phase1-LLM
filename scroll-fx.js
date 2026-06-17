@@ -36,10 +36,10 @@
           <button class="mobile-menu-close" type="button" aria-label="Close menu" data-menu-close>×</button>
         </div>
         <ul class="mobile-menu-list">
-          <li><a href="read.html">Read</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/letters">Letters</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
         <div class="mobile-menu-cta">
           <a href="https://thedeliberatepause.substack.com/subscribe" class="btn" rel="noopener">Subscribe <span class="arrow">→</span></a>

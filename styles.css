@@ -499,6 +499,7 @@ blockquote {
   position: absolute;
   top: 0; right: 0; bottom: 0;
   width: min(85vw, 380px);
+  min-height: 100%;
   background: var(--bg-dark);
   color: var(--text-cream);
   padding: 32px 28px;
@@ -512,6 +513,19 @@ blockquote {
   border-left: 1px solid var(--border-on-dark);
 }
 .mobile-menu.is-open .mobile-menu-panel { transform: translateX(0); }
+
+@media (max-width: 600px) {
+  .mobile-menu-panel {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: none;
+    min-height: 100dvh;
+    height: 100dvh;
+    padding: max(28px, env(safe-area-inset-top)) clamp(22px, 7vw, 32px) calc(28px + env(safe-area-inset-bottom));
+    border-left: 0;
+  }
+}
 
 .mobile-menu-top {
   display: flex;
