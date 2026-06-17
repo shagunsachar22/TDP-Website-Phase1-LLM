@@ -32,10 +32,10 @@ The page currently includes:
 - Indexable page metadata.
 - `/pause-playbook` included in `sitemap.xml`.
 
-CTA routing now points acquisition traffic to `/pause-playbook`:
+CTA routing keeps both acquisition paths visible:
 
-- Homepage hero primary CTA points to `/pause-playbook`.
-- Active public page footer CTAs point to `/pause-playbook`.
+- Homepage hero shows `Subscribe` to Substack and `Get the playbook` to `/pause-playbook`.
+- Active public page footers show `Subscribe` to Substack and `Get the playbook` to `/pause-playbook`.
 - Header/nav Subscribe CTAs still point directly to Substack until the Kit/backend endpoint is confirmed.
 
 ## Current Form State

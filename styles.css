@@ -706,6 +706,24 @@ body.menu-open { overflow: hidden; }
   color: var(--text-muted-dark);
   margin: 0 0 18px;
 }
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.footer-actions .btn {
+  min-height: 48px;
+}
+.footer-actions .btn-secondary {
+  background: transparent;
+  color: var(--text-cream);
+  border: 1px solid rgba(245, 239, 229, 0.22);
+}
+.footer-actions .btn-secondary:hover {
+  background: rgba(245, 239, 229, 0.08);
+  border-color: rgba(245, 239, 229, 0.34);
+}
 .footer-cols {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1330,6 +1348,15 @@ body h4,
     justify-self: stretch;
     width: 100%;
     min-width: 0;
+  }
+
+  .footer-actions {
+    align-items: stretch;
+  }
+
+  .footer-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .footer-cols {
