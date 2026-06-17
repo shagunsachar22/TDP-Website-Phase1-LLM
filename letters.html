@@ -181,67 +181,6 @@
       line-height: 1.52;
       font-size: 15px;
     }
-    .paths-section {
-      padding: 92px 0 104px;
-    }
-    .paths-header {
-      display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(0, 0.85fr);
-      gap: 44px;
-      align-items: end;
-      margin-bottom: 38px;
-    }
-    .paths-header h2 { margin-bottom: 0; }
-    .paths-header p {
-      color: var(--text-muted-light);
-      font-size: 18px;
-      line-height: 1.62;
-      margin: 0;
-    }
-    .path-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      border-top: 1px solid var(--border-on-cream);
-      border-left: 1px solid var(--border-on-cream);
-    }
-    .path-card {
-      min-height: 250px;
-      padding: 22px;
-      border-right: 1px solid var(--border-on-cream);
-      border-bottom: 1px solid var(--border-on-cream);
-      text-decoration: none;
-      color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background 0.25s var(--ease), transform 0.25s var(--ease);
-    }
-    .path-card:hover {
-      background: rgba(214,168,110,0.1);
-      transform: translateY(-2px);
-    }
-    .path-card .num {
-      color: var(--accent-amber);
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    .path-card h3 {
-      font-size: clamp(24px, 2.4vw, 34px);
-      line-height: 1.05;
-      margin: 34px 0 14px;
-    }
-    .path-card p,
-    .path-card .examples {
-      color: var(--text-muted-light);
-      line-height: 1.55;
-      margin: 0;
-    }
-    .path-card .examples {
-      margin-top: 22px;
-      font-size: 13px;
-    }
     .latest-section {
       padding: 88px 0 104px;
       border-top: 1px solid var(--border-on-cream);
@@ -311,7 +250,6 @@
     }
     @media (max-width: 1050px) {
       .publication-hero-grid,
-      .paths-header,
       .latest-grid {
         grid-template-columns: 1fr;
       }
@@ -320,12 +258,6 @@
       }
       .essay-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .path-grid {
-        grid-template-columns: 1fr;
-      }
-      .path-card {
-        min-height: 0;
       }
     }
     @media (max-width: 640px) {
@@ -439,60 +371,6 @@
             <div class="meta">Happiness & success</div>
             <h3>Does happiness feel different?</h3>
             <p>I built the life I wanted. And yet, I still do not have an answer.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="paths-section theme-cream" id="categories" aria-labelledby="paths-headline">
-      <div class="wrap">
-        <div class="paths-header">
-          <div>
-            <span class="eyebrow">Reading paths</span>
-            <h2 id="paths-headline">Letters by the pressure you are carrying.</h2>
-          </div>
-          <p>Start with the pressure that feels loudest this week. The letters are organized around burnout, failure, ambition, decision clarity, attention, and recovery.</p>
-        </div>
-        <div class="path-grid">
-          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
-            <div>
-              <div class="num">01</div>
-              <h3>Burnout & Identity</h3>
-              <p>When output becomes self-worth and rest starts to feel unsafe.</p>
-            </div>
-            <div class="examples">Start here for: burnout, self-worth, identity fusion.</div>
-          </a>
-          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
-            <div>
-              <div class="num">02</div>
-              <h3>Failure & Rejection</h3>
-              <p>When no starts feeling like a verdict instead of information.</p>
-            </div>
-            <div class="examples">Start here for: rejection, resilience, agency.</div>
-          </a>
-          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
-            <div>
-              <div class="num">03</div>
-              <h3>Ambition & Success</h3>
-              <p>When winning still does not settle the self.</p>
-            </div>
-            <div class="examples">Start here for: status, enoughness, compounding.</div>
-          </a>
-          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
-            <div>
-              <div class="num">04</div>
-              <h3>Decision Clarity</h3>
-              <p>When pressure starts making the choice before you do.</p>
-            </div>
-            <div class="examples">Start here for: conflict, overthinking, validation.</div>
-          </a>
-          <a class="path-card" href="https://thedeliberatepause.substack.com/archive?sort=new" rel="noopener">
-            <div>
-              <div class="num">05</div>
-              <h3>Attention & Recovery</h3>
-              <p>When the mind is always on, but rarely clear.</p>
-            </div>
-            <div class="examples">Start here for: focus, rest, routine, performance.</div>
           </a>
         </div>
       </div>
