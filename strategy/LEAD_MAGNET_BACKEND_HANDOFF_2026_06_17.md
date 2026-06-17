@@ -1,7 +1,5 @@
 # Lead Magnet Handoff
 
-Date: 2026-06-17
-
 ## What We Decided
 
 We should keep one proper lead magnet page:
