@@ -1,8 +1,190 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Founder Burnout Articles | The Deliberate Pause</title><meta name="description" content="Articles on burnout, overwork, and the founder habit of turning exhaustion into identity." /><link rel="canonical" href="https://www.thedeliberatepause.com/articles/category/founder-burnout" />
-<link rel="stylesheet" href="../../../styles.css" />
-<style>.category-page{background:var(--bg-cream);padding:clamp(72px,10vw,126px) 0}.category-hero{max-width:860px}.category-hero h1{font-size:clamp(44px,7vw,88px);line-height:.96;margin:0 0 20px}.category-hero p{font-size:clamp(18px,1.6vw,22px);line-height:1.55;color:var(--text-muted-light)}.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:52px}.category-card{display:flex;flex-direction:column;min-height:270px;padding:24px;border:1px solid var(--border-on-cream);border-radius:8px;background:rgba(255,255,246,.48);color:var(--text-dark)}.category-card h2{font-size:clamp(24px,2.5vw,34px);line-height:1.04;margin:0 0 14px}.category-card p{color:var(--text-muted-light);font-size:15px;line-height:1.55}.category-card span{margin-top:auto;color:var(--cta);font-weight:800}@media(max-width:880px){.category-grid{grid-template-columns:1fr}}</style></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder Burnout Articles | The Deliberate Pause</title>
+  <meta name="description" content="Articles on burnout, overwork, and the founder habit of turning exhaustion into identity." />
+  <link rel="canonical" href="https://www.thedeliberatepause.com/articles/category/founder-burnout" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css" />
+  <style>
+    .nav-cta .label-short { display: none; }
+    @media (max-width: 600px) {
+      .nav-cta .label-long { display: none; }
+      .nav-cta .label-short { display: inline; }
+    }
+    @media (max-width: 420px) {
+      .nav-cta { width: auto; min-width: 104px; padding-left: 12px; padding-right: 12px; }
+    }
+    .articles-hero {
+      padding: clamp(82px, 11vw, 140px) 0 clamp(62px, 8vw, 96px);
+      border-bottom: 1px solid var(--border-on-dark);
+    }
+    .articles-hero-grid { max-width: 1040px; }
+    .articles-hero h1 {
+      max-width: 980px;
+      font-size: clamp(50px, 8.4vw, 118px);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      margin: 0 0 28px;
+    }
+    .articles-hero .lead {
+      max-width: 760px;
+      color: var(--text-muted-dark);
+      font-size: clamp(19px, 1.7vw, 25px);
+      line-height: 1.45;
+    }
+    .articles-page {
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      padding: clamp(64px, 8vw, 96px) 0 clamp(92px, 10vw, 124px);
+    }
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 44px;
+    }
+    .category-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 9px 15px;
+      border: 1px solid var(--border-on-cream);
+      border-radius: 999px;
+      color: var(--text-dark);
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .category-pill:hover,
+    .category-pill[aria-current="page"] {
+      background: var(--bg-dark);
+      color: var(--text-cream);
+      border-color: var(--bg-dark);
+    }
+    .featured-article {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.55fr);
+      gap: clamp(32px, 6vw, 84px);
+      align-items: stretch;
+      padding: clamp(28px, 4vw, 46px);
+      border: 1px solid var(--border-on-cream);
+      border-radius: 8px;
+      margin-bottom: 56px;
+      background: rgba(255,255,246,0.5);
+    }
+    .featured-article .eyebrow {
+      color: var(--accent-rust);
+      margin-bottom: 22px;
+    }
+    .featured-article h2 {
+      font-size: clamp(34px, 5vw, 70px);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+      margin: 0 0 18px;
+    }
+    .featured-article p {
+      color: var(--text-muted-light);
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 0 26px;
+    }
+    .featured-visual {
+      min-height: 360px;
+      border-radius: 8px;
+      border: 1px solid var(--border-on-cream);
+      background:
+        linear-gradient(135deg, rgba(17,17,0,0.2), rgba(17,17,0,0.02)),
+        var(--featured-image) center / cover;
+    }
+    .section-heading {
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-on-cream);
+      padding-bottom: 18px;
+    }
+    .section-heading h2 {
+      font-size: clamp(32px, 4.5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--border-on-cream);
+      border-left: 1px solid var(--border-on-cream);
+    }
+    .article-card {
+      min-height: 350px;
+      padding: clamp(22px, 3vw, 32px);
+      border-right: 1px solid var(--border-on-cream);
+      border-bottom: 1px solid var(--border-on-cream);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      transition: background 0.22s var(--ease), transform 0.22s var(--ease);
+    }
+    .article-card:hover {
+      background: rgba(255,255,246,0.64);
+      transform: translateY(-2px);
+    }
+    .article-card .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--accent-rust);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 32px;
+    }
+    .article-card h3 {
+      font-size: clamp(25px, 2.8vw, 38px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin: 0 0 16px;
+    }
+    .article-card p {
+      color: var(--text-muted-light);
+      font-size: 15px;
+      line-height: 1.58;
+      margin: 0 0 28px;
+    }
+    .article-card .read-more {
+      margin-top: auto;
+      color: var(--cta);
+      font-weight: 800;
+    }
+    .empty-state {
+      margin-top: 34px;
+      padding: 22px 24px;
+      border: 1px solid var(--border-on-cream);
+      border-radius: 8px;
+      background: rgba(255,255,246,0.46);
+      color: var(--text-muted-light);
+      line-height: 1.58;
+      font-size: 16px;
+    }
+    @media (max-width: 1040px) {
+      .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-visual { min-height: 280px; }
+    }
+    @media (max-width: 680px) {
+      .article-grid { grid-template-columns: 1fr; }
+      .article-card { min-height: auto; }
+      .articles-hero { padding-top: 58px; }
+    }
+  </style>
+</head>
 <body>
   <header class="nav" role="banner">
     <div class="nav-inner">
@@ -25,7 +207,46 @@
       </a>
       <button class="nav-mobile-toggle" aria-label="Open menu">=</button>
     </div>
-  </header><main class="category-page"><div class="wrap"><div class="category-hero"><span class="eyebrow">Articles</span><h1>Founder Burnout</h1><p>Articles on burnout, overwork, and the founder habit of turning exhaustion into identity.</p></div><div class="category-grid"><a class="category-card" href="/articles/no-means-no-to-hustle-culture"><h2>No Means No to Hustle Culture</h2><p>A sharper case for refusing the performance religion that turns exhaustion into identity.</p><span>Read article -&gt;</span></a></div></div></main>
+  </header>
+  <main>
+    <section class="articles-hero theme-dark">
+      <div class="wrap">
+        <div class="articles-hero-grid">
+          <span class="eyebrow">Articles</span>
+          <h1>Founder Burnout</h1>
+          <p class="lead">Articles on burnout, overwork, and the founder habit of turning exhaustion into identity.</p>
+        </div>
+      </div>
+    </section>
+    <section class="articles-page">
+      <div class="wrap">
+        <nav class="category-nav" aria-label="Article categories">
+    <a class="category-pill" href="/articles/category/founder-burnout" aria-current="page">Founder Burnout</a>
+    <a class="category-pill" href="/articles/category/founder-resilience">Founder Resilience</a>
+    <a class="category-pill" href="/articles/category/founder-loneliness">Founder Loneliness</a>
+    <a class="category-pill" href="/articles/category/overthinking-anxiety">Overthinking &amp; Anxiety</a>
+    <a class="category-pill" href="/articles/category/performance-recovery">Performance &amp; Recovery</a>
+    <a class="category-pill" href="/articles/category/self-worth">Self-worth</a>
+  </nav>
+        <article class="featured-article">
+    <div>
+      <span class="eyebrow">Featured article</span>
+      <h2>No Means No to Hustle Culture</h2>
+      <p>A sharper case for refusing the performance religion that turns exhaustion into identity.</p>
+      <a class="btn" href="/articles/no-means-no-to-hustle-culture">Read article <span class="arrow">-&gt;</span></a>
+    </div>
+    <div class="featured-visual" style="--featured-image: url('https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/695a15b7cacbcc52761ed071_Blog%20Cover.webp')" role="img" aria-label="No Means No to Hustle Culture article cover"></div>
+  </article>
+        <div class="section-heading"><h2>Start with founder burnout.</h2></div>
+  <div class="article-grid"><a class="article-card" href="/articles/no-means-no-to-hustle-culture">
+    <div class="meta"><span>Founder Burnout</span><span>01</span></div>
+    <h3>No Means No to Hustle Culture</h3>
+    <p>A sharper case for refusing the performance religion that turns exhaustion into identity.</p>
+    <span class="read-more">Read article -&gt;</span>
+  </a></div>
+      </div>
+    </section>
+  </main>
   <footer class="footer theme-dark" role="contentinfo">
     <div class="wrap">
       <div class="footer-top">
@@ -52,4 +273,7 @@
         <ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/contact">Contact</a></li></ul>
       </div>
     </div>
-  </footer><script src="../../../scroll-fx.js" defer></script></body></html>
+  </footer>
+  <script src="../../../scroll-fx.js" defer></script>
+</body>
+</html>
