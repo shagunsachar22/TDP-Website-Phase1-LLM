@@ -83,6 +83,11 @@
       "permanent": true
     },
     {
+      "source": "/read/founders-are-lonely-but-theres-a-way-out",
+      "destination": "/articles/founders-are-lonely-but-theres-a-way-out",
+      "permanent": true
+    },
+    {
       "source": "/read/perfectionism-is-self-sabotage-in-disguise/",
       "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
       "permanent": true
@@ -150,6 +155,11 @@
     {
       "source": "/read/rejection-hurts-but-dont-let-it-be-painful/",
       "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
+      "source": "/read/founders-are-lonely-but-theres-a-way-out/",
+      "destination": "/articles/founders-are-lonely-but-theres-a-way-out",
       "permanent": true
     },
     {
@@ -223,6 +233,11 @@
       "permanent": true
     },
     {
+      "source": "/newsletter/founders-are-lonely-but-theres-a-way-out",
+      "destination": "/articles/founders-are-lonely-but-theres-a-way-out",
+      "permanent": true
+    },
+    {
       "source": "/newsletter/perfectionism-is-self-sabotage-in-disguise/",
       "destination": "/articles/perfectionism-is-self-sabotage-in-disguise",
       "permanent": true
@@ -290,6 +305,11 @@
     {
       "source": "/newsletter/rejection-hurts-but-dont-let-it-be-painful/",
       "destination": "/articles/rejection-hurts-but-dont-let-it-be-painful",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/founders-are-lonely-but-theres-a-way-out/",
+      "destination": "/articles/founders-are-lonely-but-theres-a-way-out",
       "permanent": true
     },
     {
