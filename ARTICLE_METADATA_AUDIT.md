@@ -5,9 +5,9 @@ Generated: 19 June 2026
 ## Executive Summary
 
 - Standalone article pages audited: **15**
-- Pages passing all required checks: **11/15**
-- Required metadata errors: **9**
-- Best-practice warnings: **1**
+- Pages passing all required checks: **15/15**
+- Required metadata errors: **0**
+- Best-practice warnings: **0**
 
 An **error** means required metadata is absent, inconsistent, invalid, or disconnected from the site structure. A **warning** is a recommended improvement that does not prevent indexing.
 
@@ -25,43 +25,15 @@ An **error** means required metadata is absent, inconsistent, invalid, or discon
 | 8 | [The Cost of Becoming a People Pleaser \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-cost-of-becoming-a-people-pleaser) | Self-worth | 0 | 0 | Pass |
 | 9 | [The False Sense of Agency \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-false-sense-of-agency) | Founder Resilience | 0 | 0 | Pass |
 | 10 | [The Hidden Cost of Not Choosing Yourself \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-hidden-cost-of-not-choosing-yourself) | Self-worth | 0 | 0 | Pass |
-| 11 | [The Low Status Moat Matters \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-low-status-moat-matters) | Self-worth | 1 | 0 | Needs fixes |
+| 11 | [The Low Status Moat Matters \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-low-status-moat-matters) | Self-worth | 0 | 0 | Pass |
 | 12 | [The Market for Your Honest Opinion \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-market-for-your-honest-opinion-is-bigger-than-you-think) | Self-worth | 0 | 0 | Pass |
-| 13 | [The Unicorn Trap and Enlightenment \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-unicorn-trap-and-the-road-to-enlightenment) | Self-worth | 2 | 0 | Needs fixes |
-| 14 | [Welcome to The Deliberate Pause \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/welcome-to-the-deliberate-pause) | Missing | 3 | 0 | Needs fixes |
-| 15 | [Your Attention Span Holds a Secret \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/your-attention-span-holds-a-secret) | Performance & Recovery | 3 | 1 | Needs fixes |
+| 13 | [The Unicorn Trap and Enlightenment \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/the-unicorn-trap-and-the-road-to-enlightenment) | Self-worth | 0 | 0 | Pass |
+| 14 | [Welcome to The Deliberate Pause \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/welcome-to-the-deliberate-pause) | Founder Resilience | 0 | 0 | Pass |
+| 15 | [Your Attention Span Holds a Secret \| The Deliberate Pause](https://www.thedeliberatepause.com/articles/your-attention-span-holds-a-secret) | Performance & Recovery | 0 | 0 | Pass |
 
 ## Findings
 
-### The Low Status Moat Matters | The Deliberate Pause
-
-Path: `/articles/the-low-status-moat-matters`
-
-- **Error — Listed under category:** Not listed on /articles/category/self-worth.
-
-### The Unicorn Trap and Enlightenment | The Deliberate Pause
-
-Path: `/articles/the-unicorn-trap-and-the-road-to-enlightenment`
-
-- **Error — Single H1:** Found 3 H1 elements.
-- **Error — Listed under category:** Not listed on /articles/category/self-worth.
-
-### Welcome to The Deliberate Pause | The Deliberate Pause
-
-Path: `/articles/welcome-to-the-deliberate-pause`
-
-- **Error — Category link:** Missing linked article category.
-- **Error — Category page:** Missing category page for unknown category.
-- **Error — Listed under category:** Not listed on /articles/category/.
-
-### Your Attention Span Holds a Secret | The Deliberate Pause
-
-Path: `/articles/your-attention-span-holds-a-secret`
-
-- **Warning — Description length:** 117 characters; target 120–165.
-- **Error — Open Graph description:** OG description should match the meta description.
-- **Error — Twitter description:** Twitter description should match the meta description.
-- **Error — Schema description:** Schema description should match the meta description.
+No errors or warnings found.
 
 ## What This Audit Checks
 
