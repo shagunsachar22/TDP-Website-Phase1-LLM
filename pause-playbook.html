@@ -173,10 +173,15 @@
     .lt-who b { display: block; font-size: 14px; color: var(--text-dark); }
     .lt-who span { font-size: 13px; color: var(--text-muted-light); }
 
-    /* ===== Final CTA ===== */
-    .lead-final { padding: clamp(74px, 9vw, 118px) 0; border-top: 1px solid var(--border-on-dark); text-align: center; }
-    .lead-final h2 { font-size: clamp(34px, 5vw, 64px); line-height: 1.0; margin-bottom: 14px; }
-    .lead-final p { color: var(--text-muted-dark); max-width: 52ch; margin: 0 auto 28px; line-height: 1.6; }
+    /* ===== CTA bands (repeated after chapters and after testimonials) ===== */
+    .lead-cta { padding: clamp(64px, 8vw, 100px) 0; text-align: center; }
+    .lead-cta h2 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.02; margin-bottom: 12px; }
+    .lead-cta p { max-width: 52ch; margin: 0 auto 26px; line-height: 1.6; }
+    .lead-cta--dark { background: var(--bg-dark); color: var(--text-cream); border-top: 1px solid var(--border-on-dark); }
+    .lead-cta--dark p { color: var(--text-muted-dark); }
+    /* clay tone so the final CTA does not blend into the dark footer */
+    .lead-cta--clay { background: var(--bg-clay); color: var(--text-cream); }
+    .lead-cta--clay p { color: rgba(255, 255, 246, 0.80); }
 
     @media (max-width: 880px) {
       .lead-grid, .transformation-heading, .before-after-grid, .lt-grid { grid-template-columns: 1fr; }
@@ -306,6 +311,15 @@
       </div>
     </section>
 
+    <!-- ===== CTA after chapters ===== -->
+    <section class="lead-cta lead-cta--dark" aria-labelledby="cta1-title">
+      <div class="wrap">
+        <h2 id="cta1-title">Get The Luck Manual, free.</h2>
+        <p>Drop your email and we will send it over. You will also get The Deliberate Pause Monday Letter.</p>
+        <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">-&gt;</span></a>
+      </div>
+    </section>
+
     <!-- ===== TESTIMONIALS ===== -->
     <section class="lead-testimonials" aria-labelledby="testimonials-title">
       <div class="wrap">
@@ -328,11 +342,11 @@
       </div>
     </section>
 
-    <!-- ===== FINAL CTA ===== -->
-    <section class="lead-final theme-dark" aria-labelledby="final-title">
+    <!-- ===== CTA after testimonials (final, clay tone to separate from the footer) ===== -->
+    <section class="lead-cta lead-cta--clay" aria-labelledby="final-title">
       <div class="wrap">
-        <h2 id="final-title">Get The Luck Manual.</h2>
-        <p>Five ways to maximize your luck, plus a practical toolkit. Without making your body pay for it. Free.</p>
+        <h2 id="final-title">Start with the manual.</h2>
+        <p>Five ways to maximize your luck, plus a practical toolkit. Free, and the Monday Letter follows.</p>
         <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">-&gt;</span></a>
       </div>
     </section>
