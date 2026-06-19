@@ -267,15 +267,19 @@ blockquote {
   color: var(--text-dark);
   border: 1px solid var(--border-on-cream);
 }
+/* higher specificity (.btn.btn-secondary) so the ghost beats ".theme-dark .btn" which fills cream */
 .theme-dark .btn-ghost,
-.theme-dark .btn-secondary {
+.theme-dark .btn-secondary,
+.theme-dark .btn.btn-ghost,
+.theme-dark .btn.btn-secondary {
+  background: transparent;
   color: var(--text-cream);
   border-color: var(--border-on-dark);
 }
 .btn-ghost:hover,
 .btn-secondary:hover { background: rgba(26,26,26,0.05); transform: translateY(-2px); box-shadow: none; }
-.theme-dark .btn-ghost:hover,
-.theme-dark .btn-secondary:hover { background: rgba(245,239,229,0.06); }
+.theme-dark .btn.btn-ghost:hover,
+.theme-dark .btn.btn-secondary:hover { background: rgba(245,239,229,0.08); }
 
 /* CTA arrow: render a proper → regardless of the inline "->" text in the markup */
 .arrow { font-size: 0 !important; }
