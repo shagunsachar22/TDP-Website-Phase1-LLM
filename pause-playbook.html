@@ -73,7 +73,12 @@
       font-size: clamp(19px, 1.8vw, 25px);
       line-height: 1.45;
     }
-    .lead-proof { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    /* hero email form (Justin Welsh style: capture right under the headline) */
+    .lead-form { margin-top: 30px; max-width: 520px; }
+    .lead-form .lead-status { margin-top: 12px; }
+    .lead-form .lead-download { max-width: 360px; margin-top: 14px; padding-top: 0; border-top: 0; }
+    .lead-form .form-disclaimer { margin-top: 12px; color: rgba(245, 239, 229, 0.54); font-size: 13px; }
+    .lead-proof { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
     .lead-proof span {
       display: inline-flex; align-items: center; min-height: 34px; padding: 7px 13px;
       border: 1px solid rgba(245, 239, 229, 0.16); border-radius: 999px;
@@ -218,6 +223,29 @@
           <span class="eyebrow">Free guide · The Luck Manual</span>
           <h1 id="lead-title">How I exited two startups without destroying myself.</h1>
           <p class="lead">Five ways to maximize your luck, plus the toolkit I wish someone had handed me before the slipped disc, the stroke scare, and the quiet rebuild that followed.</p>
+
+          <div class="lead-form" id="get-the-manual">
+            <!-- Replace action with the live Kit/backend endpoint when it is wired. Tracking is already in place. -->
+            <form
+              class="form-row"
+              id="kit-lead-form"
+              action="#kit-placeholder"
+              method="post"
+              data-kit-placeholder="true"
+              data-event-location="pause_playbook_hero"
+            >
+              <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
+              <button class="btn btn-magnetic" type="submit">Send me the manual</button>
+            </form>
+            <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
+            <div class="lead-download" id="lead-download-panel" hidden>
+              <a class="btn btn-ghost" href="downloads/luck-manual-placeholder.pdf" download data-download-link data-event-location="pause_playbook_hero">
+                Download The Luck Manual <span class="arrow">-&gt;</span>
+              </a>
+            </div>
+            <p class="form-disclaimer">Free. You will also get the Monday Letter. No spam.</p>
+          </div>
+
           <div class="lead-proof" aria-label="What the manual covers">
             <span>Building</span>
             <span>Exiting</span>
@@ -236,38 +264,6 @@
             <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after rebuilding his relationship with ambition, health, and recovery" />
             <figcaption>After</figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EMAIL CAPTURE ===== -->
-    <section class="lead-capture theme-dark" id="get-the-manual" aria-labelledby="capture-title">
-      <div class="wrap">
-        <div class="lead-card">
-          <h2 id="capture-title">Get The Luck Manual, free.</h2>
-          <p>Drop your email and we will send you the guide. You will also get The Deliberate Pause Monday Letter.</p>
-
-          <!-- Replace action with the live Kit/backend endpoint when it is wired. Tracking is already in place. -->
-          <form
-            class="form-row"
-            id="kit-lead-form"
-            action="#kit-placeholder"
-            method="post"
-            data-kit-placeholder="true"
-            data-event-location="pause_playbook_hero"
-          >
-            <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
-            <button class="btn btn-magnetic" type="submit">Send me the manual</button>
-          </form>
-
-          <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
-
-          <div class="lead-download" id="lead-download-panel" hidden>
-            <a class="btn btn-ghost" href="downloads/luck-manual-placeholder.pdf" download data-download-link data-event-location="pause_playbook_hero">
-              Download The Luck Manual <span class="arrow">-&gt;</span>
-            </a>
-            <p class="form-disclaimer">No spam. Just the occasional useful pause.</p>
-          </div>
         </div>
       </div>
     </section>
