@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How I Exited Two Startups Without Destroying Myself | The Luck Manual</title>
-  <meta name="description" content="Avi Agarwal's free guide, The Luck Manual: seven chapters on building, exiting, and sustaining ambition without making your body pay for it." />
+  <meta name="description" content="Avi Agarwal's free guide, The Luck Manual: five ways to maximize your luck, plus a practical toolkit, without making your body pay for it." />
   <meta name="author" content="Avi Agarwal" />
   <link rel="canonical" href="https://www.thedeliberatepause.com/pause-playbook" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.thedeliberatepause.com/pause-playbook" />
   <meta property="og:title" content="How I Exited Two Startups Without Destroying Myself | The Luck Manual" />
-  <meta property="og:description" content="A free guide. Seven chapters on building, exiting, and sustaining ambition without making your body pay for it." />
+  <meta property="og:description" content="A free guide. Five ways to maximize your luck, plus a practical toolkit, without making your body pay for it." />
   <meta property="og:image" content="https://www.thedeliberatepause.com/images/avi/avi-after-rebuild.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How I Exited Two Startups Without Destroying Myself | The Luck Manual" />
-  <meta name="twitter:description" content="A free guide. Seven chapters on building, exiting, and sustaining ambition without making your body pay for it." />
+  <meta name="twitter:description" content="A free guide. Five ways to maximize your luck, plus a practical toolkit, without making your body pay for it." />
   <meta name="twitter:image" content="https://www.thedeliberatepause.com/images/avi/avi-after-rebuild.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     "@type": "WebPage",
     "name": "The Luck Manual",
     "url": "https://www.thedeliberatepause.com/pause-playbook",
-    "description": "How I exited two startups without destroying myself. A free guide in seven chapters on building, exiting, and sustaining ambition.",
+    "description": "How I exited two startups without destroying myself. A free guide: five ways to maximize your luck, plus a practical toolkit.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "The Deliberate Pause",
@@ -93,6 +93,17 @@
       border: 1px solid rgba(245,239,229,0.2); border-radius: 999px;
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
+    }
+    /* before / after pair in the banner */
+    .lead-visual--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .lead-visual--pair figure { margin: 0; position: relative; }
+    .lead-visual--pair img { aspect-ratio: 3 / 4.2; object-position: 50% 32%; }
+    .lead-visual--pair figcaption {
+      position: absolute; left: 10px; bottom: 10px;
+      background: var(--bg-dark); color: var(--accent-amber-bright);
+      border: 1px solid rgba(245,239,229,0.2); border-radius: 999px;
+      font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 6px 11px;
     }
 
     /* ===== Capture card ===== */
@@ -206,7 +217,7 @@
         <div class="lead-copy">
           <span class="eyebrow">Free guide · The Luck Manual</span>
           <h1 id="lead-title">How I exited two startups without destroying myself.</h1>
-          <p class="lead">The seven chapters I wish someone had handed me before the slipped disc, the stroke scare, and the quiet rebuild that followed.</p>
+          <p class="lead">Five ways to maximize your luck, plus the toolkit I wish someone had handed me before the slipped disc, the stroke scare, and the quiet rebuild that followed.</p>
           <div class="lead-proof" aria-label="What the manual covers">
             <span>Building</span>
             <span>Exiting</span>
@@ -215,10 +226,16 @@
           </div>
         </div>
 
-        <div class="lead-visual">
-          <!-- Banner image. Save Avi's "after" photo to images/avi/avi-after-rebuild.jpg -->
-          <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after rebuilding his relationship with ambition, health, and recovery" />
-          <span class="badge">The Luck Manual</span>
+        <div class="lead-visual lead-visual--pair">
+          <!-- Before / after banner. Save the photos to images/avi/avi-before-rebuild.jpg and avi-after-rebuild.jpg -->
+          <figure>
+            <img src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal before rebuilding his approach to health, pressure, and recovery" />
+            <figcaption>Before</figcaption>
+          </figure>
+          <figure>
+            <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after rebuilding his relationship with ambition, health, and recovery" />
+            <figcaption>After</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -255,65 +272,39 @@
       </div>
     </section>
 
-    <!-- ===== BEFORE / AFTER ===== -->
-    <section class="lead-transformation" aria-labelledby="transformation-title">
-      <div class="wrap">
-        <div class="section-kicker">Before / after</div>
-        <div class="transformation-heading">
-          <h2 id="transformation-title">The ambition stayed. The way I carried it changed.</h2>
-          <p>The difference was not wanting less. It was learning to build, recover, and make hard decisions without treating my body as collateral. The Luck Manual comes from that rebuild.</p>
-        </div>
-        <div class="before-after-grid">
-          <figure class="transformation-image transformation-image--before">
-            <!-- Save Avi's "before" photo to images/avi/avi-before-rebuild.jpg -->
-            <img src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal before rebuilding his approach to health, pressure, and recovery" />
-            <figcaption><strong>Before</strong><span>Ambition was present. The operating system underneath it was not sustainable.</span></figcaption>
-          </figure>
-          <figure class="transformation-image transformation-image--after">
-            <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after rebuilding his relationship with ambition, health, and recovery" />
-            <figcaption><strong>After</strong><span>Still ambitious. More deliberate. No longer treating health as the price of winning.</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== CHAPTERS (accordion) ===== -->
     <section class="lead-chapters theme-cream" aria-labelledby="chapters-title">
       <div class="wrap">
         <div class="chapters-head">
           <div class="section-kicker">What is inside</div>
-          <h2 id="chapters-title">Seven chapters.</h2>
-          <p>Click any chapter to read the snippet. Placeholder titles and copy for now, ready for the final text.</p>
+          <h2 id="chapters-title">Five ways to maximize your luck.</h2>
+          <p>Plus a practical toolkit at the end. Click any chapter to read the snippet. Placeholder copy for now, ready for the final text.</p>
         </div>
 
         <div class="chapters">
           <details class="chapter">
-            <summary><span class="ch-num">01</span><span class="ch-title">Manufacturing your own luck surface</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. Luck is not random; it is a surface area you can widen on purpose. This chapter covers how I started creating more of it without burning more of myself.</p></div>
+            <summary><span class="ch-num">01</span><span class="ch-title">Run your own race</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. Comparison is the fastest way to lose your own thread. How to set a race only you can run, and stop scoring yourself against everyone else's.</p></div>
           </details>
           <details class="chapter">
-            <summary><span class="ch-num">02</span><span class="ch-title">The exit that nearly cost me my body</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. The acquisition looked like proof. The slipped disc and the stroke scare told a different story. What I would do differently next time.</p></div>
+            <summary><span class="ch-num">02</span><span class="ch-title">Carry less</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. Most founders carry weight they were never meant to hold. What to put down so you can move faster and think clearer.</p></div>
           </details>
           <details class="chapter">
-            <summary><span class="ch-num">03</span><span class="ch-title">Reading pressure before it reads you</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. The skill that separates good operators from great ones: catching the moment pressure turns into reaction, and creating a gap.</p></div>
+            <summary><span class="ch-num">03</span><span class="ch-title">Maximize prana</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. Energy is the real currency. Simple breath and recovery practices that keep your prana, and your judgment, topped up.</p></div>
           </details>
           <details class="chapter">
-            <summary><span class="ch-num">04</span><span class="ch-title">The decisions that compound quietly</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. The unglamorous calls nobody posts about are usually the ones that compound. How to spot them and protect time for them.</p></div>
+            <summary><span class="ch-num">04</span><span class="ch-title">It's not about you</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. When the ego runs the company, every result becomes a verdict. How to take yourself out of the centre and build cleaner.</p></div>
           </details>
           <details class="chapter">
-            <summary><span class="ch-num">05</span><span class="ch-title">Recovery as a performance system</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. Rest is not the reward for the work; it is part of the work. The recovery practices I now treat as non-negotiable.</p></div>
+            <summary><span class="ch-num">05</span><span class="ch-title">Do your reps</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. Luck loves consistency. The unglamorous reps that compound, and how to keep showing up when nobody is watching.</p></div>
           </details>
           <details class="chapter">
-            <summary><span class="ch-num">06</span><span class="ch-title">Detaching worth from the outcome</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. When every result decides who you are, ambition gets expensive. How to keep building hard while loosening that grip.</p></div>
-          </details>
-          <details class="chapter">
-            <summary><span class="ch-num">07</span><span class="ch-title">Building luck you can survive</span><span class="ch-plus" aria-hidden="true">+</span></summary>
-            <div class="ch-body"><p>Placeholder snippet. Pulling it together: ambition and recovery as one system, so the next win does not arrive at the cost of the person who built it.</p></div>
+            <summary><span class="ch-num">Toolkit</span><span class="ch-title">The practical toolkit</span><span class="ch-plus" aria-hidden="true">+</span></summary>
+            <div class="ch-body"><p>Placeholder snippet. The practical protocols you can use in real time on a hard day: the pause, the reset, and the recovery practices that hold under pressure.</p></div>
           </details>
         </div>
       </div>
@@ -345,7 +336,7 @@
     <section class="lead-final theme-dark" aria-labelledby="final-title">
       <div class="wrap">
         <h2 id="final-title">Get The Luck Manual.</h2>
-        <p>Seven chapters on building, exiting, and sustaining ambition without making your body pay for it. Free.</p>
+        <p>Five ways to maximize your luck, plus a practical toolkit. Without making your body pay for it. Free.</p>
         <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">-&gt;</span></a>
       </div>
     </section>
