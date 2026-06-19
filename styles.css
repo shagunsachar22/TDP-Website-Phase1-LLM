@@ -261,17 +261,27 @@ blockquote {
 }
 .btn-sm .arrow { font-size: 16px; }
 
-.btn-ghost {
+.btn-ghost,
+.btn-secondary {
   background: transparent;
   color: var(--text-dark);
   border: 1px solid var(--border-on-cream);
 }
-.theme-dark .btn-ghost {
+.theme-dark .btn-ghost,
+.theme-dark .btn-secondary {
   color: var(--text-cream);
   border-color: var(--border-on-dark);
 }
-.btn-ghost:hover { background: rgba(26,26,26,0.05); transform: translateY(-2px); box-shadow: none; }
-.theme-dark .btn-ghost:hover { background: rgba(245,239,229,0.06); }
+.btn-ghost:hover,
+.btn-secondary:hover { background: rgba(26,26,26,0.05); transform: translateY(-2px); box-shadow: none; }
+.theme-dark .btn-ghost:hover,
+.theme-dark .btn-secondary:hover { background: rgba(245,239,229,0.06); }
+
+/* CTA arrow: render a proper → regardless of the inline "->" text in the markup */
+.arrow { font-size: 0 !important; }
+.arrow::after { content: "\2192"; font-size: 18px; }
+.btn-sm .arrow::after { font-size: 16px; }
+.nav-cta .arrow::after { font-size: 15px; }
 
 /* ====== forms ====== */
 .form-row {
