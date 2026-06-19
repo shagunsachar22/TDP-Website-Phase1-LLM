@@ -161,14 +161,93 @@
       font-size: 13px;
       font-weight: 600;
     }
+    .lead-transformation {
+      padding: clamp(76px, 9vw, 124px) 0;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+    }
+    .transformation-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
+      gap: clamp(30px, 6vw, 84px);
+      align-items: end;
+      margin-bottom: clamp(34px, 5vw, 56px);
+    }
+    .transformation-heading h2 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+    }
+    .transformation-heading p {
+      margin: 0;
+      color: var(--text-muted-light);
+      font-size: 17px;
+      line-height: 1.62;
+    }
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .transformation-image {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border-on-cream);
+      border-radius: 8px;
+      background: var(--bg-mocha);
+    }
+    .transformation-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .transformation-image--before img {
+      object-position: center;
+    }
+    .transformation-image--after img {
+      object-position: center 52%;
+    }
+    .transformation-image figcaption {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: baseline;
+      padding: 17px 18px 19px;
+      color: var(--text-muted-light);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .transformation-image figcaption strong {
+      color: var(--accent-rust);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
     @media (max-width: 860px) {
       .lead-grid,
-      .lead-checklist-grid {
+      .lead-checklist-grid,
+      .transformation-heading,
+      .before-after-grid {
         grid-template-columns: 1fr;
       }
       .lead-hero {
         min-height: auto;
         padding-top: 96px;
+      }
+      .transformation-heading {
+        align-items: start;
+      }
+    }
+    @media (max-width: 560px) {
+      .transformation-image figcaption {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+      .transformation-image img {
+        aspect-ratio: 1 / 1;
       }
     }
   </style>
@@ -244,6 +323,27 @@
             <p class="form-disclaimer">No spam. Just the occasional useful pause.</p>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="lead-transformation" aria-labelledby="transformation-title">
+      <div class="wrap">
+        <div class="section-kicker">Before / after</div>
+        <div class="transformation-heading">
+          <h2 id="transformation-title">Two exits. One body keeping score.</h2>
+          <p>The exits looked like success. The slipped disc and stroke scare told the part of the story that the milestones could not. The Pause Playbook comes from rebuilding ambition without asking the body to absorb all of its cost.</p>
+        </div>
+
+        <div class="before-after-grid">
+          <figure class="transformation-image transformation-image--before">
+            <img src="images/avi/avi-hospital-story.png" alt="Avi Agarwal during a hospital stay before rebuilding his approach to pressure and recovery" />
+            <figcaption><strong>Before</strong><span>Building through pressure until the body forced the pause.</span></figcaption>
+          </figure>
+          <figure class="transformation-image transformation-image--after">
+            <img src="images/avi/avi-scooter-smile.webp" alt="Avi Agarwal smiling outdoors after rebuilding his relationship with ambition and recovery" />
+            <figcaption><strong>After</strong><span>Still ambitious. More present. No longer treating health as the price of winning.</span></figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
