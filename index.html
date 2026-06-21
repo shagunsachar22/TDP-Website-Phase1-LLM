@@ -128,6 +128,19 @@
       color: rgba(245, 239, 229, 0.55);
       font-size: clamp(16px, 1.2vw, 20px);
       text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+      margin-top: 16px;
+    }
+    .hero-copy .form-row { max-width: 520px; }
+    .hero-secondary {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .hero-secondary-label {
+      color: rgba(245, 239, 229, 0.6);
+      font-size: 15px;
     }
     .hero-actions {
       display: flex;
@@ -1202,11 +1215,19 @@
       <div class="hero-content">
         <div class="hero-copy">
           <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions.</p>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with The Luck Manual, free.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
-            <a class="btn btn-magnetic" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-            <a class="btn btn-secondary" href="/pause-playbook">Get the Luck Manual <span class="arrow">→</span></a>
+            <!-- Homepage lead capture for The Luck Manual. Wire to the live Kit form/endpoint in the Webflow build; tracking attributes are already in place. -->
+            <form class="form-row" id="kit-lead-form-home" action="#kit-placeholder" method="post" data-kit-placeholder="true" data-event-location="homepage_hero">
+              <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
+              <button class="btn btn-magnetic" type="submit">Send me the manual <span class="arrow">→</span></button>
+            </form>
+          </div>
+          <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">Free. You will also get the Monday Letter. No spam.</p>
+          <div class="hero-secondary" data-scroll-fx style="--fx-delay: 0.5s;">
+            <span class="hero-secondary-label">Just want the letter?</span>
+            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
           </div>
         </div>
 
