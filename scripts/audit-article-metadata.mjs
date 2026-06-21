@@ -35,6 +35,16 @@ function getMeta(html, key, attribute = 'name') {
   return '';
 }
 
+function countMeta(html, key, attribute = 'name') {
+  const tags = html.match(/<meta\s+[^>]*>/gi) || [];
+  return tags.filter((tag) => {
+    const attrs = Object.fromEntries(
+      [...tag.matchAll(/([:\w-]+)\s*=\s*(["'])(.*?)\2/g)].map((match) => [match[1].toLowerCase(), decode(match[3])])
+    );
+    return attrs[attribute] === key;
+  }).length;
+}
+
 function getCanonical(html) {
   const links = html.match(/<link\s+[^>]*>/gi) || [];
   for (const tag of links) {
@@ -97,17 +107,21 @@ const results = articleFiles.map((file) => {
   const checks = [];
 
   add(checks, 'error', 'HTML title', Boolean(title), 'Missing <title>.');
+  add(checks, 'error', 'Unique HTML title', (html.match(/<title>/gi) || []).length === 1, `Found ${(html.match(/<title>/gi) || []).length} title elements.`);
   add(checks, 'warning', 'Title length', title.length >= 30 && title.length <= 65, `${title.length} characters; target 30–65.`);
   add(checks, 'error', 'Meta description', Boolean(description), 'Missing meta description.');
+  add(checks, 'error', 'Unique meta description', countMeta(html, 'description') === 1, `Found ${countMeta(html, 'description')} meta descriptions.`);
   add(checks, 'warning', 'Description length', description.length >= 120 && description.length <= 165, `${description.length} characters; target 120–165.`);
   add(checks, 'error', 'Canonical URL', canonical === expectedUrl, `Expected ${expectedUrl}; found ${canonical || 'missing'}.`);
   add(checks, 'error', 'Open Graph type', getMeta(html, 'og:type', 'property') === 'article', 'Expected og:type=article.');
+  add(checks, 'error', 'Unique Open Graph fields', ['og:type', 'og:url', 'og:title', 'og:description', 'og:image'].every((key) => countMeta(html, key, 'property') === 1), 'Each core Open Graph field must appear exactly once.');
   add(checks, 'error', 'Open Graph URL', ogUrl === expectedUrl, `Expected ${expectedUrl}; found ${ogUrl || 'missing'}.`);
   add(checks, 'error', 'Open Graph title', ogTitle === title, 'OG title should match the page title.');
   add(checks, 'error', 'Open Graph description', ogDescription === description, 'OG description should match the meta description.');
   add(checks, 'error', 'Open Graph image', /^https:\/\//.test(ogImage), 'Missing absolute HTTPS OG image.');
   add(checks, 'warning', 'Open Graph image alt', Boolean(getMeta(html, 'og:image:alt', 'property')), 'Recommended for accessible social previews.');
   add(checks, 'error', 'Twitter card', getMeta(html, 'twitter:card') === 'summary_large_image', 'Expected summary_large_image.');
+  add(checks, 'error', 'Unique Twitter fields', ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'].every((key) => countMeta(html, key) === 1), 'Each core Twitter field must appear exactly once.');
   add(checks, 'error', 'Twitter title', twitterTitle === title, 'Twitter title should match the page title.');
   add(checks, 'error', 'Twitter description', twitterDescription === description, 'Twitter description should match the meta description.');
   add(checks, 'error', 'Twitter image', twitterImage === ogImage && Boolean(twitterImage), 'Twitter image should match the OG image.');
@@ -161,6 +175,16 @@ const lines = [
   '',
   'An **error** means required metadata is absent, inconsistent, invalid, or disconnected from the site structure. A **warning** is a recommended improvement that does not prevent indexing.',
   '',
+  '## Corrections Applied',
+  '',
+  '- Standardized all article schema publication dates to ISO `YYYY-MM-DD` format.',
+  '- Added `article:published_time` to every article.',
+  '- Aligned page, Open Graph, Twitter, and Article schema descriptions.',
+  '- Added accessible Open Graph and Twitter image alt metadata.',
+  '- Completed missing social metadata and removed duplicate metadata fields.',
+  '- Corrected article-to-category relationships and category-page listings.',
+  '- Reduced imported article heading conflicts to one H1 per page.',
+  '',
   '## Article Results',
   '',
   '| # | Article | Category | Errors | Warnings | Status |',
@@ -191,6 +215,7 @@ lines.push(
   '- Meta description presence and search-friendly length.',
   '- Canonical URL, Open Graph URL, and schema URL consistency.',
   '- Complete Open Graph and Twitter large-image metadata.',
+  '- No duplicate title, description, Open Graph, or Twitter fields.',
   '- Valid Article and BreadcrumbList JSON-LD.',
   '- Avi Agarwal author and The Deliberate Pause publisher identity.',
   '- ISO publication date, article image, headline, and description consistency.',
