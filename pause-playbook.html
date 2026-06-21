@@ -99,16 +99,25 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* before / after pair in the banner */
-    .lead-visual--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .lead-visual--pair figure { margin: 0; position: relative; }
-    .lead-visual--pair img { aspect-ratio: 3 / 4.2; object-position: 50% 32%; }
-    .lead-visual--pair figcaption {
-      position: absolute; left: 10px; bottom: 10px;
-      background: var(--bg-dark); color: var(--accent-amber-bright);
-      border: 1px solid rgba(245,239,229,0.2); border-radius: 999px;
-      font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      padding: 6px 11px;
+    /* journey collage in the banner — an arc, not a before/after */
+    .lead-visual--story { display: block; }
+    .story-photos { position: relative; margin: 0; }
+    .story-photo { border-radius: 10px; object-fit: cover; box-shadow: 0 30px 80px rgba(0,0,0,0.32); }
+    .story-photo--a {
+      width: 74%; aspect-ratio: 4 / 5; object-position: 50% 28%;
+      border: 1px solid rgba(245, 239, 229, 0.16);
+    }
+    .story-photo--b {
+      position: absolute; right: 0; bottom: -6px; width: 50%; aspect-ratio: 4 / 5;
+      object-position: 50% 30%; border: 5px solid var(--bg-mocha);
+    }
+    .story-caption {
+      display: block; margin-top: 22px; max-width: 360px;
+      color: rgba(245, 239, 229, 0.66); font-size: 14px; line-height: 1.55;
+    }
+    .story-arc {
+      display: block; margin-bottom: 6px; font-family: var(--font-serif);
+      font-size: 19px; line-height: 1.25; color: var(--text-cream); font-weight: 600;
     }
 
     /* ===== Capture card ===== */
@@ -259,16 +268,18 @@
           </div>
         </div>
 
-        <div class="lead-visual lead-visual--pair">
-          <!-- Before / after banner. Save the photos to images/avi/avi-before-rebuild.jpg and avi-after-rebuild.jpg -->
-          <figure>
-            <img src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal before rebuilding his approach to health, pressure, and recovery" />
-            <figcaption>Before</figcaption>
+        <div class="lead-visual lead-visual--story">
+          <!-- Journey collage, not a before/after. Two photos as story beats; framed as trajectory/luck.
+               Save the photos to images/avi/avi-before-rebuild.jpg (early years) and images/avi/avi-after-rebuild.jpg (today).
+               Ideal next step: a 3-4 image story strip (Kathmandu -> raising money / CreditVidya -> Prefr & the acquisition -> today). -->
+          <figure class="story-photos">
+            <img class="story-photo story-photo--a" src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal in his early founder years" />
+            <img class="story-photo story-photo--b" src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal today, after building and exiting two startups" />
           </figure>
-          <figure>
-            <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after rebuilding his relationship with ambition, health, and recovery" />
-            <figcaption>After</figcaption>
-          </figure>
+          <figcaption class="story-caption">
+            <span class="story-arc">From Kathmandu to two exits.</span>
+            Raising venture money, building CreditVidya and Prefr, the acquisition, and the rebuild that followed. Same person, different luck, most of it made on purpose.
+          </figcaption>
         </div>
       </div>
     </section>
