@@ -130,14 +130,18 @@
       text-shadow: 0 1px 8px rgba(0,0,0,0.4);
       margin-top: 16px;
     }
-    .hero-inline-link {
-      color: var(--accent-amber);
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .hero-inline-link:hover { color: var(--text-cream); }
-    .hero-copy .eyebrow { display: inline-block; margin-bottom: 18px; }
     .hero-copy .form-row { max-width: 520px; }
+    .hero-secondary {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .hero-secondary-label {
+      color: rgba(245, 239, 229, 0.6);
+      font-size: 15px;
+    }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1210,9 +1214,8 @@
 
       <div class="hero-content">
         <div class="hero-copy">
-          <span class="eyebrow" data-scroll-fx>Free guide · The Luck Manual</span>
-          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">How founders</span><span class="line">make their own luck.</span></h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Get The Luck Manual — five ways Avi Agarwal turned pressure, setbacks, and two startup exits into an unfair advantage. Then keep getting the Monday Letter, free.</p>
+          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with The Luck Manual, free.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
             <!-- Homepage lead capture for The Luck Manual. Wire to the live Kit form/endpoint in the Webflow build; tracking attributes are already in place. -->
@@ -1221,7 +1224,11 @@
               <button class="btn btn-magnetic" type="submit">Send me the manual <span class="arrow">→</span></button>
             </form>
           </div>
-          <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">Free. You will also get the Monday Letter. No spam. <a href="/pause-playbook" class="hero-inline-link">See what is inside →</a></p>
+          <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">Free. You will also get the Monday Letter. No spam.</p>
+          <div class="hero-secondary" data-scroll-fx style="--fx-delay: 0.5s;">
+            <span class="hero-secondary-label">Just want the letter?</span>
+            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+          </div>
         </div>
 
         <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
