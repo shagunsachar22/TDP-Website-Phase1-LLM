@@ -125,24 +125,27 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* hero proof banner = image + overlay chips (press + stat) */
-    .lead-proof-visual {
-      position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5;
+    /* one bold banner: big headline + a wall of press clippings */
+    .lead-hero .lead-copy h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
+    .press-wall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .press-eyebrow {
+      grid-column: 1 / -1; margin-bottom: 2px;
+      color: rgba(245, 239, 229, 0.5); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .press-card {
+      margin: 0; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5;
       border: 1px solid rgba(245, 239, 229, 0.16);
-      background: linear-gradient(150deg, rgba(214, 168, 110, 0.22), rgba(245, 239, 229, 0.05)), var(--bg-mocha);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+      background: linear-gradient(150deg, rgba(214, 168, 110, 0.18), rgba(245, 239, 229, 0.04)), var(--bg-mocha);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
     }
-    .lead-proof-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; display: block; }
-    .proof-chip {
-      position: absolute; z-index: 1; max-width: 72%;
-      background: rgba(31, 30, 25, 0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-      color: var(--text-cream); border: 1px solid rgba(245, 239, 229, 0.18); border-radius: 10px;
-      padding: 10px 14px; font-size: 13px; line-height: 1.3;
-    }
-    .proof-chip b { color: var(--accent-amber-bright); }
-    .proof-chip--press { left: 14px; bottom: 14px; }
-    .proof-chip--stat { right: 14px; top: 14px; text-align: center; font-size: 12px; max-width: none; }
-    .proof-chip--stat b { display: block; font-size: 26px; line-height: 1; margin-bottom: 2px; }
+    .press-card img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; display: block; }
+
+    /* before / after band (final CTA) */
+    .lead-ba .ba-pair { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 560px; margin: 0 auto 32px; }
+    .lead-ba figure { margin: 0; }
+    .lead-ba figure img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255, 255, 246, 0.2); display: block; background: var(--bg-mocha); }
+    .lead-ba figcaption { margin-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 246, 0.82); }
 
     /* ===== Money / Health / Love pillars (replaces the timeline) ===== */
     .lead-luck { padding: clamp(64px, 8vw, 96px) 0; border-bottom: 1px solid var(--border-on-dark); background: var(--bg-mocha); }
@@ -317,73 +320,16 @@
             <span>Health</span>
             <span>Love</span>
           </div>
-
-          <div class="lead-cred-strip" aria-label="Press features">
-            <span class="cred-label">As featured in</span>
-            <!-- Placeholder press names; swap for real logos when available -->
-            <span class="wordmark">Forbes</span>
-            <span class="wordmark">Economic Times</span>
-            <span class="wordmark">TechCrunch</span>
-            <span class="wordmark">TOI</span>
-          </div>
         </div>
 
-        <div class="lead-visual lead-proof-visual">
-          <!-- Hero proof image. Save the photo to images/lead-hero-meditation.png (or swap for a portrait). -->
-          <img src="images/lead-hero-meditation.png" alt="Avi Agarwal" onerror="this.style.display='none'" />
-          <span class="proof-chip proof-chip--stat"><b>2</b>startup exits</span>
-          <span class="proof-chip proof-chip--press">Featured in <b>Forbes, ET &amp; TechCrunch</b></span>
+        <div class="lead-visual press-wall" aria-label="Press coverage">
+          <span class="press-eyebrow">As featured in</span>
+          <!-- Save Avi's press clippings to these paths (images/press/) -->
+          <figure class="press-card"><img src="images/press/et-creditvidya-series-a.jpeg" alt="The Economic Times: Kalaari Capital leads $2M Series A funding round in CreditVidya" onerror="this.style.display='none'" /></figure>
+          <figure class="press-card"><img src="images/press/mint-creditvidya-series-b.jpeg" alt="Mint: CreditVidya raises $5M in Series B from Matrix Partners" onerror="this.style.display='none'" /></figure>
+          <figure class="press-card"><img src="images/press/reuters-cred-meta.jpeg" alt="Reuters: Indian fintech firm CRED to raise $900M from Meta at $4.5B valuation" onerror="this.style.display='none'" /></figure>
+          <figure class="press-card"><img src="images/press/yourstory-creditvidya-bif.jpeg" alt="YourStory: CreditVidya raises $3M in funding led by Bharat Innovation Fund" onerror="this.style.display='none'" /></figure>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== MONEY / HEALTH / LOVE (social proof, the core argument) ===== -->
-    <section class="lead-luck theme-dark" aria-labelledby="luck-title">
-      <div class="wrap">
-        <div class="luck-head">
-          <div class="section-kicker">The premise</div>
-          <h2 id="luck-title">I got lucky in money, health, and love. None of it was an accident.</h2>
-          <p>Luck is not one break you wait for. It is a set of conditions you can build. Here is the proof across the three that matter, and the manual shows you how to engineer your own.</p>
-        </div>
-
-        <div class="luck-pillars">
-          <article class="pillar">
-            <div class="pillar-media">
-              <!-- Swap for real company logos when available -->
-              <span class="wordmark">CreditVidya</span>
-              <span class="wordmark">CRED</span>
-            </div>
-            <div class="pillar-text">
-              <span class="pillar-label">Money</span>
-              <h3>Raised capital, built it, exited.</h3>
-              <p>Better odds showed up once the work, the story, and the people started compounding. Repeatable, not random.</p>
-            </div>
-          </article>
-          <article class="pillar">
-            <div class="pillar-media">
-              <!-- Health proof photo: images/avi/avi-health.png -->
-              <img src="images/avi/avi-health.png" alt="Avi Agarwal after rebuilding his health" onerror="this.style.display='none'" />
-            </div>
-            <div class="pillar-text">
-              <span class="pillar-label">Health</span>
-              <h3>Rebuilt after the body broke.</h3>
-              <p>A slipped disc and a stroke scare were the signal, not the end. Better energy changed every decision that came after.</p>
-            </div>
-          </article>
-          <article class="pillar">
-            <div class="pillar-media">
-              <!-- Love/life proof photo: images/avi/avi-love-life.png -->
-              <img src="images/avi/avi-love-life.png" alt="Avi Agarwal with the people who matter most" onerror="this.style.display='none'" />
-            </div>
-            <div class="pillar-text">
-              <span class="pillar-label">Love</span>
-              <h3>Showed up for the people who matter.</h3>
-              <p>Ambition stopped costing the relationships around it. That is its own kind of luck, and it is learnable too.</p>
-            </div>
-          </article>
-        </div>
-
-        <p class="luck-cta-line">And everyone can too. <a href="#get-the-manual">Download The Luck Manual &rarr;</a></p>
       </div>
     </section>
 
@@ -456,12 +402,24 @@
       </div>
     </section>
 
-    <!-- ===== CTA after testimonials (final, clay tone to separate from the footer) ===== -->
-    <section class="lead-cta lead-cta--clay" aria-labelledby="final-title">
+    <!-- ===== BEFORE / AFTER band as the final CTA (clay tone to separate from the footer) ===== -->
+    <section class="lead-cta lead-cta--clay lead-ba" aria-labelledby="final-title">
       <div class="wrap">
-        <h2 id="final-title">Start with the manual.</h2>
-        <p>Five ways to create better odds, plus a practical toolkit. Free, and the Monday Letter follows.</p>
-        <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">-&gt;</span></a>
+        <div class="ba-pair">
+          <figure>
+            <!-- Before photo: images/avi/avi-before-rebuild.jpg -->
+            <img src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal before the rebuild" onerror="this.style.display='none'" />
+            <figcaption>Before</figcaption>
+          </figure>
+          <figure>
+            <!-- After photo: images/avi/avi-after-rebuild.jpg -->
+            <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after the rebuild" onerror="this.style.display='none'" />
+            <figcaption>After</figcaption>
+          </figure>
+        </div>
+        <h2 id="final-title">Same person. Different luck.</h2>
+        <p>Before and after Avi started building his own odds. The Luck Manual is how he did it. Free, and the Monday Letter follows.</p>
+        <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">→</span></a>
       </div>
     </section>
   </main>
