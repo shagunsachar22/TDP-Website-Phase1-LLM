@@ -124,23 +124,43 @@
       margin: 0 0 36px;
       text-shadow: 0 2px 18px rgba(31, 30, 25, 0.18);
     }
-    .hero-content .form-disclaimer {
-      color: rgba(245, 239, 229, 0.55);
-      font-size: clamp(16px, 1.2vw, 20px);
-      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
-      margin-top: 16px;
-    }
     .hero-copy .form-row { max-width: 520px; }
+    .hero-content .form-disclaimer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 520px;
+      color: rgba(245, 239, 229, 0.52);
+      font-size: 13px;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+      text-shadow: none;
+      margin-top: 14px;
+    }
+    .hero-content .form-disclaimer::before {
+      content: "";
+      flex: none;
+      width: 14px;
+      height: 14px;
+      background: var(--accent-amber);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
+      opacity: 0.8;
+    }
     .hero-secondary {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 22px;
+      max-width: 520px;
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(245, 239, 229, 0.12);
     }
     .hero-secondary-label {
-      color: rgba(245, 239, 229, 0.6);
-      font-size: 15px;
+      color: rgba(245, 239, 229, 0.58);
+      font-size: 14px;
+      font-weight: 500;
     }
     .hero-actions {
       display: flex;
@@ -1227,7 +1247,7 @@
           <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">Free. You will also get the Monday Letter. No spam.</p>
           <div class="hero-secondary" data-scroll-fx style="--fx-delay: 0.5s;">
             <span class="hero-secondary-label">Just want the letter?</span>
-            <a class="btn btn-secondary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+            <a class="btn btn-secondary btn-sm" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
           </div>
         </div>
 

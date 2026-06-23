@@ -91,21 +91,66 @@
       border-bottom: 1px solid var(--border-on-dark);
     }
     .articles-hero-grid {
-      max-width: 1040px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+      gap: clamp(36px, 5vw, 76px);
+      align-items: center;
     }
+    .articles-hero-copy { max-width: 620px; }
     .articles-hero h1 {
-      max-width: 980px;
-      font-size: clamp(50px, 8.4vw, 118px);
-      line-height: 0.92;
-      letter-spacing: -0.04em;
-      margin: 0 0 28px;
+      font-size: clamp(40px, 5.2vw, 76px);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      margin: 0 0 24px;
     }
     .articles-hero .lead {
-      max-width: 760px;
       color: var(--text-muted-dark);
-      font-size: clamp(19px, 1.7vw, 25px);
-      line-height: 1.45;
+      font-size: clamp(17px, 1.5vw, 21px);
+      line-height: 1.5;
     }
+    /* featured article, now inside the hero */
+    .hero-featured {
+      display: block;
+      border: 1px solid var(--border-on-dark);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(245, 239, 229, 0.04);
+      color: var(--text-cream);
+      transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+    .hero-featured:hover {
+      transform: translateY(-4px);
+      border-color: rgba(245, 239, 229, 0.32);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    }
+    .hero-featured-img {
+      aspect-ratio: 16 / 10;
+      background:
+        linear-gradient(135deg, rgba(17, 17, 0, 0.16), rgba(17, 17, 0, 0)),
+        url("https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/693e715bd2ce6a7aad4f715e_01_Cover.webp") center / cover;
+    }
+    .hero-featured-body { padding: clamp(22px, 2.4vw, 32px); }
+    .hero-featured-body .eyebrow { display: block; color: var(--accent-rust); margin-bottom: 14px; }
+    .hero-featured-body h2 {
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+    .hero-featured-body p {
+      color: var(--text-muted-dark);
+      font-size: 15px;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+    .hero-featured-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-amber);
+      font-weight: 700;
+    }
+    .hero-featured:hover .hero-featured-cta { color: var(--text-cream); }
     .articles-page {
       background: var(--bg-cream);
       color: var(--text-dark);
@@ -271,6 +316,7 @@
       .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 900px) {
+      .articles-hero-grid,
       .featured-article,
       .section-heading,
       .articles-cta-grid {
@@ -315,9 +361,20 @@
     <section class="articles-hero theme-dark">
       <div class="wrap">
         <div class="articles-hero-grid">
-          <span class="eyebrow">Articles</span>
-          <h1>Articles on founder burnout, resilience, and recovery.</h1>
-          <p class="lead">A practical library for founders navigating self-worth, rejection, attention, agency, hustle culture, and the inner work of building well.</p>
+          <div class="articles-hero-copy">
+            <span class="eyebrow">Articles</span>
+            <h1>Articles on founder burnout, resilience, and recovery.</h1>
+            <p class="lead">A practical library for founders navigating self-worth, rejection, attention, agency, hustle culture, and the inner work of building well.</p>
+          </div>
+          <a class="hero-featured" href="/articles/the-unicorn-trap-and-the-road-to-enlightenment">
+            <div class="hero-featured-img" role="img" aria-label="The Unicorn Trap and the Road to Enlightenment article cover"></div>
+            <div class="hero-featured-body">
+              <span class="eyebrow">Featured article</span>
+              <h2>The Unicorn Trap and the Road to Enlightenment</h2>
+              <p>Why chasing startup scale, status, and the perfect exit can leave founders further from autonomy, meaning, and enough.</p>
+              <span class="hero-featured-cta">Read article <span class="arrow">→</span></span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -332,16 +389,6 @@
           <a class="category-pill" href="/articles/category/performance-recovery">Performance & Recovery</a>
           <a class="category-pill" href="/articles/category/self-worth">Self-worth</a>
         </nav>
-
-        <article class="featured-article">
-          <div>
-            <span class="eyebrow">Featured article</span>
-            <h2>The Unicorn Trap and the Road to Enlightenment</h2>
-            <p>Why chasing startup scale, status, and the perfect exit can leave founders further from autonomy, meaning, and enough.</p>
-            <a class="btn" href="/articles/the-unicorn-trap-and-the-road-to-enlightenment">Read article <span class="arrow">-&gt;</span></a>
-          </div>
-          <div class="featured-visual" role="img" aria-label="The Unicorn Trap and the Road to Enlightenment article cover"></div>
-        </article>
 
         <div class="section-heading">
           <h2>Start where it hurts.</h2>
