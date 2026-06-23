@@ -85,31 +85,30 @@
       border: 1px solid rgba(245, 239, 229, 0.16); border-radius: 999px;
       color: rgba(245, 239, 229, 0.72); font-size: 13px; font-weight: 600;
     }
+    /* "as featured in" press row */
     .lead-cred-strip {
-      display: grid;
-      grid-template-columns: auto repeat(4, minmax(56px, 1fr));
-      gap: 16px;
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      gap: 10px 22px;
       max-width: 620px;
       margin-top: 28px;
       padding-top: 22px;
       border-top: 1px solid rgba(245, 239, 229, 0.14);
     }
-    .lead-cred-strip span {
-      color: rgba(245, 239, 229, 0.54);
+    .lead-cred-strip .cred-label {
+      color: rgba(245, 239, 229, 0.5);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.18em;
-      line-height: 1.4;
       text-transform: uppercase;
     }
-    .lead-cred-strip img {
-      display: block;
-      max-width: 112px;
-      max-height: 30px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.76;
+    .lead-cred-strip .wordmark {
+      color: rgba(245, 239, 229, 0.82);
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.01em;
     }
     /* hero visual = the guide / transformation image */
     .lead-visual { position: relative; }
