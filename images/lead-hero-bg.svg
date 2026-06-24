@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Placeholder">
+  <rect width="1200" height="800" fill="#1a1611"/>
+  <text x="840" y="410" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" fill="#5a5048">full-bleed hero photo</text>
+  <text x="840" y="446" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#46403a" letter-spacing="1">save as images/lead-hero-bg.jpg</text>
+</svg>

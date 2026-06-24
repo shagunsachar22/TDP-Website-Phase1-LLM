@@ -125,24 +125,39 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* one bold banner: big headline + a layered photo/press collage */
-    .lead-hero .lead-copy h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
-    .press-collage {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      align-items: start; padding: 12px 4px;
+    /* full-bleed image hero: big bold copy + CTA over one photo */
+    .lead-hero { position: relative; overflow: hidden; display: flex; align-items: center; min-height: 86vh; }
+    .lead-hero .lead-copy h1 { font-size: clamp(44px, 6.6vw, 96px); line-height: 0.94; letter-spacing: -0.03em; text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5); }
+    .lead-hero .lead { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); }
+    .lead-hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 28%; display: block; }
+    .lead-hero-scrim {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(15, 13, 10, 0.92) 0%, rgba(15, 13, 10, 0.72) 42%, rgba(15, 13, 10, 0.18) 100%),
+        linear-gradient(0deg, rgba(15, 13, 10, 0.85) 0%, rgba(15, 13, 10, 0.25) 55%, rgba(15, 13, 10, 0.12) 100%);
     }
+    .lead-hero-inner { position: relative; z-index: 2; }
+    .lead-hero-inner .lead-copy { max-width: 600px; }
+    @media (max-width: 700px) {
+      .lead-hero { min-height: 0; padding: 104px 0 72px; }
+      .lead-hero-scrim { background: linear-gradient(0deg, rgba(15, 13, 10, 0.92) 6%, rgba(15, 13, 10, 0.55) 60%, rgba(15, 13, 10, 0.42) 100%); }
+    }
+
+    /* moodboard collage (now a section lower down) */
+    .press-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: start; }
+    .press-collage--band { max-width: 680px; margin: 40px auto 0; }
     .press-collage .clip {
       position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden;
-      border: 4px solid #fffdf7; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
-      background: var(--bg-mocha); transition: transform 0.25s var(--ease), z-index 0s;
+      border: 4px solid #fffdf7; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+      background: var(--bg-mocha); transition: transform 0.25s var(--ease);
     }
     .press-collage .clip img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; display: block; }
     .press-collage .clip .clip-tag {
       position: absolute; left: 8px; bottom: 8px; z-index: 2;
       background: rgba(20, 18, 15, 0.82); color: var(--accent-amber-bright);
       border: 1px solid rgba(245, 239, 229, 0.22); border-radius: 999px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 4px 9px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 9px;
     }
     .press-collage .clip:nth-child(1) { transform: rotate(-5deg); margin-right: -8%; z-index: 2; }
     .press-collage .clip:nth-child(2) { transform: rotate(4deg) translateY(10%); z-index: 3; }
@@ -152,7 +167,6 @@
     .press-collage .clip:nth-child(6) { transform: rotate(6deg) translateY(8%); z-index: 6; }
     .press-collage .clip:hover { transform: rotate(0deg) scale(1.04); z-index: 9; }
     @media (max-width: 600px) {
-      .press-collage { grid-template-columns: 1fr 1fr; gap: 10px; padding: 0; }
       .press-collage .clip { transform: none !important; margin: 0 !important; }
     }
 
@@ -302,7 +316,12 @@
   <main>
     <!-- ===== HERO (image banner + hook + proof) ===== -->
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
-      <div class="wrap lead-grid">
+      <div class="lead-hero-bg" aria-hidden="true">
+        <!-- Full-bleed hero photo. Save Avi's chosen shot as images/lead-hero-bg.jpg, then switch this src from .svg to .jpg. -->
+        <img src="images/lead-hero-bg.svg" alt="" onerror="this.style.display='none'" />
+      </div>
+      <div class="lead-hero-scrim" aria-hidden="true"></div>
+      <div class="wrap lead-hero-inner">
         <div class="lead-copy">
           <span class="eyebrow">Free guide · The Luck Manual</span>
           <h1 id="lead-title">How to make your own luck.</h1>
@@ -330,21 +349,6 @@
             <p class="form-disclaimer">Free. You will also get the Monday Letter. No spam.</p>
           </div>
 
-          <div class="lead-proof" aria-label="What the manual covers">
-            <span>Money</span>
-            <span>Health</span>
-            <span>Love</span>
-          </div>
-        </div>
-
-        <div class="lead-visual press-collage" aria-label="Moments from Avi Agarwal's life and work, tagged by theme">
-          <!-- Moodboard collage. Each slot is one pillar. Placeholder .svg shown now; swap to Avi's .jpeg photo at the same base name. -->
-          <figure class="clip"><img src="images/moodboard-podcast.svg" alt="Avi Agarwal recording a podcast" onerror="this.style.display='none'" /><span class="clip-tag">Work</span></figure>
-          <figure class="clip"><img src="images/moodboard-press.svg" alt="Press coverage of Avi Agarwal's company and funding" onerror="this.style.display='none'" /><span class="clip-tag">Money</span></figure>
-          <figure class="clip"><img src="images/moodboard-fitness.svg" alt="Avi Agarwal training" onerror="this.style.display='none'" /><span class="clip-tag">Health</span></figure>
-          <figure class="clip"><img src="images/moodboard-love.svg" alt="Avi Agarwal with his partner" onerror="this.style.display='none'" /><span class="clip-tag">Love</span></figure>
-          <figure class="clip"><img src="images/moodboard-guru.svg" alt="Avi Agarwal with his guru" onerror="this.style.display='none'" /><span class="clip-tag">Practice</span></figure>
-          <figure class="clip"><img src="images/moodboard-life.svg" alt="A candid moment from Avi Agarwal's life" onerror="this.style.display='none'" /><span class="clip-tag">Life</span></figure>
         </div>
       </div>
     </section>
@@ -418,24 +422,21 @@
       </div>
     </section>
 
-    <!-- ===== BEFORE / AFTER band as the final CTA (clay tone to separate from the footer) ===== -->
-    <section class="lead-cta lead-cta--clay lead-ba" aria-labelledby="final-title">
+    <!-- ===== MOODBOARD COLLAGE band as the final CTA (clay tone to separate from the footer) ===== -->
+    <section class="lead-cta lead-cta--clay" aria-labelledby="final-title">
       <div class="wrap">
-        <div class="ba-pair">
-          <figure>
-            <!-- Before photo: images/avi/avi-before-rebuild.jpg -->
-            <img src="images/avi/avi-before-rebuild.jpg" alt="Avi Agarwal before the rebuild" onerror="this.style.display='none'" />
-            <figcaption>Before</figcaption>
-          </figure>
-          <figure>
-            <!-- After photo: images/avi/avi-after-rebuild.jpg -->
-            <img src="images/avi/avi-after-rebuild.jpg" alt="Avi Agarwal after the rebuild" onerror="this.style.display='none'" />
-            <figcaption>After</figcaption>
-          </figure>
+        <h2 id="final-title">Luck across the board.</h2>
+        <p>Money, health, love, and the work in between. None of it was an accident.</p>
+        <div class="press-collage press-collage--band" aria-label="Moments from Avi Agarwal's life and work, tagged by theme">
+          <!-- Moodboard collage. Each slot is one pillar. Placeholder .svg now; swap to Avi's .jpeg at the same base name. -->
+          <figure class="clip"><img src="images/moodboard-podcast.svg" alt="Avi Agarwal recording a podcast" onerror="this.style.display='none'" /><span class="clip-tag">Work</span></figure>
+          <figure class="clip"><img src="images/moodboard-press.svg" alt="Press coverage of Avi Agarwal's company and funding" onerror="this.style.display='none'" /><span class="clip-tag">Money</span></figure>
+          <figure class="clip"><img src="images/moodboard-fitness.svg" alt="Avi Agarwal training" onerror="this.style.display='none'" /><span class="clip-tag">Health</span></figure>
+          <figure class="clip"><img src="images/moodboard-love.svg" alt="Avi Agarwal with his partner" onerror="this.style.display='none'" /><span class="clip-tag">Love</span></figure>
+          <figure class="clip"><img src="images/moodboard-guru.svg" alt="Avi Agarwal with his guru" onerror="this.style.display='none'" /><span class="clip-tag">Practice</span></figure>
+          <figure class="clip"><img src="images/moodboard-life.svg" alt="A candid moment from Avi Agarwal's life" onerror="this.style.display='none'" /><span class="clip-tag">Life</span></figure>
         </div>
-        <h2 id="final-title">Same person. Different luck.</h2>
-        <p>Before and after Avi started building his own odds. The Luck Manual is how he did it. Free, and the Monday Letter follows.</p>
-        <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">→</span></a>
+        <a class="btn btn-magnetic" href="#get-the-manual" style="margin-top: 36px;">Send me the manual <span class="arrow">→</span></a>
       </div>
     </section>
   </main>
