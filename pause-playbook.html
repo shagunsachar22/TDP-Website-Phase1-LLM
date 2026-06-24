@@ -517,7 +517,7 @@
           top = dots.length ? (top + 1) % dots.length : 0;
           setDots();
         }
-        function start() { if (reduce) return; stop(); timer = setInterval(flip, 3200); }
+        function start() { if (reduce) return; stop(); timer = setInterval(flip, 2600); }
         function stop() { if (timer) { clearInterval(timer); timer = null; } }
         deck.addEventListener('click', function () { flip(); start(); });
         deck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); start(); } });
