@@ -507,7 +507,8 @@
         var deck = document.getElementById('luck-deck');
         if (!deck) return;
         var dots = Array.prototype.slice.call(document.querySelectorAll('#deck-dots .deck-dot'));
-        var top = 0;
+        var top = 0, timer = null;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         function setDots() { dots.forEach(function (d, i) { d.classList.toggle('is-active', i === top); }); }
         function flip() {
           var first = deck.querySelector('.clip');
@@ -516,8 +517,13 @@
           top = dots.length ? (top + 1) % dots.length : 0;
           setDots();
         }
-        deck.addEventListener('click', flip);
-        deck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+        function start() { if (reduce) return; stop(); timer = setInterval(flip, 3200); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+        deck.addEventListener('click', function () { flip(); start(); });
+        deck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); start(); } });
+        deck.addEventListener('mouseenter', stop);
+        deck.addEventListener('mouseleave', start);
+        start();
       })();
     </script>
   </main>
