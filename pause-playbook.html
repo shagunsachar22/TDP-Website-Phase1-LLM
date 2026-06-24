@@ -129,18 +129,18 @@
     .lead-hero { position: relative; overflow: hidden; }
     .lead-hero .lead-copy h1 { font-size: clamp(42px, 5.8vw, 84px); line-height: 0.96; letter-spacing: -0.03em; }
     .lead-hero-bg { position: absolute; inset: 0; z-index: 0; display: flex; }
-    .lead-hero-bg img { flex: 1; min-width: 0; height: 100%; object-fit: cover; object-position: 50% 22%; opacity: 0.6; }
+    .lead-hero-bg img { flex: 1; min-width: 0; height: 100%; object-fit: cover; object-position: 50% 22%; opacity: 0.85; }
     .lead-hero-scrim {
       position: absolute; inset: 0; z-index: 1;
       background:
-        linear-gradient(90deg, var(--bg-dark) 0%, rgba(31, 30, 25, 0.94) 38%, rgba(31, 30, 25, 0.6) 100%),
-        linear-gradient(0deg, rgba(31, 30, 25, 0.9) 0%, rgba(31, 30, 25, 0.45) 48%, rgba(31, 30, 25, 0.3) 100%);
+        linear-gradient(90deg, rgba(31, 30, 25, 0.88) 0%, rgba(31, 30, 25, 0.6) 36%, rgba(31, 30, 25, 0.14) 100%),
+        linear-gradient(0deg, rgba(31, 30, 25, 0.72) 0%, rgba(31, 30, 25, 0.24) 52%, rgba(31, 30, 25, 0.08) 100%);
     }
     .lead-hero-inner { position: relative; z-index: 2; }
     .lead-hero-inner .lead-copy { max-width: 600px; }
     .lead-press-line { margin-top: 22px; color: rgba(245, 239, 229, 0.5); font-size: 12px; letter-spacing: 0.06em; }
     @media (max-width: 700px) {
-      .lead-hero-scrim { background: linear-gradient(0deg, var(--bg-dark) 6%, rgba(31, 30, 25, 0.8) 58%, rgba(31, 30, 25, 0.72) 100%); }
+      .lead-hero-scrim { background: linear-gradient(0deg, var(--bg-dark) 4%, rgba(31, 30, 25, 0.66) 56%, rgba(31, 30, 25, 0.5) 100%); }
     }
 
     /* before / after band (final CTA) */
