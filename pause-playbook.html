@@ -125,29 +125,22 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* one bold banner: big headline + a layered photo/press collage */
-    .lead-hero .lead-copy h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
-    .press-collage {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      align-items: start; padding: 12px 4px;
+    /* hero with a faded press/photo montage behind the copy */
+    .lead-hero { position: relative; overflow: hidden; }
+    .lead-hero .lead-copy h1 { font-size: clamp(42px, 5.8vw, 84px); line-height: 0.96; letter-spacing: -0.03em; }
+    .lead-hero-bg { position: absolute; inset: 0; z-index: 0; display: flex; }
+    .lead-hero-bg img { flex: 1; min-width: 0; height: 100%; object-fit: cover; object-position: 50% 22%; opacity: 0.6; }
+    .lead-hero-scrim {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(90deg, var(--bg-dark) 0%, rgba(31, 30, 25, 0.94) 38%, rgba(31, 30, 25, 0.6) 100%),
+        linear-gradient(0deg, rgba(31, 30, 25, 0.9) 0%, rgba(31, 30, 25, 0.45) 48%, rgba(31, 30, 25, 0.3) 100%);
     }
-    .press-collage .clip {
-      position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden;
-      border: 4px solid #fffdf7; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
-      background: var(--bg-mocha); transition: transform 0.25s var(--ease), z-index 0s;
-    }
-    .press-collage .clip img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; display: block; }
-    /* staggered tilts + slight overlaps = collage, not grid */
-    .press-collage .clip:nth-child(1) { transform: rotate(-5deg); margin-right: -8%; z-index: 2; }
-    .press-collage .clip:nth-child(2) { transform: rotate(4deg) translateY(10%); z-index: 3; }
-    .press-collage .clip:nth-child(3) { transform: rotate(3deg) translateY(-4%); margin-right: -8%; z-index: 5; }
-    .press-collage .clip:nth-child(4) { transform: rotate(-4deg) translateY(6%); z-index: 4; }
-    .press-collage .clip:nth-child(5) { transform: rotate(-3deg) translateY(-2%); margin-right: -8%; z-index: 3; }
-    .press-collage .clip:nth-child(6) { transform: rotate(6deg) translateY(8%); z-index: 6; }
-    .press-collage .clip:hover { transform: rotate(0deg) scale(1.04); z-index: 9; }
-    @media (max-width: 600px) {
-      .press-collage { grid-template-columns: 1fr 1fr; gap: 10px; padding: 0; }
-      .press-collage .clip { transform: none !important; margin: 0 !important; }
+    .lead-hero-inner { position: relative; z-index: 2; }
+    .lead-hero-inner .lead-copy { max-width: 600px; }
+    .lead-press-line { margin-top: 22px; color: rgba(245, 239, 229, 0.5); font-size: 12px; letter-spacing: 0.06em; }
+    @media (max-width: 700px) {
+      .lead-hero-scrim { background: linear-gradient(0deg, var(--bg-dark) 6%, rgba(31, 30, 25, 0.8) 58%, rgba(31, 30, 25, 0.72) 100%); }
     }
 
     /* before / after band (final CTA) */
@@ -296,7 +289,17 @@
   <main>
     <!-- ===== HERO (image banner + hook + proof) ===== -->
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
-      <div class="wrap lead-grid">
+      <div class="lead-hero-bg" aria-hidden="true">
+        <!-- Faded montage behind the copy. Files live in images/ -->
+        <img src="images/et-creditvidya-series-a.jpeg" alt="" onerror="this.style.display='none'" />
+        <img src="images/avi-fitness.jpeg" alt="" onerror="this.style.display='none'" />
+        <img src="images/mint-creditvidya-series-b.jpeg" alt="" onerror="this.style.display='none'" />
+        <img src="images/reuters-cred-meta.jpeg" alt="" onerror="this.style.display='none'" />
+        <img src="images/yourstory-creditvidya-bif.jpeg" alt="" onerror="this.style.display='none'" />
+        <img src="images/avi-life.jpeg" alt="" onerror="this.style.display='none'" />
+      </div>
+      <div class="lead-hero-scrim" aria-hidden="true"></div>
+      <div class="wrap lead-hero-inner">
         <div class="lead-copy">
           <span class="eyebrow">Free guide · The Luck Manual</span>
           <h1 id="lead-title">How to make your own luck.</h1>
@@ -329,16 +332,7 @@
             <span>Health</span>
             <span>Love</span>
           </div>
-        </div>
-
-        <div class="lead-visual press-collage" aria-label="Avi Agarwal in the press and in life">
-          <!-- Layered collage: press clippings + life/fitness photos. All live in images/ -->
-          <figure class="clip"><img src="images/et-creditvidya-series-a.jpeg" alt="The Economic Times: Kalaari Capital leads $2M Series A funding round in CreditVidya" onerror="this.style.display='none'" /></figure>
-          <figure class="clip"><img src="images/avi-fitness.jpeg" alt="Avi Agarwal, fitness" onerror="this.style.display='none'" /></figure>
-          <figure class="clip"><img src="images/mint-creditvidya-series-b.jpeg" alt="Mint: CreditVidya raises $5M in Series B from Matrix Partners" onerror="this.style.display='none'" /></figure>
-          <figure class="clip"><img src="images/reuters-cred-meta.jpeg" alt="Reuters: Indian fintech firm CRED to raise $900M from Meta at $4.5B valuation" onerror="this.style.display='none'" /></figure>
-          <figure class="clip"><img src="images/yourstory-creditvidya-bif.jpeg" alt="YourStory: CreditVidya raises $3M in funding led by Bharat Innovation Fund" onerror="this.style.display='none'" /></figure>
-          <figure class="clip"><img src="images/avi-life.jpeg" alt="Avi Agarwal, off the clock" onerror="this.style.display='none'" /></figure>
+          <p class="lead-press-line">As featured in Economic Times · Mint · YourStory · Reuters</p>
         </div>
       </div>
     </section>
