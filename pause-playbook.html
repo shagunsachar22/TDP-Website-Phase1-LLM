@@ -313,6 +313,28 @@
     .lead-cta--clay { background: linear-gradient(150deg, var(--bg-mocha) 0%, var(--bg-clay) 100%); color: var(--text-cream); }
     .lead-cta--clay p { color: rgba(255, 255, 246, 0.80); }
 
+    /* glittery "gift me luck" CTA */
+    .btn-luck, .btn-luck:hover {
+      background: linear-gradient(100deg, #c98f3e 0%, #e7c987 25%, #f5e4b4 50%, #e7c987 75%, #c98f3e 100%);
+      background-size: 220% 100%; color: #3a2a12; border: none;
+    }
+    .btn-luck {
+      position: relative; overflow: hidden; font-weight: 700;
+      box-shadow: 0 8px 26px rgba(201, 143, 62, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+      animation: luckShimmer 6s linear infinite;
+    }
+    @keyframes luckShimmer { to { background-position: 220% 0; } }
+    .btn-luck::after {
+      content: ""; position: absolute; top: 0; left: -65%; width: 55%; height: 100%; pointer-events: none;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+      transform: skewX(-18deg); animation: luckSheen 5s ease-in-out infinite;
+    }
+    @keyframes luckSheen { 0%, 55% { left: -65%; } 100% { left: 140%; } }
+    .btn-luck:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(201, 143, 62, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.55); }
+    .luck-star { display: inline-block; margin-left: 8px; animation: luckTwinkle 2.4s ease-in-out infinite; }
+    @keyframes luckTwinkle { 0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); } 50% { opacity: 0.55; transform: scale(0.82) rotate(20deg); } }
+    @media (prefers-reduced-motion: reduce) { .btn-luck, .btn-luck::after, .luck-star { animation: none; } }
+
     @media (max-width: 880px) {
       .lead-grid, .transformation-heading, .before-after-grid, .lt-grid { grid-template-columns: 1fr; }
       .lead-hero { padding-top: 96px; }
@@ -375,7 +397,7 @@
               data-event-location="pause_playbook_hero"
             >
               <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
-              <button class="btn btn-magnetic" type="submit">Send me the manual</button>
+              <button class="btn btn-magnetic btn-luck" type="submit">Gift me luck <span class="luck-star" aria-hidden="true">&#10038;</span></button>
             </form>
             <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
             <div class="lead-download" id="lead-download-panel" hidden>
@@ -433,7 +455,7 @@
       <div class="wrap">
         <h2 id="cta1-title">Download The Luck Manual.</h2>
         <p>Start with the five conditions for making your own luck. The Monday Letter follows.</p>
-        <a class="btn btn-magnetic" href="#get-the-manual">Send me the manual <span class="arrow">-&gt;</span></a>
+        <a class="btn btn-magnetic btn-luck" href="#get-the-manual">Gift me luck <span class="luck-star" aria-hidden="true">&#10038;</span></a>
       </div>
     </section>
 
@@ -477,7 +499,7 @@
           <div class="deck-dots" id="deck-dots"><span class="deck-dot is-active"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span></div>
           <p class="deck-hint">Tap to flip through the deck</p>
         </div>
-        <a class="btn btn-magnetic" href="#get-the-manual" style="margin-top: 28px;">Send me the manual <span class="arrow">→</span></a>
+        <a class="btn btn-magnetic btn-luck" href="#get-the-manual" style="margin-top: 28px;">Gift me luck <span class="luck-star" aria-hidden="true">&#10038;</span></a>
       </div>
     </section>
     <script>
