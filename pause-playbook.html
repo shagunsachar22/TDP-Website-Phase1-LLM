@@ -146,7 +146,10 @@
 
     /* moodboard collage (tilted scrapbook cards, section lower down) */
     .press-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: start; }
-    .press-collage--band { max-width: 680px; margin: 40px auto 0; }
+    .press-collage--band { max-width: 440px; margin: 26px auto 0; }
+    .lead-cta--compact { padding-top: clamp(46px, 6vw, 70px); padding-bottom: clamp(46px, 6vw, 70px); }
+    .lead-cta--compact h2 { font-size: clamp(26px, 3.4vw, 40px); }
+    .lead-cta--compact p { font-size: 15px; }
     .press-collage .clip {
       position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden;
       border: 4px solid #fffdf7; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
@@ -423,7 +426,7 @@
     </section>
 
     <!-- ===== FLIP-THROUGH COLLAGE band as the final CTA (clay tone to separate from the footer) ===== -->
-    <section class="lead-cta lead-cta--clay" aria-labelledby="final-title">
+    <section class="lead-cta lead-cta--clay lead-cta--compact" aria-labelledby="final-title">
       <div class="wrap">
         <h2 id="final-title">Luck across the board.</h2>
         <p>Money, health, love, and the work in between. None of it was an accident.</p>
