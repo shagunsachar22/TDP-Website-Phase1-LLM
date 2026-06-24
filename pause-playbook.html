@@ -150,7 +150,19 @@
     .lead-cta--compact p { font-size: 15px; }
 
     /* stacked "deck of cards" collage: top card front, others peeking underneath */
-    .press-collage { position: relative; width: clamp(220px, 60%, 280px); aspect-ratio: 4 / 5; margin: 38px auto 52px; }
+    .press-collage { position: relative; width: clamp(220px, 60%, 280px); aspect-ratio: 4 / 5; margin: 38px auto 34px; cursor: pointer; }
+    .deck-flip-cue {
+      position: absolute; top: -12px; right: -12px; z-index: 8; pointer-events: none;
+      width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
+      background: var(--accent-amber); color: var(--bg-dark); font-size: 21px; line-height: 1; font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+    .press-collage:hover .deck-flip-cue { transform: rotate(45deg); transition: transform 0.3s var(--ease); }
+    .deck-controls { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+    .deck-dots { display: flex; gap: 7px; }
+    .deck-dot { width: 7px; height: 7px; border-radius: 999px; background: rgba(255, 255, 246, 0.3); transition: background 0.2s, transform 0.2s; }
+    .deck-dot.is-active { background: var(--accent-amber-bright); transform: scale(1.35); }
+    .deck-hint { margin: 0; color: rgba(255, 255, 246, 0.6); font-size: 12px; letter-spacing: 0.04em; }
     .press-collage .clip {
       position: absolute; inset: 0; margin: 0; border-radius: 10px; overflow: hidden;
       border: 4px solid #fffdf7; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
@@ -429,17 +441,40 @@
       <div class="wrap">
         <h2 id="final-title">Luck across the board.</h2>
         <p>Money, health, love, and the work in between. None of it was an accident.</p>
-        <div class="press-collage press-collage--band" aria-label="Moments from Avi Agarwal's life and work, tagged by theme">
+        <div class="press-collage press-collage--band" id="luck-deck" role="button" tabindex="0" aria-label="Card deck. Tap to flip through moments from Avi Agarwal's life and work.">
           <figure class="clip"><img src="images/moodboard-podcast.svg" alt="Avi Agarwal recording a podcast" onerror="this.style.display='none'" /><span class="clip-tag">Work</span></figure>
           <figure class="clip"><img src="images/moodboard-press.svg" alt="Press coverage of Avi Agarwal's company and funding" onerror="this.style.display='none'" /><span class="clip-tag">Money</span></figure>
           <figure class="clip"><img src="images/moodboard-fitness.svg" alt="Avi Agarwal training" onerror="this.style.display='none'" /><span class="clip-tag">Health</span></figure>
           <figure class="clip"><img src="images/moodboard-love.svg" alt="Avi Agarwal with his partner" onerror="this.style.display='none'" /><span class="clip-tag">Love</span></figure>
           <figure class="clip"><img src="images/moodboard-guru.svg" alt="Avi Agarwal with his guru" onerror="this.style.display='none'" /><span class="clip-tag">Practice</span></figure>
           <figure class="clip"><img src="images/moodboard-life.svg" alt="A candid moment from Avi Agarwal's life" onerror="this.style.display='none'" /><span class="clip-tag">Life</span></figure>
+          <span class="deck-flip-cue" aria-hidden="true">&#8635;</span>
         </div>
-        <a class="btn btn-magnetic" href="#get-the-manual" style="margin-top: 36px;">Send me the manual <span class="arrow">→</span></a>
+        <div class="deck-controls">
+          <div class="deck-dots" id="deck-dots"><span class="deck-dot is-active"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span><span class="deck-dot"></span></div>
+          <p class="deck-hint">Tap to flip through the deck</p>
+        </div>
+        <a class="btn btn-magnetic" href="#get-the-manual" style="margin-top: 28px;">Send me the manual <span class="arrow">→</span></a>
       </div>
     </section>
+    <script>
+      (function () {
+        var deck = document.getElementById('luck-deck');
+        if (!deck) return;
+        var dots = Array.prototype.slice.call(document.querySelectorAll('#deck-dots .deck-dot'));
+        var top = 0;
+        function setDots() { dots.forEach(function (d, i) { d.classList.toggle('is-active', i === top); }); }
+        function flip() {
+          var first = deck.querySelector('.clip');
+          if (!first) return;
+          deck.appendChild(first);
+          top = dots.length ? (top + 1) % dots.length : 0;
+          setDots();
+        }
+        deck.addEventListener('click', flip);
+        deck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+      })();
+    </script>
   </main>
 
   <footer class="footer theme-dark" role="contentinfo">
