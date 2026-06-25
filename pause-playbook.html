@@ -128,14 +128,14 @@
     /* split hero: copy left on the gradient, photo on the right */
     .lead-hero {
       position: relative; overflow: hidden; padding: 0; display: flex; align-items: center; min-height: 84vh;
-      background: radial-gradient(34% 52% at 13% 40%, rgba(96, 81, 67, 0.32) 0%, rgba(51, 42, 36, 0) 72%), var(--bg-mocha);
+      background: radial-gradient(42% 58% at 14% 40%, rgba(118, 101, 83, 0.3) 0%, rgba(72, 59, 49, 0) 70%), rgb(72, 59, 49);
     }
     .lead-hero .lead-copy h1 { font-size: clamp(40px, 5.2vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
     .lead-hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 62%; z-index: 0; }
     .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 42% 30%; display: block; }
     .lead-hero-scrim {
       position: absolute; top: 0; bottom: 0; right: 0; left: auto; width: 62%; z-index: 1; pointer-events: none;
-      background: linear-gradient(90deg, var(--bg-mocha) 0%, var(--bg-mocha) 10%, rgba(51, 42, 36, 0.78) 26%, rgba(51, 42, 36, 0.4) 42%, rgba(51, 42, 36, 0.12) 56%, transparent 70%);
+      background: linear-gradient(90deg, rgb(72, 59, 49) 0%, rgb(72, 59, 49) 10%, rgba(72, 59, 49, 0.78) 26%, rgba(72, 59, 49, 0.4) 44%, rgba(72, 59, 49, 0.12) 58%, transparent 72%);
     }
     .lead-hero .lead-hero-inner {
       position: relative; z-index: 2; width: 100%; max-width: none;
