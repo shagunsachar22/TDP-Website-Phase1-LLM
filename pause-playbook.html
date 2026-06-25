@@ -149,11 +149,11 @@
     .lead-press-label { color: rgba(245, 239, 229, 0.45); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
     .lead-press-mark { color: rgba(245, 239, 229, 0.78); font-family: var(--font-serif); font-weight: 600; font-size: 16px; }
     @media (max-width: 820px) {
-      .lead-hero { align-items: flex-end; min-height: 0; padding: 104px 0 72px; background: var(--bg-dark); }
-      .lead-hero-bg { inset: 0; width: auto; left: 0; }
-      .lead-hero-bg img { object-position: 50% 24%; }
-      .lead-hero-scrim { inset: 0; left: 0; width: auto; background: linear-gradient(0deg, rgba(15, 13, 10, 0.92) 6%, rgba(15, 13, 10, 0.55) 60%, rgba(15, 13, 10, 0.42) 100%); }
-      .lead-hero .lead-hero-inner { padding-left: clamp(24px, 7vw, 40px); padding-right: clamp(24px, 5vw, 40px); }
+      .lead-hero { flex-direction: column; align-items: stretch; min-height: 0; padding: 0; background: var(--bg-dark); }
+      .lead-hero-bg { position: relative; inset: auto; left: auto; width: auto; height: 42vh; order: -1; z-index: 0; }
+      .lead-hero-bg img { object-position: 50% 20%; }
+      .lead-hero-scrim { display: none; }
+      .lead-hero .lead-hero-inner { padding: clamp(30px, 8vw, 44px) clamp(22px, 6vw, 32px) clamp(40px, 9vw, 52px); }
     }
 
     /* compact final CTA band */
