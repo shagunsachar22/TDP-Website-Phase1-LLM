@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/pause-playbook.html",
+      "destination": "/luck-manual",
+      "permanent": true
+    },
+    {
+      "source": "/pause-playbook",
+      "destination": "/luck-manual",
+      "permanent": true
+    },
+    {
       "source": "/read",
       "destination": "/letters",
       "permanent": true
