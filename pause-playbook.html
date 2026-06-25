@@ -68,11 +68,11 @@
       margin: 18px 0 22px;
     }
     .lead-copy .lead {
-      max-width: 54ch;
+      max-width: 46ch;
       color: rgba(245, 239, 229, 0.80);
       font-family: var(--font-serif);
-      font-size: clamp(19px, 1.8vw, 25px);
-      line-height: 1.45;
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.55;
     }
     /* hero email form (Justin Welsh style: capture right under the headline) */
     .lead-form { margin-top: 30px; max-width: 520px; }
@@ -133,7 +133,7 @@
       position: relative; overflow: hidden; padding: 0; display: flex; align-items: center; min-height: 84vh;
       background: radial-gradient(24% 46% at 12% 40%, rgba(118, 101, 83, 0.32) 0%, rgba(72, 59, 49, 0) 72%), rgb(72, 59, 49);
     }
-    .lead-hero .lead-copy h1 { font-size: clamp(40px, 5.2vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
+    .lead-hero .lead-copy h1 { font-size: clamp(34px, 3.8vw, 54px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 20px; }
     .lead-hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 62%; z-index: 0; }
     .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; display: block; }
     .lead-hero-scrim {
@@ -144,7 +144,7 @@
       position: relative; z-index: 2; width: 100%; max-width: none;
       padding-left: clamp(28px, 7vw, 110px); padding-right: 52%;
     }
-    .lead-hero-inner .lead-copy { max-width: 520px; }
+    .lead-hero-inner .lead-copy { max-width: 560px; }
     .lead-press { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 28px; }
     .lead-press-label { color: rgba(245, 239, 229, 0.45); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
     .lead-press-mark { color: rgba(245, 239, 229, 0.78); font-family: var(--font-serif); font-weight: 600; font-size: 16px; }
@@ -368,15 +368,14 @@
     <!-- ===== HERO (image banner + hook + proof) ===== -->
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
       <div class="lead-hero-bg">
-        <!-- Real on-stage photo. Save the new image as images/avi/avi-stage-mic.webp -->
-        <img src="images/avi/avi-stage-mic.webp" alt="Avi Agarwal speaking on stage with a microphone" onerror="this.style.display='none'" />
+        <!-- Real on-stage photo. Save the new image as images/avi/avi-stage-mic.jpg -->
+        <img src="images/avi/avi-stage-mic.jpg" alt="Avi Agarwal speaking on stage with a microphone" onerror="this.style.display='none'" />
       </div>
       <div class="lead-hero-scrim" aria-hidden="true"></div>
       <div class="wrap lead-hero-inner">
         <div class="lead-copy">
-          <span class="eyebrow">Free guide · The Luck Manual</span>
           <h1 id="lead-title">Luck isn't random. It's five conditions.</h1>
-          <p class="lead">I'm Avi. I used these five to sell two startups, get under 10% body fat, and end up surrounded by people I love. None of it was an accident, and it doesn't have to be for you.</p>
+          <p class="lead">I'm Avi. I used these five to build two startups, become part of a $4.5B story, get under 10% body fat, and end up surrounded by people I love. None of it was an accident, and it doesn't have to be for you.</p>
 
           <div class="lead-form" id="get-the-manual">
             <!-- Replace action with the live Kit/backend endpoint when it is wired. Tracking is already in place. -->
