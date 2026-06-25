@@ -125,24 +125,29 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* full-bleed image hero: big bold copy + CTA over one photo */
-    .lead-hero { position: relative; overflow: hidden; display: flex; align-items: flex-end; min-height: 86vh; }
-    .lead-hero .lead-copy h1 { font-size: clamp(44px, 6.6vw, 96px); line-height: 0.94; letter-spacing: -0.03em; text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5); }
-    .lead-hero .lead { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); }
-    .lead-hero-bg { position: absolute; inset: 0; z-index: 0; }
-    .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 28%; display: block; }
-    .lead-hero-scrim {
-      position: absolute; inset: 0; z-index: 1;
-      background:
-        linear-gradient(90deg, rgba(15, 13, 10, 0.82) 0%, rgba(15, 13, 10, 0.5) 46%, rgba(15, 13, 10, 0.06) 100%),
-        linear-gradient(0deg, rgba(15, 13, 10, 0.8) 0%, rgba(15, 13, 10, 0.2) 56%, rgba(15, 13, 10, 0.04) 100%);
+    /* split hero: copy left on the gradient, photo on the right */
+    .lead-hero {
+      position: relative; overflow: hidden; padding: 0; display: flex; align-items: center; min-height: 84vh;
+      background: linear-gradient(150deg, var(--bg-mocha) 0%, var(--bg-clay) 100%);
     }
-    .lead-hero .lead-hero-inner { position: relative; z-index: 2; max-width: none; padding-left: clamp(28px, 7vw, 110px); padding-right: clamp(24px, 5vw, 64px); }
-    .lead-hero-inner .lead-copy { max-width: 600px; }
-    @media (max-width: 700px) {
-      .lead-hero { min-height: 0; padding: 104px 0 72px; }
+    .lead-hero .lead-copy h1 { font-size: clamp(40px, 5.2vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
+    .lead-hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 50%; z-index: 0; }
+    .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 42% 30%; display: block; }
+    .lead-hero-scrim {
+      position: absolute; top: 0; bottom: 0; right: 0; left: auto; width: 54%; z-index: 1; pointer-events: none;
+      background: linear-gradient(90deg, var(--bg-mocha) 0%, rgba(51, 42, 36, 0.55) 20%, transparent 52%);
+    }
+    .lead-hero .lead-hero-inner {
+      position: relative; z-index: 2; width: 100%; max-width: none;
+      padding-left: clamp(28px, 7vw, 110px); padding-right: 52%;
+    }
+    .lead-hero-inner .lead-copy { max-width: 520px; }
+    @media (max-width: 820px) {
+      .lead-hero { align-items: flex-end; min-height: 0; padding: 104px 0 72px; background: var(--bg-dark); }
+      .lead-hero-bg { inset: 0; width: auto; left: 0; }
       .lead-hero-bg img { object-position: 38% 26%; }
-      .lead-hero-scrim { background: linear-gradient(0deg, rgba(15, 13, 10, 0.92) 6%, rgba(15, 13, 10, 0.55) 60%, rgba(15, 13, 10, 0.42) 100%); }
+      .lead-hero-scrim { inset: 0; left: 0; width: auto; background: linear-gradient(0deg, rgba(15, 13, 10, 0.92) 6%, rgba(15, 13, 10, 0.55) 60%, rgba(15, 13, 10, 0.42) 100%); }
+      .lead-hero .lead-hero-inner { padding-left: clamp(24px, 7vw, 40px); padding-right: clamp(24px, 5vw, 40px); }
     }
 
     /* compact final CTA band */
@@ -375,9 +380,9 @@
   <main>
     <!-- ===== HERO (image banner + hook + proof) ===== -->
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
-      <div class="lead-hero-bg" aria-hidden="true">
-        <!-- Full-bleed hero photo: the night scooter shot. -->
-        <img src="images/avi/avi-scooter-smile.webp" alt="" onerror="this.style.display='none'" />
+      <div class="lead-hero-bg">
+        <!-- Hero photo, sits on the right half. -->
+        <img src="images/avi/avi-scooter-smile.webp" alt="Avi Agarwal on a scooter on a quiet night street" onerror="this.style.display='none'" />
       </div>
       <div class="lead-hero-scrim" aria-hidden="true"></div>
       <div class="wrap lead-hero-inner">
@@ -487,12 +492,13 @@
         <h2 id="final-title">Luck across the board.</h2>
         <p>Money, health, love, and the work in between. None of it was an accident.</p>
         <div class="press-collage press-collage--band" id="luck-deck" role="button" tabindex="0" aria-label="Card deck. Tap to flip through moments from Avi Agarwal's life and work.">
-          <figure class="clip"><img src="images/moodboard-podcast.svg" alt="Avi Agarwal recording a podcast" onerror="this.style.display='none'" /><span class="clip-tag">Work</span></figure>
-          <figure class="clip"><img src="images/moodboard-press.svg" alt="Press coverage of Avi Agarwal's company and funding" onerror="this.style.display='none'" /><span class="clip-tag">Money</span></figure>
-          <figure class="clip"><img src="images/moodboard-fitness.svg" alt="Avi Agarwal training" onerror="this.style.display='none'" /><span class="clip-tag">Health</span></figure>
-          <figure class="clip"><img src="images/moodboard-love.svg" alt="Avi Agarwal with his partner" onerror="this.style.display='none'" /><span class="clip-tag">Love</span></figure>
-          <figure class="clip"><img src="images/moodboard-guru.svg" alt="Avi Agarwal with his guru" onerror="this.style.display='none'" /><span class="clip-tag">Practice</span></figure>
-          <figure class="clip"><img src="images/moodboard-life.svg" alt="A candid moment from Avi Agarwal's life" onerror="this.style.display='none'" /><span class="clip-tag">Life</span></figure>
+          <!-- Placeholder/random pictures for now; swap for Avi's real moodboard shots later. -->
+          <figure class="clip"><img src="images/avi/about-hero-speaking.png" alt="Avi Agarwal speaking" onerror="this.style.display='none'" /><span class="clip-tag">Work</span></figure>
+          <figure class="clip"><img src="images/avi-cinematic.jpg" alt="Avi Agarwal" onerror="this.style.display='none'" /><span class="clip-tag">Money</span></figure>
+          <figure class="clip"><img src="images/avi-peer.jpg" alt="Avi Agarwal" onerror="this.style.display='none'" /><span class="clip-tag">Health</span></figure>
+          <figure class="clip"><img src="images/essays/the-unicorn-trap-cover.webp" alt="The Deliberate Pause" onerror="this.style.display='none'" /><span class="clip-tag">Love</span></figure>
+          <figure class="clip"><img src="images/essays/when-success-still-feels-empty-cover.webp" alt="The Deliberate Pause" onerror="this.style.display='none'" /><span class="clip-tag">Practice</span></figure>
+          <figure class="clip"><img src="images/essays/the-low-status-moat-cover.webp" alt="The Deliberate Pause" onerror="this.style.display='none'" /><span class="clip-tag">Life</span></figure>
           <span class="deck-flip-cue" aria-hidden="true">&#8635;</span>
         </div>
         <div class="deck-controls">
