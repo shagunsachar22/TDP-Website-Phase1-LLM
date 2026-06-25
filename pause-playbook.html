@@ -127,7 +127,8 @@
     }
     /* minimal brand mast (nav removed on the lead magnet) */
     .lead-mast { position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: clamp(20px, 3vw, 34px) clamp(28px, 7vw, 110px); }
-    .lead-mast-brand { color: var(--text-cream); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+    .lead-mast-brand { display: inline-flex; align-items: center; gap: 11px; color: var(--text-cream); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+    .lead-mast-brand img { height: 26px; width: auto; display: block; }
     /* split hero: copy left on the gradient, photo on the right */
     .lead-hero {
       position: relative; overflow: hidden; padding: clamp(84px, 10vh, 116px) 0 clamp(44px, 6vh, 68px); display: flex; align-items: center; min-height: 600px;
@@ -361,7 +362,10 @@
 </head>
 <body>
   <header class="lead-mast" role="banner">
-    <a href="/" class="lead-mast-brand" aria-label="The Deliberate Pause home">The Deliberate Pause</a>
+    <a href="/" class="lead-mast-brand" aria-label="The Deliberate Pause home">
+      <img src="images/logo-light.svg" alt="" onerror="this.style.display='none'" />
+      <span>The Deliberate Pause</span>
+    </a>
   </header>
 
   <main>
