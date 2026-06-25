@@ -125,28 +125,40 @@
       font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
       padding: 8px 14px;
     }
-    /* split hero: copy left on the gradient, photo on the right */
+    /* minimal brand mast (nav removed on the lead magnet) */
+    .lead-mast { position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: clamp(20px, 3vw, 34px) clamp(28px, 7vw, 110px); }
+    .lead-mast-brand { color: var(--text-cream); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+    /* hero: copy left on dark, real photo bleeding on the right */
     .lead-hero {
-      position: relative; overflow: hidden; padding: 0; display: flex; align-items: center; min-height: 84vh;
-      background: radial-gradient(24% 46% at 12% 40%, rgba(118, 101, 83, 0.32) 0%, rgba(72, 59, 49, 0) 72%), rgb(72, 59, 49);
+      position: relative; overflow: hidden; padding: 0; display: flex; align-items: center; min-height: 82vh;
+      background: var(--bg-dark);
     }
-    .lead-hero .lead-copy h1 { font-size: clamp(40px, 5.2vw, 80px); line-height: 0.96; letter-spacing: -0.03em; }
-    .lead-hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 62%; z-index: 0; }
-    .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 42% 30%; display: block; }
+    .lead-hero .lead-copy h1 { font-size: clamp(40px, 5vw, 78px); line-height: 1.0; letter-spacing: -0.025em; }
+    .lead-hero .lead-copy h1 em { font-style: italic; color: var(--accent-amber-bright); }
+    .lead-hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 58%; z-index: 0; }
+    .lead-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; display: block; }
     .lead-hero-scrim {
-      position: absolute; top: 0; bottom: 0; right: 0; left: auto; width: 62%; z-index: 1; pointer-events: none;
-      background: linear-gradient(90deg, rgb(72, 59, 49) 0%, rgb(72, 59, 49) 10%, rgba(72, 59, 49, 0.78) 26%, rgba(72, 59, 49, 0.4) 44%, rgba(72, 59, 49, 0.12) 58%, transparent 72%);
+      position: absolute; top: 0; bottom: 0; right: 0; left: auto; width: 58%; z-index: 1; pointer-events: none;
+      background: linear-gradient(90deg, var(--bg-dark) 0%, var(--bg-dark) 12%, rgba(31, 30, 25, 0.72) 32%, rgba(31, 30, 25, 0.22) 54%, transparent 74%);
     }
     .lead-hero .lead-hero-inner {
       position: relative; z-index: 2; width: 100%; max-width: none;
-      padding-left: clamp(28px, 7vw, 110px); padding-right: 52%;
+      padding-left: clamp(28px, 7vw, 110px); padding-right: 50%;
     }
     .lead-hero-inner .lead-copy { max-width: 520px; }
+    /* social proof + credibility bands */
+    .lead-press-band { background: var(--bg-dark); border-top: 1px solid var(--border-on-dark); padding: clamp(20px, 2.6vw, 28px) 0; }
+    .lead-press-band .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px clamp(22px, 3vw, 44px); }
+    .lead-press-label { color: rgba(245, 239, 229, 0.45); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+    .lead-press-mark { color: rgba(245, 239, 229, 0.8); font-family: var(--font-serif); font-weight: 600; font-size: clamp(16px, 1.5vw, 19px); }
+    .lead-wiseman { background: var(--bg-dark); padding: 0 0 clamp(40px, 6vw, 68px); }
+    .lead-wiseman p { max-width: 1040px; margin: 0; border-left: 3px solid var(--accent-rust); padding-left: 22px; color: rgba(245, 239, 229, 0.72); font-size: clamp(15px, 1.4vw, 18px); line-height: 1.6; }
+    .lead-wiseman strong { color: var(--text-cream); font-weight: 600; }
     @media (max-width: 820px) {
-      .lead-hero { align-items: flex-end; min-height: 0; padding: 104px 0 72px; background: var(--bg-dark); }
+      .lead-hero { align-items: flex-end; min-height: 0; padding: 120px 0 60px; }
       .lead-hero-bg { inset: 0; width: auto; left: 0; }
-      .lead-hero-bg img { object-position: 38% 26%; }
-      .lead-hero-scrim { inset: 0; left: 0; width: auto; background: linear-gradient(0deg, rgba(15, 13, 10, 0.92) 6%, rgba(15, 13, 10, 0.55) 60%, rgba(15, 13, 10, 0.42) 100%); }
+      .lead-hero-bg img { object-position: 50% 22%; }
+      .lead-hero-scrim { inset: 0; left: 0; width: auto; background: linear-gradient(0deg, var(--bg-dark) 8%, rgba(31, 30, 25, 0.6) 58%, rgba(31, 30, 25, 0.42) 100%); }
       .lead-hero .lead-hero-inner { padding-left: clamp(24px, 7vw, 40px); padding-right: clamp(24px, 5vw, 40px); }
     }
 
@@ -354,42 +366,22 @@
   </style>
 </head>
 <body>
-  <header class="nav" role="banner">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="The Deliberate Pause home">
-        <img class="nav-logo-img" src="images/logo.svg" alt="" onerror="this.style.display='none'" />
-        <span class="nav-logo-text">The Deliberate Pause</span>
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="/articles">Articles</a></li>
-          <li><a href="/letters">Letters</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-      <a href="#get-the-manual" class="btn btn-magnetic nav-cta">
-        <span class="label-long">Get the manual</span>
-        <span class="label-short">Get it</span>
-        <span class="arrow">-&gt;</span>
-      </a>
-      <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">=</button>
-    </div>
+  <header class="lead-mast" role="banner">
+    <a href="/" class="lead-mast-brand" aria-label="The Deliberate Pause home">The Deliberate Pause</a>
   </header>
 
   <main>
     <!-- ===== HERO (image banner + hook + proof) ===== -->
     <section class="lead-hero theme-dark" aria-labelledby="lead-title">
       <div class="lead-hero-bg">
-        <!-- Hero photo, sits on the right half. -->
-        <img src="images/avi/avi-scooter-smile.webp" alt="Avi Agarwal on a scooter on a quiet night street" onerror="this.style.display='none'" />
+        <!-- Real on-stage photo. Save the new image as images/avi/avi-stage-mic.webp -->
+        <img src="images/avi/avi-stage-mic.webp" alt="Avi Agarwal speaking on stage with a microphone" onerror="this.style.display='none'" />
       </div>
       <div class="lead-hero-scrim" aria-hidden="true"></div>
       <div class="wrap lead-hero-inner">
         <div class="lead-copy">
-          <span class="eyebrow">Free guide · The Luck Manual</span>
-          <h1 id="lead-title">How to make your own luck.</h1>
-          <p class="lead">Avi got lucky in money, health, and love. None of it was an accident. The Luck Manual is the five conditions behind it, so you can make your own.</p>
+          <h1 id="lead-title">Luck isn't random.<br />It's <em>five conditions.</em></h1>
+          <p class="lead">I'm Avi. I used these five to sell two startups, get under 10% body fat, and end up surrounded by people I love. None of it was an accident, and it doesn't have to be for you.</p>
 
           <div class="lead-form" id="get-the-manual">
             <!-- Replace action with the live Kit/backend endpoint when it is wired. Tracking is already in place. -->
@@ -410,10 +402,29 @@
                 Download the Luck Manual <span class="arrow">-&gt;</span>
               </a>
             </div>
-            <p class="form-disclaimer">Free. You will also get the Monday Letter. No spam.</p>
+            <p class="form-disclaimer">Free. No spam.</p>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF (press) ===== -->
+    <section class="lead-press-band" aria-label="Press features">
+      <div class="wrap">
+        <span class="lead-press-label">As featured in</span>
+        <!-- Text wordmarks for now; swap for real logos when available. -->
+        <span class="lead-press-mark">Forbes</span>
+        <span class="lead-press-mark">The Economic Times</span>
+        <span class="lead-press-mark">TechCrunch</span>
+        <span class="lead-press-mark">VCCircle</span>
+      </div>
+    </section>
+
+    <!-- ===== CREDIBILITY (Wiseman) ===== -->
+    <section class="lead-wiseman">
+      <div class="wrap">
+        <p>Psychologist Richard Wiseman spent ten years studying luck. He found that "lucky" people aren't chosen, they take more chances and spot more opportunities. You can learn to do the same. <strong>This manual shows you how.</strong></p>
       </div>
     </section>
 
