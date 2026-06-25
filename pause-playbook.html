@@ -153,6 +153,7 @@
       .lead-hero { flex-direction: column; align-items: stretch; min-height: 0; padding: 0; background: var(--bg-dark); }
       .lead-hero-bg { position: relative; inset: auto; left: auto; width: auto; height: 32vh; order: -1; z-index: 0; }
       .lead-hero-bg img { object-position: 50% 16%; }
+      .lead-hero-bg::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 44%; pointer-events: none; z-index: 1; background: linear-gradient(to top, var(--bg-dark) 0%, rgba(31, 30, 25, 0.55) 44%, rgba(31, 30, 25, 0) 100%); }
       .lead-hero-scrim { display: none; }
       .lead-hero .lead-hero-inner { padding: clamp(22px, 5vw, 30px) clamp(22px, 6vw, 32px) clamp(36px, 8vw, 48px); }
       .lead-hero .lead-copy h1 { margin-bottom: 14px; }
