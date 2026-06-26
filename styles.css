@@ -1568,6 +1568,16 @@ body.popup-open {
   max-width: 42ch;
 }
 
+.tdp-popup__copy p strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.popup-accent {
+  font-style: italic;
+  color: var(--accent-rust);
+}
+
 .tdp-popup__actions {
   display: flex;
   flex-wrap: wrap;
