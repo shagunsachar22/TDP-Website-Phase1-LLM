@@ -84,9 +84,10 @@
         <div class="tdp-popup__content">
           <div class="tdp-popup__copy">
             <h2 id="tdp-popup-title">Luck isn't random.</h2>
-            <p>It's five conditions. Join 1,000+ founders training the mind for pressure, clarity, and better decisions, with a short letter every Monday at 11:11.</p>
+            <p>It's five conditions. Start with The Luck Manual, free, then a short letter every Monday at 11:11.</p>
             <div class="tdp-popup__actions">
-              <a class="popup-primary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
+              <a class="popup-primary" href="/luck-manual">Get the Luck Manual <span class="arrow">→</span></a>
+              <a class="popup-secondary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Just the letter</a>
             </div>
           </div>
           <div class="tdp-popup__image" aria-hidden="true"></div>
