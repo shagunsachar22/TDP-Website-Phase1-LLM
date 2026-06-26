@@ -361,10 +361,12 @@
       .hero { min-height: auto; }
       /* declutter nav: the hero already has the form + a Subscribe link, so drop the redundant nav arrow, keep just the menu */
       .nav-cta { display: none; }
+      /* show hero content immediately on mobile so the essay-preview card never sits in a blank, fade-gated void */
+      .hero [data-scroll-fx] { opacity: 1 !important; transform: none !important; }
       .hero-content {
         grid-template-columns: 1fr;
         padding: 38px var(--gutter) 28px;
-        gap: 20px;
+        gap: 16px;
       }
       .hero-headline {
         font-size: clamp(29px, 8.4vw, 36px) !important;
