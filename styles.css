@@ -1579,9 +1579,14 @@ body.popup-open {
 }
 
 .popup-primary {
-  background: var(--bg-dark);
-  color: var(--text-cream);
+  background: #c05a34;
+  color: #fff;
   min-width: min(100%, 250px);
+}
+
+.popup-primary:hover {
+  background: #a94e2c;
+  color: #fff;
 }
 
 .popup-secondary {

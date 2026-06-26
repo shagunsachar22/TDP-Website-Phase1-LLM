@@ -83,8 +83,8 @@
         <button class="tdp-popup__close" type="button" aria-label="Close popup" data-popup-close>×</button>
         <div class="tdp-popup__content">
           <div class="tdp-popup__copy">
-            <h2 id="tdp-popup-title">You have a courage problem.</h2>
-            <p>Join founders training mental models for pressure, uncertainty, and better decisions. Mondays at 11:11.</p>
+            <h2 id="tdp-popup-title">Luck isn't random.</h2>
+            <p>It's five conditions. Join 1,000+ founders training the mind for pressure, clarity, and better decisions, with a short letter every Monday at 11:11.</p>
             <div class="tdp-popup__actions">
               <a class="popup-primary" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
             </div>
