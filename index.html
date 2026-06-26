@@ -357,12 +357,48 @@
       0%, 100% { transform: translate(-50%, 0); opacity: 0.55; }
       50%      { transform: translate(-50%, 4px); opacity: 0.95; }
     }
+    .hero-ecosystem { display: none; }
+
     @media (max-width: 768px) {
       .hero { min-height: auto; }
       /* declutter nav: the hero already has the form + a Subscribe link, so drop the redundant nav arrow, keep just the menu */
       .nav-cta { display: none; }
       /* show hero content immediately on mobile so the essay-preview card never sits in a blank, fade-gated void */
       .hero [data-scroll-fx] { opacity: 1 !important; transform: none !important; }
+      /* move the ecosystem band into the hero (above the article preview) on mobile */
+      .logobar { display: none; }
+      .hero-ecosystem {
+        display: block;
+        max-width: 460px;
+        margin: 0 auto;
+        padding: 26px 0 18px;
+        text-align: center;
+        border-top: 1px solid var(--border-on-dark);
+      }
+      .hero-ecosystem-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(245, 239, 229, 0.5);
+        margin-bottom: 18px;
+      }
+      .hero-ecosystem-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 16px 22px;
+      }
+      .hero-ecosystem-logos img {
+        height: 26px;
+        width: auto;
+        max-width: 92px;
+        object-fit: contain;
+        opacity: 0.82;
+      }
       /* centered, full-fold hero on mobile (Justin Welsh style) so the first screen reads as a complete unit */
       .hero-content {
         display: block;
@@ -1280,13 +1316,25 @@
           </div>
         </div>
 
-        <aside class="hero-reads" aria-label="Start with these essays" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
-          <span class="eyebrow">Essay preview</span>
+        <div class="hero-ecosystem" aria-label="Read across the startup ecosystem">
+          <span class="hero-ecosystem-label">Read across the startup ecosystem</span>
+          <div class="hero-ecosystem-logos" aria-hidden="true">
+            <img src="images/logos/kalaari.svg" alt="Kalaari" />
+            <img src="images/logos/inmobi.svg" alt="InMobi" />
+            <img src="images/logos/cred.svg" alt="CRED" />
+            <img src="images/logos/z47.svg" alt="Z47" />
+            <img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" />
+            <img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" />
+          </div>
+        </div>
+
+        <aside class="hero-reads" aria-label="Start with these articles" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
+          <span class="eyebrow">Article preview</span>
           <button class="hero-featured-essay" type="button" data-popup-trigger aria-label="Preview The Unicorn Trap and subscribe">
             <span class="hero-featured-image" aria-hidden="true">
               <img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/693e715bd2ce6a7aad4f715e_01_Cover.webp" alt="" loading="eager" />
             </span>
-            <span class="hero-read-kicker">Featured essay</span>
+            <span class="hero-read-kicker">Featured article</span>
             <strong>The Unicorn Trap.</strong>
             <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
           </button>
