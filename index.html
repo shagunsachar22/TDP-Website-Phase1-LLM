@@ -359,24 +359,26 @@
     }
     @media (max-width: 768px) {
       .hero { min-height: auto; }
+      /* declutter nav: the hero already has the form + a Subscribe link, so drop the redundant nav arrow, keep just the menu */
+      .nav-cta { display: none; }
       .hero-content {
         grid-template-columns: 1fr;
-        padding: 56px var(--gutter) 28px;
-        gap: 24px;
+        padding: 38px var(--gutter) 28px;
+        gap: 20px;
       }
-      /* Drop floor to 32px + cap growth at 9vw so "running a startup?" never wraps to a 3rd line on iPhone SE (375px) → Pixel 7 (412px). */
       .hero-headline {
-        font-size: clamp(33px, 10.5vw, 42px) !important;
-        line-height: 1.02 !important;
-        max-width: 11.4ch;
-        margin-bottom: 18px;
+        font-size: clamp(29px, 8.4vw, 36px) !important;
+        line-height: 1.05 !important;
+        max-width: 15ch;
+        margin-bottom: 14px;
       }
       .hero-content .lead {
         font-size: 15px;
         line-height: 1.48;
-        margin-bottom: 22px;
-        max-width: 32ch;
+        margin-bottom: 18px;
+        max-width: 34ch;
       }
+      .hero-secondary { margin-top: 18px; padding-top: 18px; }
       .hero-actions .btn {
         min-height: 54px;
         padding: 0 24px;
@@ -452,10 +454,10 @@
     }
     @media (max-width: 390px) {
       .hero-content {
-        padding-top: 44px;
+        padding-top: 32px;
       }
       .hero-headline {
-        font-size: 34px !important;
+        font-size: 31px !important;
       }
       .hero-content .lead {
         font-size: 14px;
