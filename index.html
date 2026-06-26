@@ -119,6 +119,19 @@
     /* warm accent words — gold on dark sections, rust on cream — used sparingly to add colour */
     .tint-gold { color: #ecd49b !important; }
     .tint-rust { color: var(--accent-rust) !important; }
+    /* "magical" shimmering gold for the Luck Manual mention */
+    .luck-shimmer {
+      background: linear-gradient(100deg, #c98f3e 0%, #e7c987 22%, #f7ebc6 50%, #e7c987 78%, #c98f3e 100%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      font-weight: 600;
+      animation: luckShimmerText 5.5s linear infinite;
+    }
+    @keyframes luckShimmerText { to { background-position: 220% 0; } }
+    @media (prefers-reduced-motion: reduce) { .luck-shimmer { animation: none; } }
     .hero-content .lead {
       color: rgba(255, 255, 246, 0.82);
       font-size: clamp(17px, 1.4vw, 21px);
@@ -374,7 +387,7 @@
         display: block;
         align-self: stretch;
         width: 100%;
-        margin: 6px auto 0;
+        margin: 0 auto;
         padding: 24px 0 4px;
         text-align: center;
         border-top: 1px solid var(--border-on-dark);
@@ -443,9 +456,11 @@
       }
       .hero-secondary {
         justify-content: center;
-        max-width: 340px;
+        width: 100%;
+        max-width: none;
         margin: 18px auto 0;
-        padding-top: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
       }
       .hero-reads {
         justify-self: stretch;
@@ -1298,7 +1313,7 @@
       <div class="hero-content">
         <div class="hero-copy">
           <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in <span class="tint-gold">yogic philosophy.</span></span></h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with The Luck Manual, free.</p>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with <span class="luck-shimmer">The Luck Manual</span>, free.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
             <!-- Homepage lead capture for The Luck Manual. Wire to the live Kit form/endpoint in the Webflow build; tracking attributes are already in place. -->
