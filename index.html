@@ -369,9 +369,10 @@
       .logobar { display: none; }
       .hero-ecosystem {
         display: block;
-        max-width: 460px;
-        margin: 0 auto;
-        padding: 26px 0 18px;
+        align-self: stretch;
+        width: 100%;
+        margin: 6px auto 0;
+        padding: 24px 0 4px;
         text-align: center;
         border-top: 1px solid var(--border-on-dark);
       }
@@ -405,14 +406,11 @@
         padding: 0 var(--gutter);
       }
       .hero-copy {
-        min-height: calc(100vh - 76px);
-        min-height: calc(100svh - 76px);
         max-width: 460px;
         margin: 0 auto;
-        padding: 20px 0 30px;
+        padding: clamp(40px, 11vh, 84px) 0 36px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         text-align: center;
       }
@@ -518,7 +516,7 @@
       .avi-intro { padding: 72px 0 96px; }
     }
     @media (max-width: 390px) {
-      .hero-copy { min-height: calc(100svh - 72px); padding-bottom: 24px; }
+      .hero-copy { padding-top: clamp(32px, 8vh, 60px); padding-bottom: 24px; }
       .hero-headline {
         font-size: 31px !important;
       }
@@ -1314,17 +1312,16 @@
             <span class="hero-secondary-label">Just want the letter?</span>
             <a class="btn btn-secondary btn-sm" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
           </div>
-        </div>
-
-        <div class="hero-ecosystem" aria-label="Read across the startup ecosystem">
-          <span class="hero-ecosystem-label">Read across the startup ecosystem</span>
-          <div class="hero-ecosystem-logos" aria-hidden="true">
-            <img src="images/logos/kalaari.svg" alt="Kalaari" />
-            <img src="images/logos/inmobi.svg" alt="InMobi" />
-            <img src="images/logos/cred.svg" alt="CRED" />
-            <img src="images/logos/z47.svg" alt="Z47" />
-            <img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" />
-            <img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" />
+          <div class="hero-ecosystem" aria-label="Read across the startup ecosystem">
+            <span class="hero-ecosystem-label">Read across the startup ecosystem</span>
+            <div class="hero-ecosystem-logos" aria-hidden="true">
+              <img src="images/logos/kalaari.svg" alt="Kalaari" />
+              <img src="images/logos/inmobi.svg" alt="InMobi" />
+              <img src="images/logos/cred.svg" alt="CRED" />
+              <img src="images/logos/z47.svg" alt="Z47" />
+              <img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" />
+              <img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" />
+            </div>
           </div>
         </div>
 
