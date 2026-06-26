@@ -1606,8 +1606,15 @@ body.popup-open {
 }
 
 .popup-secondary {
-  border: 1px solid #CBC8C4;
-  color: var(--text-dark);
+  border: 1px solid var(--accent-rust);
+  color: var(--accent-rust);
+  background: transparent;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.popup-secondary:hover {
+  background: var(--accent-rust);
+  color: #fff;
 }
 
 .tdp-popup__image {
