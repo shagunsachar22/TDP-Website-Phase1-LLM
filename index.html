@@ -386,19 +386,16 @@
         color: rgba(245, 239, 229, 0.5);
         margin-bottom: 18px;
       }
-      .hero-ecosystem-logos {
-        display: flex;
-        flex-wrap: wrap;
+      .hero-eco-marquee .marquee-track {
+        gap: 42px;
         align-items: center;
-        justify-content: center;
-        gap: 16px 22px;
+        animation-duration: 26s;
       }
-      .hero-ecosystem-logos img {
-        height: 26px;
+      .hero-eco-marquee img {
+        height: 23px;
         width: auto;
-        max-width: 92px;
-        object-fit: contain;
-        opacity: 0.82;
+        flex: none;
+        opacity: 0.8;
       }
       /* centered, full-fold hero on mobile (Justin Welsh style) so the first screen reads as a complete unit */
       .hero-content {
@@ -1314,13 +1311,21 @@
           </div>
           <div class="hero-ecosystem" aria-label="Read across the startup ecosystem">
             <span class="hero-ecosystem-label">Read across the startup ecosystem</span>
-            <div class="hero-ecosystem-logos" aria-hidden="true">
-              <img src="images/logos/kalaari.svg" alt="Kalaari" />
-              <img src="images/logos/inmobi.svg" alt="InMobi" />
-              <img src="images/logos/cred.svg" alt="CRED" />
-              <img src="images/logos/z47.svg" alt="Z47" />
-              <img src="images/logos/alpha-wave-global.png" alt="Alpha Wave Global" />
-              <img src="images/logos/bharat-innovation-fund.png" alt="Bharat Innovation Fund" />
+            <div class="marquee hero-eco-marquee" aria-hidden="true">
+              <div class="marquee-track">
+                <img src="images/logos/kalaari.svg" alt="" />
+                <img src="images/logos/inmobi.svg" alt="" />
+                <img src="images/logos/cred.svg" alt="" />
+                <img src="images/logos/z47.svg" alt="" />
+                <img src="images/logos/alpha-wave-global.png" alt="" />
+                <img src="images/logos/bharat-innovation-fund.png" alt="" />
+                <img src="images/logos/kalaari.svg" alt="" />
+                <img src="images/logos/inmobi.svg" alt="" />
+                <img src="images/logos/cred.svg" alt="" />
+                <img src="images/logos/z47.svg" alt="" />
+                <img src="images/logos/alpha-wave-global.png" alt="" />
+                <img src="images/logos/bharat-innovation-fund.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
