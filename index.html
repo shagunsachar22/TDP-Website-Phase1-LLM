@@ -116,6 +116,9 @@
       text-shadow: none;
     }
     .hero-headline .line { display: block; }
+    /* warm accent words — gold on dark sections, rust on cream — used sparingly to add colour */
+    .tint-gold { color: #ecd49b !important; }
+    .tint-rust { color: var(--accent-rust) !important; }
     .hero-content .lead {
       color: rgba(255, 255, 246, 0.82);
       font-size: clamp(17px, 1.4vw, 21px);
@@ -1294,7 +1297,7 @@
 
       <div class="hero-content">
         <div class="hero-copy">
-          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in yogic philosophy.</span></h1>
+          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in <span class="tint-gold">yogic philosophy.</span></span></h1>
           <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with The Luck Manual, free.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
@@ -1436,7 +1439,7 @@
     <section class="reading theme-cream" aria-labelledby="reading-headline">
       <div class="wrap">
         <span class="eyebrow" data-scroll-fx>Articles</span>
-        <h2 id="reading-headline" data-scroll-fx>What other founders are reading.</h2>
+        <h2 id="reading-headline" data-scroll-fx>What other founders are <span class="tint-rust">reading.</span></h2>
         <div class="reading-grid">
           <article class="reading-featured" data-scroll-fx="fade-right">
             <a href="/articles/the-unicorn-trap-and-the-road-to-enlightenment"><div class="thumb essay-thumb-success-empty"><img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/693e715bd2ce6a7aad4f715e_01_Cover.webp" alt="The Unicorn Trap and the Road to Enlightenment article cover" loading="lazy" /></div></a>
@@ -1471,7 +1474,7 @@
         <div class="pause-grid">
           <div class="pause-left">
             <span class="eyebrow" data-scroll-fx>The Pause</span>
-            <h2 id="pause-headline" data-scroll-fx>Tools the top 1% already use.</h2>
+            <h2 id="pause-headline" data-scroll-fx>Tools the <span class="tint-gold">top 1%</span> already use.</h2>
             <p class="lead" data-scroll-fx style="--fx-delay: 0.1s;">Presence, stillness, and dropping the ego. These are not soft ideas. They are performance skills.</p>
 
             <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.2s;">
@@ -1583,7 +1586,7 @@
       <div class="wrap">
         <div class="definition-grid">
           <div class="definition-copy" data-scroll-fx="fade-right">
-            <h2 id="definition-headline">What is The Deliberate Pause?</h2>
+            <h2 id="definition-headline">What is <span class="tint-rust">The Deliberate Pause?</span></h2>
             <p>Something happens. You react. Most of life happens so fast there is no space between the two.</p>
             <p>The Deliberate Pause is that space.</p>
             <p>Ever wondered what separates the good from the great? The best reflect sooner. Learn faster. Recover sooner. Find courage earlier. Decide before fear decides for them.</p>
