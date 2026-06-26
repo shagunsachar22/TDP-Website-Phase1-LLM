@@ -151,13 +151,13 @@
     .lead-press-label { color: rgba(245, 239, 229, 0.45); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
     .lead-press-mark { color: rgba(245, 239, 229, 0.78); font-family: var(--font-serif); font-weight: 600; font-size: 16px; }
     .lead-wiseman {
-      margin-top: 26px; max-width: 540px;
+      margin: 0; max-width: 60ch;
       padding: 4px 0 4px 18px;
-      border-left: 3px solid #ecd49b;
-      color: rgba(245, 239, 229, 0.66);
-      font-family: var(--font-serif); font-size: 14.5px; line-height: 1.55;
+      border-left: 3px solid var(--accent-rust);
+      color: var(--text-muted-light);
+      font-family: var(--font-serif); font-size: 17px; line-height: 1.6;
     }
-    .lead-wiseman strong { color: rgba(245, 239, 229, 0.9); font-weight: 600; }
+    .lead-wiseman strong { color: var(--text-dark); font-weight: 600; }
     /* full-width press strip (spans the page) */
     .lead-press-band { background: var(--bg-dark); border-top: 1px solid var(--border-on-dark); border-bottom: 1px solid var(--border-on-dark); padding: 20px 0; }
     .lead-press-band-inner { display: flex; align-items: center; gap: 18px 44px; flex-wrap: wrap; }
@@ -183,7 +183,7 @@
       .lead-press-band .lead-press-marks { justify-content: flex-start; gap: 8px 18px; }
       .lead-press-label { flex-basis: 100%; margin: 0 0 4px; }
       .lead-press-mark { font-size: 13px; }
-      .lead-wiseman { margin-top: 20px; max-width: none; font-size: 13.5px; padding-left: 14px; }
+      .lead-wiseman { max-width: none; font-size: 15px; padding-left: 14px; }
       .lead-footer-inner { gap: 12px; }
     }
 
@@ -429,8 +429,6 @@
             </div>
             <p class="form-disclaimer">Free. No spam.</p>
           </div>
-
-          <p class="lead-wiseman">Psychologist Richard Wiseman spent ten years studying luck. He found that &ldquo;lucky&rdquo; people aren&rsquo;t chosen, they take more chances and spot more opportunities. You can learn to do the same. <strong>This manual shows you how.</strong></p>
         </div>
       </div>
     </section>
@@ -454,7 +452,7 @@
         <div class="chapters-head">
           <div class="section-kicker">What is inside</div>
           <h2 id="chapters-title">Five ways to maximize your luck.</h2>
-          <p>Plus a practical toolkit at the end. These are not affirmations. They are the conditions Avi used to create better odds when life was moving too fast.</p>
+          <p class="lead-wiseman">Psychologist Richard Wiseman spent ten years studying luck. He found that &ldquo;lucky&rdquo; people aren&rsquo;t chosen, they take more chances and spot more opportunities. You can learn to do the same. <strong>This manual shows you how.</strong></p>
         </div>
 
         <div class="chapters">
