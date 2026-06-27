@@ -132,6 +132,44 @@
     }
     @keyframes luckShimmerText { to { background-position: 220% 0; } }
     @media (prefers-reduced-motion: reduce) { .luck-shimmer { animation: none; } }
+
+    /* ===== Hero right column: Luck Manual book mockup + social proof ===== */
+    .hero-aside { display: flex; flex-direction: column; align-items: center; gap: clamp(28px, 4vw, 44px); justify-self: end; width: min(100%, 380px); }
+    .lm-book { position: relative; width: min(100%, 320px); }
+    .lm-cover {
+      position: relative; z-index: 2; aspect-ratio: 3 / 4;
+      background: #F7F3E8; color: var(--text-dark);
+      border-radius: 5px 9px 9px 5px; border-left: 8px solid #15120D;
+      box-shadow: 0 44px 90px rgba(0,0,0,0.5);
+      padding: clamp(24px, 2.6vw, 34px);
+      display: flex; flex-direction: column;
+      transform: rotate(-3deg);
+    }
+    .lm-sheet {
+      position: absolute; z-index: 1; right: -20px; top: 7%; width: 68%; height: 88%;
+      background: #ECE7DA; border-radius: 4px;
+      box-shadow: 0 26px 60px rgba(0,0,0,0.42); transform: rotate(7deg);
+    }
+    .lm-kicker { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8479; margin-bottom: clamp(16px, 2.6vw, 26px); }
+    .lm-title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(34px, 3.6vw, 50px); line-height: 0.96; letter-spacing: -0.02em; color: #15120D; }
+    .lm-sub { font-family: var(--font-serif); font-style: italic; font-size: clamp(12px, 1.1vw, 15px); line-height: 1.35; color: #6f675c; margin-top: 12px; }
+    .lm-free { margin-top: auto; padding-top: 16px; font-family: var(--font-sans); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: var(--accent-rust); }
+    .hero-proof { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .hero-avatars { display: flex; }
+    .hero-avatars span {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-sans); font-size: 12px; font-weight: 700;
+      color: var(--text-cream); background: #3b362e;
+      border: 2px solid var(--bg-dark); margin-left: -11px;
+    }
+    .hero-avatars span:first-child { margin-left: 0; }
+    .hero-avatars span.more { background: var(--accent-amber-bright); color: #15120D; }
+    .hero-proof p { color: rgba(245,239,229,0.74); font-size: clamp(15px, 1.3vw, 17px); line-height: 1.45; margin: 0; max-width: 30ch; }
+    .hero-proof p strong { color: var(--text-cream); font-weight: 700; }
+    .hero-subscribe-btn, .hero-subscribe-btn:hover { background: #c05a34 !important; color: #fff !important; border-color: transparent !important; }
+    .hero-subscribe-btn:hover { background: #a94e2c !important; }
+    .hero-subcopy { color: rgba(245, 239, 229, 0.6); font-size: 14px; line-height: 1.5; margin-top: 14px; }
     .hero-content .lead {
       color: rgba(255, 255, 246, 0.82);
       font-size: clamp(17px, 1.4vw, 21px);
@@ -379,6 +417,9 @@
       .hero { min-height: auto; }
       /* declutter nav: the hero already has the form + a Subscribe link, so drop the redundant nav arrow, keep just the menu */
       .nav-cta { display: none; }
+      /* book mockup + proof stack below the copy on mobile */
+      .hero-aside { margin: 32px auto 0; gap: 26px; }
+      .lm-book { width: min(78%, 270px); }
       /* show hero content immediately on mobile so the essay-preview card never sits in a blank, fade-gated void */
       .hero [data-scroll-fx] { opacity: 1 !important; transform: none !important; }
       /* move the ecosystem band into the hero (above the article preview) on mobile */
@@ -1312,21 +1353,17 @@
 
       <div class="hero-content">
         <div class="hero-copy">
-          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg"><span class="line">Mental training </span><span class="line">rooted in <span class="tint-gold">yogic philosophy.</span></span></h1>
-          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">Join 1,000+ founders learning how to train the mind for pressure, clarity, and better decisions. Start with <span class="luck-shimmer">The Luck Manual</span>, free.</p>
+          <h1 class="hero-headline" id="hero-headline" data-scroll-fx="fade-up-lg">The Deliberate Pause is the <span class="tint-gold">highest-leverage move</span> a founder can make.</h1>
+          <p class="lead" data-scroll-fx style="--fx-delay: 0.15s;">One essay every Monday at 11 am to help you make better decisions under pressure. Read it in 5 minutes.</p>
 
           <div class="hero-actions" data-scroll-fx style="--fx-delay: 0.3s;">
-            <!-- Homepage lead capture for The Luck Manual. Wire to the live Kit form/endpoint in the Webflow build; tracking attributes are already in place. -->
+            <!-- Single CTA: subscribe to the letter; the Luck Manual is the free incentive. Wire to the live Kit form/endpoint in the Webflow build. -->
             <form class="form-row" id="kit-lead-form-home" action="#kit-placeholder" method="post" data-kit-placeholder="true" data-event-location="homepage_hero">
               <input type="email" name="email_address" placeholder="Email address" autocomplete="email" required />
-              <button class="btn btn-magnetic" type="submit">Send me the manual <span class="arrow">→</span></button>
+              <button class="btn btn-magnetic hero-subscribe-btn" type="submit">Subscribe</button>
             </form>
           </div>
-          <p class="form-disclaimer" data-scroll-fx style="--fx-delay: 0.4s;">Free. You will also get the Monday Letter. No spam.</p>
-          <div class="hero-secondary" data-scroll-fx style="--fx-delay: 0.5s;">
-            <span class="hero-secondary-label">Just want the letter?</span>
-            <a class="btn btn-secondary btn-sm" href="https://thedeliberatepause.substack.com/subscribe" rel="noopener">Subscribe <span class="arrow">→</span></a>
-          </div>
+          <p class="hero-subcopy" data-scroll-fx style="--fx-delay: 0.4s;">Subscribe and get <span class="luck-shimmer">The Luck Manual</span> instantly &mdash; free.</p>
           <div class="hero-ecosystem" aria-label="Read across the startup ecosystem">
             <span class="hero-ecosystem-label">Read across the startup ecosystem</span>
             <div class="marquee hero-eco-marquee" aria-hidden="true">
@@ -1348,40 +1385,22 @@
           </div>
         </div>
 
-        <aside class="hero-reads" aria-label="Start with these articles" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
-          <span class="eyebrow">Article preview</span>
-          <button class="hero-featured-essay" type="button" data-popup-trigger aria-label="Preview The Unicorn Trap and subscribe">
-            <span class="hero-featured-image" aria-hidden="true">
-              <img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/693e715bd2ce6a7aad4f715e_01_Cover.webp" alt="" loading="eager" />
-            </span>
-            <span class="hero-read-kicker">Featured article</span>
-            <strong>The Unicorn Trap.</strong>
-            <span>The story you tell yourself about scale, and why the body files an objection long before the cap table does.</span>
-          </button>
-          <div class="hero-mini-essays" aria-label="More essays">
-            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Low Status Moat and subscribe">
-              <img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69627dbc6814d6238154a30b_Thumbnail.png" alt="" loading="eager" />
-              <span class="hero-mini-copy">
-                <span class="hero-mini-title">Low Status Moat.</span>
-                <span class="hero-mini-dek">The work nobody photographs is the work that compounds.</span>
-              </span>
-            </button>
-            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview Does happiness feel different and subscribe">
-              <img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69db5df0f451b41c788a6eb2_Thumbnail.webp" alt="" loading="eager" />
-              <span class="hero-mini-copy">
-                <span class="hero-mini-title">Does happiness feel different?</span>
-                <span class="hero-mini-dek">Notes on contentment, winning, and what actually lasts.</span>
-              </span>
-            </button>
-            <button class="hero-mini-essay" type="button" data-popup-trigger aria-label="Preview When success still feels empty and subscribe">
-              <img src="https://cdn.prod.website-files.com/6879c06732ea67b4f3e0c21d/69ee6df4ce6b47f820e044d3_Thumbnail.webp" alt="" loading="eager" />
-              <span class="hero-mini-copy">
-                <span class="hero-mini-title">When success still feels empty.</span>
-                <span class="hero-mini-dek">The hollow feeling after the exit nobody warns founders about.</span>
-              </span>
-            </button>
+        <aside class="hero-aside" aria-label="The Luck Manual, free for subscribers" data-scroll-fx="fade-left" style="--fx-delay: 0.2s;">
+          <div class="lm-book">
+            <div class="lm-sheet" aria-hidden="true"></div>
+            <div class="lm-cover">
+              <span class="lm-kicker">The Deliberate Pause</span>
+              <span class="lm-title">The<br />Luck<br />Manual</span>
+              <span class="lm-sub">Five plays for founders building under pressure.</span>
+              <span class="lm-free">FREE PDF</span>
+            </div>
           </div>
-          <span class="hero-preview-note">Subscribe to read the full Monday letter.</span>
+          <div class="hero-proof">
+            <div class="hero-avatars" aria-hidden="true">
+              <span>RK</span><span>AN</span><span>SV</span><span>PJ</span><span class="more">1K+</span>
+            </div>
+            <p>Join <strong>1,000+ founders</strong> engineering their own odds.</p>
+          </div>
         </aside>
       </div>
 
